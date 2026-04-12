@@ -31,8 +31,10 @@ body {
   color: var(--color-ink);
 }
 
-/* Hero split background — diagonal clip, always anchored to viewport centre */
+/* Hero split background — diagonal clip, centred around viewport midpoint.
+   80px clip offset means visible edge spans from left+80 (top) to left (bottom).
+   Shifting left by half the offset (40px) centres the diagonal on 50vw. */
 .hero-split-bg {
-  left: 50vw;
+  left: calc(50vw - 40px);
   clip-path: polygon(80px 0, 100% 0, 100% 100%, 0% 100%);
 }
