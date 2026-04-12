@@ -38,3 +38,12 @@ body {
   left: calc(50vw - 40px);
   clip-path: polygon(80px 0, 100% 0, 100% 100%, 0% 100%);
 }
+
+/* Client logo marquee — CSS infinite scroll */
+.logo-track {
+  animation: marquee 60s linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
