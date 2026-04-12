@@ -1,3 +1,5 @@
+import MediaKitModal from './MediaKitModal'
+
 const BRANDS = [
   {
     type: 'consumer',
@@ -87,12 +89,11 @@ export default function Audiences() {
 
         {/* CTA */}
         <div className="flex justify-end border-t border-black/10 pt-8">
-          <a
-            href="#media-kit-form"
-            className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase text-ink border-2 border-ink px-7 py-3.5 no-underline transition-all duration-[180ms] hover:bg-ink hover:text-white hover:-translate-y-px"
-          >
-            Request Audience Data & Media Kit →
-          </a>
+          <MediaKitModal>
+            <button className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase text-ink border-2 border-ink px-7 py-3.5 bg-transparent cursor-pointer font-sans transition-all duration-[180ms] hover:bg-ink hover:text-white hover:-translate-y-px">
+              Request Audience Data & Media Kit →
+            </button>
+          </MediaKitModal>
         </div>
       </div>
     </section>
