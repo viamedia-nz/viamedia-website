@@ -20,7 +20,7 @@ export default function Nav() {
     <nav
       className={`fixed top-0 left-0 right-0 z-200 flex items-center justify-between px-[52px] h-[68px] bg-[rgba(244,243,240,0.96)] backdrop-blur-[20px] border-b border-black/10 transition-shadow duration-200 ${scrolled ? 'shadow-[0_2px_20px_rgba(0,0,0,0.08)]' : ''}`}
     >
-      <a href="#hero" className="flex items-center h-9 no-underline">
+      <a href="#hero" className="flex items-center shrink-0 h-9 no-underline">
         {/* Desktop: full horizontal wordmark */}
         <img
           src="/logos/viamedia-wordmark-black.svg"
@@ -31,7 +31,7 @@ export default function Nav() {
         <img
           src="/logos/viamedia-mark-black.svg"
           alt="Via Media"
-          className="block md:hidden h-8 w-auto"
+          className="block md:hidden h-8 w-8"
         />
       </a>
 
