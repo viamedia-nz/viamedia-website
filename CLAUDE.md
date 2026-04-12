@@ -4,35 +4,30 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Via Media automotive marketing website. Single-page static site — one `index.html` file containing all HTML, CSS, and JavaScript. No build tools, no package manager, no framework.
+Via Media automotive marketing website. Being migrated from a single-file static site (`reference.html`) to React + Vite + Tailwind CSS.
 
 ## Development
 
-No build step. Open `index.html` directly in a browser or use any static file server:
-
 ```bash
-npx serve .
-# or
-python -m http.server 8000
+npm install        # install dependencies
+npm run dev        # start dev server on localhost:5173
+npm run build      # production build to dist/
+npm run preview    # preview production build
 ```
 
-Deployed on Vercel (hence the file is named `index.html`).
+Deployed on Vercel.
 
 ## Architecture
 
-Everything lives in `index.html` (~1,567 lines):
+- **Stack**: React 19, Vite 6, Tailwind CSS v4
+- **Entry**: `index.html` → `src/main.jsx` → `src/App.jsx`
+- **Components**: `src/components/` — landing page sections (Nav, Hero, Services, FAQ, Contact, etc.)
+- **Styling**: Tailwind utility classes with custom design tokens in `src/index.css` via `@theme`
+- **Reference**: `reference.html` contains the original static site (~1,567 lines) used as visual reference during migration
 
-- **CSS** (lines ~9–900): CSS custom properties in `:root`, responsive design via media queries, scroll animations (`.fade-up` / `.visible`)
-- **HTML** (lines ~900–1517): Fixed nav, hero with split-panel toggle, services tabs, FAQ accordion, client logos, contact section
-- **JavaScript** (lines ~1518–1565): Vanilla JS — nav scroll shadow, IntersectionObserver for fade-up animations, hero panel toggle, services tab switching, FAQ accordion
+## Design System (defined in `src/index.css`)
 
-Key interactive patterns:
-- `setHeroPanel(mode)` — toggles hero background between steel/carrara
-- `showService(id, el)` — tab-based service panel switcher
-- `toggleAccordion(trigger)` — single-open accordion for FAQ
-
-## Design System
-
-- Fonts: Montserrat (headings/body), Inter (secondary)
-- Colors: `--red: #D4001A` (brand accent), `--navy: #0F2340`, `--steel: #2B3A4A`, `--bg: #F4F3F0`
-- All styling uses CSS custom properties defined in `:root`
+- Fonts: `font-sans` = Montserrat (headings/body), `font-body` = Inter (secondary text)
+- Brand colors: `red` (#D4001A), `red-dark` (#A80015), `navy` (#0F2340), `steel` (#2B3A4A)
+- Neutrals: `ink` (#111110), `muted` (#6B6A67), `bg` (#F4F3F0), `stone` (#E2E0DC)
+- All colors available as Tailwind utilities (e.g. `text-red`, `bg-navy`, `border-stone`)
