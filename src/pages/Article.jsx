@@ -41,13 +41,31 @@ export default function Article() {
           {article.date}
         </div>
 
-        <h1 className="text-[clamp(28px,3.5vw,44px)] font-black leading-[1.1] tracking-[-0.02em] uppercase mb-8">
+        <h1 className="text-[clamp(28px,3.5vw,44px)] font-black leading-[1.1] tracking-[-0.02em] uppercase mb-10">
           {article.title}
         </h1>
 
-        <div className="text-[15px] text-dim leading-[1.85] space-y-[18px]">
-          <p>{article.summary}</p>
-          <p className="text-muted italic">Full article content coming soon.</p>
+        <div className="text-[15px] text-dim leading-[1.85]">
+          {article.body.map((block, i) =>
+            block.type === 'h' ? (
+              <h3 key={i} className="text-lg font-extrabold tracking-[-0.01em] text-ink mt-10 mb-4">
+                {block.text}
+              </h3>
+            ) : (
+              <p key={i} className="mb-[18px]">
+                {block.text}
+              </p>
+            )
+          )}
+        </div>
+
+        <div className="mt-14 pt-8 border-t border-black/10">
+          <Link
+            to="/insights"
+            className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase text-red no-underline border-b border-red/30 pb-[3px] hover:border-red transition-colors duration-[180ms]"
+          >
+            ← More Insights
+          </Link>
         </div>
       </div>
     </section>
