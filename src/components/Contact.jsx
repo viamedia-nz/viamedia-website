@@ -15,10 +15,17 @@ export default function Contact() {
         {/* Left column */}
         <div>
           <div className="mb-8">
+            {/* Desktop: full horizontal wordmark — larger than nav for brand presence */}
+            <img
+              src="/logos/viamedia-wordmark-white.svg"
+              alt="Via Media"
+              className="hidden md:block h-12 w-auto"
+            />
+            {/* Mobile: circle mark only */}
             <img
               src="/logos/viamedia-mark-white.svg"
-              alt=""
-              className="h-10 w-auto opacity-70"
+              alt="Via Media"
+              className="block md:hidden h-14 w-14"
             />
           </div>
           <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-white/45 mb-[18px]">
@@ -70,7 +77,8 @@ export default function Contact() {
             </div>
             <div className="flex flex-col gap-[7px] col-span-2">
               <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/35">Service Area</label>
-              <select className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 [&>option]:bg-steel">
+              <select defaultValue="" className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 [&>option]:bg-steel [&:invalid]:text-white/[0.22]" required>
+                <option value="" disabled hidden>Select a service area</option>
                 {SERVICE_OPTIONS.map(opt => (
                   <option key={opt}>{opt}</option>
                 ))}
