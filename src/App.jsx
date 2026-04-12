@@ -5,6 +5,7 @@ import OurDifference from './components/OurDifference'
 import Audiences from './components/Audiences'
 import Solutions from './components/Solutions'
 import Services from './components/Services'
+import Contact from './components/Contact'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Audiences />
         <Solutions />
         <Services />
+        <Contact />
       </main>
     </div>
   )
