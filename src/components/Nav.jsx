@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const LINKS = [
   { label: 'Audiences', href: '#audiences' },
   { label: 'Services', href: '#solutions' },
   { label: 'Insights', href: '#insights-page' },
-  { label: 'About', href: '#about-page' },
+  { label: 'About', href: '/about', isRoute: true },
 ]
 
 export default function Nav() {
@@ -36,14 +37,23 @@ export default function Nav() {
       </a>
 
       <ul className="flex gap-8 items-center list-none">
-        {LINKS.map(({ label, href }) => (
+        {LINKS.map(({ label, href, isRoute }) => (
           <li key={href}>
-            <a
-              href={href}
-              className="text-[11px] font-semibold tracking-[0.1em] uppercase text-muted no-underline transition-colors duration-[180ms] hover:text-ink"
-            >
-              {label}
-            </a>
+            {isRoute ? (
+              <Link
+                to={href}
+                className="text-[11px] font-semibold tracking-[0.1em] uppercase text-muted no-underline transition-colors duration-[180ms] hover:text-ink"
+              >
+                {label}
+              </Link>
+            ) : (
+              <a
+                href={href}
+                className="text-[11px] font-semibold tracking-[0.1em] uppercase text-muted no-underline transition-colors duration-[180ms] hover:text-ink"
+              >
+                {label}
+              </a>
+            )}
           </li>
         ))}
         <li>

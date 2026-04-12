@@ -39,6 +39,11 @@ body {
   clip-path: polygon(80px 0, 100% 0, 100% 100%, 0% 100%);
 }
 
+/* Global paragraph text-wrap for orphan prevention */
+p {
+  text-wrap: pretty;
+}
+
 /* Client logo marquee — CSS infinite scroll */
 .logo-track {
   animation: marquee 72s linear infinite;
