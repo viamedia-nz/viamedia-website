@@ -1,6 +1,7 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import LogoBand from './components/LogoBand'
+import OurDifference from './components/OurDifference'
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <main className="pt-[68px]">
         <Hero />
         <LogoBand />
+        <OurDifference />
       </main>
     </div>
   )
