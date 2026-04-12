@@ -3,6 +3,8 @@ import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './components/About'
+import Insights from './pages/Insights'
+import Article from './pages/Article'
 
 export default function App() {
   return (
@@ -14,6 +16,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/insights" element={<Insights />} />
+            <Route path="/insights/:slug" element={<Article />} />
           </Routes>
         </main>
 
