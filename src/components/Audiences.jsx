@@ -67,7 +67,7 @@ export default function Audiences() {
             <div
               key={title}
               className={`bg-white border border-black/10 border-t-3 ${BORDER_TOP[type]} p-8 pb-7 flex flex-col cursor-default transition-all duration-[220ms] hover:shadow-[0_8px_32px_rgba(0,0,0,0.09)] hover:-translate-y-[3px]`}
-              style={type === 'both' ? { borderTopColor: 'transparent' } : undefined}
+              style={type === 'both' ? { borderTop: '3px solid', borderImage: 'linear-gradient(to right, #D4001A 50%, #354757 50%) 1', borderLeft: 'none', borderRight: 'none', borderBottom: 'none' } : undefined}
             >
               <div className={`text-[9px] font-bold tracking-[0.18em] uppercase ${EYEBROW_COLOR[type]} mb-3.5 min-h-[1.6em]`}>
                 {eyebrow}
