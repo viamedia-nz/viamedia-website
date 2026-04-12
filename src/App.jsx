@@ -6,6 +6,7 @@ import Audiences from './components/Audiences'
 import Solutions from './components/Solutions'
 import Services from './components/Services'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 export default function App() {
   return (
@@ -21,6 +22,8 @@ export default function App() {
         <Services />
         <Contact />
       </main>
+
+      <Footer />
     </div>
   )
 }
