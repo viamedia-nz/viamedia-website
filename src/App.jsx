@@ -2,6 +2,7 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import LogoBand from './components/LogoBand'
 import OurDifference from './components/OurDifference'
+import Audiences from './components/Audiences'
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Hero />
         <LogoBand />
         <OurDifference />
+        <Audiences />
       </main>
     </div>
   )
