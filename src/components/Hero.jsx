@@ -51,11 +51,11 @@ export default function Hero() {
         {/* RIGHT: stats + mark watermark */}
         <div className="pl-[52px] relative flex flex-col justify-center">
           <div className="relative z-2">
-            {/* Mark watermark behind stats */}
+            {/* Mark watermark behind stats — centred vertically on stat box */}
             <img
               src="/logos/viamedia-mark-hero-overlay.svg"
               alt=""
-              className="absolute left-1/2 top-[40%] -translate-x-[20%] -translate-y-1/2 w-[clamp(280px,100%,420px)] h-[clamp(280px,100%,420px)] opacity-35 pointer-events-none z-1"
+              className="absolute left-1/2 top-1/2 -translate-x-1/3 -translate-y-1/2 w-[140%] h-auto opacity-25 pointer-events-none z-1"
             />
 
             {STATS.map(({ value, accent, label }, i) => (
