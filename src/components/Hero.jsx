@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 const STATS = [
   { value: '3.5', accent: 'M+', label: 'Audience Contact Points Each Month' },
   { value: '450', accent: 'K+', label: 'First-Party Audience Across NZ Automotive' },
@@ -7,18 +5,13 @@ const STATS = [
 ]
 
 export default function Hero() {
-  const [panelBg, setPanelBg] = useState('#354757')
-
   return (
     <section id="hero" className="relative overflow-hidden flex items-stretch bg-hero-left">
       {/* Red left rule */}
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-red z-4" />
 
       {/* Right panel split background */}
-      <div
-        className="hero-split-bg absolute top-0 bottom-0 right-0 z-0 transition-[background] duration-400 ease-in-out"
-        style={{ background: panelBg }}
-      />
+      <div className="hero-split-bg absolute top-0 bottom-0 right-0 z-0 bg-steel-mid" />
 
       {/* Centred content grid */}
       <div className="relative z-2 w-full max-w-[1200px] mx-auto grid grid-cols-2 items-center px-[52px] pt-[88px] pb-[100px]">
@@ -92,26 +85,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Panel toggle (dev tool) */}
-      <div className="absolute bottom-5 right-5 z-10 flex gap-2 items-center">
-        <span className="text-[9px] font-bold tracking-[0.08em] uppercase text-white/40">Right panel:</span>
-        {[
-          { label: 'Steel Mid', bg: '#354757' },
-          { label: 'Carrara', bg: '#E2E0DC' },
-        ].map(({ label, bg }) => (
-          <button
-            key={bg}
-            onClick={() => setPanelBg(bg)}
-            className={`text-[9px] font-bold tracking-[0.08em] uppercase px-3 py-1.5 border-none cursor-pointer transition-all duration-200 font-sans ${
-              panelBg === bg
-                ? 'bg-red text-white'
-                : 'bg-white/10 text-white/40 hover:bg-white/18 hover:text-white/70'
-            }`}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
     </section>
   )
 }
