@@ -18,16 +18,6 @@ export default function Hero() {
 
         {/* LEFT: copy + CTAs */}
         <div className="pr-12 relative overflow-hidden">
-          {/* Ghosted wordmark */}
-          <div className="absolute left-0 bottom-[-16px] h-[88px] w-auto opacity-[0.035] pointer-events-none z-1 max-w-[90%]">
-            <svg viewBox="0 0 1326 432" xmlns="http://www.w3.org/2000/svg" className="h-full w-auto">
-              <path d="M235,0h1091v432H235C347.022,421.062,433.361,329.13,433.111,215.515,432.861,101.516,346.664,10.938,235,0Z" fill="#ffffff"/>
-              <polygon points="198.648 144.07 126.918 287.566 55.125 144.01 198.648 144.07" fill="#ffffff"/>
-              <polygon points="378.865 287.965 235.29 288.01 306.904 144.521 378.865 287.965" fill="#ffffff"/>
-              <polygon points="235.02 287.661 199.004 288.049 198.987 144.306 234.984 144.262 235.02 287.661" fill="#ffffff"/>
-            </svg>
-          </div>
-
           <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.24em] uppercase text-red mb-6">
             <div className="w-7 h-0.5 bg-red" />
             Content-Led, Audience-Powered
@@ -65,7 +55,7 @@ export default function Hero() {
             <img
               src="/logos/viamedia-mark-hero-overlay.svg"
               alt=""
-              className="absolute left-1/2 top-[40%] -translate-x-[20%] -translate-y-1/2 w-[clamp(280px,100%,420px)] h-[clamp(280px,100%,420px)] opacity-10 pointer-events-none z-1"
+              className="absolute left-1/2 top-[40%] -translate-x-[20%] -translate-y-1/2 w-[clamp(280px,100%,420px)] h-[clamp(280px,100%,420px)] opacity-20 pointer-events-none z-1"
             />
 
             {STATS.map(({ value, accent, label }, i) => (
