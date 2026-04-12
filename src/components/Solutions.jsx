@@ -83,7 +83,7 @@ export default function Solutions() {
           {TIERS.map((tier, i) => {
             const isOpen = openIndex === i
             return (
-              <div key={i} className={`overflow-hidden ${isOpen ? '' : 'border-b border-white/[0.09]'} ${i === 0 && !isOpen ? 'border-t border-t-white/[0.09]' : ''}`}>
+              <div key={i} className={`border-b border-white/[0.09] overflow-hidden ${i === 0 ? 'border-t border-t-white/[0.09]' : ''}`}>
                 {/* Header */}
                 <button
                   onClick={() => toggle(i)}
@@ -105,7 +105,7 @@ export default function Solutions() {
                 {/* Body */}
                 <div
                   className="bg-ink2 overflow-hidden transition-all duration-[450ms] ease-in-out"
-                  style={{ maxHeight: isOpen ? '1200px' : '0', padding: isOpen ? '0 28px 36px' : '0 28px 0' }}
+                  style={{ maxHeight: isOpen ? '1200px' : '0', padding: isOpen ? '20px 28px 36px' : '0 28px 0' }}
                 >
                   {tier.body.map((p, j) => (
                     <p key={j} className="text-sm text-white/60 leading-[1.8] mb-3.5">{p}</p>
