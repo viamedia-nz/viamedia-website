@@ -83,7 +83,7 @@ export default function Solutions() {
           {TIERS.map((tier, i) => {
             const isOpen = openIndex === i
             return (
-              <div key={i} className={`border-b border-white/[0.09] overflow-hidden ${i === 0 ? 'border-t border-t-white/[0.09]' : ''}`}>
+              <div key={i} className={`overflow-hidden ${isOpen ? '' : 'border-b border-white/[0.09]'} ${i === 0 && !isOpen ? 'border-t border-t-white/[0.09]' : ''}`}>
                 {/* Header */}
                 <button
                   onClick={() => toggle(i)}
