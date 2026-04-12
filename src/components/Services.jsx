@@ -95,7 +95,7 @@ export default function Services() {
         </p>
 
         {/* Tab bar */}
-        <div className="flex border-b-2 border-black/10 mt-14 mb-0 overflow-x-auto scrollbar-none">
+        <div className="flex border-b-2 border-black/10 mt-14 mb-0 overflow-x-auto overflow-y-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {TABS.map(({ id, label }) => (
             <button
               key={id}
@@ -113,7 +113,7 @@ export default function Services() {
 
         {/* Panel content */}
         <div className="pt-12">
-          <h3 className="text-[26px] font-black tracking-[-0.02em] uppercase mb-5 text-ink">
+          <h3 className="text-[26px] font-black tracking-[-0.02em] uppercase mb-5 text-ink border-l-3 border-l-red pl-4">
             {panel.title}
           </h3>
           <p className="text-[15px] text-muted leading-[1.8] mb-8 pb-8 border-b border-black/10 max-w-[800px]">
