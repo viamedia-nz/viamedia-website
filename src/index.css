@@ -30,3 +30,12 @@ body {
   background: var(--color-bg);
   color: var(--color-ink);
 }
+
+/* Hero split background — diagonal clip + responsive left offset */
+.hero-split-bg {
+  left: 50vw;
+  clip-path: polygon(80px 0, 100% 0, 100% 100%, 0% 100%);
+}
+@media (min-width: 1100px) { .hero-split-bg { left: calc(50vw - 20px); } }
+@media (min-width: 1300px) { .hero-split-bg { left: calc(50vw - 50px); } }
+@media (min-width: 1500px) { .hero-split-bg { left: 600px; } }
