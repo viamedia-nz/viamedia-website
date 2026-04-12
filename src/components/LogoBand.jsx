@@ -25,11 +25,11 @@ const LOGOS = [
 function LogoItem({ name }) {
   const isCompact = COMPACT.has(name)
   return (
-    <div className={isCompact ? 'px-14' : 'px-9'} style={{ display: 'inline-flex', alignItems: 'center' }}>
+    <div className={isCompact ? 'px-8' : 'px-5'} style={{ display: 'inline-flex', alignItems: 'center' }}>
       <img
         src={`/logos/client/${name}.png`}
         alt={name.replace('logo-', '').replace(/-/g, ' ')}
-        className="h-20 w-auto max-w-none"
+        className="h-11 w-auto max-w-none"
         loading="lazy"
       />
     </div>
@@ -42,7 +42,7 @@ export default function LogoBand() {
       <div className="logo-track inline-flex items-center">
         {/* Two copies for seamless loop */}
         {[0, 1].map(copy => (
-          <div key={copy} className="inline-flex items-center py-6">
+          <div key={copy} className="inline-flex items-center py-3">
             {LOGOS.map(name => (
               <LogoItem key={`${copy}-${name}`} name={name} />
             ))}

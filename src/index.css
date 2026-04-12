@@ -41,7 +41,7 @@ body {
 
 /* Client logo marquee — CSS infinite scroll */
 .logo-track {
-  animation: marquee 60s linear infinite;
+  animation: marquee 72s linear infinite;
 }
 @keyframes marquee {
   from { transform: translateX(0); }
