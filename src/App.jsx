@@ -4,6 +4,7 @@ import LogoBand from './components/LogoBand'
 import OurDifference from './components/OurDifference'
 import Audiences from './components/Audiences'
 import Solutions from './components/Solutions'
+import Services from './components/Services'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <OurDifference />
         <Audiences />
         <Solutions />
+        <Services />
       </main>
     </div>
   )
