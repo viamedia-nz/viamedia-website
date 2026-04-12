@@ -61,7 +61,7 @@ export default function Hero() {
             {STATS.map(({ value, accent, label }, i) => (
               <div
                 key={i}
-                className={`w-full py-[22px] flex flex-col gap-[5px] ${i < STATS.length - 1 ? 'border-b border-white/[0.09]' : ''}`}
+                className="w-full py-[22px] flex flex-col gap-[5px]"
               >
                 <div className="text-[clamp(36px,3.6vw,50px)] font-black tracking-[-0.04em] leading-none text-white">
                   {value}<span className="text-red">{accent}</span>
