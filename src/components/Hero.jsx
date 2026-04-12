@@ -55,7 +55,7 @@ export default function Hero() {
             <img
               src="/logos/viamedia-mark-hero-overlay.svg"
               alt=""
-              className="absolute left-1/2 top-1/2 -translate-x-1/3 -translate-y-1/2 w-[140%] h-auto opacity-25 pointer-events-none z-1"
+              className="absolute left-1/2 top-1/2 -translate-x-1/3 -translate-y-1/2 w-[380px] h-[380px] opacity-[0.12] pointer-events-none z-1"
             />
 
             {STATS.map(({ value, accent, label }, i) => (
