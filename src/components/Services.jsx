@@ -100,7 +100,7 @@ export default function Services() {
             <button
               key={id}
               onClick={() => setActiveTab(id)}
-              className={`shrink-0 px-7 py-3.5 text-[11px] font-bold tracking-[0.1em] uppercase cursor-pointer whitespace-nowrap bg-transparent border-none border-b-3 -mb-[2px] transition-all duration-[180ms] font-sans ${
+              className={`shrink-0 px-7 py-3.5 text-[11px] font-bold tracking-[0.1em] uppercase cursor-pointer whitespace-nowrap bg-transparent border-t-0 border-l-0 border-r-0 border-b-3 -mb-[2px] transition-all duration-[180ms] font-sans ${
                 activeTab === id
                   ? 'text-ink border-b-red'
                   : 'text-muted border-b-transparent hover:text-ink'
@@ -113,7 +113,7 @@ export default function Services() {
 
         {/* Panel content */}
         <div className="pt-12">
-          <h3 className="text-[26px] font-black tracking-[-0.02em] uppercase mb-5 text-ink border-l-3 border-l-red pl-4">
+          <h3 className="text-[26px] font-black tracking-[-0.02em] uppercase mb-5 text-ink">
             {panel.title}
           </h3>
           <p className="text-[15px] text-muted leading-[1.8] mb-8 pb-8 border-b border-black/10 max-w-[800px]">
