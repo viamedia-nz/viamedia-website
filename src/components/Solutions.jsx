@@ -118,23 +118,23 @@ export default function Solutions() {
                   style={{ maxHeight: isOpen ? '2400px' : '0', padding: isOpen ? '20px 16px 36px' : '0 16px 0' }}
                 >
                   {tier.body.map((p, j) => (
-                    <p key={j} className="text-sm text-white/60 leading-[1.8] mb-3.5">{p}</p>
+                    <p key={j} className="text-sm text-on-dark leading-[1.8] mb-3.5">{p}</p>
                   ))}
 
-                  <div className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/30 mt-6 mb-2">
+                  <div className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted mt-6 mb-2">
                     What this typically includes
                   </div>
                   <ul className="list-none p-0 mb-5">
                     {tier.includes.map((item, j) => (
-                      <li key={j} className={`py-2.5 pl-5 text-[13px] text-white/50 leading-[1.65] relative ${j < tier.includes.length - 1 ? 'border-b border-white/[0.06]' : ''}`}>
+                      <li key={j} className={`py-2.5 pl-5 text-[13px] text-on-dark-muted leading-[1.65] relative ${j < tier.includes.length - 1 ? 'border-b border-white/[0.06]' : ''}`}>
                         <span className="absolute left-0 text-red text-[11px]">—</span>
                         {item}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="text-[13px] text-white/50 leading-[1.75] py-4 border-t border-b border-white/[0.07] mb-5">
-                    <strong className="block text-[10px] font-bold tracking-[0.14em] uppercase text-white/30 mb-1.5 not-italic">
+                  <div className="text-[13px] text-on-dark leading-[1.75] py-4 border-t border-b border-white/[0.07] mb-5">
+                    <strong className="block text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted mb-1.5 not-italic">
                       Most relevant audience
                     </strong>
                     {tier.audience}
@@ -144,14 +144,14 @@ export default function Solutions() {
                     {tier.pricing}
                   </div>
 
-                  <div className="text-[13px] italic text-white/50 leading-[1.75] py-[18px] px-5 bg-white/[0.04] border-l-3 border-l-red mb-6">
+                  <div className="text-[13px] italic text-on-dark leading-[1.75] py-[18px] px-5 bg-white/[0.04] border-l-3 border-l-red mb-6">
                     {tier.testimonial}
-                    <strong className="not-italic text-white/55 font-semibold block mt-2.5 text-[11px] tracking-[0.04em]">
+                    <strong className="not-italic text-on-dark-muted font-semibold block mt-2.5 text-[11px] tracking-[0.04em]">
                       {tier.attribution}
                     </strong>
                   </div>
 
-                  <p className="text-sm text-white/55 leading-[1.75] mb-4">{tier.ctaIntro}</p>
+                  <p className="text-sm text-on-dark leading-[1.75] mb-4">{tier.ctaIntro}</p>
                   <div>
                     <a
                       href="#contact"

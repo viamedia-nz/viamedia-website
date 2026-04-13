@@ -19,6 +19,10 @@
 
   --font-sans: 'Montserrat', sans-serif;
   --font-body: 'Inter', sans-serif;
+
+  /* Dark-background text colours for legibility */
+  --color-on-dark: #D1D5DB;
+  --color-on-dark-muted: #9CA3AF;
 }
 
 html {

@@ -35,7 +35,7 @@ export default function Contact() {
           <h2 className="text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase text-white mb-5">
             Let's Talk About<br />Your <em className="not-italic text-red">Business</em>
           </h2>
-          <p className="text-[15px] text-white/50 leading-[1.8] mb-11">
+          <p className="text-[15px] text-on-dark leading-[1.8] mb-11">
             Tell us about your business, your goals, and who you're trying to reach. We'll come back with how we can help and what that looks like in practice.
           </p>
         </div>
@@ -44,7 +44,7 @@ export default function Contact() {
         <div className="fade-up delay-1">
           <form className="grid grid-cols-1 sm:grid-cols-2 gap-3" onSubmit={e => e.preventDefault()}>
             <div className="flex flex-col gap-[7px]">
-              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/35">First Name</label>
+              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">First Name</label>
               <input
                 type="text"
                 placeholder="First name"
@@ -52,7 +52,7 @@ export default function Contact() {
               />
             </div>
             <div className="flex flex-col gap-[7px]">
-              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/35">Last Name</label>
+              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Last Name</label>
               <input
                 type="text"
                 placeholder="Last name"
@@ -60,7 +60,7 @@ export default function Contact() {
               />
             </div>
             <div className="flex flex-col gap-[7px]">
-              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/35">Email Address</label>
+              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Email Address</label>
               <input
                 type="email"
                 placeholder="name@company.com"
@@ -68,7 +68,7 @@ export default function Contact() {
               />
             </div>
             <div className="flex flex-col gap-[7px]">
-              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/35">Company</label>
+              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Company</label>
               <input
                 type="text"
                 placeholder="Company name"
@@ -76,7 +76,7 @@ export default function Contact() {
               />
             </div>
             <div className="flex flex-col gap-[7px] col-span-2">
-              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/35">Service Area</label>
+              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Service Area</label>
               <select defaultValue="" className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 [&>option]:bg-steel [&:invalid]:text-white/[0.22]" required>
                 <option value="" disabled hidden>Select a service area</option>
                 {SERVICE_OPTIONS.map(opt => (
@@ -85,7 +85,7 @@ export default function Contact() {
               </select>
             </div>
             <div className="flex flex-col gap-[7px] col-span-2">
-              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/35">Message</label>
+              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Message</label>
               <textarea
                 placeholder="Tell us about your goals"
                 className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] resize-y min-h-[110px]"
