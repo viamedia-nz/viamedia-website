@@ -45,16 +45,16 @@ const EYEBROW_COLOR = {
 
 export default function Audiences() {
   return (
-    <section id="audiences" className="bg-off py-[110px] px-[52px]">
+    <section id="audiences" className="bg-off py-16 md:py-[110px] px-5 md:px-[52px]">
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
-        <div className="grid grid-cols-2 gap-20 items-end mb-13">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 items-end mb-10 md:mb-13">
           <div>
             <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
               <div className="w-[22px] h-0.5 bg-red" />
               First-Party Audiences
             </div>
-            <h2 className="text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase mb-0">
+            <h2 className="text-[clamp(28px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase mb-0">
               The Audiences Your Customers <em className="not-italic text-red">Already Trust</em>
             </h2>
           </div>
@@ -64,11 +64,11 @@ export default function Audiences() {
         </div>
 
         {/* Brand cards */}
-        <div className="grid grid-cols-4 gap-4 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {BRANDS.map(({ type, eyebrow, title, text, pin }) => (
             <div
               key={title}
-              className={`bg-white border border-black/10 border-t-3 ${BORDER_TOP[type]} p-8 pb-7 flex flex-col cursor-default transition-all duration-[220ms] hover:shadow-[0_8px_32px_rgba(0,0,0,0.09)] hover:-translate-y-[3px]`}
+              className={`bg-white border border-black/10 border-t-3 ${BORDER_TOP[type]} p-5 md:p-8 pb-5 md:pb-7 flex flex-col cursor-default transition-all duration-[220ms] hover:shadow-[0_8px_32px_rgba(0,0,0,0.09)] hover:-translate-y-[3px]`}
               style={type === 'both' ? { borderTop: '3px solid', borderImage: 'linear-gradient(to right, #D4001A 50%, #354757 50%) 1', borderLeft: 'none', borderRight: 'none', borderBottom: 'none' } : undefined}
             >
               <div className={`text-[9px] font-bold tracking-[0.18em] uppercase ${EYEBROW_COLOR[type]} mb-3.5 min-h-[1.6em]`}>

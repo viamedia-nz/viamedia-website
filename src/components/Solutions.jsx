@@ -62,10 +62,20 @@ const TIERS = [
 export default function Solutions() {
   const [openIndex, setOpenIndex] = useState(-1)
 
-  const toggle = (i) => setOpenIndex(openIndex === i ? -1 : i)
+  const toggle = (i) => {
+    const newIndex = openIndex === i ? -1 : i
+    setOpenIndex(newIndex)
+    // Wait for collapse animation to settle before scrolling
+    if (newIndex !== -1) {
+      setTimeout(() => {
+        const headers = document.querySelectorAll('#solutions button')
+        headers[newIndex]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 480)
+    }
+  }
 
   return (
-    <section id="solutions" className="bg-ink py-[110px] px-[52px]">
+    <section id="solutions" className="bg-ink py-16 md:py-[110px] px-5 md:px-[52px]">
       <div className="max-w-[1200px] mx-auto">
         <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-white/45 mb-[18px]">
           <div className="w-[22px] h-0.5 bg-white/45" />
@@ -87,7 +97,7 @@ export default function Solutions() {
                 {/* Header */}
                 <button
                   onClick={() => toggle(i)}
-                  className="w-full flex justify-between items-center px-7 py-6 bg-ink2 border-none cursor-pointer text-left font-sans transition-colors duration-[180ms] hover:bg-dim mb-px"
+                  className="w-full flex justify-between items-center px-4 md:px-7 py-5 md:py-6 bg-ink2 border-none cursor-pointer text-left font-sans transition-colors duration-[180ms] hover:bg-dim mb-px scroll-mt-[84px]"
                 >
                   <div className="flex flex-col gap-1.5">
                     <div className={`text-[15px] font-extrabold uppercase tracking-[-0.01em] transition-colors duration-[180ms] ${isOpen ? 'text-red' : 'text-white'}`}>
@@ -105,7 +115,7 @@ export default function Solutions() {
                 {/* Body */}
                 <div
                   className="bg-ink2 overflow-hidden transition-all duration-[450ms] ease-in-out"
-                  style={{ maxHeight: isOpen ? '1200px' : '0', padding: isOpen ? '20px 28px 36px' : '0 28px 0' }}
+                  style={{ maxHeight: isOpen ? '2400px' : '0', padding: isOpen ? '20px 16px 36px' : '0 16px 0' }}
                 >
                   {tier.body.map((p, j) => (
                     <p key={j} className="text-sm text-white/60 leading-[1.8] mb-3.5">{p}</p>

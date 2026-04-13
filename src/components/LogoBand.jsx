@@ -25,11 +25,11 @@ const LOGOS = [
 function LogoItem({ name }) {
   const isCompact = COMPACT.has(name)
   return (
-    <div className={isCompact ? 'px-8' : 'px-5'} style={{ display: 'inline-flex', alignItems: 'center' }}>
+    <div className={isCompact ? 'px-4 md:px-8' : 'px-3 md:px-5'} style={{ display: 'inline-flex', alignItems: 'center' }}>
       <img
         src={`/logos/client/${name}.png`}
         alt={name.replace('logo-', '').replace(/-/g, ' ')}
-        className="h-11 w-auto max-w-none"
+        className="h-8 md:h-11 w-auto max-w-none"
         loading="lazy"
       />
     </div>

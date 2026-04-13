@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom'
 import LogoBand from './LogoBand'
 
 export default function About() {
   return (
     <section id="about-page" className="bg-stone border-t-4 border-t-red">
-      <div className="max-w-[1200px] mx-auto py-[110px] px-[52px]">
+      <div className="max-w-[1200px] mx-auto py-16 md:py-[110px] px-5 md:px-[52px]">
         <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-muted mb-[18px]">
           <div className="w-[22px] h-0.5 bg-red" />
           About
@@ -18,7 +19,7 @@ export default function About() {
         </div>
 
         {/* Stat block */}
-        <div className="bg-ink w-[55%] py-10 px-10 my-10">
+        <div className="bg-ink w-full md:w-[55%] py-8 md:py-10 px-6 md:px-10 my-8 md:my-10">
           <div className="flex items-center gap-6 mb-8">
             <div className="text-[clamp(48px,5vw,72px)] font-black tracking-[-0.05em] leading-none text-white">
               30<span className="text-red">+</span>
@@ -55,12 +56,12 @@ export default function About() {
           <p className="mb-[18px]">Our full-time team is supported by a wide network of specialist contributors, photographers, videographers, and content creators who operate throughout the country. Many have been working with Via Media for ten years or more — people who know the automotive community because they are part of it.</p>
         </div>
 
-        <a
-          href="#contact"
+        <Link
+          to="/#contact"
           className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase text-white bg-ink px-[34px] py-[17px] no-underline mt-2.5 transition-all duration-[180ms] hover:bg-red hover:-translate-y-px"
         >
           Get in Touch →
-        </a>
+        </Link>
       </div>
 
       {/* Full-bleed logo band — no label, no borders */}

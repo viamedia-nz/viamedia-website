@@ -23,16 +23,16 @@ const ITEMS = [
 
 export default function OurDifference() {
   return (
-    <section id="different" className="bg-white py-[110px] px-[52px]">
+    <section id="different" className="bg-white py-16 md:py-[110px] px-5 md:px-[52px]">
       <div className="max-w-[1200px] mx-auto">
-        {/* Header: two-column layout */}
-        <div className="grid grid-cols-2 gap-20 items-end mb-15">
+        {/* Header */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 items-end mb-10 md:mb-15">
           <div>
             <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
               <div className="w-[22px] h-0.5 bg-red" />
               Our Difference
             </div>
-            <h2 className="text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase mb-0">
+            <h2 className="text-[clamp(28px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase mb-0">
               Connected to the <em className="not-italic text-red">Industry</em>
             </h2>
           </div>
@@ -42,13 +42,13 @@ export default function OurDifference() {
         </div>
 
         {/* Four-tile grid */}
-        <div className="grid grid-cols-2 gap-px bg-black/10 border border-black/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-black/10 border border-black/10">
           {ITEMS.map(({ num, title, text }) => (
             <div
               key={num}
-              className="bg-white p-11 border-l-3 border-l-transparent transition-all duration-[220ms] cursor-default hover:bg-off hover:border-l-red hover:translate-x-0.5"
+              className="bg-white p-6 md:p-11 border-l-3 border-l-transparent transition-all duration-[220ms] cursor-default hover:bg-off hover:border-l-red hover:translate-x-0.5"
             >
-              <div className="text-[52px] font-black tracking-[-0.05em] leading-none text-red opacity-[0.18] mb-3">
+              <div className="text-[40px] md:text-[52px] font-black tracking-[-0.05em] leading-none text-red opacity-[0.18] mb-3">
                 {num}
               </div>
               <h3 className="text-[15px] font-extrabold tracking-[-0.01em] mb-[11px]">

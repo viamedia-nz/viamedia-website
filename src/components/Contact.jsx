@@ -9,8 +9,8 @@ const SERVICE_OPTIONS = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-steel py-[120px] px-[52px]">
-      <div className="max-w-[1200px] mx-auto grid grid-cols-2 gap-[100px] items-start">
+    <section id="contact" className="bg-steel py-16 md:py-[120px] px-5 md:px-[52px]">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[100px] items-start">
 
         {/* Left column */}
         <div>
@@ -42,7 +42,7 @@ export default function Contact() {
 
         {/* Right column — form */}
         <div>
-          <form className="grid grid-cols-2 gap-3" onSubmit={e => e.preventDefault()}>
+          <form className="grid grid-cols-1 sm:grid-cols-2 gap-3" onSubmit={e => e.preventDefault()}>
             <div className="flex flex-col gap-[7px]">
               <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/35">First Name</label>
               <input
