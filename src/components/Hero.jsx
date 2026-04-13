@@ -28,7 +28,7 @@ export default function Hero() {
             <span className="text-red block">Built on<br />Audience</span>
           </h1>
 
-          <p className="text-sm font-normal text-white/[0.52] max-w-[420px] leading-[1.85] mb-10">
+          <p className="text-sm font-normal text-on-dark max-w-[420px] leading-[1.85] mb-10">
             Via Media connects brands with New Zealand's automotive audiences through content, paid media, and search.
           </p>
 
@@ -66,7 +66,7 @@ export default function Hero() {
                 <div className="text-[clamp(32px,3.6vw,50px)] font-black tracking-[-0.04em] leading-none text-white">
                   {value}<span className="text-red">{accent}</span>
                 </div>
-                <div className="text-[10px] font-semibold tracking-[0.16em] uppercase text-white/[0.38]">
+                <div className="text-[10px] font-semibold tracking-[0.16em] uppercase text-on-dark-muted">
                   {label}
                 </div>
               </div>
