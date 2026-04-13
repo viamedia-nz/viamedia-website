@@ -65,12 +65,17 @@ export default function Solutions() {
   const toggle = (i) => {
     const newIndex = openIndex === i ? -1 : i
     setOpenIndex(newIndex)
-    // Wait for collapse animation to settle before scrolling
     if (newIndex !== -1) {
+      // Opening — scroll the header into view after collapse settles
       setTimeout(() => {
         const headers = document.querySelectorAll('#solutions button')
         headers[newIndex]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }, 480)
+    } else {
+      // Closing — scroll back to the section top
+      setTimeout(() => {
+        document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
     }
   }
 
