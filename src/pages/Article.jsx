@@ -22,11 +22,11 @@ export default function Article() {
   return (
     <section className="bg-off border-t-4 border-t-red">
       {/* Hero graphic — full width */}
-      <div className="h-[280px] relative overflow-hidden">
+      <div className="h-[160px] md:h-[280px] relative overflow-hidden">
         <InsightGraphic type={article.graphic} />
       </div>
 
-      <div className="max-w-[800px] mx-auto py-[80px] px-[52px]">
+      <div className="max-w-[800px] mx-auto py-12 md:py-[80px] px-5 md:px-[52px]">
         <Link
           to="/insights"
           className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.1em] uppercase text-muted no-underline mb-10 hover:text-ink transition-colors duration-[180ms]"

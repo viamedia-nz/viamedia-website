@@ -39,6 +39,11 @@ body {
   clip-path: polygon(80px 0, 100% 0, 100% 100%, 0% 100%);
 }
 
+/* Offset scroll targets for fixed nav (68px + 4px breathing room) */
+section[id], #contact {
+  scroll-margin-top: 72px;
+}
+
 /* Global paragraph text-wrap for orphan prevention */
 p {
   text-wrap: pretty;
@@ -47,6 +52,9 @@ p {
 /* Client logo marquee — CSS infinite scroll */
 .logo-track {
   animation: marquee 72s linear infinite;
+}
+@media (max-width: 640px) {
+  .logo-track { animation-duration: 45s; }
 }
 @keyframes marquee {
   from { transform: translateX(0); }

@@ -16,7 +16,7 @@ export default function MediaKitModal({ children }) {
 
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-300 bg-black/70 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
-        <Dialog.Content className="fixed z-310 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[520px] bg-off p-10 shadow-[0_24px_80px_rgba(0,0,0,0.3)] focus:outline-none">
+        <Dialog.Content className="fixed z-310 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[90vw] md:max-w-[520px] bg-off p-6 md:p-10 shadow-[0_24px_80px_rgba(0,0,0,0.3)] focus:outline-none max-h-[90vh] overflow-y-auto">
           {/* Close button */}
           <Dialog.Close className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-muted hover:text-ink transition-colors duration-150 cursor-pointer bg-transparent border-none text-lg font-light">
             ×

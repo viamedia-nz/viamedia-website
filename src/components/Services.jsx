@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 const TABS = [
   {
@@ -78,10 +78,20 @@ const TABS = [
 
 export default function Services() {
   const [activeTab, setActiveTab] = useState('content')
+  const tabBarRef = useRef(null)
   const panel = TABS.find(t => t.id === activeTab)
 
+  const selectTab = (id) => {
+    setActiveTab(id)
+    // Scroll the selected tab to centre of the tab bar
+    setTimeout(() => {
+      const btn = tabBarRef.current?.querySelector(`[data-tab="${id}"]`)
+      btn?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+    }, 50)
+  }
+
   return (
-    <section id="services" className="bg-white py-[110px] px-[52px]">
+    <section id="services" className="bg-white py-16 md:py-[110px] px-5 md:px-[52px]">
       <div className="max-w-[1200px] mx-auto">
         <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
           <div className="w-[22px] h-0.5 bg-red" />
@@ -95,12 +105,13 @@ export default function Services() {
         </p>
 
         {/* Tab bar */}
-        <div className="flex border-b-2 border-black/10 mt-14 mb-0 overflow-x-auto overflow-y-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div ref={tabBarRef} className="flex border-b-2 border-black/10 mt-14 mb-0 overflow-x-auto overflow-y-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {TABS.map(({ id, label }) => (
             <button
               key={id}
-              onClick={() => setActiveTab(id)}
-              className={`shrink-0 px-7 py-3.5 text-[11px] font-bold tracking-[0.1em] uppercase cursor-pointer whitespace-nowrap bg-transparent border-t-0 border-l-0 border-r-0 border-b-3 -mb-[2px] transition-all duration-[180ms] font-sans ${
+              data-tab={id}
+              onClick={() => selectTab(id)}
+              className={`shrink-0 px-4 md:px-7 py-3.5 text-[11px] font-bold tracking-[0.1em] uppercase cursor-pointer whitespace-nowrap bg-transparent border-t-0 border-l-0 border-r-0 border-b-3 -mb-[2px] transition-all duration-[180ms] font-sans ${
                 activeTab === id
                   ? 'text-ink border-b-red'
                   : 'text-muted border-b-transparent hover:text-ink'
