@@ -10,7 +10,7 @@ const TABS = [
     items: [
       'Editorial features, product profiles, technical guides, and campaign-led content',
       'Social-first video, reels, and platform-native formats across Facebook, Instagram, TikTok, and YouTube',
-      'Publishing across our owned social channels — reaching combined audiences of 450,000+',
+      'Publishing across our owned social channels, reaching combined audiences of 450,000+',
       'EDM campaigns to our owned brand audiences, and management of client database communications and subscriber lists',
       'Content optimised for AI-assisted discovery and long-tail search',
       'Case studies and client story content',
