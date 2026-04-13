@@ -77,7 +77,7 @@ export default function Contact() {
             </div>
             <div className="flex flex-col gap-[7px] col-span-2">
               <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Service Area</label>
-              <select defaultValue="" className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 [&>option]:bg-steel [&:invalid]:text-white/[0.22]" required>
+              <select defaultValue="" className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 [&>option]:bg-[#2B3A4A] [&>option]:text-[#D1D5DB] [&>option:checked]:bg-[#354757] [&>option:checked]:text-white [&:invalid]:text-white/[0.22]" required>
                 <option value="" disabled hidden>Select a service area</option>
                 {SERVICE_OPTIONS.map(opt => (
                   <option key={opt}>{opt}</option>
