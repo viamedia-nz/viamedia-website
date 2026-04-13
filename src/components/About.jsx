@@ -5,21 +5,21 @@ export default function About() {
   return (
     <section id="about-page" className="bg-stone border-t-4 border-t-red">
       <div className="max-w-[1200px] mx-auto py-16 md:py-[110px] px-5 md:px-[52px]">
-        <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-muted mb-[18px]">
+        <div className="fade-up flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-muted mb-[18px]">
           <div className="w-[22px] h-0.5 bg-red" />
           About
         </div>
-        <h2 className="text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase mb-6">
+        <h2 className="fade-up delay-1 text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase mb-6">
           Thirty Years <em className="not-italic text-red">Inside the Industry</em>
         </h2>
 
-        <div className="max-w-[800px] about-body text-[15px] text-dim leading-[1.85]">
+        <div className="fade-up delay-2 max-w-[800px] about-body text-[15px] text-dim leading-[1.85]">
           <p className="mb-[18px]">Via Media is a New Zealand marketing agency specialising in the automotive sector. What sets us apart is not just what we do — it is what we have spent three decades building: owned audiences, trusted channels, and deep relationships across every part of the NZ automotive community, from enthusiast to trade professional.</p>
           <p className="mb-[18px]">The business has its roots in the early 1990s, when it established itself as one of New Zealand's leading independent automotive publishers. Over the following decades it built three of the sector's most recognised brands — NZ Performance Car, NZV8, and Auto Channel — along with the first-party audiences that follow them. Those audiences were not acquired or aggregated. They were earned, community by community, over thirty years.</p>
         </div>
 
         {/* Stat block */}
-        <div className="bg-ink w-full md:w-[55%] py-8 md:py-10 px-6 md:px-10 my-8 md:my-10">
+        <div className="fade-up delay-3 bg-ink w-full md:w-[55%] py-8 md:py-10 px-6 md:px-10 my-8 md:my-10">
           <div className="flex items-center gap-6 mb-8">
             <div className="text-[clamp(48px,5vw,72px)] font-black tracking-[-0.05em] leading-none text-white">
               30<span className="text-red">+</span>

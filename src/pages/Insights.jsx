@@ -8,7 +8,7 @@ export default function Insights() {
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 items-end mb-10 md:mb-13">
-          <div>
+          <div className="fade-up">
             <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
               <div className="w-[22px] h-0.5 bg-red" />
               Insights
@@ -17,13 +17,13 @@ export default function Insights() {
               Industry <em className="not-italic text-red">Perspectives</em>
             </h2>
           </div>
-          <p className="text-[15px] text-muted leading-[1.85]">
+          <p className="fade-up delay-1 text-[15px] text-muted leading-[1.85]">
             Perspective on automotive marketing, audience behaviour, and the changing media landscape — as we've encountered it.
           </p>
         </div>
 
         {/* Article grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="fade-up delay-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {ARTICLES.map((article) => (
             <Link
               key={article.slug}

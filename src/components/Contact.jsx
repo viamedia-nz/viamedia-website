@@ -13,7 +13,7 @@ export default function Contact() {
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[100px] items-start">
 
         {/* Left column */}
-        <div>
+        <div className="fade-up">
           <div className="mb-8">
             {/* Desktop: full horizontal wordmark — larger than nav for brand presence */}
             <img
@@ -41,7 +41,7 @@ export default function Contact() {
         </div>
 
         {/* Right column — form */}
-        <div>
+        <div className="fade-up delay-1">
           <form className="grid grid-cols-1 sm:grid-cols-2 gap-3" onSubmit={e => e.preventDefault()}>
             <div className="flex flex-col gap-[7px]">
               <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/35">First Name</label>

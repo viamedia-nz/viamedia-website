@@ -49,7 +49,7 @@ export default function Audiences() {
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 items-end mb-10 md:mb-13">
-          <div>
+          <div className="fade-up">
             <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
               <div className="w-[22px] h-0.5 bg-red" />
               First-Party Audiences
@@ -64,7 +64,7 @@ export default function Audiences() {
         </div>
 
         {/* Brand cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        <div className="fade-up delay-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {BRANDS.map(({ type, eyebrow, title, text, pin }) => (
             <div
               key={title}
