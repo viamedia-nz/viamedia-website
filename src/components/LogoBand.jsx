@@ -6,7 +6,6 @@ const COMPACT = new Set([
   'logo-subaru', 'logo-toyota', 'logo-valvoline', 'logo-yhi',
 ])
 
-// Seeded random order from spec
 const LOGOS = [
   'logo-napa', 'logo-mann-hummel', 'logo-meguiars', 'logo-beach-hop',
   'logo-holden', 'logo-bapcor', 'logo-niterra', 'logo-spark-foundry',
@@ -22,32 +21,35 @@ const LOGOS = [
   'logo-exedy', 'logo-ac-delco', 'logo-autoserv', 'logo-sunday-drive',
 ]
 
-function LogoItem({ name }) {
-  const isCompact = COMPACT.has(name)
+function LogoSet({ copy }) {
   return (
-    <div className={isCompact ? 'px-4 md:px-8' : 'px-3 md:px-5'} style={{ display: 'inline-flex', alignItems: 'center' }}>
-      <img
-        src={`/logos/client/${name}.png`}
-        alt={name.replace('logo-', '').replace(/-/g, ' ')}
-        className="h-8 md:h-11 w-auto max-w-none"
-        loading="lazy"
-      />
+    <div className="flex shrink-0 items-center py-3" aria-hidden={copy === 1}>
+      {LOGOS.map((name) => {
+        const isCompact = COMPACT.has(name)
+        return (
+          <div
+            key={name}
+            className={`shrink-0 flex items-center ${isCompact ? 'px-6' : 'px-4'}`}
+          >
+            <img
+              src={`/logos/client/${name}.png`}
+              alt={copy === 0 ? name.replace('logo-', '').replace(/-/g, ' ') : ''}
+              className="h-8 md:h-11 w-auto max-w-none block"
+              loading="eager"
+            />
+          </div>
+        )
+      })}
     </div>
   )
 }
 
 export default function LogoBand() {
   return (
-    <div className="overflow-hidden whitespace-nowrap bg-white">
-      <div className="logo-track inline-flex items-center">
-        {/* Two copies for seamless loop */}
-        {[0, 1].map(copy => (
-          <div key={copy} className="inline-flex items-center py-3">
-            {LOGOS.map(name => (
-              <LogoItem key={`${copy}-${name}`} name={name} />
-            ))}
-          </div>
-        ))}
+    <div className="overflow-hidden bg-white">
+      <div className="logo-track flex">
+        <LogoSet copy={0} />
+        <LogoSet copy={1} />
       </div>
     </div>
   )
