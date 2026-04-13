@@ -93,14 +93,14 @@ export default function Services() {
   return (
     <section id="services" className="bg-white py-16 md:py-[110px] px-5 md:px-[52px]">
       <div className="max-w-[1200px] mx-auto">
-        <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
+        <div className="fade-up flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
           <div className="w-[22px] h-0.5 bg-red" />
           How We Work
         </div>
-        <h2 className="text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase mb-5">
+        <h2 className="fade-up delay-1 text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase mb-5">
           One Brief, <em className="not-italic text-red">Everything Covered</em>
         </h2>
-        <p className="text-[15px] text-muted leading-[1.8] font-normal max-w-[560px] mb-14">
+        <p className="fade-up delay-2 text-[15px] text-muted leading-[1.8] font-normal max-w-[560px] mb-14">
           An integrated approach to automotive marketing — content, audience, and amplification working together.
         </p>
 
@@ -123,7 +123,7 @@ export default function Services() {
         </div>
 
         {/* Panel content */}
-        <div className="pt-12">
+        <div key={activeTab} className="pt-12 tab-panel-enter">
           <h3 className="text-[26px] font-black tracking-[-0.02em] uppercase mb-5 text-ink">
             {panel.title}
           </h3>

@@ -49,6 +49,39 @@ p {
   text-wrap: pretty;
 }
 
+/* Fade-up scroll animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up.delay-1 { transition-delay: 0.1s; }
+.fade-up.delay-2 { transition-delay: 0.2s; }
+.fade-up.delay-3 { transition-delay: 0.3s; }
+
+/* Services tab panel transition */
+.tab-panel-enter {
+  animation: tabFadeIn 0.3s ease;
+}
+@keyframes tabFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll snap on main page — desktop only, proximity for gentle settle */
+@media (min-width: 768px) {
+  .snap-container {
+    scroll-snap-type: y proximity;
+  }
+  .snap-container section {
+    scroll-snap-align: start;
+  }
+}
+
 /* Client logo marquee — CSS infinite scroll */
 .logo-track {
   animation: marquee 72s linear infinite;

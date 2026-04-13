@@ -77,14 +77,14 @@ export default function Solutions() {
   return (
     <section id="solutions" className="bg-ink py-16 md:py-[110px] px-5 md:px-[52px]">
       <div className="max-w-[1200px] mx-auto">
-        <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-white/45 mb-[18px]">
+        <div className="fade-up flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-white/45 mb-[18px]">
           <div className="w-[22px] h-0.5 bg-white/45" />
           Who We Work With
         </div>
-        <h2 className="text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase text-white mb-5">
+        <h2 className="fade-up delay-1 text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase text-white mb-5">
           Solutions to <em className="not-italic text-red">Suit You</em>
         </h2>
-        <p className="text-[15px] text-white/50 leading-[1.8] font-normal max-w-[560px] mb-14">
+        <p className="fade-up delay-2 text-[15px] text-white/50 leading-[1.8] font-normal max-w-[560px] mb-14">
           Our solutions are built around your business size, your objectives, and the audiences most relevant to them. Find the one that fits your business.
         </p>
 
