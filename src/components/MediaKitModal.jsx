@@ -30,18 +30,19 @@ export default function MediaKitModal({ children }) {
     setStatus('submitting')
     const selectedBrands = BRANDS.filter((b) => fields.brands.includes(b.id)).map((b) => b.label)
     try {
+      const body = new FormData()
+      body.append('_subject', 'Audience Data Request — Via Media Website')
+      body.append('Name', fields.name)
+      body.append('Company', fields.company)
+      body.append('Email', fields.email)
+      body.append('Brands of Interest', selectedBrands.join(', ') || 'None selected')
       const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          _subject: 'Audience Data Request — Via Media Website',
-          Name: fields.name,
-          Company: fields.company,
-          Email: fields.email,
-          'Brands of Interest': selectedBrands.join(', ') || 'None selected',
-        }),
+        headers: { Accept: 'application/json' },
+        body,
       })
-      setStatus(res.ok ? 'success' : 'error')
+      const data = await res.json()
+      setStatus(data.ok ? 'success' : 'error')
     } catch {
       setStatus('error')
     }
@@ -82,7 +83,7 @@ export default function MediaKitModal({ children }) {
                 Request Received
               </Dialog.Title>
               <p className="text-[15px] text-muted leading-[1.7]">
-                Thank you — we'll send your audience data shortly.
+                Thank you — we'll send your audience data and media kit shortly.
               </p>
             </div>
           ) : (

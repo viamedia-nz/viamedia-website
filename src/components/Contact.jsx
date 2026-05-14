@@ -23,20 +23,21 @@ export default function Contact() {
     e.preventDefault()
     setStatus('submitting')
     try {
+      const body = new FormData()
+      body.append('_subject', 'New Enquiry — Via Media Website')
+      body.append('First Name', fields.firstName)
+      body.append('Last Name', fields.lastName)
+      body.append('Email', fields.email)
+      body.append('Company', fields.company)
+      body.append('Service Area', fields.service)
+      body.append('Message', fields.message)
       const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          _subject: 'New Enquiry — Via Media Website',
-          'First Name': fields.firstName,
-          'Last Name': fields.lastName,
-          Email: fields.email,
-          Company: fields.company,
-          'Service Area': fields.service,
-          Message: fields.message,
-        }),
+        headers: { Accept: 'application/json' },
+        body,
       })
-      setStatus(res.ok ? 'success' : 'error')
+      const data = await res.json()
+      setStatus(data.ok ? 'success' : 'error')
     } catch {
       setStatus('error')
     }

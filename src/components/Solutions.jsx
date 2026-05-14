@@ -53,7 +53,7 @@ const TIERS = [
     ],
     audience: 'Access to all our automotive audiences — consumer, trade, and specialist sector — with targeting aligned to your campaign objectives.',
     pricing: 'Integrated campaigns from $3,000 per month',
-    testimonial: '"The team at Via Media make every campaign extremely easy with in-depth targeting data and post-campaign reporting. With the ability to target dual audiences of trade and consumer on one platform, all with consistently above average industry results, Via Media are a go-to for connecting with our customers smarter, faster and more efficiently."',
+    testimonial: '"The team at Via Media make every campaign extremely easy with in-depth targeting data and post-campaign reporting. With the ability to target dual audiences of trade and consumer on one platform, all with consistently above average industry results, Via Media are a go-to for connecting with our customers smarter, faster, and more efficiently."',
     attribution: '— Frances Vettori, General Manager Marketing, NAPA ANZ',
     ctaIntro: 'Tell us about your business and what you\'re trying to achieve. We\'ll come back with the approach we recommend.',
   },
