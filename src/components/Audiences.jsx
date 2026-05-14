@@ -37,10 +37,20 @@ const BORDER_TOP = {
   both: '',
 }
 
-const EYEBROW_COLOR = {
-  consumer: 'text-red',
-  trade: 'text-steel-mid',
-  both: 'text-muted',
+function EyebrowLabel({ type, eyebrow }) {
+  if (type === 'consumer') {
+    return <span className="text-red">{eyebrow}</span>
+  }
+  if (type === 'trade') {
+    return <span className="text-[#6B7280]">{eyebrow}</span>
+  }
+  // both: "Consumer & Trade" — Consumer in red, & Trade in grey
+  return (
+    <>
+      <span className="text-red">Consumer</span>
+      <span className="text-[#6B7280]"> &amp; Trade</span>
+    </>
+  )
 }
 
 export default function Audiences() {
@@ -71,8 +81,8 @@ export default function Audiences() {
               className={`bg-white border border-black/10 border-t-3 ${BORDER_TOP[type]} p-5 md:p-8 pb-5 md:pb-7 flex flex-col cursor-default transition-all duration-[220ms] hover:shadow-[0_8px_32px_rgba(0,0,0,0.09)] hover:-translate-y-[3px]`}
               style={type === 'both' ? { borderTop: '3px solid', borderImage: 'linear-gradient(to right, #D4001A 50%, #354757 50%) 1', borderLeft: 'none', borderRight: 'none', borderBottom: 'none' } : undefined}
             >
-              <div className={`text-[9px] font-bold tracking-[0.18em] uppercase ${EYEBROW_COLOR[type]} mb-3.5 min-h-[1.6em]`}>
-                {eyebrow}
+              <div className="text-[11px] font-bold tracking-[0.18em] uppercase mb-3.5 min-h-[1.6em]">
+                <EyebrowLabel type={type} eyebrow={eyebrow} />
               </div>
               <h3 className="text-lg font-black uppercase tracking-[-0.02em] text-ink mb-3.5 leading-[1.1]">
                 {title}
@@ -90,8 +100,8 @@ export default function Audiences() {
         {/* CTA */}
         <div className="flex justify-end border-t border-black/10 pt-8">
           <MediaKitModal>
-            <button className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase text-ink border-2 border-ink px-7 py-3.5 bg-transparent cursor-pointer font-sans transition-all duration-[180ms] hover:bg-ink hover:text-white hover:-translate-y-px">
-              Request Audience Data & Media Kit →
+            <button className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase text-red border-[1.5px] border-red px-7 py-3.5 bg-transparent cursor-pointer font-sans transition-all duration-[180ms] hover:bg-red hover:text-white hover:-translate-y-px">
+              Request Audience Data &amp; Media Kit →
             </button>
           </MediaKitModal>
         </div>

@@ -12,7 +12,7 @@ const ITEMS = [
   {
     num: '03',
     title: 'Content-Led Marketing',
-    text: "We specialise in content that informs, builds credibility, and continues working long after it's published — found through AI-assisted discovery, traditional search, and the platforms where your audiences are most active. Content on our channels doesn't just reach people today; it keeps finding new ones.",
+    text: "We specialise in content that informs, builds credibility, and continues working long after it's published — found through AI-assisted discovery, traditional search, and the platforms where your audiences are most active. Content on our channels doesn't just reach people today; it keeps on finding new audiences.",
   },
   {
     num: '04',

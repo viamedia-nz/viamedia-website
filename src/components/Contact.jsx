@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const SERVICE_OPTIONS = [
   'Content & Channels',
   'Lead Generation & Paid Media',
@@ -7,7 +9,39 @@ const SERVICE_OPTIONS = [
   'Not sure yet',
 ]
 
+const FORMSPREE_URL = 'https://formspree.io/f/mykoanpz'
+
 export default function Contact() {
+  const [fields, setFields] = useState({
+    firstName: '', lastName: '', email: '', company: '', service: '', message: '',
+  })
+  const [status, setStatus] = useState('idle') // idle | submitting | success | error
+
+  const set = (key) => (e) => setFields((f) => ({ ...f, [key]: e.target.value }))
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('submitting')
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: 'New Enquiry — Via Media Website',
+          'First Name': fields.firstName,
+          'Last Name': fields.lastName,
+          Email: fields.email,
+          Company: fields.company,
+          'Service Area': fields.service,
+          Message: fields.message,
+        }),
+      })
+      setStatus(res.ok ? 'success' : 'error')
+    } catch {
+      setStatus('error')
+    }
+  }
+
   return (
     <section id="contact" className="bg-steel py-16 md:py-[120px] px-5 md:px-[52px]">
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[100px] items-start">
@@ -15,7 +49,7 @@ export default function Contact() {
         {/* Left column */}
         <div className="fade-up">
           <div className="mb-8">
-            {/* Desktop: full horizontal wordmark — larger than nav for brand presence */}
+            {/* Desktop: full horizontal wordmark */}
             <img
               src="/logos/viamedia-wordmark-white.svg"
               alt="Via Media"
@@ -42,64 +76,100 @@ export default function Contact() {
 
         {/* Right column — form */}
         <div className="fade-up delay-1">
-          <form className="grid grid-cols-1 sm:grid-cols-2 gap-3" onSubmit={e => e.preventDefault()}>
-            <div className="flex flex-col gap-[7px]">
-              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">First Name</label>
-              <input
-                type="text"
-                placeholder="First name"
-                className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22]"
-              />
+          {status === 'success' ? (
+            <div className="py-10 text-on-dark text-[15px] leading-[1.8]">
+              Thank you — we'll be in touch shortly.
             </div>
-            <div className="flex flex-col gap-[7px]">
-              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Last Name</label>
-              <input
-                type="text"
-                placeholder="Last name"
-                className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22]"
-              />
-            </div>
-            <div className="flex flex-col gap-[7px]">
-              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Email Address</label>
-              <input
-                type="email"
-                placeholder="name@company.com"
-                className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22]"
-              />
-            </div>
-            <div className="flex flex-col gap-[7px]">
-              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Company</label>
-              <input
-                type="text"
-                placeholder="Company name"
-                className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22]"
-              />
-            </div>
-            <div className="flex flex-col gap-[7px] col-span-2">
-              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Service Area</label>
-              <select defaultValue="" className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 [&>option]:bg-[#2B3A4A] [&>option]:text-[#D1D5DB] [&>option:checked]:bg-[#354757] [&>option:checked]:text-white [&:invalid]:text-white/[0.22]" required>
-                <option value="" disabled hidden>Select a service area</option>
-                {SERVICE_OPTIONS.map(opt => (
-                  <option key={opt}>{opt}</option>
-                ))}
-              </select>
-            </div>
-            <div className="flex flex-col gap-[7px] col-span-2">
-              <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Message</label>
-              <textarea
-                placeholder="Tell us about your goals"
-                className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] resize-y min-h-[110px]"
-              />
-            </div>
-            <div className="col-span-2 mt-1">
-              <button
-                type="submit"
-                className="w-full font-sans text-xs font-bold tracking-[0.14em] uppercase text-white bg-red border-none py-5 px-11 cursor-pointer transition-colors duration-[180ms] hover:bg-red-dark"
-              >
-                Get in Touch →
-              </button>
-            </div>
-          </form>
+          ) : (
+            <form className="flex flex-wrap gap-3" onSubmit={handleSubmit}>
+              {/* Row 1: First Name + Last Name */}
+              <div className="flex flex-col gap-[7px] w-full min-[480px]:w-[calc(50%-6px)]">
+                <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">First Name</label>
+                <input
+                  type="text"
+                  placeholder="First name"
+                  value={fields.firstName}
+                  onChange={set('firstName')}
+                  required
+                  className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] min-w-0 w-full"
+                />
+              </div>
+              <div className="flex flex-col gap-[7px] w-full min-[480px]:w-[calc(50%-6px)]">
+                <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Last Name</label>
+                <input
+                  type="text"
+                  placeholder="Last name"
+                  value={fields.lastName}
+                  onChange={set('lastName')}
+                  required
+                  className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] min-w-0 w-full"
+                />
+              </div>
+              {/* Row 2: Email + Company */}
+              <div className="flex flex-col gap-[7px] w-full min-[480px]:w-[calc(50%-6px)]">
+                <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Email Address</label>
+                <input
+                  type="email"
+                  placeholder="name@company.com"
+                  value={fields.email}
+                  onChange={set('email')}
+                  required
+                  className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] min-w-0 w-full"
+                />
+              </div>
+              <div className="flex flex-col gap-[7px] w-full min-[480px]:w-[calc(50%-6px)]">
+                <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Company</label>
+                <input
+                  type="text"
+                  placeholder="Company name"
+                  value={fields.company}
+                  onChange={set('company')}
+                  className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] min-w-0 w-full"
+                />
+              </div>
+              {/* Service area — full width */}
+              <div className="flex flex-col gap-[7px] w-full">
+                <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Service Area</label>
+                <select
+                  value={fields.service}
+                  onChange={set('service')}
+                  required
+                  className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 [&>option]:bg-[#2B3A4A] [&>option]:text-[#D1D5DB] [&>option:checked]:bg-[#354757] [&>option:checked]:text-white [&:invalid]:text-white/[0.22]"
+                >
+                  <option value="" disabled hidden>Select a service area</option>
+                  {SERVICE_OPTIONS.map(opt => (
+                    <option key={opt}>{opt}</option>
+                  ))}
+                </select>
+              </div>
+              {/* Message — full width */}
+              <div className="flex flex-col gap-[7px] w-full">
+                <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Message</label>
+                <textarea
+                  placeholder="Tell us about your goals"
+                  value={fields.message}
+                  onChange={set('message')}
+                  className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] resize-y min-h-[110px] w-full"
+                />
+              </div>
+              {/* Error message */}
+              {status === 'error' && (
+                <p className="w-full text-sm text-red">
+                  Something went wrong. Please try again or email us directly.
+                </p>
+              )}
+              {/* Submit */}
+              <div className="w-full mt-1">
+                <button
+                  type="submit"
+                  disabled={status === 'submitting'}
+                  className="w-full font-sans text-xs font-bold tracking-[0.14em] uppercase text-white bg-red border-none py-5 px-11 cursor-pointer transition-colors duration-[180ms] hover:bg-red-dark disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {status === 'submitting' ? 'Sending…' : 'Get in Touch →'}
+                </button>
+              </div>
+            </form>
+          )}
         </div>
       </div>
     </section>

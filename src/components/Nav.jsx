@@ -49,41 +49,43 @@ export default function Nav() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-200 flex items-center justify-between px-5 md:px-[52px] h-[68px] bg-[rgba(244,243,240,0.96)] backdrop-blur-[20px] border-b border-black/10 transition-shadow duration-200 ${scrolled ? 'shadow-[0_2px_20px_rgba(0,0,0,0.08)]' : ''}`}
+        className={`fixed top-0 left-0 right-0 z-200 px-5 md:px-[52px] h-[68px] bg-[rgba(244,243,240,0.96)] backdrop-blur-[20px] border-b border-black/10 transition-shadow duration-200 ${scrolled ? 'shadow-[0_2px_20px_rgba(0,0,0,0.08)]' : ''}`}
       >
-        <Link to="/" onClick={() => { if (location.pathname === '/') window.scrollTo({ top: 0, behavior: 'smooth' }) }} className="flex items-center shrink-0 h-9 no-underline">
-          <img src="/logos/viamedia-wordmark-black.svg" alt="Via Media" className="hidden md:block h-7 w-auto" />
-          <img src="/logos/viamedia-mark-black.svg" alt="Via Media" className="block md:hidden h-8 w-8" />
-        </Link>
+        <div className="max-w-[1200px] mx-auto h-full flex items-center justify-between">
+          <Link to="/" onClick={() => { if (location.pathname === '/') window.scrollTo({ top: 0, behavior: 'smooth' }) }} className="flex items-center shrink-0 h-9 no-underline">
+            <img src="/logos/viamedia-wordmark-black.svg" alt="Via Media" className="hidden md:block h-7 w-auto" />
+            <img src="/logos/viamedia-mark-black.svg" alt="Via Media" className="block md:hidden h-8 w-8" />
+          </Link>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex gap-8 items-center list-none">
-          {LINKS.map(({ label, to, hash }) => (
-            <li key={label}>
-              {to ? (
-                <Link to={to} className={linkClass}>{label}</Link>
-              ) : (
-                <a href={hash} onClick={handleScroll(hash)} className={linkClass}>{label}</a>
-              )}
+          {/* Desktop links */}
+          <ul className="hidden md:flex gap-8 items-center list-none">
+            {LINKS.map(({ label, to, hash }) => (
+              <li key={label}>
+                {to ? (
+                  <Link to={to} className={linkClass}>{label}</Link>
+                ) : (
+                  <a href={hash} onClick={handleScroll(hash)} className={linkClass}>{label}</a>
+                )}
+              </li>
+            ))}
+            <li>
+              <a href="#contact" onClick={handleScroll('#contact')} className="text-[11px] font-bold tracking-[0.1em] uppercase text-white! bg-red px-6 py-3 no-underline transition-colors duration-[180ms] hover:bg-red-dark">
+                Contact
+              </a>
             </li>
-          ))}
-          <li>
-            <a href="#contact" onClick={handleScroll('#contact')} className="text-[11px] font-bold tracking-[0.1em] uppercase text-white! bg-red px-6 py-3 no-underline transition-colors duration-[180ms] hover:bg-red-dark">
-              Contact
-            </a>
-          </li>
-        </ul>
+          </ul>
 
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col justify-center gap-[5px] w-8 h-8 bg-transparent border-none cursor-pointer"
-          aria-label="Menu"
-        >
-          <span className={`block w-5 h-[2px] bg-ink transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
-          <span className={`block w-5 h-[2px] bg-ink transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-[2px] bg-ink transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
-        </button>
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden flex flex-col justify-center gap-[5px] w-8 h-8 bg-transparent border-none cursor-pointer"
+            aria-label="Menu"
+          >
+            <span className={`block w-5 h-[2px] bg-ink transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+            <span className={`block w-5 h-[2px] bg-ink transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
+            <span className={`block w-5 h-[2px] bg-ink transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu overlay */}

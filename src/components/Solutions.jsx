@@ -16,7 +16,7 @@ const TIERS = [
     audience: 'Depending on your customer base — consumer, trade, or both — we\'ll match you to the most relevant audience.',
     pricing: 'Individual elements from $500 per month',
     testimonial: '"The always-on digital advertising delivered quantifiable, qualified leads at a very cost-effective price point — and generated some genuinely unexpected social proof in the comments, with customers recommending us unprompted."',
-    attribution: '— Vincent Offenbaker, American Pickup Parts',
+    attribution: '— Vincent Offenbaker, Director, American Pickup Parts',
     ctaIntro: 'Tell us about your business — where you are, what you do, and who you\'re trying to reach. We\'ll come back with some options that fit.',
   },
   {
@@ -34,8 +34,8 @@ const TIERS = [
     ],
     audience: 'Typically spans two or more of our brands and specialist sector audiences, depending on your product and customer mix.',
     pricing: 'Integrated packages from $1,500 per month',
-    testimonial: '"Via Media gave us the content-led strategy and the audience reach to launch Infinitev into the New Zealand automotive aftermarket — something we couldn\'t have achieved with our internal marketing resource alone."',
-    attribution: '— Graeme Cochrane, Infinitev',
+    testimonial: '"The Via Media team are easy to work with and really understand our market. The content they create has become a steady source of leads — people are finding Harrys Euro through AI search results, which is a big reason we keep investing in content with them."',
+    attribution: '— Scott Wood, Director, Harrys Euro',
     ctaIntro: 'Tell us about your business. We\'ll put a tailored proposal together.',
   },
   {
@@ -53,8 +53,8 @@ const TIERS = [
     ],
     audience: 'Access to all our automotive audiences — consumer, trade, and specialist sector — with targeting aligned to your campaign objectives.',
     pricing: 'Integrated campaigns from $3,000 per month',
-    testimonial: '"We use Via Media\'s first-party audience reach to drive more cost-effective engagement for our sub-brand campaigns across both consumer and trade channels — consistently delivering an ROI of up to four times what our other channels provide."',
-    attribution: '— Lara Channing-Hutt, GPC New Zealand',
+    testimonial: '"The team at Via Media make every campaign extremely easy with in-depth targeting data and post-campaign reporting. With the ability to target dual audiences of trade and consumer on one platform, all with consistently above average industry results, Via Media are a go-to for connecting with our customers smarter, faster and more efficiently."',
+    attribution: '— Frances Vettori, General Manager Marketing, NAPA ANZ',
     ctaIntro: 'Tell us about your business and what you\'re trying to achieve. We\'ll come back with the approach we recommend.',
   },
 ]
@@ -66,13 +66,11 @@ export default function Solutions() {
     const newIndex = openIndex === i ? -1 : i
     setOpenIndex(newIndex)
     if (newIndex !== -1) {
-      // Opening — scroll the header into view after collapse settles
       setTimeout(() => {
         const headers = document.querySelectorAll('#solutions button')
         headers[newIndex]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }, 480)
     } else {
-      // Closing — scroll back to the section top
       setTimeout(() => {
         document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' })
       }, 100)
@@ -80,7 +78,7 @@ export default function Solutions() {
   }
 
   return (
-    <section id="solutions" className="bg-ink py-16 md:py-[110px] px-5 md:px-[52px]">
+    <section id="solutions" className="bg-ink py-12 md:py-[80px] px-5 md:px-[52px]">
       <div className="max-w-[1200px] mx-auto">
         <div className="fade-up flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-white/45 mb-[18px]">
           <div className="w-[22px] h-0.5 bg-white/45" />
@@ -89,7 +87,7 @@ export default function Solutions() {
         <h2 className="fade-up delay-1 text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase text-white mb-5">
           Solutions to <em className="not-italic text-red">Suit You</em>
         </h2>
-        <p className="fade-up delay-2 text-[15px] text-white/50 leading-[1.8] font-normal max-w-[560px] mb-14">
+        <p className="fade-up delay-2 text-[15px] text-white/50 leading-[1.8] font-normal max-w-[560px] mb-10">
           Our solutions are built around your business size, your objectives, and the audiences most relevant to them. Find the one that fits your business.
         </p>
 
@@ -104,7 +102,7 @@ export default function Solutions() {
                   onClick={() => toggle(i)}
                   className="w-full flex justify-between items-center px-4 md:px-7 py-5 md:py-6 bg-ink2 border-none cursor-pointer text-left font-sans transition-colors duration-[180ms] hover:bg-dim mb-px scroll-mt-[84px]"
                 >
-                  <div className="flex flex-col gap-1.5">
+                  <div className="flex flex-col gap-1.5 pr-12 min-w-0">
                     <div className={`text-[15px] font-extrabold uppercase tracking-[-0.01em] transition-colors duration-[180ms] ${isOpen ? 'text-red' : 'text-white'}`}>
                       {tier.title}
                     </div>
@@ -120,26 +118,26 @@ export default function Solutions() {
                 {/* Body */}
                 <div
                   className="bg-ink2 overflow-hidden transition-all duration-[450ms] ease-in-out"
-                  style={{ maxHeight: isOpen ? '2400px' : '0', padding: isOpen ? '20px 16px 36px' : '0 16px 0' }}
+                  style={{ maxHeight: isOpen ? '2800px' : '0', padding: isOpen ? '24px 16px 40px' : '0 16px 0' }}
                 >
                   {tier.body.map((p, j) => (
-                    <p key={j} className="text-sm text-on-dark leading-[1.8] mb-3.5">{p}</p>
+                    <p key={j} className="text-[15px] text-[#E5E7EB] leading-[1.85] mb-4">{p}</p>
                   ))}
 
-                  <div className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted mt-6 mb-2">
+                  <div className="text-[12px] font-bold tracking-[0.14em] uppercase text-white mt-7 mb-2.5">
                     What this typically includes
                   </div>
                   <ul className="list-none p-0 mb-5">
                     {tier.includes.map((item, j) => (
-                      <li key={j} className={`py-2.5 pl-5 text-[13px] text-on-dark-muted leading-[1.65] relative ${j < tier.includes.length - 1 ? 'border-b border-white/[0.06]' : ''}`}>
+                      <li key={j} className={`py-2.5 pl-5 text-[14px] text-[#E5E7EB] leading-[1.7] relative ${j < tier.includes.length - 1 ? 'border-b border-white/[0.06]' : ''}`}>
                         <span className="absolute left-0 text-red text-[11px]">—</span>
                         {item}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="text-[13px] text-on-dark leading-[1.75] py-4 border-t border-b border-white/[0.07] mb-5">
-                    <strong className="block text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted mb-1.5 not-italic">
+                  <div className="text-[14px] text-[#E5E7EB] leading-[1.75] py-4 border-t border-b border-white/[0.07] mb-5">
+                    <strong className="block text-[12px] font-bold tracking-[0.14em] uppercase text-white mb-1.5 not-italic">
                       Most relevant audience
                     </strong>
                     {tier.audience}
@@ -149,14 +147,14 @@ export default function Solutions() {
                     {tier.pricing}
                   </div>
 
-                  <div className="text-[13px] italic text-on-dark leading-[1.75] py-[18px] px-5 bg-white/[0.04] border-l-3 border-l-red mb-6">
+                  <div className="text-[14px] italic text-[#E5E7EB] leading-[1.8] py-6 px-5 bg-white/[0.04] border-l-3 border-l-red my-8">
                     {tier.testimonial}
-                    <strong className="not-italic text-on-dark-muted font-semibold block mt-2.5 text-[11px] tracking-[0.04em]">
+                    <strong className="not-italic text-[#9CA3AF] font-semibold block mt-3 text-[11px] tracking-[0.04em]">
                       {tier.attribution}
                     </strong>
                   </div>
 
-                  <p className="text-sm text-on-dark leading-[1.75] mb-4">{tier.ctaIntro}</p>
+                  <p className="text-[15px] text-[#E5E7EB] leading-[1.75] mb-4">{tier.ctaIntro}</p>
                   <div>
                     <a
                       href="#contact"
@@ -169,6 +167,16 @@ export default function Solutions() {
               </div>
             )
           })}
+        </div>
+
+        {/* Bridge CTA — section-level closer */}
+        <div className="mt-10 flex">
+          <a
+            href="#services"
+            className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase text-white/60 border border-white/25 px-8 py-4 no-underline transition-all duration-[200ms] hover:text-white hover:border-white/50"
+          >
+            See how we work →
+          </a>
         </div>
       </div>
     </section>
