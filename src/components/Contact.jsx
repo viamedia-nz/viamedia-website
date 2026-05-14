@@ -55,6 +55,7 @@ export default function Contact() {
               src="/logos/viamedia-wordmark-white.svg"
               alt="Via Media"
               className="hidden md:block h-12 w-auto"
+              style={{ imageRendering: 'auto', WebkitFontSmoothing: 'antialiased' }}
             />
             {/* Mobile: circle mark only */}
             <img
