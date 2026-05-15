@@ -93,14 +93,14 @@ export default function Services() {
   return (
     <section id="services" className="bg-white py-16 md:py-[110px] px-5 md:px-[52px]">
       <div className="max-w-[1200px] mx-auto">
-        <div className="fade-up flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
+        <div className="fade-up flex items-center gap-3 text-[11px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
           <div className="w-[22px] h-0.5 bg-red" />
           How We Work
         </div>
         <h2 className="fade-up delay-1 text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase mb-5">
           One Brief, <em className="not-italic text-red">Everything Covered</em>
         </h2>
-        <p className="fade-up delay-2 text-[15px] text-muted leading-[1.8] font-normal max-w-[560px] mb-14">
+        <p className="fade-up delay-2 text-[15px] text-dim leading-[1.85] font-normal max-w-[560px] mb-14">
           An integrated approach to automotive marketing — content, audience, and amplification working together.
         </p>
 
@@ -127,7 +127,7 @@ export default function Services() {
           <h3 className="text-[26px] font-black tracking-[-0.02em] uppercase mb-5 text-ink">
             {panel.title}
           </h3>
-          <p className="text-[15px] text-muted leading-[1.8] mb-8 pb-8 border-b border-black/10 max-w-[800px]">
+          <p className="text-[15px] text-dim leading-[1.85] mb-8 pb-8 border-b border-black/10 max-w-[800px]">
             {panel.lead}
           </p>
           <div className="text-[10px] font-bold tracking-[0.14em] uppercase text-red mb-3">
@@ -137,7 +137,7 @@ export default function Services() {
             {panel.items.map((item, j) => (
               <li
                 key={j}
-                className={`py-[11px] pl-[22px] text-sm text-muted leading-[1.65] relative ${j < panel.items.length - 1 ? 'border-b border-black/10' : ''}`}
+                className={`py-[11px] pl-[22px] text-sm text-dim leading-[1.85] relative ${j < panel.items.length - 1 ? 'border-b border-black/10' : ''}`}
               >
                 <span className="absolute left-0 text-red text-xs">—</span>
                 {item}

@@ -60,7 +60,7 @@ export default function Audiences() {
         {/* Header */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 items-end mb-10 md:mb-13">
           <div className="fade-up">
-            <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
+            <div className="flex items-center gap-3 text-[11px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
               <div className="w-[22px] h-0.5 bg-red" />
               First-Party Audiences
             </div>
@@ -68,7 +68,7 @@ export default function Audiences() {
               The Audiences Your Customers <em className="not-italic text-red">Already Trust</em>
             </h2>
           </div>
-          <p className="text-[15px] text-muted leading-[1.85]">
+          <p className="text-[15px] text-dim leading-[1.85]">
             Our audiences span the New Zealand automotive aftermarket — from engaged consumer communities to trade professionals and specialist sector groups — built over decades across three owned brands and trusted by the people they serve. They're the starting point for what we can help you reach.
           </p>
         </div>
@@ -87,7 +87,7 @@ export default function Audiences() {
               <h3 className="text-lg font-black uppercase tracking-[-0.02em] text-ink mb-3.5 leading-[1.1]">
                 {title}
               </h3>
-              <p className="text-[13px] text-muted leading-[1.75] flex-1 mb-5">
+              <p className="text-[13px] text-dim leading-[1.85] flex-1 mb-5">
                 {text}
               </p>
               <div className="text-[10px] font-semibold tracking-[0.08em] text-muted pt-4 border-t border-black/10 mt-auto">

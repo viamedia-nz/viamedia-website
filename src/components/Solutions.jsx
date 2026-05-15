@@ -80,14 +80,14 @@ export default function Solutions() {
   return (
     <section id="solutions" className="bg-ink py-12 md:py-[80px] px-5 md:px-[52px]">
       <div className="max-w-[1200px] mx-auto">
-        <div className="fade-up flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-white/45 mb-[18px]">
+        <div className="fade-up flex items-center gap-3 text-[11px] font-bold tracking-[0.22em] uppercase text-white/45 mb-[18px]">
           <div className="w-[22px] h-0.5 bg-white/45" />
           Who We Work With
         </div>
         <h2 className="fade-up delay-1 text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase text-white mb-5">
           Solutions to <em className="not-italic text-red">Suit You</em>
         </h2>
-        <p className="fade-up delay-2 text-[15px] text-white/50 leading-[1.8] font-normal max-w-[560px] mb-10">
+        <p className="fade-up delay-2 text-[15px] text-on-dark leading-[1.85] font-normal max-w-[560px] mb-10">
           Our solutions are built around your business size, your objectives, and the audiences most relevant to them. Find the one that fits your business.
         </p>
 
@@ -106,7 +106,7 @@ export default function Solutions() {
                     <div className={`text-[15px] font-extrabold uppercase tracking-[-0.01em] transition-colors duration-[180ms] ${isOpen ? 'text-red' : 'text-white'}`}>
                       {tier.title}
                     </div>
-                    <div className="text-[13px] text-white/45 font-normal">
+                    <div className="text-[15px] text-on-dark">
                       {tier.desc}
                     </div>
                   </div>
@@ -121,7 +121,7 @@ export default function Solutions() {
                   style={{ maxHeight: isOpen ? '2800px' : '0', padding: isOpen ? '24px 16px 40px' : '0 16px 0' }}
                 >
                   {tier.body.map((p, j) => (
-                    <p key={j} className="text-[15px] text-[#E5E7EB] leading-[1.85] mb-4">{p}</p>
+                    <p key={j} className="text-[15px] text-on-dark leading-[1.85] mb-4">{p}</p>
                   ))}
 
                   <div className="text-[12px] font-bold tracking-[0.14em] uppercase text-white mt-7 mb-2.5">
@@ -129,14 +129,14 @@ export default function Solutions() {
                   </div>
                   <ul className="list-none p-0 mb-5">
                     {tier.includes.map((item, j) => (
-                      <li key={j} className={`py-2.5 pl-5 text-[14px] text-[#E5E7EB] leading-[1.7] relative ${j < tier.includes.length - 1 ? 'border-b border-white/[0.06]' : ''}`}>
+                      <li key={j} className={`py-2.5 pl-5 text-[14px] text-on-dark leading-[1.85] relative ${j < tier.includes.length - 1 ? 'border-b border-white/[0.06]' : ''}`}>
                         <span className="absolute left-0 text-red text-[11px]">—</span>
                         {item}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="text-[14px] text-[#E5E7EB] leading-[1.75] py-4 border-t border-b border-white/[0.07] mb-5">
+                  <div className="text-[14px] text-on-dark leading-[1.85] py-4 border-t border-b border-white/[0.07] mb-5">
                     <strong className="block text-[12px] font-bold tracking-[0.14em] uppercase text-white mb-1.5 not-italic">
                       Most relevant audience
                     </strong>
@@ -147,14 +147,14 @@ export default function Solutions() {
                     {tier.pricing}
                   </div>
 
-                  <div className="text-[14px] italic text-[#E5E7EB] leading-[1.8] py-6 px-5 bg-white/[0.04] border-l-3 border-l-red my-8">
+                  <div className="text-[14px] italic text-on-dark leading-[1.85] py-6 px-5 bg-white/[0.04] border-l-3 border-l-red my-8">
                     {tier.testimonial}
-                    <strong className="not-italic text-[#9CA3AF] font-semibold block mt-3 text-[11px] tracking-[0.04em]">
+                    <strong className="not-italic text-[#9CA3AF] font-semibold block mt-3 text-[13px] tracking-[0.04em]">
                       {tier.attribution}
                     </strong>
                   </div>
 
-                  <p className="text-[15px] text-[#E5E7EB] leading-[1.75] mb-4">{tier.ctaIntro}</p>
+                  <p className="text-[15px] text-on-dark leading-[1.85] mb-4">{tier.ctaIntro}</p>
                   <div>
                     <a
                       href="#contact"

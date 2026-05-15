@@ -28,7 +28,7 @@ export default function OurDifference() {
         {/* Header */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 items-end mb-10 md:mb-15">
           <div className="fade-up">
-            <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
+            <div className="flex items-center gap-3 text-[11px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
               <div className="w-[22px] h-0.5 bg-red" />
               Our Difference
             </div>
@@ -36,7 +36,7 @@ export default function OurDifference() {
               Connected to the <em className="not-italic text-red">Industry</em>
             </h2>
           </div>
-          <p className="fade-up delay-1 text-[15px] text-muted leading-[1.85] font-normal">
+          <p className="fade-up delay-1 text-[15px] text-dim leading-[1.85] font-normal">
             Via Media owns the brands, the content, and the audiences — built from within the NZ automotive community for more than 30 years. That foundation shapes everything we do for our clients.
           </p>
         </div>
@@ -54,7 +54,7 @@ export default function OurDifference() {
               <h3 className="text-[15px] font-extrabold tracking-[-0.01em] mb-[11px]">
                 {title}
               </h3>
-              <p className="text-sm text-muted leading-[1.8]">
+              <p className="text-sm text-dim leading-[1.85]">
                 {text}
               </p>
             </div>

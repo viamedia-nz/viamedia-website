@@ -64,14 +64,14 @@ export default function Contact() {
               className="block md:hidden h-14 w-14"
             />
           </div>
-          <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-white/45 mb-[18px]">
+          <div className="flex items-center gap-3 text-[11px] font-bold tracking-[0.22em] uppercase text-white/45 mb-[18px]">
             <div className="w-[22px] h-0.5 bg-white/45" />
             Get in Touch
           </div>
           <h2 className="text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase text-white mb-5">
             Let's Talk About<br />Your <em className="not-italic text-red">Business</em>
           </h2>
-          <p className="text-[15px] text-on-dark leading-[1.8] mb-11">
+          <p className="text-[15px] text-on-dark leading-[1.85] mb-11">
             Tell us about your business, your goals, and who you're trying to reach. We'll come back with how we can help and what that looks like in practice.
           </p>
         </div>
@@ -165,7 +165,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full font-sans text-xs font-bold tracking-[0.14em] uppercase text-white bg-red border-none py-5 px-11 cursor-pointer transition-colors duration-[180ms] hover:bg-red-dark disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full font-sans text-[11px] font-bold tracking-[0.14em] uppercase text-white bg-red border-none py-5 px-11 cursor-pointer transition-colors duration-[180ms] hover:bg-red-dark disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {status === 'submitting' ? 'Sending…' : 'Get in Touch →'}
                 </button>

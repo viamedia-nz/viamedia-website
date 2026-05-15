@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section id="about-page" className="bg-stone border-t-4 border-t-red">
       <div className="max-w-[1200px] mx-auto py-16 md:py-[110px] px-5 md:px-[52px]">
-        <div className="fade-up flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-muted mb-[18px]">
+        <div className="fade-up flex items-center gap-3 text-[11px] font-bold tracking-[0.22em] uppercase text-muted mb-[18px]">
           <div className="w-[22px] h-0.5 bg-red" />
           About
         </div>

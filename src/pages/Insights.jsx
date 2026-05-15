@@ -9,7 +9,7 @@ export default function Insights() {
         {/* Header */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 items-end mb-10 md:mb-13">
           <div className="fade-up">
-            <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
+            <div className="flex items-center gap-3 text-[11px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
               <div className="w-[22px] h-0.5 bg-red" />
               Insights
             </div>
@@ -17,7 +17,7 @@ export default function Insights() {
               Industry <em className="not-italic text-red">Perspectives</em>
             </h2>
           </div>
-          <p className="fade-up delay-1 text-[15px] text-muted leading-[1.85]">
+          <p className="fade-up delay-1 text-[15px] text-dim leading-[1.85]">
             Perspective on automotive marketing, audience behaviour, and the changing media landscape — as we've encountered it.
           </p>
         </div>
