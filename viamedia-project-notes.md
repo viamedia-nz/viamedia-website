@@ -1,6 +1,6 @@
 # Via Media Website — Project Notes
 
-*Last updated: 13 April 2026 — Session 1 React build (full site built and deployed to Vercel). This is the primary reference document for the Via Media website build. Update it as decisions are made or scope changes. Version number increments with each session: this is v4.*
+*Last updated: 17 May 2026 — v5. Hero rebuild complete. Michael's change requests actioned. Contact form wired. Font audit complete. See Section 16 for full session record.*
 
 ---
 
@@ -22,8 +22,8 @@ The site is not a car site. It is a marketing agency site that operates in the a
 | Code repository | GitHub | viamedia-nz organisation account — github.com/viamedia-nz/viamedia-website (public repo) |
 | Hosting | Vercel | Free Hobby plan; auto-deploys on push to main |
 | CMS (content) | Decap CMS | Not yet implemented — Phase 2 |
-| Forms | TBC | Contact form built but not yet wired to a submission endpoint |
-| Authentication (staff area) | Google OAuth | Staff log in with their viamedia.co.nz Google Workspace accounts — Phase 2 |
+| Forms | Formspree | Contact form: mykoanpz / Audience data form: xzdoqjad |
+| Authentication (staff area) | Google OAuth | Phase 2 |
 | Client forms | HubSpot embedded forms | Phase 3 |
 | Client reporting data | Google Sheets | Phase 5 |
 
@@ -42,57 +42,45 @@ The site is not a car site. It is a marketing agency site that operates in the a
 
 ## 4. Site structure — phases
 
-### Phase 1 — Core public site (BUILT — Session 1, 13 April 2026)
+### Phase 1 — Core public site (COMPLETE)
 
-**Main scroll (single page — localhost:5173 / viamedia-website.vercel.app):**
+**Main scroll (single page):**
 - ✅ Nav — Audiences / Services / Insights / About / Contact (red CTA button)
-- ✅ Hero — eyebrow, H1, stats, two CTAs, diagonal split panel, Via Media mark watermark
+- ✅ Hero — wordmark lockup, eyebrow, H1, sub-headline, stats, two CTAs, diagonal split panel, watermark (see Section 7 for full spec)
 - ✅ Client logo scrolling band — white background, full bleed
 - ✅ Our Difference — four pillars
-- ✅ First-Party Audiences — four brand cards + media kit CTA
+- ✅ First-Party Audiences — four brand cards + audience data CTA
 - ✅ Who We Work With — three-tier self-selection accordion
 - ✅ How We Work — five service panels, horizontal tab navigation
-- ✅ Get in Touch — contact form with service area dropdown
-- ✅ Footer — nav links centred, copyright right-aligned, no logo
+- ✅ Get in Touch — contact form wired to Formspree
+- ✅ Footer
 
 **Standalone pages:**
-- ✅ About — at `/about`, full-width text layout, 30+ stat block with timeline, client logo band
+- ✅ About — at `/about`
 - ✅ Insights index — at `/insights`
-- ✅ Three article pages — at `/insights/[slug]`, full article copy loaded from viamedia-website-copy.docx
-- ✅ Media kit request modal — Radix Dialog, triggered from Audiences section CTA
+- ✅ Three article pages — at `/insights/[slug]`
+- ✅ Audience data request modal — Radix Dialog, triggered from Audiences section CTA
+
+**Outstanding Phase 1 items:**
+- [ ] Logo band scroll glitch — occasional jump, deferred to standalone session
+- [ ] Logo band scale, ordering, greyscale tightening — deferred to standalone session
+- [ ] SEO basics — page titles, meta descriptions, Open Graph tags
+- [ ] noindex tags on non-public pages
+- [ ] reCAPTCHA v3 re-enable after DNS cutover to viamedia.co.nz
+- [ ] Decap CMS setup — final task before DNS cutover
+- [ ] Cross-browser checks
 
 ### Phase 2 — Staff internal dashboard
-- Google Workspace OAuth login (viamedia.co.nz accounts only)
-- noindex on all internal pages
-
 ### Phase 3 — Client-facing pages
-- HubSpot embedded forms
-- noindex
-
 ### Phase 4 — Pre-populated editable client records
-- HubSpot API integration
-
 ### Phase 5 — Client campaign reporting
-- Google Sheets as source of truth (one row per report)
-- Vercel serverless function fetches sheet at request time
-- Make scenario automates row creation when Looker Studio report is ready
-- Permanent per-report URLs: `viamedia.co.nz/clients/[client-slug]/[report-period]`
-- noindex on all report pages
+*(Unchanged from v4 — see previous notes for detail)*
 
 ---
 
 ## 5. Site structure principle — qualify first, explain delivery second
 
-The page sequence follows a proven B2B conversion flow. A prospect arriving at the site is not ready to absorb service detail until they have first established that Via Media operates in their world and serves businesses like theirs.
-
-The four-stage journey the site takes them through is:
-
-1. **Credibility** — Do these people know my industry and my customers? *(Our Difference, First-Party Audiences)*
-2. **Relevance** — Is this right for a business at my scale and with my objectives? *(Who We Work With — self-selection accordion)*
-3. **Delivery** — How does it actually work in practice? *(How We Work — service detail)*
-4. **Action** — I'm ready to have a conversation. *(Contact)*
-
-The Services nav item links to Who We Work With (Solutions to Suit You) rather than How We Work, because self-selection is the entry point to the services journey.
+*(Unchanged from v4)*
 
 ---
 
@@ -100,16 +88,15 @@ The Services nav item links to Who We Work With (Solutions to Suit You) rather t
 
 ### Navigation
 - **Final nav confirmed:** Audiences / Services / Insights / About / Contact (red button)
-- "Contact" is styled as the red CTA button
 - Logo top-left functions as Home link — links to `/`
 
 ### Hero
+- **Lockup:** Via Media wordmark (`viamedia-wordmark-white.svg`) above eyebrow — opening brand element
 - **Eyebrow:** Content-Led, Audience-Powered *(comma, no trailing punctuation)*
-- **H1:** Automotive Marketing, Built on Audience
+- **H1:** Automotive Marketing, Built on Audience *(demoted to subhead beneath lockup — full typographic weight maintained)*
 - **Sub-headline:** Via Media connects brands with New Zealand's automotive audiences through content, paid media, and search.
-- **Stats (in order):** 3.5M+ Audience Contact Points Each Month | 450,000+ First-Party Audience Across NZ Automotive | 30+ Years Trusted by NZ Automotive Communities
+- **Stats (in order):** 3.5M+ Audience Contact Points Each Month | 450K+ First-Party Audience Across NZ Automotive | 30+ Years Trusted by NZ Automotive Communities
 - **CTAs:** Explore Services → (primary, red) | Our Audiences → (ghost white)
-- Hero panel toggle removed — steel dark panel only
 
 ### H1/H2 heading sequence — main landing page
 
@@ -122,18 +109,18 @@ The Services nav item links to Who We Work With (Solutions to Suit You) rather t
 | H2 | One Brief, Everything Covered | How We Work |
 | H2 | Let's Talk About Your Business | Contact |
 
-### Section eyebrows (confirmed labels)
+### Section eyebrows
 - Our Difference
 - First-Party Audiences
 - Who We Work With *(eyebrow)* / Solutions to Suit You *(H2)*
 - How We Work
 - Get in Touch
 
-### Audience card eyebrows
-- NZPC: **Consumer**
-- NZV8: **Consumer**
-- Auto Channel: **Trade**
-- Specialist Sectors: **Consumer & Trade**
+### Audience card eyebrows — colour coded
+- NZPC: **Consumer** (red)
+- NZV8: **Consumer** (red)
+- Auto Channel: **Trade** (grey)
+- Specialist Sectors: **Consumer & Trade** (red/grey split)
 
 ### How We Work tab labels and panel headings
 
@@ -154,16 +141,14 @@ The Services nav item links to Who We Work With (Solutions to Suit You) rather t
 - Activations & Events
 - Not sure yet
 
-### Media kit modal
-- Triggered from Audiences section CTA
-- Fields: Name, Company, Email, checkboxes for NZPC / NZV8 / Auto Channel / Specialist Sectors
-- Submit button: "Request Media Kit →"
-- Via Media mark (not wordmark) top-left of modal
+### Testimonials — all three tiers confirmed
+- Tier 1 (Independent Business): Vincent Offenbaker, Director, American Pickup Parts
+- Tier 2 (Regional or Multi-Location): Scott Wood, Director, Harrys Euro *(no apostrophe — intentional, references Fast and Furious)*
+- Tier 3 (National Brand or Importer): Frances Vettori, General Manager Marketing, NAPA ANZ
 
 ### Footer
 - © 2026 Via Media Ltd
-- Layout: nav links centred / copyright right-aligned / no logo
-- Single row
+- Nav links centred / copyright right-aligned / no logo
 
 ### Insights article dates
 - Article 1 (Search & Discovery): 30 January 2026
@@ -184,52 +169,118 @@ The Services nav item links to Who We Work With (Solutions to Suit You) rather t
 --steel:     #1C2B3A   /* hero left panel */
 --red:       #D4001A   /* brand accent, CTAs */
 --charcoal:  #1A1A1A   /* headings */
+
+/* Hero specific */
+--hero-left:  #1A1918
+--hero-right: #354757
 ```
 
-### Body text legibility (updated Session 1)
-- Dark background body text: `#D1D5DB`
-- Dark background secondary/caption text: `#9CA3AF`
-- Light background body text: `#4B5563` (unchanged from Tailwind default)
+### Body text legibility
+- Dark background primary: `#D1D5DB`
+- Dark background secondary/caption: `#9CA3AF`
+- Light background primary: `#4B5563`
+- Body leading: `leading-[1.85]` globally
 
 ### Typography
 - Headings, nav, stats: Montserrat
 - Body, captions: Inter
-- `text-wrap: pretty` applied globally to prevent single-word orphans
+- `text-wrap: pretty` applied globally
+
+### Font sizes — site-wide standard (updated May 2026 font audit)
+- Section eyebrows: `text-[11px]`, `tracking-[0.22em]` — applied site-wide
+- Primary CTA buttons: `text-[11px]`
+- Body copy: `text-[15px]` on dark backgrounds (`text-on-dark` token), `text-dim` (#3e3d3a) on light
+- Secondary/caption: `text-muted` (#6b6a67) on light backgrounds
+- Testimonial attribution: `text-[13px]`
 
 ### Logo usage
-- **Nav desktop:** `viamedia-wordmark-black.svg` — white background removed from SVG (background rect paths stripped)
+- **Nav desktop:** `viamedia-wordmark-black.svg` (background rect paths stripped from SVG)
 - **Nav mobile:** `viamedia-mark-black.svg`
-- **Hero watermark:** `viamedia-mark-hero-overlay.svg`
-- **Contact section desktop:** `viamedia-wordmark-white.svg` — sized at ~1.5–2x nav size
-- **Contact section mobile:** `viamedia-mark-white.svg`
+- **Hero left panel:** `viamedia-wordmark-white.svg` — complete lockup, single asset only. Do not combine with `viamedia-mark-white.svg`.
+- **Hero right panel watermark:** `viamedia-mark-hero-overlay.svg`
+- **Contact section desktop:** `viamedia-wordmark-white.svg` at `312px` fixed width
+- **Contact section mobile:** `viamedia-wordmark-white.svg` at `clamp(180px, 55vw, 280px)` — full wordmark at all viewport sizes, no mark-only fallback
 - **Footer:** no logo
 
+### Get in Touch wordmark SVG fix (May 2026)
+- Letter counter shapes (enclosed spaces in a, e, d, i): changed to `fill="none"` — background shows through correctly
+- `shape-rendering="geometricPrecision"` and `text-rendering="geometricPrecision"` added to SVG element
+- Wordmark must not appear in footer — was incorrectly added by Claude Code and removed
+
+### Hero — full technical spec (May 2026 rebuild)
+
+**This section is critical for any future Claude Code session touching Hero.jsx. Do not simplify the dynamic system.**
+
+**Left panel:**
+- Lockup: `viamedia-wordmark-white.svg`, `width: clamp(200px, 22vw, 330px)`, `height: auto`
+- Lockup bottom margin and eyebrow bottom margin: same clamp value — `clamp(16px, 1.8vw, 26px)` — equalises gaps above and below eyebrow
+- H1: `clamp(42px, 5.2vw, 76px)`, weight 900, line-height 0.97, letter-spacing -0.035em
+- "BUILT ON" and "AUDIENCE" lines in red (#D4001A), `display: block`
+- Sub-headline: Inter, `clamp(13px, 1.0vw, 15px)`, `rgba(255,255,255,0.52)`, line-height 1.85
+- Left panel background: `#1A1918`
+- Red left rule: 4px solid `#D4001A`, full hero height, position absolute, left 0
+
+**Split line:**
+- `clip-path: polygon(80px 0, 100% 0, 100% 100%, 0% 100%)` — 80px diagonal offset must never change
+- Anchored to 1200px container midpoint via ResizeObserver — not 50vw
+- Right column does not have `overflow: hidden` — watermark extends freely to right edge of hero
+
+**Right panel:**
+- Background: `#354757` applied to split background element, not the column itself
+- Watermark: `viamedia-mark-hero-overlay.svg`, opacity `0.06`, sized and positioned dynamically
+- Watermark SVG geometry (viewBox 0 0 432 432): VIA letterform top at y=144.07 (33.35% of height), bottom at y=287.965 (66.66%), centre at exactly 50%
+- Pin lines: `rgba(255,255,255,0.09)`, 1px height, positioned between stat rows, anchored to VIA letterform zone
+- Pin line left boundary: starts at diagonal split line (calculated from `splitLeft` state), extends to right edge of hero (`right: 0`)
+- Stat numbers: dynamic font size — `Math.min(80, Math.max(36, Math.floor(pinSpan * 0.55 / 3)))` — intentionally larger than H1
+- Stat labels: `clamp(9px, 0.85vw, 12px)` desktop, `11px` fixed mobile
+- Diagonal indentation: per-row left padding follows split slope — top row most indented, bottom least
+
+**Dynamic right panel — three sequential requestAnimationFrame frames:**
+- Frame 1: measure eyebrow top and sub-headline bottom → position stat block → set provisional font size
+- Frame 2 (double rAF): calculate and apply diagonal indentation per row
+- Frame 3 (triple rAF): measure row gaps → set pin lines → size watermark from pin line span → position watermark
+- All frames guarded: `if (window.innerWidth < 768) reset all state and return`
+- Short viewport guard: `statHeight = Math.max(200, calculatedHeight)`
+
+**Stat block anchoring:**
+- Top of 3.5M+ numeral aligns with top of eyebrow
+- Bottom of 30+ numeral aligns with bottom of sub-headline
+- "Years Trusted" caption sits below bottom anchor — outside the measured span
+- `firstNumRef` on 3.5M+ numeral div, `lastNumRef` on 30+ numeral div (not row containers)
+
+**Hero height system:**
+- `min-height` and `max-height`: `calc(100vh - 68px - ${bandHeight}px)`
+- `bandHeight` measured dynamically from logo band element via ResizeObserver — self-corrects on resize
+- Short viewport fallback: below 720px viewport height → `height: auto`, no band subtraction, content scrolls naturally
+- Mobile: `height: auto`, no band subtraction
+- Hero-inner vertical padding: `clamp(40px, 7vh, 88px) top`, `clamp(48px, 8vh, 100px) bottom`
+
+**Mobile hero:**
+- Single dark panel, no split, no right panel dynamic calculations
+- Lockup: `viamedia-wordmark-white.svg`, `width: clamp(180px, 55vw, 280px)`
+- Top padding: 32px, lockup bottom margin: 28px
+- Eyebrow: `11px` fixed
+- Stat labels: `11px` fixed
+- Stats stack below CTAs, pin lines as `border-bottom: 1px solid rgba(255,255,255,0.09)` between rows
+
 ### Client logo band
-- White background — not off-white or grey
-- Full bleed — no border lines, no label
-- Scrolling animation — GPU-accelerated via `transform: translateX` and `will-change: transform`
-- **Known issue:** occasional minor glitch/jump in scroll loop — to be revisited in Session 2
+- White background, full bleed
+- Scrolling via `transform: translateX`, `will-change: transform`
+- Known issue: occasional minor glitch/jump in scroll loop — deferred to standalone session
 
 ### Accordion — Solutions to Suit You
 - Top border hidden on open panel
-- Additional padding above expanded content
-- On close: returns to top of Solutions section (deliberate UX decision — allows user to easily select another tier)
+- On close: returns to top of Solutions section
+- Descriptor line: `text-[15px] text-on-dark` (not opacity modifier — opacity was the legibility problem)
+- Bridge CTA below accordion cards: "See How We Work →" anchoring to How We Work section
 
-### How We Work tabs
-- Selected tab: red underline on active tab label
-- No vertical accent on panel heading
-
-### About page
-- Full-width single column text layout
-- 30+ stat block: ~50–60% width, left-aligned, with timeline (1990s — 2000s — 2010s — 2022 — Today)
-- Client logo band at bottom: full bleed, no label, no border
-- No "Reaching NZ automotive audiences" label
-
-### Scroll behaviour
-- CSS scroll snap on main page sections: `scroll-snap-type: y mandatory`
-- Smooth scroll on all anchor links
-- Fade-up IntersectionObserver animations on scroll
-- Nav shadow appears on scroll, disappears at top
+### Forms — Formspree wiring (May 2026)
+- Contact form endpoint: `https://formspree.io/f/mykoanpz`
+- Audience data form endpoint: `https://formspree.io/f/xzdoqjad`
+- Inline success/error states — no redirect on success
+- Hidden field subject lines: "New Enquiry — Via Media Website" / "Audience Data Request — Via Media Website"
+- reCAPTCHA v3 disabled — Formshield active as baseline spam protection
+- **Re-enable reCAPTCHA v3 after DNS cutover to viamedia.co.nz**
 
 ---
 
@@ -246,19 +297,17 @@ The Services nav item links to Who We Work With (Solutions to Suit You) rather t
 
 ## 9. Responsive design
 
-Handled entirely in React/Tailwind.
-
-**Implemented breakpoints:** 375px (mobile), 768px (tablet), 1280px (desktop)
+Handled entirely in React/Tailwind. Breakpoints: 375px (mobile), 768px (tablet), 1280px (desktop).
 
 **Mobile treatments:**
-- Hero: single dark panel, no diagonal split, stats stack below copy
+- Hero: single dark panel, no diagonal split, wordmark lockup above eyebrow, stats stack below CTAs — see Section 7 full spec
 - How We Work tabs: horizontally scrollable tab strip
 - Audience grid: two columns (tablet), single column (mobile)
 - Accordion: works at all sizes as-is
 - Nav: hamburger menu, items stack vertically
 - Logo band: full bleed at all sizes
 - Nav logo: mark only on mobile, full wordmark on desktop
-- Contact section: mark only on mobile, wordmark on desktop
+- Contact section: full wordmark at all viewport sizes (not mark-only on mobile)
 
 ---
 
@@ -268,7 +317,6 @@ Handled entirely in React/Tailwind.
 - Oxford comma
 - Space before ellipses
 - Space before and after em dashes
-- Style guide excerpt to be uploaded when available
 - Tone: direct, credible, not promotional. Avoid marketing speak and redundant adjectives.
 - Positioning: mid-to-high end.
 
@@ -277,98 +325,112 @@ Handled entirely in React/Tailwind.
 ## 11. Search indexing
 
 - All public agency pages: indexed normally
-- Staff internal area: noindex meta tag + login protection
-- Client-facing pages: noindex meta tag
-- Client report pages: noindex meta tag
-- Sitemap to be generated for public pages only
+- Staff internal area: noindex + login protection
+- Client-facing pages: noindex
+- Client report pages: noindex
+- Sitemap: public pages only
 
 ---
 
 ## 12. Workflow
 
-- Planning and copy: Claude.ai project chat (this interface)
-- Build: Claude Code desktop app (Code tab) — pointed at `C:\Users\simon\Documents\viamedia-website`
-- Claude Code works in a worktree (`claude/relaxed-aryabhata`) — changes must be pushed to main via `git push origin main` from VS Code terminal at end of session
-- Michael feedback: Simon collects, brings to Claude, changes pushed, Vercel redeploys, preview URL shared
-- Copy changes are trivial in this stack
-
-**Important Git note:** Claude Code desktop app does not always auto-push to GitHub. Always run `git push origin main` from VS Code terminal at the end of a build session to ensure Vercel has the latest build.
-
-**Pre-build checklist — all complete:**
-- [x] GitHub repo created under Via Media organisation account (viamedia-nz)
-- [x] Vercel account connected to GitHub repo (Hobby/free plan)
-- [x] React + Vite + Tailwind CSS scaffolded
-- [x] CLAUDE.md created with full project context
-- [x] Client logo PNGs in `public/logos/client/`
-- [x] Via Media SVG/PNG brand assets in `public/logos/` and `public/`
-- [x] viamedia-logo-band-spec.md in project root
-- [x] viamedia-website-copy.docx in project root (for article content — not committed to GitHub)
-- [x] All sections built and deployed
-- [x] Mobile responsive pass complete
-- [x] Micro-interactions and scroll animations added
-- [x] Live preview URL confirmed working: viamedia-website.vercel.app
+- Planning and copy: Claude.ai project chat
+- Build: Claude Code desktop app — `C:\Users\simon\Documents\viamedia-website`
+- Claude Code does not auto-push — always run `git push origin main` from VS Code terminal at end of session
+- Michael feedback: Simon collects → brings to Claude.ai → implements in Claude Code → pushes → Vercel redeploys → preview URL shared
 
 ---
 
-## 13. Session 2 — next steps
+## 13. Next session priorities
 
-**Priority fixes before Michael review:**
-- [ ] Logo band scroll glitch — occasional jump needs a cleaner loop solution
-- [ ] Contact form submission endpoint — currently unconnected (Formspree or Make webhook)
-- [ ] SEO basics — page titles, meta descriptions, Open Graph tags
-- [ ] noindex tags on any non-public pages
-
-**Michael review process:**
-1. Share `viamedia-website.vercel.app` with Michael
-2. Collect feedback
-3. Bring feedback to Claude.ai chat — plan changes
-4. Implement via Claude Code desktop app
-5. Push to GitHub → Vercel auto-redeploys
-
-**Post-Michael-review tasks:**
-- Connect viamedia.co.nz domain in Vercel DNS settings
-- CAANZ or NZ industry association membership check — add to footer/About if applicable
-- Media kit / audience profile page build (confirmed next deliverable after launch)
-- About page visual block — replace stat/timeline placeholder with properly designed graphic
+1. Logo band: scroll glitch fix, scale adjustments, per-logo vertical centring, manual ordering, greyscale tightening — standalone session
+2. Contact section lockup size — review against hero lockup once live on viamedia.co.nz at production viewport sizes
+3. SEO basics — page titles, meta descriptions, Open Graph tags
+4. noindex tags on non-public pages
+5. Decap CMS setup — final task before DNS cutover
+6. DNS cutover to viamedia.co.nz — after Michael approves
+7. reCAPTCHA v3 re-enable — after DNS cutover
+8. CAANZ / NZ industry association membership check — add to footer or About if applicable
+9. Media kit / audience profile page — confirmed next deliverable after launch
+10. About page visual block — separate design task
+11. Cross-browser checks
 
 ---
 
 ## 14. Project files and assets
 
 ### Asset locations in the React build
-- Brand assets (SVG logos, marks): `public/logos/`
+- Brand assets: `public/logos/`
 - Client logos: `public/logos/client/`
 - Favicon files: `public/` (root level)
 
 ### Via Media brand assets
-- `viamedia-wordmark-black.svg` — nav desktop, light backgrounds (background rect removed from SVG)
-- `viamedia-wordmark-white.svg` — contact section, dark backgrounds
-- `viamedia-mark-black.svg` — nav mobile, light backgrounds
-- `viamedia-mark-white.svg` — dark backgrounds
+- `viamedia-wordmark-black.svg` — nav desktop (background rect removed)
+- `viamedia-wordmark-white.svg` — hero left panel, contact section, dark backgrounds
+- `viamedia-mark-black.svg` — nav mobile
+- `viamedia-mark-white.svg` — general dark background use
 - `viamedia-mark-hero-overlay.svg` — hero right panel watermark
 - Favicon set: svg, ico, 32px png, apple-touch-icon, 192px png
 
 ### Reference files in project root
 | File | Purpose | Status |
 |---|---|---|
-| index.html | v5 desktop mockup — visual reference only, do not modify | Current |
-| CLAUDE.md | Claude Code context file | Current |
+| index.html | v5 desktop mockup — visual reference only | Current |
+| CLAUDE.md | Claude Code context file | Current — update after each session |
 | viamedia-project-notes.md | This file | Current |
 | viamedia-logo-band-spec.md | Client logo band technical spec | Current |
-| viamedia-website-copy.docx | Full site copy including all three articles | Current — not committed to GitHub |
+| viamedia-website-copy.docx | Full site copy including articles | Current — not committed to GitHub |
 
 ---
 
-## 15. What is deliberately out of scope for this project
+## 15. What is deliberately out of scope
 
-- The consumer-facing NZPC and NZV8 WordPress/Elementor sites — separate project
+- NZPC and NZV8 WordPress/Elementor sites — separate project
 - HubSpot CRM tidying and pipeline setup — separate project
 - Monday.com dashboards — separate project
 - Looker Studio reporting build — separate project
 - AI agent / internal chat assistant — separate project
 
-The brand kit and design language established here should flow into all of the above once locked.
+---
+
+## 16. Session record
+
+### Session 1 — 13 April 2026
+Full React build scaffolded and deployed. All Phase 1 sections built. Mobile responsive pass complete. Micro-interactions added. Live at viamedia-website.vercel.app.
+
+### Session 2 — May 2026 (Michael's change requests + hero rebuild)
+
+**Michael's change requests — disposition:**
+
+| Request | Outcome |
+|---|---|
+| Nav logo too small | Not changed — brand presence addressed via hero lockup instead |
+| Logo band scale/glitch | Deferred — standalone session required |
+| Main heading copy change | Not changed — H1 demoted to subhead beneath lockup instead |
+| Hero watermark: make smaller, lift top right | Counter-proposal: opacity reduced to 0.06, size and position now dynamic |
+| Audience boxes: labels bigger, all red | Colour-coded instead — Consumer red, Trade grey. Sizes increased. |
+| Media kit CTA: make red | Outlined red, solid on hover. Renamed to "audience data" language. |
+| Solutions accordion: colour and font size | Descriptor at 15px text-on-dark, body contrast increased, structure revised |
+| "One Brief" move above Solutions | Order unchanged. Bridge CTA "See How We Work →" added below accordion. |
+| Our Work / case studies in nav | Deferred to Phase 2 |
+
+**Additional changes completed:**
+- Insights page nav alignment fixed
+- Contact form Android layout fixed
+- Both forms wired to Formspree — confirmed submitting to Google Groups inbox
+- Get in Touch wordmark SVG letter counter fill fixed, geometric precision rendering added
+- Testimonials updated — all three tiers confirmed with final attributions
+- Pillar 3 copy fix: "it keeps finding new ones" → "it keeps on finding new audiences"
+- Font audit: eyebrows 11px site-wide, CTA buttons 11px, body leading 1.85, attribution 13px, body copy tokens standardised
+
+**Hero rebuild — completed across 11 iterations (V1–V11):**
+- Wordmark lockup added above eyebrow as opening brand element
+- Dynamic right panel system implemented — stat sizing, watermark sizing, pin line positioning all calculated at runtime
+- Pin lines anchored to exact VIA letterform SVG coordinates (y=144.07 top, y=287.965 bottom)
+- Hero height dynamically accounts for logo band — band visible on first load at viewports above 720px height
+- Short viewport fallback below 720px — content sizes naturally, band reveals on scroll
+- Mobile hero: corrected spacing, fixed 11px font sizes for eyebrow and stat labels
 
 ---
 
-*End of document — v4, 13 April 2026.*
+*End of document — v5, 17 May 2026.*
