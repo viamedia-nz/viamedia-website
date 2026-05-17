@@ -49,19 +49,13 @@ export default function Contact() {
 
         {/* Left column */}
         <div className="fade-up">
-          <div className="mb-8">
-            {/* Desktop: full horizontal wordmark */}
+          <div className="mb-16">
+            {/* Wordmark lockup at all viewport sizes (mobile uses clamp matching hero mobile) */}
             <img
               src="/logos/viamedia-wordmark-white.svg"
               alt="Via Media"
-              className="hidden md:block h-12 w-auto"
+              className="block w-[clamp(180px,55vw,280px)] md:w-[312px] h-auto"
               style={{ imageRendering: 'auto', WebkitFontSmoothing: 'antialiased' }}
-            />
-            {/* Mobile: circle mark only */}
-            <img
-              src="/logos/viamedia-mark-white.svg"
-              alt="Via Media"
-              className="block md:hidden h-14 w-14"
             />
           </div>
           <div className="flex items-center gap-3 text-[11px] font-bold tracking-[0.22em] uppercase text-white/45 mb-[18px]">
