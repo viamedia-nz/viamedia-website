@@ -32,8 +32,9 @@ export default function Hero() {
   const [bandHeight, setBandHeight] = useState(0)
   const [isShortViewport, setIsShortViewport] = useState(false)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
+  const [heroMaxHeight, setHeroMaxHeight] = useState('none')
 
-  // Split anchoring + band height + viewport flags — always runs
+  // Split anchoring + band height + viewport flags + hero max-height — always runs
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
@@ -46,17 +47,42 @@ export default function Hero() {
       const vw = window.innerWidth
       const vh = window.innerHeight
       const mob = vw < 768
+      const short = vh < SHORT_VIEWPORT
       setIsMobileViewport(mob)
-      setIsShortViewport(vh < SHORT_VIEWPORT)
+      setIsShortViewport(short)
 
       // Logo band sits directly after the hero in the DOM.
       // No band subtraction on mobile — hero takes content height naturally.
-      if (mob) {
-        setBandHeight(0)
-      } else {
+      let measuredBand = 0
+      if (!mob) {
         const bandEl = heroRef.current?.nextElementSibling
-        if (bandEl) setBandHeight(bandEl.offsetHeight)
+        if (bandEl) measuredBand = bandEl.offsetHeight
       }
+      setBandHeight(measuredBand)
+
+      // Content-aware max-height: only constrain when there is enough room for
+      // both the hero content and the logo band. Otherwise let the hero take
+      // its natural content height and reveal the band on scroll. Prevents
+      // top/bottom clipping at non-standard viewport/zoom combinations.
+      if (mob || short) {
+        setHeroMaxHeight('none')
+        return
+      }
+      const availableHeight = vh - 68 - measuredBand
+      requestAnimationFrame(() => {
+        // containerRef IS the hero-inner element — reuse for content height
+        const innerEl = containerRef.current
+        if (innerEl) {
+          const contentHeight = innerEl.scrollHeight
+          if (contentHeight > availableHeight * 0.92) {
+            setHeroMaxHeight('none')
+          } else {
+            setHeroMaxHeight(`${availableHeight}px`)
+          }
+        } else {
+          setHeroMaxHeight('none')
+        }
+      })
     }
     const obs = new ResizeObserver(update)
     obs.observe(el)
@@ -253,14 +279,12 @@ export default function Hero() {
     }
   }, [])
 
-  // Derived hero heights — mobile and short viewports use auto so content
-  // flows naturally; standard desktop subtracts nav + band so the band shows
-  // on first load without scrolling.
+  // Derived hero min-height. Max-height is now content-aware state (heroMaxHeight),
+  // set in the ResizeObserver — 'none' when content is too tall for the band to fit,
+  // otherwise the calc value so the band shows on first load.
   const heroHeightCalc = `calc(100vh - 68px - ${bandHeight}px)`
   const heroMinHeight =
     isMobileViewport || isShortViewport ? 'auto' : heroHeightCalc
-  const heroMaxHeight =
-    isMobileViewport || isShortViewport ? 'none' : heroHeightCalc
 
   return (
     <section
@@ -317,8 +341,8 @@ export default function Hero() {
           minHeight: heroMinHeight,
           alignItems: 'stretch',
           padding: isMobileViewport
-            ? '32px 0 clamp(48px, 8vh, 100px)'
-            : 'clamp(40px, 7vh, 88px) 0 clamp(48px, 8vh, 100px)',
+            ? '32px 0 clamp(28px, 5vh, 100px)'
+            : 'clamp(24px, 4vh, 88px) 0 clamp(28px, 5vh, 100px)',
         }}
       >
         {/* LEFT COLUMN */}
