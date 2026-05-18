@@ -111,7 +111,7 @@ export default function Services() {
               key={id}
               data-tab={id}
               onClick={() => selectTab(id)}
-              className={`shrink-0 px-4 md:px-7 py-3.5 text-[11px] font-bold tracking-[0.1em] uppercase cursor-pointer whitespace-nowrap bg-transparent border-t-0 border-l-0 border-r-0 border-b-3 -mb-[2px] transition-all duration-[180ms] font-sans ${
+              className={`shrink-0 px-4 md:px-7 py-3.5 text-[11px] font-bold tracking-[0.1em] uppercase cursor-pointer whitespace-nowrap bg-transparent border-t-0 border-l-0 border-r-0 border-b-4 -mb-[2px] transition-all duration-[180ms] font-sans ${
                 activeTab === id
                   ? 'text-ink border-b-red'
                   : 'text-muted border-b-transparent hover:text-ink'
