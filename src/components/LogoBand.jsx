@@ -29,6 +29,7 @@ const LOGOS = [
   'logo-penrite',
   'logo-wtac',
   'logo-premier-events',
+  'logo-repco',
   'logo-smits-group',
   'logo-mindshare',
   'logo-harrys-euro',
