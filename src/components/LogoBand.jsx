@@ -53,7 +53,11 @@ const LOGO_CONFIG = [
 
 function LogoSet({ copy }) {
   return (
-    <div className="flex shrink-0 items-center py-3" aria-hidden={copy === 1}>
+    <div
+      className="flex shrink-0 items-center py-3"
+      aria-hidden={copy === 1}
+      style={{ willChange: 'transform', transform: 'translateZ(0)' }}
+    >
       {LOGO_CONFIG.map((item) => (
         <div
           key={item.file}
