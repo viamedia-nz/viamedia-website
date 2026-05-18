@@ -114,7 +114,17 @@ p {
     padding-right: 14px;
   }
 }
+@media (max-width: 768px) {
+  .logo-track {
+    animation-name: marquee-mobile;
+    animation-duration: 30s;
+  }
+}
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
+}
+@keyframes marquee-mobile {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-4866px); }
 }
