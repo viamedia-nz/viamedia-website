@@ -96,6 +96,7 @@ p {
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  isolation: isolate;
 }
 @media (max-width: 768px) {
   .logo-track { animation-duration: 30s; }
