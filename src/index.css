@@ -91,13 +91,14 @@ p {
    Mobile track is narrower (smaller logos + padding), so shorter
    duration keeps perceived scroll speed consistent. */
 .logo-track {
-  animation: marquee 18s linear infinite;
+  animation: marquee 55s linear infinite;
+  width: max-content;
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 @media (max-width: 768px) {
-  .logo-track { animation-duration: 8s; }
+  .logo-track { animation-duration: 30s; }
 }
 @keyframes marquee {
   from { transform: translateX(0); }
