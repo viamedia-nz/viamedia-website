@@ -30,7 +30,8 @@ function ScrollLink({ hash, className, children }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-ink border-t border-white/[0.06] px-5 md:px-[52px] py-8 md:py-9 grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-6 md:gap-8">
+    <footer className="bg-ink border-t border-white/[0.06] px-5 md:px-[52px] py-8 md:py-9 grid grid-cols-1 md:grid-cols-3 items-center gap-6 md:gap-8">
+      <div className="hidden md:block" />
       <ul className="flex flex-wrap gap-4 md:gap-7 list-none justify-center">
         {LINKS.map(({ label, to, hash }) => (
           <li key={label}>
