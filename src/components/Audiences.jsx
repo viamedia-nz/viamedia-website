@@ -25,9 +25,9 @@ const BRANDS = [
   {
     type: 'both',
     eyebrow: 'Consumer & Trade',
-    title: 'Specialist Sectors',
+    title: 'EV, 4WD & RV',
     text: 'Beyond our three core brands, we have built and maintain first-party audiences across specific high-value sectors of the NZ automotive market — including dedicated EV, four-wheel drive, and RV communities, spanning both consumer enthusiasts and trade professionals.',
-    pin: 'EV  |  Four-Wheel Drive  |  RV',
+    pin: 'EV | 4WD | RV | Specialist Sectors',
   },
 ]
 

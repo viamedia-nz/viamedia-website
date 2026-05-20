@@ -48,7 +48,7 @@ export default function About() {
           <p className="mb-[18px]">We're a specialist agency that owns its audiences and its channels, understands the sector from the inside, and can deliver an integrated campaign without assembling it from separate parts.</p>
         </div>
 
-        <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-muted mt-8 mb-2.5">
+        <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-muted mt-8 mb-2.5">
           Our People
         </div>
         <div className="max-w-[800px] about-body text-[15px] text-dim leading-[1.85]">

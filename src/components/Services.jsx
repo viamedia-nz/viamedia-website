@@ -54,7 +54,7 @@ const TABS = [
     lead: "We know how NZ automotive audiences think, decide, and respond — because we've been in conversation with them for three decades. We use that knowledge to shape campaigns and strategies grounded in real audience behaviour, across consumer and trade segments.",
     whatLabel: 'What We Apply',
     items: [
-      'Audience research deployed across our owned channels and communities',
+      'Market Insight reports: custom audience research deployed across our owned channels and communities',
       'Behavioural data and audience insights from GA4 and Tag Manager — informing targeting and content strategy',
       'Strategic marketing recommendations to guide campaign composition and improve the effectiveness of your existing marketing activity',
       'Competitor and category analysis to inform positioning, messaging, and content strategy',
@@ -130,7 +130,7 @@ export default function Services() {
           <p className="text-[15px] text-dim leading-[1.85] mb-8 pb-8 border-b border-black/10 max-w-[800px]">
             {panel.lead}
           </p>
-          <div className="text-[10px] font-bold tracking-[0.14em] uppercase text-red mb-3">
+          <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-red mb-3">
             {panel.whatLabel}
           </div>
           <ul className="list-none p-0 m-0 max-w-[800px]">

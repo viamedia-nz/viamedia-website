@@ -1,19 +1,18 @@
 import { useState } from 'react'
 
-const SERVICE_OPTIONS = [
-  'Content & Channels',
-  'Lead Generation & Paid Media',
-  'Organic Search & Discovery',
-  'Audience Intelligence & Strategy',
-  'Activations & Events',
-  'Not sure yet',
+const OBJECTIVE_OPTIONS = [
+  "I'm looking to grow my customer base",
+  "I'm launching a new product or service",
+  "I'm looking to build brand presence",
+  "I'm looking to outsource my marketing function",
+  "I'm not sure yet — I'd like to find out what's possible",
 ]
 
 const FORMSPREE_URL = 'https://formspree.io/f/mykoanpz'
 
 export default function Contact() {
   const [fields, setFields] = useState({
-    firstName: '', lastName: '', email: '', company: '', service: '', message: '',
+    firstName: '', lastName: '', email: '', company: '', phone: '', objective: '', message: '',
   })
   const [status, setStatus] = useState('idle') // idle | submitting | success | error
 
@@ -29,7 +28,8 @@ export default function Contact() {
       body.append('Last Name', fields.lastName)
       body.append('Email', fields.email)
       body.append('Company', fields.company)
-      body.append('Service Area', fields.service)
+      body.append('Phone', fields.phone)
+      body.append('Marketing Objective', fields.objective)
       body.append('Message', fields.message)
       const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
@@ -123,17 +123,28 @@ export default function Contact() {
                   className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] min-w-0 w-full"
                 />
               </div>
-              {/* Service area — full width */}
+              {/* Phone — half width */}
+              <div className="flex flex-col gap-[7px] w-full min-[480px]:w-[calc(50%-6px)]">
+                <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Phone</label>
+                <input
+                  type="tel"
+                  placeholder="e.g. 021 422 1234 or +64 21 422 1234"
+                  value={fields.phone}
+                  onChange={set('phone')}
+                  className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] min-w-0 w-full"
+                />
+              </div>
+              {/* Marketing Objective — full width */}
               <div className="flex flex-col gap-[7px] w-full">
-                <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Service Area</label>
+                <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">Marketing Objective</label>
                 <select
-                  value={fields.service}
-                  onChange={set('service')}
+                  value={fields.objective}
+                  onChange={set('objective')}
                   required
                   className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 [&>option]:bg-[#2B3A4A] [&>option]:text-[#D1D5DB] [&>option:checked]:bg-[#354757] [&>option:checked]:text-white [&:invalid]:text-white/[0.22]"
                 >
-                  <option value="" disabled hidden>Select a service area</option>
-                  {SERVICE_OPTIONS.map(opt => (
+                  <option value="" disabled hidden>Select your marketing objective</option>
+                  {OBJECTIVE_OPTIONS.map(opt => (
                     <option key={opt}>{opt}</option>
                   ))}
                 </select>

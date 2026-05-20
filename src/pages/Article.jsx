@@ -29,15 +29,15 @@ export default function Article() {
       <div className="max-w-[800px] mx-auto py-12 md:py-[80px] px-5 md:px-[52px]">
         <Link
           to="/insights"
-          className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.1em] uppercase text-muted no-underline mb-10 hover:text-ink transition-colors duration-[180ms]"
+          className="inline-flex items-center gap-2 text-[12px] font-bold tracking-[0.1em] uppercase text-muted no-underline mb-10 hover:text-ink transition-colors duration-[180ms]"
         >
           ← Back to Insights
         </Link>
 
-        <div className="text-[9px] font-bold tracking-[0.18em] uppercase text-red mb-3">
+        <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-red mb-3">
           {article.category}
         </div>
-        <div className="text-[9px] tracking-[0.1em] uppercase text-muted mb-6">
+        <div className="text-[11px] tracking-[0.1em] uppercase text-muted mb-6">
           {article.date}
         </div>
 
@@ -62,7 +62,7 @@ export default function Article() {
         <div className="mt-14 pt-8 border-t border-black/10">
           <Link
             to="/insights"
-            className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase text-red no-underline border-b border-red/30 pb-[3px] hover:border-red transition-colors duration-[180ms]"
+            className="inline-flex items-center gap-2 text-[12px] font-bold tracking-[0.1em] uppercase text-red no-underline border-b border-red/30 pb-[3px] hover:border-red transition-colors duration-[180ms]"
           >
             ← More Insights
           </Link>

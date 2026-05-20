@@ -34,10 +34,10 @@ export default function Insights() {
                 <InsightGraphic type={article.graphic} />
               </div>
               <div className="p-5 md:p-7 pt-6 md:pt-8 flex flex-col flex-1">
-                <div className="text-[9px] font-bold tracking-[0.18em] uppercase text-red mb-3">
+                <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-red mb-3">
                   {article.category}
                 </div>
-                <div className="text-[9px] tracking-[0.1em] uppercase text-white/25 mb-3">
+                <div className="text-[11px] tracking-[0.1em] uppercase text-white/25 mb-3">
                   {article.date}
                 </div>
                 <h3 className="text-base font-bold leading-[1.4] text-white mb-3 flex-1">

@@ -14,7 +14,7 @@ const TIERS = [
       'Paid social amplification to reach people actively engaging with automotive content',
     ],
     audience: 'Depending on your customer base — consumer, trade, or both — we\'ll match you to the most relevant audience.',
-    pricing: 'Individual elements from $500 per month',
+    pricing: 'Individual elements from $500 + GST per month',
     testimonial: '"The always-on digital advertising delivered quantifiable, qualified leads at a very cost-effective price point — and generated some genuinely unexpected social proof in the comments, with customers recommending us unprompted."',
     attribution: '— Vincent Offenbaker, Director, American Pickup Parts',
     ctaIntro: 'Tell us about your business — where you are, what you do, and who you\'re trying to reach. We\'ll come back with some options that fit.',
@@ -33,7 +33,7 @@ const TIERS = [
       'Campaign reporting and performance insights',
     ],
     audience: 'Typically spans two or more of our brands and specialist sector audiences, depending on your product and customer mix.',
-    pricing: 'Integrated packages from $1,500 per month',
+    pricing: 'Integrated packages from $1,500 + GST per month',
     testimonial: '"The Via Media team are easy to work with and really understand our market. The content they create has become a steady source of leads — people are finding Harrys Euro through AI search results, which is a big reason we keep investing in content with them."',
     attribution: '— Scott Wood, Director, Harrys Euro',
     ctaIntro: 'Tell us about your business. We\'ll put a tailored proposal together.',
@@ -52,7 +52,7 @@ const TIERS = [
       'Detailed reporting and audience insights',
     ],
     audience: 'Access to all our automotive audiences — consumer, trade, and specialist sector — with targeting aligned to your campaign objectives.',
-    pricing: 'Integrated campaigns from $3,000 per month',
+    pricing: 'Integrated campaigns from $3,000 + GST per month',
     testimonial: '"The team at Via Media make every campaign extremely easy with in-depth targeting data and post-campaign reporting. With the ability to target dual audiences of trade and consumer on one platform, all with consistently above average industry results, Via Media are a go-to for connecting with our customers smarter, faster, and more efficiently."',
     attribution: '— Frances Vettori, General Manager Marketing, NAPA ANZ',
     ctaIntro: 'Tell us about your business and what you\'re trying to achieve. We\'ll come back with the approach we recommend.',
@@ -124,7 +124,7 @@ export default function Solutions() {
                     <p key={j} className="text-[15px] text-on-dark leading-[1.85] mb-4">{p}</p>
                   ))}
 
-                  <div className="text-[12px] font-bold tracking-[0.14em] uppercase text-white mt-7 mb-2.5">
+                  <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-white mt-7 mb-2.5">
                     What this typically includes
                   </div>
                   <ul className="list-none p-0 mb-5">
@@ -137,7 +137,7 @@ export default function Solutions() {
                   </ul>
 
                   <div className="text-[14px] text-on-dark leading-[1.85] py-4 border-t border-b border-white/[0.07] mb-5">
-                    <strong className="block text-[12px] font-bold tracking-[0.14em] uppercase text-white mb-1.5 not-italic">
+                    <strong className="block text-[11px] font-bold tracking-[0.14em] uppercase text-white mb-1.5 not-italic">
                       Most relevant audience
                     </strong>
                     {tier.audience}
@@ -173,7 +173,7 @@ export default function Solutions() {
         <div className="mt-10 flex">
           <a
             href="#services"
-            className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase text-white/60 border border-white/25 px-8 py-4 no-underline transition-all duration-[200ms] hover:text-white hover:border-white/50"
+            className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase text-white/60 border border-white/25 px-8 py-4 no-underline transition-all duration-[200ms] hover:text-white hover:border-red"
           >
             See how we work →
           </a>
