@@ -65,14 +65,14 @@ const AUTO_CHANNEL = [
 function SubsectionGroup({ label, items }) {
   return (
     <div className="mb-10">
-      <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-on-dark-muted mb-4">
+      <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-muted mb-4">
         {label}
       </div>
       <ul className="list-none p-0 m-0">
         {items.map((item, i) => (
           <li
             key={i}
-            className={`py-3 pl-[22px] text-sm text-on-dark leading-[1.85] relative ${i < items.length - 1 ? 'border-b border-white/[0.07]' : ''}`}
+            className={`py-3 pl-[22px] text-sm text-dim leading-[1.85] relative ${i < items.length - 1 ? 'border-b border-black/10' : ''}`}
           >
             <span className="absolute left-0 text-red text-xs">—</span>
             {item}
@@ -89,28 +89,30 @@ export default function AdSizes() {
       <title>Ad Sizes — Via Media</title>
       <meta name="robots" content="noindex, nofollow" />
 
-      <section id="ad-sizes-page" className="bg-[#0A0A0A] border-t-4 border-t-red">
-        <div className="max-w-[1200px] mx-auto py-16 md:py-[110px] px-5 md:px-[52px]">
+      <section id="ad-sizes-page" className="bg-off py-16 md:py-[110px] px-5 md:px-[52px] border-t-4 border-t-red">
+        <div className="max-w-[1200px] mx-auto">
           <div className="flex items-center gap-3 text-[11px] font-bold tracking-[0.22em] uppercase text-red mb-[18px]">
             <div className="w-[22px] h-0.5 bg-red" />
-            Material Supply Specifications
+            Client Resources
           </div>
-          <h1 className="text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase text-white mb-6">
+          <h1 className="text-[clamp(34px,4vw,56px)] font-black leading-[1.03] tracking-[-0.03em] uppercase mb-6">
             Ad Sizes
           </h1>
-          <p className="max-w-[800px] text-[15px] text-on-dark-muted leading-[1.85] mb-14">
-            Dimensions are width × height + bleed as specified. Print: PDF, CMYK, 300dpi, fonts embedded. Digital: PNG, RGB.
+          <p className="max-w-[800px] text-[15px] text-dim leading-[1.85] mb-14">
+            Dimensions are width × height + bleed as specified. Print files: PDF, CMYK, 300dpi, fonts embedded. Digital files: PNG, RGB.
           </p>
 
           <div className="max-w-[800px]">
-            <h2 className="text-[clamp(22px,2.5vw,32px)] font-black tracking-[-0.02em] uppercase text-white mt-4 mb-8 pb-4 border-b border-white/15">
+            <h2 className="text-[clamp(22px,2.5vw,32px)] font-black tracking-[-0.02em] uppercase text-ink mb-8">
               NZ Performance Car &amp; NZV8
             </h2>
             {NZPC_NZV8.map((group) => (
               <SubsectionGroup key={group.label} label={group.label} items={group.items} />
             ))}
 
-            <h2 className="text-[clamp(22px,2.5vw,32px)] font-black tracking-[-0.02em] uppercase text-white mt-16 mb-8 pb-4 border-b border-white/15">
+            <hr className="my-14 border-0 border-t border-black/10" />
+
+            <h2 className="text-[clamp(22px,2.5vw,32px)] font-black tracking-[-0.02em] uppercase text-ink mb-8">
               Auto Channel
             </h2>
             {AUTO_CHANNEL.map((group) => (
