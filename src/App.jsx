@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import About from './components/About'
 import Insights from './pages/Insights'
 import Article from './pages/Article'
+import AdSizes from './pages/AdSizes'
 import useScrollAnimations from './hooks/useScrollAnimations'
 
 function ScrollToHash() {
@@ -36,6 +37,7 @@ function AppContent() {
           <Route path="/about" element={<About />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/insights/:slug" element={<Article />} />
+          <Route path="/ad-sizes" element={<AdSizes />} />
         </Routes>
       </main>
 
