@@ -13,6 +13,7 @@ const NZPC_NZV8 = [
     items: [
       'Social post — 1080px × 1080px and 1080px × 1350px. Safe space: allow 90px left/right, 90px top/bottom. Font sizes: H1 30–34pt, H2 24–28pt, Body 16–18pt. Formats: JPG, MP4. Carousel: max. 10 tiles, 1:1 ratio only.',
       'Social reel — 1080px × 1920px. Safe space: allow 250px top, 250px bottom, full 1080px width. Font sizes: H1 36–42pt, H2 28–32pt, Body 18–22pt. Format: MP4.',
+      'Copy — Applies to both social post and reel ads. Headline: 40-character limit, can vary per carousel card. Primary text: 80 characters or fewer for feed placements, applies to the whole ad and can\'t change card-to-card in a carousel. Description (optional): 20-character limit per card; often doesn\'t display at all, especially on reels and carousel placements, so don\'t rely on it for anything essential. Links: one destination URL per ad, or one per card if carousel cards go to different pages. Mandatory terms, conditions, or disclaimers: include these in the primary text or headline, not the description field.',
     ],
   },
   {
@@ -51,6 +52,7 @@ const AUTO_CHANNEL = [
     items: [
       'Social post — 1080px × 1080px and 1080px × 1350px. Safe space: allow 90px left/right, 90px top/bottom. Font sizes: H1 30–34pt, H2 24–28pt, Body 16–18pt. Formats: JPG, MP4. Carousel: max. 10 tiles, 1:1 ratio only.',
       'Social reel — 1080px × 1920px. Safe space: allow 250px top, 250px bottom, full 1080px width. Font sizes: H1 36–42pt, H2 28–32pt, Body 18–22pt. Format: MP4.',
+      'Copy — Applies to both social post and reel ads. Headline: 40-character limit, can vary per carousel card. Primary text: 80 characters or fewer for feed placements, applies to the whole ad and can\'t change card-to-card in a carousel. Description (optional): 20-character limit per card; often doesn\'t display at all, especially on reels and carousel placements, so don\'t rely on it for anything essential. Links: one destination URL per ad, or one per card if carousel cards go to different pages. Mandatory terms, conditions, or disclaimers: include these in the primary text or headline, not the description field.',
     ],
   },
   {
