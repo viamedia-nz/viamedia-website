@@ -23,12 +23,31 @@ function ScrollToHash() {
   return null
 }
 
+// Pushes a page view into the GTM dataLayer on every route change.
+// The site is a single-page app, so only the first load is a real page load —
+// every navigation after that has to be reported explicitly.
+// In GTM, the GA4 page_view tag fires on the custom event 'spa_page_view'.
+function GtmPageView() {
+  const { pathname, search } = useLocation()
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'spa_page_view',
+      page_path: pathname + search,
+      page_location: window.location.href,
+      page_title: document.title,
+    })
+  }, [pathname, search])
+  return null
+}
+
 function AppContent() {
   useScrollAnimations()
 
   return (
     <div className="min-h-screen bg-bg text-ink snap-container">
       <ScrollToHash />
+      <GtmPageView />
       <Nav />
 
       <main className="pt-[68px]">
