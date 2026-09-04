@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { ENTRANTS } from './chromeShowcaseEntrants'
 
@@ -170,7 +170,34 @@ export default function ChromeShowcase() {
   const [values, setValues] = useState(initial)
   const [status, setStatus] = useState('idle') // idle | sending | done | error
   const [missing, setMissing] = useState([])
-  const [trap, setTrap] = useState('')
+  const formRef = useRef(null)
+
+  // Reads every named field straight out of the DOM.
+  // Browser autofill and password managers write values into the input without
+  // always firing the event React listens for, so React state can be empty while
+  // the field looks filled. The DOM is the only reliable source at submit time.
+  function readForm() {
+    const el = formRef.current
+    if (!el) return {}
+    const out = {}
+    for (const [key, val] of new FormData(el).entries()) {
+      if (typeof val === 'string') out[key] = val
+    }
+    return out
+  }
+
+  // Chrome can autofill before React finishes hydrating. Pick up anything it
+  // wrote once the page has settled, so the autosaved draft holds real values.
+  useEffect(() => {
+    const t = setTimeout(() => {
+      const dom = readForm()
+      setValues(v => {
+        const changed = Object.keys(dom).some(k => (dom[k] || '') !== (v[k] || ''))
+        return changed ? { ...v, ...dom } : v
+      })
+    }, 400)
+    return () => clearTimeout(t)
+  }, [])
 
   // Autosave the draft to this browser only.
   useEffect(() => {
@@ -190,9 +217,11 @@ export default function ChromeShowcase() {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    if (trap) return // honeypot
 
-    const empty = requiredKeys.filter(k => !String(values[k] || '').trim())
+    const merged = { ...values, ...readForm() }
+    setValues(merged)
+
+    const empty = requiredKeys.filter(k => !String(merged[k] || '').trim())
     if (empty.length) {
       setMissing(empty)
       const el = document.getElementById(empty[0])
@@ -210,7 +239,7 @@ export default function ChromeShowcase() {
     body.set('plate', entrant?.plate || '')
     body.set('special_info_original', entrant?.info || '')
     ALL_KEYS.forEach(k => {
-      const v = values[k]
+      const v = merged[k]
       body.set(k, typeof v === 'boolean' ? (v ? 'Yes' : 'No') : String(v || ''))
     })
 
@@ -310,14 +339,7 @@ export default function ChromeShowcase() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} noValidate>
-
-            {/* honeypot — hidden from people, filled by bots */}
-            <input
-              type="text" name="company_website" tabIndex={-1} autoComplete="off"
-              value={trap} onChange={e => setTrap(e.target.value)}
-              className="absolute w-px h-px -left-[9999px] opacity-0" aria-hidden="true"
-            />
+          <form ref={formRef} onSubmit={handleSubmit} noValidate>
 
             <SectionHeading eyebrow="Step 1" title="Your contact details" />
             {CONTACT_FIELDS.map(f => (
