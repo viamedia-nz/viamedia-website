@@ -7,6 +7,7 @@ import About from './components/About'
 import Insights from './pages/Insights'
 import Article from './pages/Article'
 import AdSizes from './pages/AdSizes'
+import ChromeShowcase from './pages/lp/ChromeShowcase'
 import useScrollAnimations from './hooks/useScrollAnimations'
 import { ARTICLES } from './data/articles'
 
@@ -35,6 +36,7 @@ const ROUTE_TITLES = {
   '/about': `About — ${SITE_NAME}`,
   '/insights': `Insights — ${SITE_NAME}`,
   '/ad-sizes': `Ad Sizes — ${SITE_NAME}`,
+  '/lp/chrome-showcase': `Elite 50 entrant details — ${SITE_NAME}`,
 }
 
 function titleForPath(pathname) {
@@ -88,6 +90,7 @@ function AppContent() {
           <Route path="/insights" element={<Insights />} />
           <Route path="/insights/:slug" element={<Article />} />
           <Route path="/ad-sizes" element={<AdSizes />} />
+          <Route path="/lp/chrome-showcase" element={<ChromeShowcase />} />
         </Routes>
       </main>
 
