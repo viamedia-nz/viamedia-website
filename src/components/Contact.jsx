@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 const OBJECTIVE_OPTIONS = [
   "I'm looking to grow my customer base",
@@ -18,19 +18,37 @@ export default function Contact() {
 
   const set = (key) => (e) => setFields((f) => ({ ...f, [key]: e.target.value }))
 
+  const formRef = useRef(null)
+
+  // Reads every named field straight out of the DOM.
+  // Browser autofill and password managers write values into the input without
+  // always firing the event React listens for, so React state can be empty while
+  // the field looks filled. The DOM is the only reliable source at submit time.
+  const readForm = () => {
+    const el = formRef.current
+    if (!el) return {}
+    const out = {}
+    for (const [key, val] of new FormData(el).entries()) {
+      if (typeof val === 'string') out[key] = val
+    }
+    return out
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('submitting')
+    const merged = { ...fields, ...readForm() }
+    setFields(merged)
     try {
       const body = new FormData()
       body.append('_subject', 'New Enquiry — Via Media Website')
-      body.append('First Name', fields.firstName)
-      body.append('Last Name', fields.lastName)
-      body.append('Email', fields.email)
-      body.append('Company', fields.company)
-      body.append('Phone', fields.phone)
-      body.append('Marketing Objective', fields.objective)
-      body.append('Message', fields.message)
+      body.append('First Name', merged.firstName)
+      body.append('Last Name', merged.lastName)
+      body.append('Email', merged.email)
+      body.append('Company', merged.company)
+      body.append('Phone', merged.phone)
+      body.append('Marketing Objective', merged.objective)
+      body.append('Message', merged.message)
       const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
         headers: { Accept: 'application/json' },
@@ -77,7 +95,7 @@ export default function Contact() {
               Thank you — we'll be in touch shortly.
             </div>
           ) : (
-            <form className="flex flex-wrap gap-3" onSubmit={handleSubmit}>
+            <form ref={formRef} className="flex flex-wrap gap-3" onSubmit={handleSubmit}>
               {/* Row 1: First Name + Last Name */}
               <div className="flex flex-col gap-[7px] w-full min-[480px]:w-[calc(50%-6px)]">
                 <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-on-dark-muted">First Name</label>
@@ -86,6 +104,8 @@ export default function Contact() {
                   placeholder="First name"
                   value={fields.firstName}
                   onChange={set('firstName')}
+                  name="firstName"
+                  autoComplete="given-name"
                   required
                   className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] min-w-0 w-full"
                 />
@@ -97,6 +117,8 @@ export default function Contact() {
                   placeholder="Last name"
                   value={fields.lastName}
                   onChange={set('lastName')}
+                  name="lastName"
+                  autoComplete="family-name"
                   required
                   className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] min-w-0 w-full"
                 />
@@ -109,6 +131,8 @@ export default function Contact() {
                   placeholder="name@company.com"
                   value={fields.email}
                   onChange={set('email')}
+                  name="email"
+                  autoComplete="email"
                   required
                   className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] min-w-0 w-full"
                 />
@@ -120,6 +144,8 @@ export default function Contact() {
                   placeholder="Company name"
                   value={fields.company}
                   onChange={set('company')}
+                  name="company"
+                  autoComplete="organization"
                   className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] min-w-0 w-full"
                 />
               </div>
@@ -131,6 +157,8 @@ export default function Contact() {
                   placeholder="e.g. 021 422 1234 or +64 21 422 1234"
                   value={fields.phone}
                   onChange={set('phone')}
+                  name="phone"
+                  autoComplete="tel"
                   className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] min-w-0 w-full"
                 />
               </div>
@@ -140,6 +168,8 @@ export default function Contact() {
                 <select
                   value={fields.objective}
                   onChange={set('objective')}
+                  name="objective"
+                  autoComplete="off"
                   required
                   className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 [&>option]:bg-[#2B3A4A] [&>option]:text-[#D1D5DB] [&>option:checked]:bg-[#354757] [&>option:checked]:text-white [&:invalid]:text-white/[0.22]"
                 >
@@ -156,6 +186,8 @@ export default function Contact() {
                   placeholder="Tell us about your goals"
                   value={fields.message}
                   onChange={set('message')}
+                  name="message"
+                  autoComplete="off"
                   className="bg-white/[0.07] border border-white/12 text-white px-4 py-3.5 font-sans text-sm outline-none transition-all duration-[180ms] focus:border-red focus:bg-white/10 placeholder:text-white/[0.22] resize-y min-h-[110px] w-full"
                 />
               </div>

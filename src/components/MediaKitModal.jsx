@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 
 const BRANDS = [
@@ -16,6 +16,22 @@ export default function MediaKitModal({ children }) {
 
   const set = (key) => (e) => setFields((f) => ({ ...f, [key]: e.target.value }))
 
+  const formRef = useRef(null)
+
+  // Reads every named field straight out of the DOM.
+  // Browser autofill and password managers write values into the input without
+  // always firing the event React listens for, so React state can be empty while
+  // the field looks filled. The DOM is the only reliable source at submit time.
+  const readForm = () => {
+    const el = formRef.current
+    if (!el) return {}
+    const out = {}
+    for (const [key, val] of new FormData(el).entries()) {
+      if (typeof val === 'string') out[key] = val
+    }
+    return out
+  }
+
   const toggleBrand = (id) => {
     setFields((f) => ({
       ...f,
@@ -28,13 +44,15 @@ export default function MediaKitModal({ children }) {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('submitting')
+    const merged = { ...fields, ...readForm() }
+    setFields(merged)
     const selectedBrands = BRANDS.filter((b) => fields.brands.includes(b.id)).map((b) => b.label)
     try {
       const body = new FormData()
       body.append('_subject', 'Audience Data Request — Via Media Website')
-      body.append('Name', fields.name)
-      body.append('Company', fields.company)
-      body.append('Email', fields.email)
+      body.append('Name', merged.name)
+      body.append('Company', merged.company)
+      body.append('Email', merged.email)
       body.append('Brands of Interest', selectedBrands.join(', ') || 'None selected')
       const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
@@ -95,7 +113,7 @@ export default function MediaKitModal({ children }) {
                 Tell us about your business and we'll send through the relevant audience profile.
               </Dialog.Description>
 
-              <form className="space-y-4" onSubmit={handleSubmit}>
+              <form ref={formRef} className="space-y-4" onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-[6px]">
                   <label className="text-[10px] font-bold tracking-[0.14em] uppercase text-muted">Name</label>
                   <input
@@ -103,6 +121,8 @@ export default function MediaKitModal({ children }) {
                     placeholder="Your name"
                     value={fields.name}
                     onChange={set('name')}
+                    name="name"
+                    autoComplete="name"
                     required
                     className="bg-white border border-black/10 text-ink px-4 py-3 font-sans text-sm outline-none transition-colors duration-[180ms] focus:border-red placeholder:text-muted/40"
                   />
@@ -115,6 +135,8 @@ export default function MediaKitModal({ children }) {
                     placeholder="Company name"
                     value={fields.company}
                     onChange={set('company')}
+                    name="company"
+                    autoComplete="organization"
                     className="bg-white border border-black/10 text-ink px-4 py-3 font-sans text-sm outline-none transition-colors duration-[180ms] focus:border-red placeholder:text-muted/40"
                   />
                 </div>
@@ -126,6 +148,8 @@ export default function MediaKitModal({ children }) {
                     placeholder="name@company.com"
                     value={fields.email}
                     onChange={set('email')}
+                    name="email"
+                    autoComplete="email"
                     required
                     className="bg-white border border-black/10 text-ink px-4 py-3 font-sans text-sm outline-none transition-colors duration-[180ms] focus:border-red placeholder:text-muted/40"
                   />
