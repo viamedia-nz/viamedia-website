@@ -57,8 +57,6 @@ const DRIVER_FIELDS = [
   { key: 'driver_owner', label: 'Driver / owner' },
   { key: 'age', label: 'Age' },
   { key: 'location', label: 'Location' },
-  { key: 'occupation', label: 'Occupation' },
-  { key: 'build_time', label: 'Build time' },
   { key: 'ownership_length', label: 'Length of ownership' },
 ]
 
