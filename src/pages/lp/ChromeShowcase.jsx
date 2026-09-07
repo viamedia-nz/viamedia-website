@@ -144,11 +144,14 @@ export default function ChromeShowcase() {
   const [params] = useSearchParams()
   const code = (params.get('e') || '').toUpperCase().trim()
   const entrant = ENTRANTS[code]
+  // One draft per car. Sharing a single key across links would let a
+  // half-finished entry reappear under a different vehicle.
+  const storageKey = `${CONFIG.storageKey}-${code || 'nocode'}`
 
   const initial = useMemo(() => {
     let saved = {}
     try {
-      const raw = window.localStorage.getItem(CONFIG.storageKey)
+      const raw = window.localStorage.getItem(storageKey)
       if (raw) saved = JSON.parse(raw)
     } catch { /* private browsing or storage disabled */ }
     return {
@@ -201,7 +204,7 @@ export default function ChromeShowcase() {
   useEffect(() => {
     if (status === 'done') return
     try {
-      window.localStorage.setItem(CONFIG.storageKey, JSON.stringify(values))
+      window.localStorage.setItem(storageKey, JSON.stringify(values))
     } catch { /* ignore */ }
   }, [values, status])
 
@@ -244,7 +247,7 @@ export default function ChromeShowcase() {
     try {
       const res = await fetch(CONFIG.webhookUrl, { method: 'POST', body })
       if (!res.ok) throw new Error(`Webhook returned ${res.status}`)
-      try { window.localStorage.removeItem(CONFIG.storageKey) } catch { /* ignore */ }
+      try { window.localStorage.removeItem(storageKey) } catch { /* ignore */ }
       window.dataLayer = window.dataLayer || []
       window.dataLayer.push({ event: 'chrome_showcase_submit', entrant_code: code || '(none)' })
       setStatus('done')
