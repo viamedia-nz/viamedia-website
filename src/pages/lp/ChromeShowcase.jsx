@@ -14,7 +14,7 @@ const CONFIG = {
   selectionName: "New Zealand's Elite 50",
   magazineTitle: "New Zealand's Elite Cars 2026",
   publicationDate: '7 December',
-  deadline: 'Wednesday 30 September',
+  deadline: 'Monday 21 September',
   heroImage: '/lp/chrome-showcase/chrome-showcase-hero.jpg',
   supportEmail: 'editors@viamedia.co.nz',
   storageKey: 'chrome-showcase-2026-draft',
