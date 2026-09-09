@@ -247,7 +247,9 @@ export default function ChromeShowcase() {
     try {
       const res = await fetch(CONFIG.webhookUrl, { method: 'POST', body })
       if (!res.ok) throw new Error(`Webhook returned ${res.status}`)
-      try { window.localStorage.removeItem(storageKey) } catch { /* ignore */ }
+      // The draft is deliberately kept after submitting. An entrant can send a
+      // partial form, come back to the same link, and find their answers still
+      // there to finish. Clearing it here would force them to retype everything.
       window.dataLayer = window.dataLayer || []
       window.dataLayer.push({ event: 'chrome_showcase_submit', entrant_code: code || '(none)' })
       setStatus('done')
@@ -271,6 +273,11 @@ export default function ChromeShowcase() {
             <p className="text-[15px] text-dim leading-[1.85] mb-4">
               We have emailed you a copy of your answers. If anything needs correcting, reply to
               that email and we will fix it.
+            </p>
+            <p className="text-[15px] text-dim leading-[1.85] mb-4">
+              If you still have details to add, open your link again — your answers are saved and
+              you can pick up where you left off. Send it a second time and we will use your
+              latest version.
             </p>
             <p className="text-[15px] text-dim leading-[1.85]">
               See you at {CONFIG.eventVenue} on {CONFIG.eventDates}. Your feature runs in{' '}
