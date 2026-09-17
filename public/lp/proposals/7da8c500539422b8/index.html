@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>UltraTube RS in Australia — Via Media proposal</title>
+<link rel="icon" href="/viamedia-favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0}
+  :root{
+    --white:#FFFFFF; --off:#F4F3F0; --stone:#E2E0DC;
+    --ink:#111110; --ink2:#2A2A28; --muted:#6B6A67;
+    --line:rgba(0,0,0,0.10); --line-md:rgba(0,0,0,0.18);
+    --red:#D4001A; --red-dark:#A80015; --red-bright:#FF3A47;
+    --hero:#15171A; --hero-right:#2B3A4A;
+    --on-dark:#F4F3F0; --on-dark-muted:rgba(244,243,240,0.66); --line-dark:rgba(255,255,255,0.14);
+    --it-cyan:#5BC6EA;
+    --font:'Montserrat', "Helvetica Neue", Arial, sans-serif;
+    --wrap:980px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;font-family:var(--font);color:var(--ink2);background:var(--off);line-height:1.62;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,p{margin:0}
+  img{max-width:100%;display:block}
+  .section{padding-block:80px;padding-inline:24px}
+  .wrap{max-width:var(--wrap);margin:0 auto}
+  .s-paper{background:var(--off)} .s-white{background:var(--white)}
+  .s-dark{background:var(--ink);color:var(--on-dark)}
+  h1,h2,h3{color:var(--ink);font-weight:800;line-height:1.1;letter-spacing:-0.015em;text-wrap:balance}
+  .s-dark h2,.s-dark h3{color:var(--white)}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+  .eyebrow::before{content:"";width:26px;height:2px;background:currentColor}
+  .s-dark .eyebrow{color:var(--red-bright)}
+  h2.title{font-size:clamp(1.8rem,4.2vw,2.8rem);margin-bottom:20px}
+  .lede{font-size:clamp(1.04rem,2vw,1.22rem);font-weight:500;max-width:62ch}
+  .muted{color:var(--muted)} .s-dark .muted{color:var(--on-dark-muted)}
+  .copy{display:flex;flex-direction:column;gap:16px;max-width:66ch}
+
+  /* hero */
+  .hero{background:linear-gradient(105deg,var(--hero) 0%,var(--hero) 45%,var(--hero-right) 100%);color:var(--on-dark);padding:36px 24px 80px;position:relative}
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--red),var(--red-dark))}
+  .hero__bar{max-width:var(--wrap);margin:0 auto;padding-bottom:64px}
+  .wordmark{height:58px;width:auto;color:var(--off);display:block}
+  .hero__inner{max-width:var(--wrap);margin:0 auto}
+  .hero h1{color:var(--white);font-size:clamp(2rem,5vw,3.4rem);font-weight:900;max-width:20ch}
+  .hero h1 span{color:var(--it-cyan)}
+  .hero__thesis{margin-top:24px;font-size:clamp(1.02rem,2vw,1.24rem);font-weight:500;max-width:58ch}
+  .pill{display:inline-block;margin-top:30px;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(255,255,255,.32);border-radius:100px;padding:9px 20px;color:var(--white)}
+  .prepared{margin-top:44px}
+  .prepared span{display:block;font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-muted);margin-bottom:12px}
+  .it-logo{height:52px;width:auto}
+
+  /* pullout */
+  .pullout{margin-top:44px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0}
+  .pullout__num{font-weight:900;font-size:clamp(2.8rem,8vw,4.4rem);color:var(--red);line-height:.9;letter-spacing:-.03em}
+  .pullout__text{font-weight:500;font-size:clamp(1rem,2vw,1.14rem);max-width:48ch}
+
+  /* stats */
+  .stats{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .stat{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:22px 20px}
+  .stat__num{font-weight:900;font-size:clamp(1.6rem,3.4vw,2.2rem);color:var(--red);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .stat__label{margin-top:10px;font-size:.9rem;color:var(--muted);line-height:1.45}
+  .source{margin-top:16px;font-size:.84rem;color:var(--muted)}
+
+  /* steps */
+  .steps{margin-top:40px;display:grid;gap:14px}
+  .step{display:grid;grid-template-columns:60px 1fr;gap:22px;align-items:start;background:var(--white);border-radius:14px;padding:26px 28px}
+  .step__num{font-weight:900;font-size:2rem;color:var(--red);line-height:1}
+  .step__tag{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .step h3{font-size:1.16rem;margin-bottom:8px}
+  .step p{color:var(--ink2);max-width:64ch}
+  .step p + p{margin-top:8px}
+
+  /* destination options */
+  .dest{margin-top:40px}
+  .dest h3{font-size:1.2rem;margin-bottom:6px}
+  .dest > p{max-width:64ch;color:var(--muted)}
+  .opts{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .opt{border:1px solid var(--line-md);border-radius:14px;padding:22px 24px;background:var(--white)}
+  .opt--rec{border:2px solid var(--ink)}
+  .opt__tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:100px;background:var(--stone);color:var(--ink);margin-bottom:12px}
+  .opt--rec .opt__tag{background:var(--red);color:var(--white)}
+  .opt h4{margin:0 0 8px;font-size:1.02rem;color:var(--ink)}
+  .opt p{font-size:.94rem;color:var(--ink2)}
+
+  /* measures */
+  .measures{margin-top:36px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .measure{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--red);border-radius:0 0 12px 12px;padding:20px}
+  .measure h3{font-size:1rem;margin-bottom:8px}
+  .measure p{font-size:.9rem;color:var(--muted);line-height:1.5}
+
+  /* needs */
+  .needs{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;padding:0;list-style:none}
+  .needs li{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .needs li::before{content:"";width:10px;height:10px;margin-top:8px;border-radius:2px;background:var(--red)}
+  .needs strong{color:var(--ink);display:block}
+  .needs span{color:var(--muted);font-size:.94rem}
+
+  /* cost */
+  .cost-card{margin-top:40px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:30px 30px 26px}
+  .cost-group{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:24px 0 8px}
+  .cost-group:first-child{padding-top:0}
+  .cost-item{display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:start;padding:18px 0;border-bottom:1px solid var(--line)}
+  .cost-item__title{font-weight:700;color:var(--ink);line-height:1.35}
+  .cost-item__fig{font-weight:700;color:var(--ink);white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums}
+  .cost-item__desc{grid-column:1/2;font-size:.92rem;color:var(--muted);line-height:1.6;max-width:58ch}
+  .cost-sub{display:flex;justify-content:space-between;gap:18px;padding:14px 0;font-weight:700;color:var(--ink);border-top:1px solid var(--line-md);font-variant-numeric:tabular-nums}
+  .cost-totals{margin-top:24px;border-top:2px solid var(--ink);padding-top:22px}
+  .cost-total{display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap}
+  .cost-total__label{font-size:1.08rem;font-weight:700;color:var(--ink)}
+  .cost-total__fig{font-weight:900;font-size:clamp(1.9rem,5vw,2.5rem);color:var(--red);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .cost-monthly{margin-top:12px;font-weight:600;color:var(--ink)}
+  .cost-total__fig small{font-size:.9rem;font-weight:700;color:var(--ink);letter-spacing:0}
+  .cost-note{margin-top:10px;font-size:.9rem;color:var(--muted)}
+  .reassure{margin-top:24px;padding:20px 24px;background:var(--off);border-left:3px solid var(--red);border-radius:0 10px 10px 0;font-weight:500;max-width:70ch}
+
+  /* options (dark) */
+  .options{margin-top:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .option{border:1px solid var(--line-dark);border-radius:14px;padding:24px 22px}
+  .option h3{font-size:1.04rem;margin-bottom:10px}
+  .option p{color:var(--on-dark-muted);font-size:.94rem}
+
+  .footer{background:var(--ink);color:var(--on-dark-muted);padding:0 24px 44px}
+  .footer__inner{max-width:var(--wrap);margin:0 auto;border-top:1px solid var(--line-dark);padding-top:28px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px}
+  .footer__mark{height:36px;width:auto;color:var(--white);display:block}
+  .footer__contact{font-size:.88rem;text-align:right;line-height:1.7}
+  .footer a{color:var(--on-dark);text-decoration:none;border-bottom:1px solid var(--red)}
+  a:focus-visible{outline:3px solid var(--red-bright);outline-offset:3px}
+
+  @media (max-width:860px){
+    .stats,.measures{grid-template-columns:1fr 1fr}
+    .options{grid-template-columns:1fr}
+  }
+  @media (max-width:640px){
+    .section{padding-block:56px;padding-inline:16px}
+    .hero{padding:26px 16px 60px}
+    .hero__bar{padding-bottom:40px}
+    .wordmark{height:40px}
+    .it-logo{height:38px}
+    .pullout{grid-template-columns:1fr;gap:12px}
+    .opts,.needs{grid-template-columns:1fr}
+    .step{grid-template-columns:40px 1fr;gap:14px;padding:20px}
+    .step__num{font-size:1.6rem}
+    .cost-card{padding:22px 18px}
+    .cost-item{grid-template-columns:1fr;gap:4px}
+    .cost-item__fig{text-align:left}
+    .cost-item__desc{grid-column:1/-1}
+    .footer{padding-inline:16px}
+    .footer__inner{flex-direction:column;align-items:flex-start}
+    .footer__contact{text-align:left}
+  }
+  @media (max-width:420px){ .stats,.measures{grid-template-columns:1fr} }
+  @media print{
+    *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+    .section{padding-block:36px}
+    .step,.cost-card,.option,.opt,.measure,.stat{break-inside:avoid}
+  }
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;pointer-events:none;overflow:hidden;">
+  <symbol id="vm-wordmark" viewBox="0 0 1326 432">
+    <path d="M235,0c111.664,10.915,197.86,102.283,198.111,215.515.251,113.616-86.089,205.547-198.111,216.485h-36C93.719,421.662,9.794,339.837,1.412,232.168c-.819-10.521-.817-21.823,0-32.324C9.797,92.111,93.712,10.391,199,0h36Z" fill="currentColor"/>
+    <path d="M1326,269.118v17.835c-7.930,3.410-16.787,4.077-25.378,1.376-8.358-2.629-12.629-9.363-12.967-18.814-7.294,22.822-35.432,25.527-53.286,16.214-9.909-5.169-14.838-14.626-14.720-25.739.217-20.406,15.561-27.725,33.583-30.722l33.364-5.548c.352-5.647.160-11.721-2.932-16.272-3.688-5.425-10.564-6.200-16.652-5.828-8.900.544-14.859,6.780-14.520,16.138l-27.583-.125c-.002-14.517,7.240-26.232,19.561-32.412,16.426-8.239,36.154-8.217,52.479.803,10.214,5.644,17.131,16.930,17.229,28.810l.443,53.789,11.378.494ZM1284.055,256.048c1.842-4.622,2.455-9.007,2.477-13.960l-27.615,4.783c-4.805.832-9.177,4.464-10.155,8.373-1.147,4.585-.715,10.730,3.837,13.090,12.054,6.249,26.527.078,31.456-12.287Z" fill="currentColor"/>
+    <path d="M919.126,288.282l-.307-101.609-40.391,100.988c-3.756.668-7.173.674-11.686.294l-40.749-99.924-.530,100.204-27.984-.024-.011-144.120,37.975-.137,37.198,94.533,36.861-94.410,37.517-.099-.052,144.260-27.841.044Z" fill="currentColor"/>
+    <path d="M1128.216,286.543c-21.168,11.032-46.094,1.182-55.379-20.536-7.979-18.663-8.691-40.283-1.191-59.060,8.288-20.750,29.334-31.654,50.464-26.216,10.010,2.576,15.324,9.337,20.216,18.962l.246-55.724,27.963.150-.020,143.841-20.946-.023-5.081-21.930c-4.344,7.852-7.626,16.030-16.272,20.536ZM1140.546,217.789c-3.880-9.960-12.646-15.813-22.947-15.193-9.784.589-17.833,7.013-20.732,17.265-3.388,11.979-2.913,25.118,3.051,36.349,4.157,7.827,12.822,11.336,21.307,10.578,21.945-1.959,26.058-31.703,19.320-49Z" fill="currentColor"/>
+    <polygon points="587.633 143.91 617.78 143.865 567.948 287.932 535.647 288.018 485.222 144.096 515.956 144.012 551.716 249.564 587.633 143.91" fill="currentColor"/>
+    <path d="M675.041,286.350c-10.962-4.919-16.147-14.951-16.079-26.357.117-19.728,15.055-27.585,32.392-30.488l34.683-5.808c.207-5.219-.016-10.918-2.424-15.322-3.114-5.697-9.643-6.852-15.568-6.876-9.642-.039-16.572,6.301-16.308,16.264l-27.434-.060c-.349-14.074,7.235-26.401,19.650-32.607,13.444-6.721,28.040-7.388,42.493-3.388,15.743,4.357,27.139,17.493,27.247,34.423l.335,52.517,10.983.228-.035,18.199c-8.609,3.686-17.907,3.923-26.602.651-7.267-2.734-10.342-8.815-11.640-17.282-7.685,21.345-33.531,24.390-51.694,15.906ZM692.557,268.679c12.223,5.583,25.782-.491,30.694-12.281,1.935-4.645,2.542-9.063,2.641-14.301l-27.205,4.640c-4.878.832-9.483,4.534-10.466,8.110-1.419,5.156-.819,11.478,4.337,13.832Z" fill="currentColor"/>
+    <path d="M994.878,264.197c9.850,6.639,28.964,4.741,33.494-9.712l26.921.089c-5.668,32.208-41.174,42.216-67.578,32.595-32.416-11.811-39.377-53.531-25.874-81.476s52.964-34.264,76.909-16.383c15.923,11.891,20.651,33.174,19.349,52.917l-73.914.067c.572,8.417,3.466,17.032,10.692,21.903ZM984.734,224.242l44.628-.023c-.167-7.385-2.671-14.601-8.703-18.925-7.990-5.729-19.949-5.462-27.591.786-5.521,4.513-8.199,11.526-8.333,18.162Z" fill="currentColor"/>
+    <polygon points="650.243 287.913 622.225 287.951 622.267 181.753 650.229 181.827 650.243 287.913" fill="currentColor"/>
+    <polygon points="1210.783 287.849 1182.999 288.043 1182.999 181.82 1210.729 181.752 1210.783 287.849" fill="currentColor"/>
+    <path d="M1196.508,168.821c-9.248-.171-15.164-6.208-15.253-14.809-.096-9.236,6.587-15.157,15.758-15.093,8.999.063,15.439,5.973,15.459,14.897.020,8.851-6.329,15.183-15.963,15.005Z" fill="currentColor"/>
+    <path d="M647.810,164.282c-6.207,6.287-17.220,6.020-23.156.101-5.428-5.413-5.463-15.420-.143-20.877,6.010-6.165,17.001-6.198,23.184-.194,5.412,5.255,5.763,15.250.116,20.970Z" fill="currentColor"/>
+    <polygon points="198.648 144.07 126.918 287.566 55.125 144.01 198.648 144.07" fill="#15171A"/>
+    <polygon points="378.865 287.965 235.29 288.01 306.904 144.521 378.865 287.965" fill="#15171A"/>
+    <polygon points="235.02 287.661 199.004 288.049 198.987 144.306 234.984 144.262 235.02 287.661" fill="#15171A"/>
+  </symbol>
+  <symbol id="vm-wordmark-footer" viewBox="0 0 1326 432">
+    <path d="M235,0c111.664,10.915,197.86,102.283,198.111,215.515.251,113.616-86.089,205.547-198.111,216.485h-36C93.719,421.662,9.794,339.837,1.412,232.168c-.819-10.521-.817-21.823,0-32.324C9.797,92.111,93.712,10.391,199,0h36Z" fill="currentColor"/>
+    <path d="M1326,269.118v17.835c-7.930,3.410-16.787,4.077-25.378,1.376-8.358-2.629-12.629-9.363-12.967-18.814-7.294,22.822-35.432,25.527-53.286,16.214-9.909-5.169-14.838-14.626-14.720-25.739.217-20.406,15.561-27.725,33.583-30.722l33.364-5.548c.352-5.647.160-11.721-2.932-16.272-3.688-5.425-10.564-6.200-16.652-5.828-8.900.544-14.859,6.780-14.520,16.138l-27.583-.125c-.002-14.517,7.240-26.232,19.561-32.412,16.426-8.239,36.154-8.217,52.479.803,10.214,5.644,17.131,16.930,17.229,28.810l.443,53.789,11.378.494ZM1284.055,256.048c1.842-4.622,2.455-9.007,2.477-13.960l-27.615,4.783c-4.805.832-9.177,4.464-10.155,8.373-1.147,4.585-.715,10.730,3.837,13.090,12.054,6.249,26.527.078,31.456-12.287Z" fill="currentColor"/>
+    <path d="M919.126,288.282l-.307-101.609-40.391,100.988c-3.756.668-7.173.674-11.686.294l-40.749-99.924-.530,100.204-27.984-.024-.011-144.120,37.975-.137,37.198,94.533,36.861-94.410,37.517-.099-.052,144.260-27.841.044Z" fill="currentColor"/>
+    <path d="M1128.216,286.543c-21.168,11.032-46.094,1.182-55.379-20.536-7.979-18.663-8.691-40.283-1.191-59.060,8.288-20.750,29.334-31.654,50.464-26.216,10.010,2.576,15.324,9.337,20.216,18.962l.246-55.724,27.963.150-.020,143.841-20.946-.023-5.081-21.930c-4.344,7.852-7.626,16.030-16.272,20.536ZM1140.546,217.789c-3.880-9.960-12.646-15.813-22.947-15.193-9.784.589-17.833,7.013-20.732,17.265-3.388,11.979-2.913,25.118,3.051,36.349,4.157,7.827,12.822,11.336,21.307,10.578,21.945-1.959,26.058-31.703,19.320-49Z" fill="currentColor"/>
+    <polygon points="587.633 143.91 617.78 143.865 567.948 287.932 535.647 288.018 485.222 144.096 515.956 144.012 551.716 249.564 587.633 143.91" fill="currentColor"/>
+    <path d="M675.041,286.350c-10.962-4.919-16.147-14.951-16.079-26.357.117-19.728,15.055-27.585,32.392-30.488l34.683-5.808c.207-5.219-.016-10.918-2.424-15.322-3.114-5.697-9.643-6.852-15.568-6.876-9.642-.039-16.572,6.301-16.308,16.264l-27.434-.060c-.349-14.074,7.235-26.401,19.650-32.607,13.444-6.721,28.040-7.388,42.493-3.388,15.743,4.357,27.139,17.493,27.247,34.423l.335,52.517,10.983.228-.035,18.199c-8.609,3.686-17.907,3.923-26.602.651-7.267-2.734-10.342-8.815-11.640-17.282-7.685,21.345-33.531,24.390-51.694,15.906ZM692.557,268.679c12.223,5.583,25.782-.491,30.694-12.281,1.935-4.645,2.542-9.063,2.641-14.301l-27.205,4.640c-4.878.832-9.483,4.534-10.466,8.110-1.419,5.156-.819,11.478,4.337,13.832Z" fill="currentColor"/>
+    <path d="M994.878,264.197c9.850,6.639,28.964,4.741,33.494-9.712l26.921.089c-5.668,32.208-41.174,42.216-67.578,32.595-32.416-11.811-39.377-53.531-25.874-81.476s52.964-34.264,76.909-16.383c15.923,11.891,20.651,33.174,19.349,52.917l-73.914.067c.572,8.417,3.466,17.032,10.692,21.903ZM984.734,224.242l44.628-.023c-.167-7.385-2.671-14.601-8.703-18.925-7.990-5.729-19.949-5.462-27.591.786-5.521,4.513-8.199,11.526-8.333,18.162Z" fill="currentColor"/>
+    <polygon points="650.243 287.913 622.225 287.951 622.267 181.753 650.229 181.827 650.243 287.913" fill="currentColor"/>
+    <polygon points="1210.783 287.849 1182.999 288.043 1182.999 181.82 1210.729 181.752 1210.783 287.849" fill="currentColor"/>
+    <path d="M1196.508,168.821c-9.248-.171-15.164-6.208-15.253-14.809-.096-9.236,6.587-15.157,15.758-15.093,8.999.063,15.439,5.973,15.459,14.897.020,8.851-6.329,15.183-15.963,15.005Z" fill="currentColor"/>
+    <path d="M647.810,164.282c-6.207,6.287-17.220,6.020-23.156.101-5.428-5.413-5.463-15.420-.143-20.877,6.010-6.165,17.001-6.198,23.184-.194,5.412,5.255,5.763,15.250.116,20.970Z" fill="currentColor"/>
+    <polygon points="198.648 144.07 126.918 287.566 55.125 144.01 198.648 144.07" fill="#111110"/>
+    <polygon points="378.865 287.965 235.29 288.01 306.904 144.521 378.865 287.965" fill="#111110"/>
+    <polygon points="235.02 287.661 199.004 288.049 198.987 144.306 234.984 144.262 235.02 287.661" fill="#111110"/>
+  </symbol>
+</svg>
+
+
+<header class="hero">
+  <div class="hero__bar">
+    <svg class="wordmark" viewBox="0 0 1326 432" role="img" aria-label="Via Media"><use href="#vm-wordmark"></use></svg>
+  </div>
+  <div class="hero__inner">
+    <h1>Introducing <span>UltraTube RS</span> to Australian fabricators</h1>
+    <p class="hero__thesis">A three-month Meta campaign that tells the UltraTube RS story to motorsport and performance car enthusiasts in South East Queensland and Northern New South Wales, and sends them to your online shop.</p>
+    <div class="pill">3-month campaign · Australia</div>
+    <div class="prepared">
+      <span>Prepared for</span>
+      <img class="it-logo" src="data:image/png;base64,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" alt="Industrial Tube">
+    </div>
+  </div>
+</header>
+
+<section class="section s-paper">
+  <div class="wrap">
+    <div class="eyebrow">Who we are</div>
+    <h2 class="title">A trusted voice to fabricators.</h2>
+    <div class="copy">
+      <p class="lede">Via Media publishes NZ Performance Car and NZV8. We have been writing for performance car enthusiasts for up to 30 years, and they follow us for the builds, the parts, and the people behind them.</p>
+      <p class="muted">Our following reaches well beyond New Zealand. That gives us a direct line to Australian fabricators, and the credibility to introduce a new product to them.</p>
+    </div>
+    <div class="pullout">
+      <div class="pullout__num">51,000+</div>
+      <div class="pullout__text">Australian followers of NZ Performance Car and NZV8.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section s-white">
+  <div class="wrap">
+    <div class="eyebrow">The opportunity</div>
+    <h2 class="title">A new product for a new audience.</h2>
+    <div class="copy">
+      <p class="lede">Your Google Search and Performance Max campaigns reach buyers who are already searching. Most Australian enthusiasts have not heard of UltraTube RS yet, so they are not searching for it.</p>
+      <p class="muted">Meta puts the product in front of those fabricators first, in the feeds where they already follow car content. Once they know the name, your Google campaigns are there when they search for it. This plan assumes your Google Search and Performance Max campaigns keep running alongside Meta, but that isn't essential. If you would rather move some of that spend across to Meta, we can plan around that.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section s-paper">
+  <div class="wrap">
+    <div class="eyebrow">The plan</div>
+    <h2 class="title">From first look to the shop.</h2>
+    <p class="lede muted">Three stages, running together over three months. Each stage feeds the next.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step__num">1</div>
+        <div>
+          <div class="step__tag">Awareness</div>
+          <h3>Put UltraTube RS in front of Australian fabricators</h3>
+          <p>We run partnership ads that show NZ Performance Car and your new Industrial Tube Australia page together. The ads go to our Australian followers in South East Queensland and Northern New South Wales, and we extend the reach with lookalike audiences and interest targeting for motorsport, drifting, drag racing, and fabrication.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__num">2</div>
+        <div>
+          <div class="step__tag">Education</div>
+          <h3>Explain why it matters</h3>
+          <p>A short video cut from stock or archive motorsport footage with text overlays, and a carousel that sets out the case: a dual-phase steel tube made for safety cages, benchmarked against 4130 chromoly and T45, and predictable to bend and weld.</p>
+          <p>The fabricators from our New Zealand feature give it credibility. Nick Mitchell of Mitchell Race Xtreme, and Dave McCahon, whose Racecraft Engineering has supplied more than 9,700 roll cage kits, speak from hands-on experience.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__num">3</div>
+        <div>
+          <div class="step__tag">Conversion</div>
+          <h3>Bring interested fabricators to the shop</h3>
+          <p>People who watch half the video or engage with the posts see product ads with sizes and prices. These link straight to the UltraTube RS page in your online shop.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest">
+      <h3>Where the traffic goes</h3>
+      <p>We recommend starting with your existing shop page, so buyers land one click from the cart. If the first month shows strong interest but few carts, we can add a dedicated explainer page.</p>
+      <div class="opts">
+        <div class="opt opt--rec">
+          <div class="opt__tag">Recommended start</div>
+          <h4>UltraTube RS shop page with a short copy block</h4>
+          <p>We supply a short block of copy for the top of your UltraTube RS shop page: the key strength figures, one fabricator quote, and why it suits cage work. It sits above the product table and keeps the path to purchase short.</p>
+        </div>
+        <div class="opt">
+          <div class="opt__tag">Option</div>
+          <h4>Dedicated UltraTube RS explainer page</h4>
+          <p>A fuller page on your shop site with fabricator endorsements and the material comparison, linking to the products. We would scope and price this separately if the month-one results point to it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section s-white">
+  <div class="wrap">
+    <div class="eyebrow">How we'll measure it</div>
+    <h2 class="title">Tracking the whole path to purchase.</h2>
+    <div class="copy">
+      <p class="lede">UltraTube RS is new to this audience, so we measure each step from first view to sale. You receive a written report each month.</p>
+    </div>
+    <div class="measures">
+      <div class="measure"><h3>Attention</h3><p>Reach in the target regions, and cost per person who watches half the video.</p></div>
+      <div class="measure"><h3>Interest</h3><p>Visits to the UltraTube RS shop page, tracked by the Meta pixel.</p></div>
+      <div class="measure"><h3>Intent</h3><p>Add to carts and enquiries from the shop page.</p></div>
+      <div class="measure"><h3>Sales</h3><p>UltraTube RS orders from the target regions, compared with the three months before the campaign.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section s-paper">
+  <div class="wrap">
+    <div class="eyebrow">What we need from you</div>
+    <h2 class="title">A short list to get started.</h2>
+    <ul class="needs">
+      <li><div><strong>Industrial Tube Australia Facebook page</strong><span>Set up by your team, so the partnership ads run from it.</span></div></li>
+      <li><div><strong>Meta Business Manager access</strong><span>Shared with Via Media so we can build and run the campaign.</span></div></li>
+      <li><div><strong>Meta pixel on the shop</strong><span>We supply the pixel and events. Your team installs them, and we test that they work.</span></div></li>
+      <li><div><strong>The shop page copy block</strong><span>We supply it and refine it with you. Your team publishes it.</span></div></li>
+      <li><div><strong>Product confirmation</strong><span>Your current Australian approvals for UltraTube RS, so the ads state them correctly.</span></div></li>
+      <li><div><strong>Monthly UltraTube RS sales figures</strong><span>For the target regions, so we can report on sales as well as clicks.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section s-white">
+  <div class="wrap">
+    <div class="eyebrow">What it costs</div>
+    <h2 class="title">A three-month campaign.</h2>
+
+    <div class="cost-card">
+      <div class="cost-group">Via Media fee</div>
+
+      <div class="cost-item">
+        <div class="cost-item__title">Campaign setup and creative</div>
+        <div class="cost-item__fig">$1,000</div>
+        <p class="cost-item__desc">The look and templates for the campaign creative: one 15–30 second video, one carousel, and product ads for retargeting, with one round of revisions. Includes Meta pixel setup and testing, audience and campaign build, and the shop page copy block. Introductory rate, spread across the three monthly payments.</p>
+      </div>
+
+      <div class="cost-item">
+        <div class="cost-item__title">Audience access, months 1–3</div>
+        <div class="cost-item__fig">$3,000</div>
+        <p class="cost-item__desc">Your ads served to the Australian followers of NZ Performance Car and NZV8 in South East Queensland and Northern New South Wales, with lookalike and interest targeting to extend the reach. $1,000 per month.</p>
+      </div>
+
+      <div class="cost-item">
+        <div class="cost-item__title">Campaign management and reporting, months 1–3</div>
+        <div class="cost-item__fig">$1,050</div>
+        <p class="cost-item__desc">Monitoring and optimisation, creative updates as results come in, and one written report each month. $350 per month.</p>
+      </div>
+
+      <div class="cost-group">Meta ad spend (boost)</div>
+
+      <div class="cost-item">
+        <div class="cost-item__title">Months 1–3</div>
+        <div class="cost-item__fig">$2,250</div>
+        <p class="cost-item__desc">Paid to Meta for the awareness, education, and retargeting ads. $750 per month.</p>
+      </div>
+
+      <div class="cost-totals">
+        <div class="cost-total">
+          <span class="cost-total__label">Monthly campaign charge</span>
+          <span class="cost-total__fig">$2,433 <small>+ GST per month</small></span>
+        </div>
+        <p class="cost-monthly">For three months, with setup included. Three-month total: $7,300.</p>
+        <p class="cost-note">All figures are in New Zealand dollars and exclude GST. Excludes new video or photography shoots, and the optional dedicated explainer page.</p>
+      </div>
+    </div>
+
+    <div class="reassure">At the end of three months, we'll review the results with you and agree the next step.</div>
+  </div>
+</section>
+
+<section class="section s-dark">
+  <div class="wrap">
+    <div class="eyebrow">Where to next</div>
+    <h2 class="title">Building on the first three months.</h2>
+    <p class="lede">Once the audience and tracking are in place, there are three natural next steps.</p>
+    <div class="options">
+      <div class="option">
+        <h3>The wider UltraTube range</h3>
+        <p>Extend the campaign to UltraTube precision tube for fabrication, off-road, and commercial fit-out work.</p>
+      </div>
+      <div class="option">
+        <h3>Google and Meta together</h3>
+        <p>We manage your Google Search and Performance Max campaigns alongside Meta, so both channels share audiences, creative, and one report.</p>
+      </div>
+      <div class="option">
+        <h3>A dedicated explainer page</h3>
+        <p>A fuller UltraTube RS page with fabricator endorsements, if the campaign shows buyers want more detail before they order.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <svg class="footer__mark" viewBox="0 0 1326 432" role="img" aria-label="Via Media"><use href="#vm-wordmark-footer"></use></svg>
+    <div class="footer__contact">
+      Michael White · Business Director · 021 222 7720<br>
+      <a href="mailto:michael.white@viamedia.co.nz">michael.white@viamedia.co.nz</a> · <a href="https://viamedia.co.nz">viamedia.co.nz</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
