@@ -16,6 +16,10 @@
       "destination": "/lp/proposals/:token/index.html"
     },
     {
+      "source": "/lp/reports/:token",
+      "destination": "/lp/reports/:token/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

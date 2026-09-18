@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>High Performance Academy — Via Media report</title>
+<link rel="icon" href="/viamedia-favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0}
+  :root{
+    --ink:#111110;
+    --ink2:#2a2a28;
+    --cream:#f4f3f0;
+    --stone:#e2e0dc;
+    --muted:#6b6a67;
+    --white:#ffffff;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  body{
+    background:var(--stone);
+    color:var(--ink2);
+    font-family:'Montserrat',Arial,Helvetica,sans-serif;
+    padding:24px 16px 48px;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+
+  .sheet{
+    max-width:1360px;
+    margin:0 auto;
+    background:var(--white);
+    box-shadow:0 1px 3px rgba(0,0,0,.12), 0 12px 32px rgba(0,0,0,.10);
+  }
+
+  /* ---- bands ---- */
+  .band{
+    background:var(--ink);
+    color:var(--white);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:14px 24px;
+    flex-wrap:wrap;
+  }
+  .band .wordmark{height:22px;width:auto;display:block}
+  .band .tag{
+    font-size:10px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.55);
+    white-space:nowrap;
+  }
+
+  /* ---- title block ---- */
+  .titleblock{
+    padding:26px 24px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .titleblock h1{
+    margin:0;
+    font-size:21pt;
+    line-height:1.15;
+    text-transform:uppercase;
+    font-weight:800;
+    letter-spacing:.01em;
+    text-wrap:balance;
+  }
+  .titleblock .strap{
+    margin:6px 0 0;
+    font-weight:700;
+    font-size:12.5pt;
+    color:var(--ink2);
+  }
+  .titleblock .audience{
+    margin:4px 0 0;
+    font-size:9.5pt;
+    color:var(--muted);
+  }
+  .refs{
+    text-align:right;
+    font-size:8.5pt;
+    color:var(--muted);
+    line-height:1.6;
+    min-width:220px;
+  }
+  .refs b{color:var(--ink2);font-weight:600;}
+
+  /* ---- KPI tiles ---- */
+  .kpi-panel{
+    margin:20px 24px 0;
+    background:var(--cream);
+    border:1px solid var(--stone);
+    border-radius:1.5mm;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+  }
+  .kpi{
+    padding:16px 18px;
+    border-left:1px solid var(--stone);
+  }
+  .kpi:first-child{border-left:none;}
+  .kpi .label{
+    font-size:8.5pt;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:600;
+  }
+  .kpi .figure{
+    font-size:19pt;
+    font-weight:800;
+    color:var(--ink);
+    margin:4px 0 2px;
+    font-variant-numeric:tabular-nums;
+    text-wrap:balance;
+  }
+  .kpi .desc{
+    font-size:8.5pt;
+    color:var(--muted);
+  }
+
+  /* ---- stat strip ---- */
+  .strip{
+    margin:14px 24px 0;
+    padding:10px 16px;
+    border:1px dashed var(--stone);
+    border-radius:1.5mm;
+    font-size:9.5pt;
+    color:var(--ink2);
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+  }
+  .strip span{white-space:nowrap;}
+  .strip b{font-weight:700;color:var(--ink);}
+
+  /* ---- table ---- */
+  .tablewrap{
+    margin:22px 24px 0;
+    overflow-x:auto;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:8.3pt;
+    font-variant-numeric:tabular-nums;
+  }
+  thead th{
+    text-align:right;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    font-size:7.3pt;
+    color:var(--muted);
+    padding:8px 7px;
+    border-bottom:1.4px solid var(--ink);
+    white-space:normal;
+    max-width:80px;
+  }
+  thead th:first-child, thead th:nth-child(2){text-align:left;}
+  tbody td{
+    padding:9px 7px;
+    border-bottom:1px solid var(--stone);
+    text-align:right;
+    white-space:nowrap;
+  }
+  tbody td:first-child, tbody td:nth-child(2){text-align:left;}
+  tbody tr.summary td{
+    font-weight:700;
+    border-top:1.4px solid var(--ink);
+    border-bottom:1.4px solid var(--ink);
+    color:var(--ink);
+  }
+  .footnote{
+    margin:8px 24px 0;
+    font-size:8pt;
+    color:var(--muted);
+    line-height:1.5;
+  }
+
+  /* ---- status / measurement notes ---- */
+  .notes{
+    margin:22px 24px 0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+  .notes h2{
+    font-size:8.5pt;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:700;
+    margin:0 0 8px;
+    padding-bottom:6px;
+    border-bottom:1px solid var(--stone);
+  }
+  .notes p{
+    font-size:9.3pt;
+    line-height:1.55;
+    margin:0;
+    color:var(--ink2);
+  }
+  .notes b{font-weight:700;color:var(--ink);}
+
+  /* ---- bottom band / glossary ---- */
+  .glossary{
+    margin-top:26px;
+    background:var(--ink);
+    color:rgba(255,255,255,.82);
+    padding:20px 24px;
+    display:flex;
+    justify-content:space-between;
+    gap:24px;
+    align-items:flex-end;
+    flex-wrap:wrap;
+  }
+  .glossary .cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px 32px;
+    font-size:7.6pt;
+    line-height:1.6;
+    max-width:840px;
+  }
+  .glossary b{color:#fff;font-weight:600;}
+  .glossary .wordmark{height:20px;width:auto;flex:none;}
+
+  @media (max-width:820px){
+    .titleblock{flex-direction:column;}
+    .refs{text-align:left;}
+    .kpi-panel{grid-template-columns:1fr 1fr;}
+    .kpi:nth-child(3){border-left:none;}
+    .kpi:nth-child(2n){border-left:1px solid var(--stone);}
+    .notes,.glossary .cols{grid-template-columns:1fr;}
+    thead th{max-width:none;}
+  }
+
+  @media print{
+    @page{size:A4 landscape;margin:0;}
+    body{background:var(--white);padding:0;}
+    .sheet{box-shadow:none;max-width:none;}
+    * { print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;pointer-events:none;overflow:hidden;">
+  <symbol id="vm-wordmark" viewBox="0 0 1326 432"><path d="M235,0c111.664,10.915,197.86,102.283,198.111,215.515.251,113.616-86.089,205.547-198.111,216.485h-36C93.719,421.662,9.794,339.837,1.412,232.168c-.819-10.521-.817-21.823,0-32.324C9.797,92.111,93.712,10.391,199,0h36Z" fill="#ffffff"/><path d="M1326,269.118v17.835c-7.93,3.41-16.787,4.077-25.378,1.376-8.358-2.629-12.629-9.363-12.967-18.814-7.294,22.822-35.432,25.527-53.286,16.214-9.909-5.169-14.838-14.626-14.72-25.739.217-20.406,15.561-27.725,33.583-30.722l33.364-5.548c.352-5.647.16-11.721-2.932-16.272-3.688-5.425-10.564-6.2-16.652-5.828-8.9.544-14.859,6.78-14.52,16.138l-27.583-.125c-.002-14.517,7.24-26.232,19.561-32.412,16.426-8.239,36.154-8.217,52.479.803,10.214,5.644,17.131,16.93,17.229,28.81l.443,53.789,11.378.494ZM1284.055,256.048c1.842-4.622,2.455-9.007,2.477-13.96l-27.615,4.783c-4.805.832-9.177,4.464-10.155,8.373-1.147,4.585-.715,10.73,3.837,13.09,12.054,6.249,26.527.078,31.456-12.287Z" fill="#ffffff"/><path d="M919.126,288.282l-.307-101.609-40.391,100.988c-3.756.668-7.173.674-11.686.294l-40.749-99.924-.53,100.204-27.984-.024-.011-144.12,37.975-.137,37.198,94.533,36.861-94.41,37.517-.099-.052,144.26-27.841.044Z" fill="#ffffff"/><path d="M1128.216,286.543c-21.168,11.032-46.094,1.182-55.379-20.536-7.979-18.663-8.691-40.283-1.191-59.06,8.288-20.75,29.334-31.654,50.464-26.216,10.01,2.576,15.324,9.337,20.216,18.962l.246-55.724,27.963.15-.02,143.841-20.946-.023-5.081-21.93c-4.344,7.852-7.626,16.03-16.272,20.536ZM1140.546,217.789c-3.88-9.96-12.646-15.813-22.947-15.193-9.784.589-17.833,7.013-20.732,17.265-3.388,11.979-2.913,25.118,3.051,36.349,4.157,7.827,12.822,11.336,21.307,10.578,21.945-1.959,26.058-31.703,19.32-49Z" fill="#ffffff"/><polygon points="587.633 143.91 617.78 143.865 567.948 287.932 535.647 288.018 485.222 144.096 515.956 144.012 551.716 249.564 587.633 143.91" fill="#ffffff"/><path d="M675.041,286.35c-10.962-4.919-16.147-14.951-16.079-26.357.117-19.728,15.055-27.585,32.392-30.488l34.683-5.808c.207-5.219-.016-10.918-2.424-15.322-3.114-5.697-9.643-6.852-15.568-6.876-9.642-.039-16.572,6.301-16.308,16.264l-27.434-.06c-.349-14.074,7.235-26.401,19.65-32.607,13.444-6.721,28.04-7.388,42.493-3.388,15.743,4.357,27.139,17.493,27.247,34.423l.335,52.517,10.983.228-.035,18.199c-8.609,3.686-17.907,3.923-26.602.651-7.267-2.734-10.342-8.815-11.64-17.282-7.685,21.345-33.531,24.39-51.694,15.906ZM692.557,268.679c12.223,5.583,25.782-.491,30.694-12.281,1.935-4.645,2.542-9.063,2.641-14.301l-27.205,4.64c-4.878.832-9.483,4.534-10.466,8.11-1.419,5.156-.819,11.478,4.337,13.832Z" fill="#ffffff"/><path d="M994.878,264.197c9.85,6.639,28.964,4.741,33.494-9.712l26.921.089c-5.668,32.208-41.174,42.216-67.578,32.595-32.416-11.811-39.377-53.531-25.874-81.476s52.964-34.264,76.909-16.383c15.923,11.891,20.651,33.174,19.349,52.917l-73.914.067c.572,8.417,3.466,17.032,10.692,21.903ZM984.734,224.242l44.628-.023c-.167-7.385-2.671-14.601-8.703-18.925-7.99-5.729-19.949-5.462-27.591.786-5.521,4.513-8.199,11.526-8.333,18.162Z" fill="#ffffff"/><polygon points="650.243 287.913 622.225 287.951 622.267 181.753 650.229 181.827 650.243 287.913" fill="#ffffff"/><polygon points="1210.783 287.849 1182.999 288.043 1182.999 181.82 1210.729 181.752 1210.783 287.849" fill="#ffffff"/><path d="M1196.508,168.821c-9.248-.171-15.164-6.208-15.253-14.809-.096-9.236,6.587-15.157,15.758-15.093,8.999.063,15.439,5.973,15.459,14.897.02,8.851-6.329,15.183-15.963,15.005Z" fill="#ffffff"/><path d="M647.81,164.282c-6.207,6.287-17.22,6.02-23.156.101-5.428-5.413-5.463-15.42-.143-20.877,6.01-6.165,17.001-6.198,23.184-.194,5.412,5.255,5.763,15.25.116,20.97Z" fill="#ffffff"/><polygon points="198.648 144.07 126.918 287.566 55.125 144.01 198.648 144.07" fill="#000000"/><polygon points="378.865 287.965 235.29 288.01 306.904 144.521 378.865 287.965" fill="#000000"/><polygon points="235.02 287.661 199.004 288.049 198.987 144.306 234.984 144.262 235.02 287.661" fill="#000000"/></symbol>
+</svg>
+
+<div class="sheet">
+
+  <div class="band">
+    <svg class="wordmark" viewBox="0 0 1326 432" role="img" aria-label="Via Media"><use href="#vm-wordmark"></use></svg>
+    <div class="tag">Paid social &mdash; campaign progress check</div>
+  </div>
+
+  <div class="titleblock">
+    <div>
+      <h1>High Performance Academy</h1>
+      <p class="strap">Paid Social &mdash; Leads (competition entries) &middot; Day 4 of 27</p>
+      <p class="audience">NZ Performance Car and NZV8 first-party audiences plus lookalikes &middot; 18&ndash;65 &middot; New Zealand</p>
+    </div>
+    <div class="refs">
+      NZPC job <b>HIG7874-68295</b><br>
+      NZV8 job <b>HIG7874-68293</b><br>
+      Reporting job <b>HIG7874-68296</b><br>
+      Flight <b>15 Sep &ndash; 12 Oct 2026</b> (in progress)<br>
+      Data as at <b>18 Sep 2026, 10:50am NZT</b>
+    </div>
+  </div>
+
+  <div class="kpi-panel">
+    <div class="kpi">
+      <div class="label">Audience</div>
+      <div class="figure">69,918*</div>
+      <div class="desc">Reach &mdash; combined across two ad accounts, some crossover</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Delivery</div>
+      <div class="figure">99,203</div>
+      <div class="desc">Impressions &mdash; frequency 1.36 (NZPC), 1.49 (NZV8)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Outcome</div>
+      <div class="figure">1,065</div>
+      <div class="desc">Confirmed entries recorded via HPA's pixel</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Efficiency</div>
+      <div class="figure">$0.55</div>
+      <div class="desc">Cost per confirmed entry (CPA), combined</div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <span>Landing page views <b>2,193</b> &rarr; confirmed entries <b>1,065</b> (<b>48.57%</b> conversion)</span>
+    <span>Spend to date <b>$589.21</b> of <b>$4,000.00</b> (<b>14.7%</b>)</span>
+    <span>Flight elapsed <b>14.8%</b> (day 4 of 27)</span>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Job</th>
+          <th>Schedule</th>
+          <th>Budget</th>
+          <th>Amount<br>spent</th>
+          <th>Reach</th>
+          <th>Impressions</th>
+          <th>Frequency</th>
+          <th>Link<br>clicks</th>
+          <th>CPC<br>(link)</th>
+          <th>Landing<br>page views</th>
+          <th>Confirmed<br>entries</th>
+          <th>CPA</th>
+          <th>LPV &rarr; entry<br>rate (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>NZ Performance Car &mdash; Leads</td>
+          <td>15 Sep&ndash;12 Oct 2026 (in progress)</td>
+          <td>$2,000.00</td>
+          <td>$293.62</td>
+          <td>37,303</td>
+          <td>50,689</td>
+          <td>1.36</td>
+          <td>1,347</td>
+          <td>$0.22</td>
+          <td>1,268</td>
+          <td>626</td>
+          <td>$0.47</td>
+          <td>49.37</td>
+        </tr>
+        <tr>
+          <td>NZV8 &mdash; Leads</td>
+          <td>15 Sep&ndash;12 Oct 2026 (in progress)</td>
+          <td>$2,000.00</td>
+          <td>$295.59</td>
+          <td>32,615</td>
+          <td>48,514</td>
+          <td>1.49</td>
+          <td>1,013</td>
+          <td>$0.29</td>
+          <td>925</td>
+          <td>439</td>
+          <td>$0.67</td>
+          <td>47.46</td>
+        </tr>
+        <tr class="summary">
+          <td>Summary</td>
+          <td>15 Sep&ndash;12 Oct 2026 (in progress)</td>
+          <td>$4,000.00</td>
+          <td>$589.21</td>
+          <td>69,918*</td>
+          <td>99,203</td>
+          <td>&mdash;</td>
+          <td>2,360</td>
+          <td>&mdash;</td>
+          <td>2,193</td>
+          <td>1,065</td>
+          <td>$0.55</td>
+          <td>48.57</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote">*Summary reach is the arithmetic sum of the NZPC and NZV8 ad account figures. Meta cannot deduplicate reach across separate ad accounts; the two campaigns run to different first-party audiences with limited crossover, so this is a bounded estimate rather than an exact figure. Frequency and CPC are dashed in the summary row for the same reason &mdash; they cannot be blended across accounts. CPA and the LPV &rarr; entry rate are true combined figures: total spend divided by total confirmed entries, and total confirmed entries divided by total landing page views.</p>
+
+  <div class="notes">
+    <div>
+      <h2>Delivery status</h2>
+      <p>Both ad sets optimise to the <b>Complete Registration</b> event on HPA's pixel, which HPA has shared into Via Media's ad account. Each has already recorded well over the roughly 30&ndash;40 weekly conversions Meta looks for to exit the learning phase &mdash; <b>626</b> on NZPC and <b>439</b> on NZV8 in the first four days &mdash; so current figures reflect stable, optimised delivery rather than early calibration.</p>
+    </div>
+    <div>
+      <h2>Measurement note</h2>
+      <p>All figures come from Meta Ads Manager. Landing page views and confirmed entries are counted through the Complete Registration event on HPA's pixel. None of this is verified server-side against HPA's own competition database, and it will not always match HPA's internal count, because the two systems count differently. Treat these as Meta's indication of activity rather than a confirmed total.</p>
+    </div>
+  </div>
+
+  <div class="glossary">
+    <div class="cols">
+      <div><b>Reach</b> is the number of unique accounts that saw your ads; summary reach here is a cross-account sum, not a deduplicated figure.</div>
+      <div><b>Impressions</b> are the number of times your ads were on-screen, including repeat views by the same accounts.</div>
+      <div><b>Frequency</b> is the average number of times each account saw the campaign.</div>
+      <div><b>Link clicks</b> counts taps on the ad's link &mdash; the tap, not arrival at the destination.</div>
+      <div><b>Landing page views</b> are visits Meta's pixel recorded on HPA's entry page after a click.</div>
+      <div><b>Confirmed entries</b> are Complete Registration events recorded by HPA's pixel when the competition entry form is submitted.</div>
+      <div><b>CPA</b> (cost per acquisition) is amount spent divided by confirmed entries.</div>
+      <div><b>LPV &rarr; entry rate</b> is the share of landing page views that went on to record a confirmed entry.</div>
+    </div>
+    <svg class="wordmark" viewBox="0 0 1326 432" role="img" aria-label="Via Media"><use href="#vm-wordmark"></use></svg>
+  </div>
+
+</div>
+</body>
+</html>
