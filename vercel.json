@@ -47,6 +47,10 @@
       "destination": "/lp/reports/:token/index.html"
     },
     {
+      "source": "/lp/review/:token",
+      "destination": "/lp/review/:token/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
