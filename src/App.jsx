@@ -7,6 +7,7 @@ import About from './components/About'
 import Insights from './pages/Insights'
 import Article from './pages/Article'
 import AdSizes from './pages/AdSizes'
+import AdSpecsPrint from './pages/AdSpecsPrint'
 import ChromeShowcase from './pages/lp/ChromeShowcase'
 import useScrollAnimations from './hooks/useScrollAnimations'
 import { ARTICLES } from './data/articles'
@@ -35,7 +36,8 @@ const ROUTE_TITLES = {
   '/': DEFAULT_TITLE,
   '/about': `About — ${SITE_NAME}`,
   '/insights': `Insights — ${SITE_NAME}`,
-  '/ad-sizes': `Ad Sizes — ${SITE_NAME}`,
+  '/ad-sizes': `Ad specs and deadlines — ${SITE_NAME}`,
+  '/ad-sizes/print': `Print deadlines and specs — ${SITE_NAME}`,
   '/lp/chrome-showcase': `Elite 50 entrant details — ${SITE_NAME}`,
 }
 
@@ -76,6 +78,17 @@ function PageTitleAndView() {
 
 function AppContent() {
   useScrollAnimations()
+  const { pathname } = useLocation()
+
+  // The PDF layout renders on its own, without the site nav and footer.
+  if (pathname.replace(/\/+$/, '') === '/ad-sizes/print') {
+    return (
+      <>
+        <PageTitleAndView />
+        <AdSpecsPrint />
+      </>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-bg text-ink snap-container">
