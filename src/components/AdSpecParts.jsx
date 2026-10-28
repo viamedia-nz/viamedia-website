@@ -153,13 +153,25 @@ function DateText({ iso, compact, withYear = false }) {
   )
 }
 
+// The cover month or range leads ("Jan–Feb 2027"); on phones the year drops to
+// its own line so the column stays narrow.
+function CoverText({ cover, compact }) {
+  if (compact) return cover
+  const parts = cover.split(' ')
+  const year = parts.pop()
+  return (
+    <>
+      <span className="block sm:inline whitespace-nowrap">{parts.join(' ')}</span> <span>{year}</span>
+    </>
+  )
+}
+
 // rows: issues to show. highlightFirst marks the next open issue.
 export function DeadlinesTable({ brand, rows, highlightFirst = false, compact = false }) {
-  const showMonth = brand.id === 'ac'
   const th = compact
     ? 'text-[9px] py-[7px] px-[7px]'
-    : 'text-[10px] sm:text-[10.5px] py-2 px-[6px] sm:px-3'
-  const td = compact ? 'text-[11.5px] py-[7.5px] px-[7px]' : 'text-[13px] py-[10px] px-[6px] sm:px-3'
+    : 'text-[10px] sm:text-[10.5px] py-2 px-1 sm:px-3'
+  const td = compact ? 'text-[11.5px] py-[7.5px] px-[7px]' : 'text-[13px] py-[10px] px-1 sm:px-3'
   const head = (key, label) => (
     <th className={`${th} text-left font-semibold uppercase tracking-[0.06em] text-muted border-b-2 border-ink whitespace-nowrap`}>
       <span className="inline-flex items-center gap-[6px]">
@@ -187,15 +199,13 @@ export function DeadlinesTable({ brand, rows, highlightFirst = false, compact = 
           return (
             <tr key={r.issue} className={next ? 'bg-[#EEF2F6]' : ''}>
               <td
-                className={`${cell} font-bold text-ink`}
+                className={`${td} border-b border-stone align-top font-bold text-ink ${compact ? 'whitespace-nowrap' : 'sm:whitespace-nowrap'}`}
                 style={next ? { boxShadow: 'inset 3px 0 0 #D4001A' } : undefined}
               >
-                {r.issue}
-                {showMonth && (
-                  <span className={`block font-medium text-muted ${compact ? 'text-[9px]' : 'text-[11px]'}`}>
-                    {r.month}
-                  </span>
-                )}
+                <CoverText cover={r.cover} compact={compact} />
+                <span className={`block font-medium text-muted whitespace-nowrap ${compact ? 'text-[9px]' : 'text-[11px]'}`}>
+                  Issue {r.issue}
+                </span>
                 {next && <span className="sr-only"> (next issue)</span>}
               </td>
               <td className={`${cell} text-dim`}>
@@ -205,7 +215,7 @@ export function DeadlinesTable({ brand, rows, highlightFirst = false, compact = 
                 <DateText iso={r.supply} compact={compact} />
               </td>
               <td className={`${cell} text-ink font-semibold`}>
-                <DateText iso={r.live} compact={compact} withYear={!showMonth} />
+                <DateText iso={r.live} compact={compact} />
               </td>
             </tr>
           )

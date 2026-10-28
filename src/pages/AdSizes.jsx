@@ -145,7 +145,7 @@ function DeadlinesPanel({ id, brands }) {
         </span>
       </summary>
 
-      <div className="px-3 sm:px-5 pb-5 pt-1 bg-white border-t border-black/10">
+      <div className="px-2 sm:px-5 pb-5 pt-1 bg-white border-t border-black/10">
         <div className="py-4">
           <DateLegend />
         </div>
