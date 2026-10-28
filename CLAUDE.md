@@ -31,3 +31,9 @@ Deployed on Vercel.
 - Brand colors: `red` (#D4001A), `red-dark` (#A80015), `navy` (#0F2340), `steel` (#2B3A4A)
 - Neutrals: `ink` (#111110), `muted` (#6B6A67), `bg` (#F4F3F0), `stone` (#E2E0DC)
 - All colors available as Tailwind utilities (e.g. `text-red`, `bg-navy`, `border-stone`)
+
+## Client resource pages and PDFs
+
+Before building any client-facing resource page, PDF download, or client report, read
+`docs/client-resource-pages.md`. It holds the approved design rules and the
+data file → web page → print route → static PDF pattern (reference build: `/ad-sizes`).
