@@ -1,5 +1,13 @@
 // Print deadlines for the /ad-sizes page and the PDF at /ad-sizes/print.
 //
+// AFTER ANY EDIT HERE, ALSO:
+//   1. Regenerate the PDF from /ad-sizes/print (Chrome: Print > Save as PDF,
+//      margins none, background graphics on) and replace
+//      public/downloads/via-media-print-deadlines-and-specs.pdf.
+//   2. Update UPDATED and AS_FROM in src/pages/AdSpecsPrint.jsx.
+//   3. Bump the ?v= value on PDF_HREF in src/pages/AdSizes.jsx.
+// The download is a static file; it does not rebuild from this data on its own.
+//
 // Source of truth: Monday board "Deadlines & Ad Revenue" (1487983673).
 //   makeUp = Make-up Deadline (date36)
 //   supply = Supply Deadline (date44)
