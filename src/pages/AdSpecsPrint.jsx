@@ -3,7 +3,7 @@
 // To update: change src/data/printDeadlines.js, set UPDATED and AS_FROM below,
 // then open /ad-sizes/print in Chrome, Print, Save as PDF (margins: none,
 // background graphics on), and replace public/downloads/via-media-print-deadlines-and-specs.pdf.
-import { PRINT, PRINT_NOTE, printSize, DIGITAL_SCHEDULING } from '../data/adSpecs'
+import { PRINT, printSize, DIGITAL_SCHEDULING } from '../data/adSpecs'
 import { BRANDS, openIssues } from '../data/printDeadlines'
 import { DateLegend, DeadlinesTable, Icon, PrintThumb } from '../components/AdSpecParts'
 
@@ -140,7 +140,12 @@ export default function AdSpecsPrint() {
               <Icon name="print" className="w-[5mm] h-[5mm]" />
               Supplying print artwork
             </div>
-            <p className="mt-[2mm] text-[8.5pt] text-dim leading-[1.55]">{PRINT_NOTE}</p>
+            <p className="mt-[2mm] text-[8.5pt] text-dim leading-[1.55]">
+              <b className="text-ink">Auto Channel:</b> {PRINT.ac.note.replace('Supply print ads as ', '')}
+            </p>
+            <p className="mt-[1mm] text-[8.5pt] text-dim leading-[1.55]">
+              <b className="text-ink">NZ Performance Car &amp; NZV8:</b> {PRINT.consumer.note.replace('Supply print ads as ', '')}
+            </p>
             <p className="mt-[1.5mm] text-[8.5pt] text-dim leading-[1.55]">
               Add 5mm bleed to double-page, full-page and bottom cover strip ads. Other units need no bleed.
             </p>

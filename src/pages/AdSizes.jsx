@@ -5,7 +5,6 @@ import {
   DIGITAL_NOTE,
   DIGITAL_SCHEDULING,
   PRINT,
-  PRINT_NOTE,
   SOCIAL,
   SOCIAL_COPY,
   printSize,
@@ -177,7 +176,7 @@ function DeadlinesPanel({ id, brands }) {
 
 function PrintCard({ spec, panel }) {
   return (
-    <ChannelCard icon="print" title="Print" rule={PRINT_NOTE}>
+    <ChannelCard icon="print" title="Print" rule={spec.note}>
       {spec.units.map((u) => (
         <UnitRow key={u.name} thumb={<PrintThumb unit={u} page={spec.page} />} name={u.name} size={printSize(u)} />
       ))}

@@ -7,8 +7,10 @@ export const DIGITAL_NOTE =
 export const DIGITAL_SCHEDULING =
   'Digital campaign dates are flexible. A campaign can align with a print issue, run to calendar months, or run for a set period.'
 
-export const PRINT_NOTE =
-  'Supply print ads as PDF/X-1a: CMYK, 300dpi, fonts embedded, transparency flattened.'
+// Auto Channel's spec matches its media kit page. NZPC/NZV8 keep the wording
+// that was live before Oct 2026 until the PDF/X-1a requirement is confirmed for them.
+const PRINT_NOTE_AC = 'Supply print ads as PDF/X-1a: CMYK, 300dpi, fonts embedded, transparency flattened.'
+const PRINT_NOTE_CONSUMER = 'Supply print ads as PDF: CMYK, 300dpi, fonts embedded.'
 
 export const SOCIAL = [
   {
@@ -41,6 +43,7 @@ export const SOCIAL_COPY = [
 // at: where the unit sits on the page in the drawing ('full', 'bottom', 'bottom-left', 'top-right', 'sheet').
 export const PRINT = {
   ac: {
+    note: PRINT_NOTE_AC,
     page: { w: 240, h: 340 },
     units: [
       { name: 'Double-page spread', w: 480, h: 340, bleed: true, at: 'spread' },
@@ -54,6 +57,7 @@ export const PRINT = {
     ],
   },
   consumer: {
+    note: PRINT_NOTE_CONSUMER,
     page: { w: 210, h: 297 },
     units: [
       { name: 'Double-page spread', w: 420, h: 297, bleed: true, at: 'spread' },
