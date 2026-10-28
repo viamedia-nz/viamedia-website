@@ -19,7 +19,8 @@ import {
   PrintThumb,
 } from '../components/AdSpecParts'
 
-export const PDF_HREF = '/downloads/via-media-print-deadlines-and-specs.pdf'
+// Bump the v= value whenever the PDF is replaced, so browsers fetch the new file.
+export const PDF_HREF = '/downloads/via-media-print-deadlines-and-specs.pdf?v=2026-10-28c'
 
 // ---------- Layout pieces ----------
 
