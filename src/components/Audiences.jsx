@@ -13,7 +13,7 @@ const BRANDS = [
     eyebrow: 'Consumer',
     title: 'NZV8',
     text: "Serving NZ's V8 and classic vehicle community for over two decades. An audience that combines genuine passion with serious purchasing power — invested in quality, reliability, and the brands they trust. Builds in this community regularly run into six figures.",
-    pin: '30–65+  |  Established Income  |  Brand Loyal',
+    pin: '35–65+  |  Established Income  |  Brand Loyal',
   },
   {
     type: 'trade',
