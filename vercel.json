@@ -35,6 +35,15 @@
           "value": "noindex, nofollow, noarchive"
         }
       ]
+    },
+    {
+      "source": "/media-kit/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
     }
   ],
   "rewrites": [
@@ -49,6 +58,10 @@
     {
       "source": "/lp/review/:token",
       "destination": "/lp/review/:token/index.html"
+    },
+    {
+      "source": "/media-kit/:brand",
+      "destination": "/media-kit/:brand/index.html"
     },
     {
       "source": "/(.*)",
