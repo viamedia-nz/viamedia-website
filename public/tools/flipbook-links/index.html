@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="icon" href="/viamedia-favicon.svg" type="image/svg+xml">
+<title>Flipbook Link Builder</title>
+<!--
+  Internal staff tool. Unlisted: nothing links here. Not indexed: X-Robots-Tag in vercel.json (/tools/...).
+
+  MAINTENANCE
+  Each month, when the Auto Channel flipbook is swapped, add the new issue to the TOP of ISSUES in the script below.
+  Format: [issue number, "Month Year"],
+  The Auto Channel site turns the issue number into the Issuu document (AC_ISSUES in Elementor template 780),
+  so no Issuu names are needed here.
+
+  Link format: https://autochannel.co.nz/?issue=96&pg=14&utm_source=viamedia&utm_medium=email&utm_campaign=client-preview
+  Use pg, never page: WordPress strips "page" before the flipbook script can read it.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: Via Media resource-page shell (dark header band, light utility body, white card), one narrow column: form, then the finished link. Single light look. */
+:root{
+  --ink:#111110; --dim:#3E3D3A; --muted:#6B6A67;
+  --off:#F4F3F0; --stone:#E2E0DC; --white:#FFFFFF;
+  --red:#D4001A; --red-dark:#A80015; --steel:#354757; --band:#1A1918; --steel-dark:#2B3A4A;
+  --font:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--off);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.55}
+.wrap{max-width:680px;margin:0 auto}
+.gutter{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1{margin:0;text-wrap:balance}
+p{margin:0}
+
+header.band{color:#fff;background:linear-gradient(105deg,var(--band) 0%,var(--band) 42%,var(--steel) 100%)}
+header.band .inner{padding-block:32px 30px;display:grid;gap:14px}
+.mark{display:block;height:26px;width:auto}
+h1{font-size:clamp(26px,4vw,34px);font-weight:900;letter-spacing:-.02em;line-height:1.1}
+.lede{max-width:60ch;color:rgba(255,255,255,.82);font-size:15px}
+.rule{height:5px;background:linear-gradient(90deg,var(--red),var(--red-dark))}
+
+main{padding-block:24px 64px;display:grid;gap:18px}
+form{background:var(--white);border-radius:14px;padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:18px 16px}
+.f{display:grid;gap:6px;min-width:0;align-content:start}
+.f.full{grid-column:1/-1}
+label{font-size:13px;font-weight:800}
+.hint{font-size:12px;color:var(--muted)}
+.err{font-size:12px;color:var(--red-dark);font-weight:700}
+select,input{font:inherit;font-size:15px;color:var(--ink);background:var(--white);border:1px solid var(--stone);border-radius:8px;padding:10px 12px;width:100%;min-width:0}
+input[aria-invalid="true"]{border-color:var(--red)}
+select:focus-visible,input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+
+.out{background:var(--steel-dark);color:#fff;border-radius:14px;padding:22px;display:grid;gap:14px}
+.sum{font-size:14px;font-weight:700}
+.sum span{color:rgba(255,255,255,.65);font-weight:500}
+.link{font-family:var(--mono);font-size:13px;line-height:1.6;overflow-wrap:anywhere;word-break:break-all;background:rgba(0,0,0,.25);border-radius:8px;padding:12px;user-select:all;min-width:0}
+.link .k{color:rgba(255,255,255,.6)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{font:inherit;font-size:14px;font-weight:800;border-radius:999px;padding:11px 22px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.primary{background:var(--red);color:#fff;border:0}
+.btn.primary:hover{background:var(--red-dark)}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.toast{font-size:13px;font-weight:700}
+.notes{font-size:12.5px;color:var(--muted);display:grid;gap:4px}
+@media (max-width:540px){form{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.btn{transition:background-color .12s}}
+</style>
+</head>
+<body>
+<header class="band">
+  <div class="wrap gutter inner">
+    <img class="mark" src="/logos/viamedia-wordmark-white.svg" alt="Via Media">
+    <h1>Auto Channel flipbook links</h1>
+    <p class="lede">Pick the issue and page, then copy the link into your email. The link opens the flipbook on that page, and we can see the visits it brings in.</p>
+  </div>
+</header>
+<div class="rule"></div>
+
+<main class="wrap gutter">
+  <form id="f" novalidate>
+    <div class="f">
+      <label for="issue">Issue</label>
+      <select id="issue"></select>
+    </div>
+    <div class="f">
+      <label for="pg">Page</label>
+      <input id="pg" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="Cover" autocomplete="off" aria-describedby="pg-hint pg-err">
+      <span class="hint" id="pg-hint">The page number printed in the magazine. Blank opens the cover.</span>
+      <span class="err" id="pg-err" hidden>Use a page number from 1 to 200.</span>
+    </div>
+    <div class="f">
+      <label for="med">Sent as</label>
+      <select id="med">
+        <option value="email">Email</option>
+        <option value="message">Text or chat message</option>
+        <option value="social">Social post</option>
+      </select>
+    </div>
+    <div class="f">
+      <label for="camp">Reason</label>
+      <select id="camp">
+        <option value="client-preview">Show a client their ad or story</option>
+        <option value="sales-pitch">Sales pitch to a prospect</option>
+        <option value="general">Other</option>
+      </select>
+    </div>
+  </form>
+
+  <section class="out" aria-live="polite">
+    <p class="sum" id="sum"></p>
+    <div class="link" id="link"></div>
+    <div class="actions">
+      <button class="btn primary" id="copy" type="button">Copy link</button>
+      <a class="btn ghost" id="test" href="#" target="_blank" rel="noopener">Open to test</a>
+      <span class="toast" id="toast" role="status"></span>
+    </div>
+  </section>
+
+  <div class="notes">
+    <p>Copy the link from here, not from the browser address bar after the flipbook closes.</p>
+    <p>Google Analytics records the visit and anything the reader does on the site. Page turns inside the flipbook are counted by Issuu.</p>
+  </div>
+</main>
+
+<script>
+(function(){
+  /* ISSUE LIST — newest first. Add the new issue at the top each month. */
+  var ISSUES = [
+    [96, "November 2026"],
+    [95, "October 2026"],
+    [94, "September 2026"],
+    [93, "August 2026"],
+    [92, "July 2026"],
+    [91, "June 2026"],
+    [90, "May 2026"],
+    [89, "April 2026"],
+    [88, "March 2026"],
+    [87, "February 2026"],
+    [86, "December 2025"],
+    [85, "November 2025"]
+  ];
+  var BASE = "https://autochannel.co.nz/";
+  var SOURCE = "viamedia"; /* fixed: every link built here is sent by the Via Media team */
+
+  var $ = function(id){ return document.getElementById(id); };
+  var issue=$("issue"), pg=$("pg"), med=$("med"), camp=$("camp");
+
+  ISSUES.forEach(function(it, i){
+    var o=document.createElement("option");
+    o.value=String(it[0]); o.textContent="Issue "+it[0]+" — "+it[1]+(i===0?" (latest)":"");
+    issue.appendChild(o);
+  });
+
+  function readPage(){
+    var v=pg.value.trim();
+    if(v==="") return {ok:true, n:null};
+    if(!/^[0-9]+$/.test(v)) return {ok:false};
+    var n=parseInt(v,10);
+    return (n>=1 && n<=200) ? {ok:true, n:n} : {ok:false};
+  }
+  function label(sel){ return sel.options[sel.selectedIndex].textContent; }
+
+  var current="";
+  function build(){
+    var p=readPage();
+    pg.setAttribute("aria-invalid", p.ok?"false":"true");
+    $("pg-err").hidden = p.ok;
+    var u=new URL(BASE);
+    u.searchParams.set("issue", issue.value);
+    if(p.ok && p.n) u.searchParams.set("pg", String(p.n));
+    u.searchParams.set("utm_source", SOURCE);
+    u.searchParams.set("utm_medium", med.value);
+    u.searchParams.set("utm_campaign", camp.value);
+    current = p.ok ? u.toString() : "";
+
+    var it=ISSUES.filter(function(x){ return String(x[0])===issue.value; })[0];
+    var sum=$("sum"); sum.textContent="";
+    sum.appendChild(document.createTextNode("Opens Issue "+it[0]+" ("+it[1]+"), "+(p.ok&&p.n?"page "+p.n:"cover")+" "));
+    var s=document.createElement("span"); s.textContent="· "+label(med); sum.appendChild(s);
+
+    var box=$("link"); box.textContent="";
+    if(!current){ box.textContent="Fix the page number to make the link."; }
+    else{
+      box.appendChild(document.createTextNode(u.origin+u.pathname+"?"));
+      u.search.slice(1).split("&").forEach(function(part, i){
+        var eq=part.indexOf("="); var k=document.createElement("span"); k.className="k";
+        k.textContent=(i?"&":"")+part.slice(0,eq+1);
+        box.appendChild(k); box.appendChild(document.createTextNode(part.slice(eq+1)));
+      });
+    }
+    $("copy").disabled = !current;
+    var t=$("test");
+    if(current){ t.href=current; t.removeAttribute("aria-disabled"); } else { t.removeAttribute("href"); t.setAttribute("aria-disabled","true"); }
+    $("toast").textContent="";
+  }
+
+  function selectLink(){
+    var r=document.createRange(); r.selectNodeContents($("link"));
+    var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+
+  $("copy").addEventListener("click", function(){
+    if(!current) return;
+    var done=function(){ $("toast").textContent="Copied. Paste it into your email."; };
+    var fail=function(){ selectLink(); $("toast").textContent="Link selected. Press Ctrl+C or Cmd+C to copy."; };
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(current).then(done, fail); }
+      else fail();
+    }catch(e){ fail(); }
+  });
+
+  [issue,med,camp].forEach(function(el){ el.addEventListener("change", build); });
+  pg.addEventListener("input", build);
+  $("f").addEventListener("submit", function(e){ e.preventDefault(); });
+
+  build();
+})();
+</script>
+</body>
+</html>
