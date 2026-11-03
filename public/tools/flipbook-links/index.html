@@ -10,10 +10,8 @@
   Internal staff tool. Unlisted: nothing links here. Not indexed: X-Robots-Tag in vercel.json (/tools/...).
 
   MAINTENANCE
-  Each month, when the Auto Channel flipbook is swapped, add the new issue to the TOP of ISSUES in the script below.
-  Format: [issue number, "Month Year"],
-  The Auto Channel site turns the issue number into the Issuu document (AC_ISSUES in Elementor template 780),
-  so no Issuu names are needed here.
+  None. Staff type the issue number. The Auto Channel site turns it into the Issuu document
+  (AC_ISSUES in Elementor template 780), so no issue list or Issuu names are kept here.
 
   Link format: https://autochannel.co.nz/?issue=96&pg=14&utm_source=viamedia&utm_medium=email&utm_campaign=client-preview
   Use pg, never page: WordPress strips "page" before the flipbook script can read it.
@@ -88,7 +86,9 @@ select:focus-visible,input:focus-visible,button:focus-visible,a:focus-visible{ou
   <form id="f" novalidate>
     <div class="f">
       <label for="issue">Issue</label>
-      <select id="issue"></select>
+      <input id="issue" type="text" inputmode="numeric" pattern="[0-9]*" required autocomplete="off" aria-describedby="issue-hint issue-err">
+      <span class="hint" id="issue-hint">The issue number on the cover or in the job code. AC_096 is issue 96.</span>
+      <span class="err" id="issue-err" hidden>Use an issue number from 1 to 999.</span>
     </div>
     <div class="f">
       <label for="pg">Page</label>
@@ -132,32 +132,20 @@ select:focus-visible,input:focus-visible,button:focus-visible,a:focus-visible{ou
 
 <script>
 (function(){
-  /* ISSUE LIST — newest first. Add the new issue at the top each month. */
-  var ISSUES = [
-    [96, "November 2026"],
-    [95, "October 2026"],
-    [94, "September 2026"],
-    [93, "August 2026"],
-    [92, "July 2026"],
-    [91, "June 2026"],
-    [90, "May 2026"],
-    [89, "April 2026"],
-    [88, "March 2026"],
-    [87, "February 2026"],
-    [86, "December 2025"],
-    [85, "November 2025"]
-  ];
   var BASE = "https://autochannel.co.nz/";
   var SOURCE = "viamedia"; /* fixed: every link built here is sent by the Via Media team */
 
   var $ = function(id){ return document.getElementById(id); };
   var issue=$("issue"), pg=$("pg"), med=$("med"), camp=$("camp");
 
-  ISSUES.forEach(function(it, i){
-    var o=document.createElement("option");
-    o.value=String(it[0]); o.textContent="Issue "+it[0]+" — "+it[1]+(i===0?" (latest)":"");
-    issue.appendChild(o);
-  });
+  /* Issue: required, digits only, 1 to 999. Blank is not an error message, but no link is made. */
+  function readIssue(){
+    var v=issue.value.trim();
+    if(v==="") return {ok:false, blank:true};
+    if(!/^[0-9]+$/.test(v)) return {ok:false};
+    var n=parseInt(v,10);
+    return (n>=1 && n<=999) ? {ok:true, n:n} : {ok:false};
+  }
 
   function readPage(){
     var v=pg.value.trim();
@@ -170,24 +158,25 @@ select:focus-visible,input:focus-visible,button:focus-visible,a:focus-visible{ou
 
   var current="";
   function build(){
-    var p=readPage();
+    var p=readPage(), q=readIssue();
     pg.setAttribute("aria-invalid", p.ok?"false":"true");
     $("pg-err").hidden = p.ok;
+    issue.setAttribute("aria-invalid", (q.ok||q.blank)?"false":"true");
+    $("issue-err").hidden = q.ok || q.blank;
     var u=new URL(BASE);
-    u.searchParams.set("issue", issue.value);
+    u.searchParams.set("issue", q.ok ? String(q.n) : "");
     if(p.ok && p.n) u.searchParams.set("pg", String(p.n));
     u.searchParams.set("utm_source", SOURCE);
     u.searchParams.set("utm_medium", med.value);
     u.searchParams.set("utm_campaign", camp.value);
-    current = p.ok ? u.toString() : "";
+    current = (p.ok && q.ok) ? u.toString() : "";
 
-    var it=ISSUES.filter(function(x){ return String(x[0])===issue.value; })[0];
     var sum=$("sum"); sum.textContent="";
-    sum.appendChild(document.createTextNode("Opens Issue "+it[0]+" ("+it[1]+"), "+(p.ok&&p.n?"page "+p.n:"cover")+" "));
+    sum.appendChild(document.createTextNode((q.ok?"Opens Issue "+q.n:"No issue yet")+", "+(p.ok&&p.n?"page "+p.n:"cover")+" "));
     var s=document.createElement("span"); s.textContent="· "+label(med); sum.appendChild(s);
 
     var box=$("link"); box.textContent="";
-    if(!current){ box.textContent="Fix the page number to make the link."; }
+    if(!current){ box.textContent = !q.ok ? (q.blank ? "Type the issue number to make the link." : "Fix the issue number to make the link.") : "Fix the page number to make the link."; }
     else{
       box.appendChild(document.createTextNode(u.origin+u.pathname+"?"));
       u.search.slice(1).split("&").forEach(function(part, i){
@@ -217,8 +206,8 @@ select:focus-visible,input:focus-visible,button:focus-visible,a:focus-visible{ou
     }catch(e){ fail(); }
   });
 
-  [issue,med,camp].forEach(function(el){ el.addEventListener("change", build); });
-  pg.addEventListener("input", build);
+  [med,camp].forEach(function(el){ el.addEventListener("change", build); });
+  [issue,pg].forEach(function(el){ el.addEventListener("input", build); });
   $("f").addEventListener("submit", function(e){ e.preventDefault(); });
 
   build();
