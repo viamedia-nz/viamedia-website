@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kruzin Kustoms — Digital Presence Review and Growth Plan</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white:#FFFFFF; --off:#F4F3F0; --stone:#E2E0DC;
+    --ink:#111110; --ink2:#2A2A28; --muted:#6B6A67; --dim:#3E3D3A;
+    --border:rgba(0,0,0,0.10); --border-md:rgba(0,0,0,0.18);
+    --red:#D4001A; --red-dark:#A80015;
+    --navy:#0F2340; --steel:#2B3A4A; --steel-mid:#354757;
+    --hero-left:#1A1918; --hero-right:#354757;
+    --paper:var(--off); --text:#2A2A28; --text-muted:var(--muted);
+    --red-bright:#FF3A47; --on-dark:var(--off); --on-dark-muted:rgba(244,243,240,0.66);
+    --line:var(--border); --line-dark:rgba(255,255,255,0.14);
+    --font:'Montserrat', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; --wrap:980px;
+    --good:#1E7A4C; --opp:#2F5F8A; --gap:#B86A00; --confirm:#5E5D5A;
+  }
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body { font-family:var(--font); color:var(--text); background:var(--paper); line-height:1.62; font-weight:400; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  img { max-width:100%; display:block; }
+  .section { padding:88px 24px; }
+  .wrap { max-width:var(--wrap); margin:0 auto; }
+  .section--dark  { background:var(--ink);  color:var(--on-dark); }
+  .section--paper { background:var(--paper); color:var(--text); }
+  .section--white { background:var(--white); color:var(--text); }
+  h1, h2, h3 { font-family:var(--font); font-weight:800; line-height:1.08; letter-spacing:-0.015em; color:var(--ink); }
+  .section--dark h1, .section--dark h2, .section--dark h3 { color:var(--white); }
+  .eyebrow { font-weight:700; font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--red); display:inline-flex; align-items:center; gap:10px; margin-bottom:18px; }
+  .eyebrow::before { content:""; width:26px; height:2px; background:var(--red); display:inline-block; }
+  .section--dark .eyebrow { color:var(--red-bright); }
+  .section--dark .eyebrow::before { background:var(--red-bright); }
+  h2.title { font-size:clamp(1.9rem, 4.4vw, 3rem); margin-bottom:22px; }
+  .lede { font-size:clamp(1.05rem, 2.1vw, 1.24rem); max-width:62ch; font-weight:500; }
+  .body-copy p { margin-bottom:18px; max-width:66ch; }
+  .body-copy p:last-child { margin-bottom:0; }
+  .muted { color:var(--text-muted); font-weight:400; }
+  .section--dark .muted { color:var(--on-dark-muted); }
+
+  .wordmark { display:block; width:auto; color:var(--off); }
+  .wordmark--hero { height:62px; }
+  .wordmark-link { display:inline-flex; }
+  .wordmark-link:focus-visible { outline:3px solid var(--red-bright); outline-offset:4px; border-radius:2px; }
+
+  /* HERO */
+  .hero { background:linear-gradient(105deg, var(--hero-left) 0%, var(--hero-left) 42%, var(--hero-right) 100%); color:var(--on-dark); padding:40px 24px 88px; position:relative; overflow:hidden; }
+  .hero::after { content:""; position:absolute; left:0; right:0; bottom:0; height:5px; background:linear-gradient(90deg, var(--red) 0%, var(--red-dark) 100%); }
+  .hero__bar { max-width:var(--wrap); margin:0 auto; padding:12px 0 68px; }
+  .hero__inner { max-width:var(--wrap); margin:0 auto; }
+  .hero h1 { font-size:clamp(2rem, 5.2vw, 3.4rem); font-weight:900; max-width:20ch; color:var(--white); }
+  .hero__sub { margin-top:14px; font-size:clamp(1.1rem, 2.6vw, 1.5rem); font-weight:700; color:var(--white); letter-spacing:-0.005em; }
+  .hero__thesis { margin-top:24px; font-size:clamp(1.02rem, 2.1vw, 1.24rem); color:var(--on-dark); max-width:56ch; font-weight:500; }
+  .hero__tag { display:inline-block; margin-top:32px; font-size:0.74rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--white); border:1px solid rgba(255,255,255,0.32); border-radius:100px; padding:9px 20px; }
+  .hero__prepared { margin-top:42px; display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+  .hero__prepared .pf-label { display:block; font-size:0.68rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--on-dark-muted); margin-bottom:12px; width:100%; }
+  .client-chip { background:var(--white); border-radius:12px; padding:12px 18px; display:inline-flex; }
+  .client-chip img { height:66px; width:auto; }
+  .client-meta { font-size:0.95rem; line-height:1.55; color:var(--on-dark); }
+  .client-meta span { display:block; color:var(--on-dark-muted); font-size:0.88rem; }
+
+  /* PULL-OUT */
+  .pullout { margin-top:48px; display:grid; grid-template-columns:auto 1fr; gap:30px; align-items:center; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:32px 0; }
+  .pullout__num { font-weight:900; font-size:clamp(3rem, 8vw, 4.6rem); color:var(--red); line-height:0.9; letter-spacing:-0.03em; }
+  .pullout__text { font-size:clamp(1rem, 2vw, 1.14rem); font-weight:500; max-width:48ch; }
+
+  /* QUOTE */
+  .quote { margin-top:40px; background:var(--ink); color:var(--on-dark); border-left:4px solid var(--red); border-radius:0 12px 12px 0; padding:28px 32px; }
+  .quote p { font-style:italic; font-weight:600; font-size:clamp(1rem, 1.9vw, 1.12rem); line-height:1.65; max-width:68ch; }
+  .quote cite { display:block; margin-top:16px; font-style:normal; font-weight:600; font-size:0.86rem; letter-spacing:0.02em; color:var(--on-dark-muted); }
+
+  /* FINDINGS */
+  .findings { margin-top:40px; display:grid; gap:12px; }
+  .finding { display:grid; grid-template-columns:88px 1fr; gap:26px; align-items:center; border-radius:14px; padding:28px 32px; }
+  .finding--light { background:var(--paper); border:1px solid var(--line); }
+  .finding--dark { background:var(--ink); }
+  .finding__body { min-width:0; }
+  .finding__icon { width:88px; height:88px; border-radius:50%; display:grid; place-items:center; }
+  .finding--light .finding__icon { background:var(--white); border:1px solid var(--line); color:var(--ink); }
+  .finding--dark .finding__icon { background:rgba(255,255,255,0.06); border:1px solid var(--line-dark); color:var(--white); }
+  .finding__icon svg { width:44px; height:44px; fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+  .finding h3 { font-size:clamp(1.15rem, 2.4vw, 1.4rem); font-weight:800; margin:10px 0 8px; }
+  .finding--dark h3 { color:var(--white); }
+  .finding p { color:var(--text-muted); font-size:0.98rem; max-width:64ch; }
+  .finding--dark p { color:var(--on-dark-muted); }
+  .tag { display:inline-block; font-size:0.68rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#FFFFFF; border-radius:100px; padding:5px 12px; }
+  .tag--good { background:var(--good); }
+  .tag--opp { background:var(--opp); }
+  .tag--fix { background:var(--red); }
+  .tag--gap { background:var(--gap); }
+  .tag--confirm { background:var(--confirm); }
+
+  /* STEPS */
+  .steps { margin-top:44px; display:grid; gap:16px; }
+  .step { display:grid; grid-template-columns:68px 1fr; gap:24px; align-items:start; background:var(--white); border:1px solid var(--line); border-radius:14px; padding:26px 28px; transition:transform .2s ease, box-shadow .2s ease; }
+  .step:hover { transform:translateY(-2px); box-shadow:0 12px 30px rgba(17,17,16,0.08); }
+  .step__num { font-weight:900; font-size:2.1rem; color:var(--red); line-height:1; }
+  .step h3 { font-size:1.18rem; font-weight:700; margin-bottom:10px; }
+  .step ul { list-style:none; display:grid; gap:7px; }
+  .step li { color:var(--text-muted); max-width:66ch; padding-left:18px; position:relative; }
+  .step li::before { content:""; position:absolute; left:0; top:0.68em; width:7px; height:2px; background:var(--red); }
+  .step .budget { display:inline-block; margin-bottom:12px; font-size:0.74rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink); background:var(--stone); border-radius:100px; padding:5px 12px; }
+
+  /* OPTIONS (dark) */
+  .options { margin-top:42px; display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
+  .option { border:1px solid var(--line-dark); border-radius:14px; padding:26px 24px; }
+  .option h3 { color:var(--white); font-size:1.06rem; margin-bottom:10px; }
+  .option p { color:var(--on-dark-muted); font-size:0.95rem; }
+
+  /* COST */
+  .cost-card { margin-top:44px; background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:30px 30px 26px; }
+  .cost-group { font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); padding:26px 0 6px; }
+  .cost-group:first-child { padding-top:0; }
+  .cost-item { display:grid; grid-template-columns:1fr auto; gap:10px 24px; align-items:start; padding:18px 0; border-bottom:1px solid var(--line); }
+  .cost-item__title { font-weight:700; font-size:1rem; color:var(--ink); line-height:1.35; }
+  .cost-item__fig { font-weight:700; font-size:1rem; color:var(--ink); white-space:nowrap; text-align:right; }
+  .cost-item__desc { grid-column:1 / 2; margin-top:2px; font-size:0.92rem; color:var(--text-muted); line-height:1.6; max-width:58ch; }
+  .cost-totals { margin-top:26px; border-top:2px solid var(--ink); padding-top:22px; }
+  .cost-total { display:flex; justify-content:space-between; align-items:baseline; gap:18px; flex-wrap:wrap; }
+  .cost-total__label { font-size:1.08rem; font-weight:700; }
+  .cost-total__fig { font-weight:900; font-size:clamp(1.9rem, 5vw, 2.5rem); color:var(--red); line-height:1; letter-spacing:-0.02em; }
+  .cost-sum { display:grid; gap:0; }
+  .cost-sum__row { display:flex; justify-content:space-between; align-items:baseline; gap:18px; flex-wrap:wrap; padding:12px 0; border-bottom:1px solid var(--line); }
+  .cost-sum__row:last-child { border-bottom:none; }
+  .cost-sum__label { font-size:1.04rem; font-weight:700; color:var(--ink); }
+  .cost-sum__label small { display:block; font-size:0.86rem; font-weight:400; color:var(--text-muted); margin-top:2px; }
+  .cost-sum__fig { font-size:1.3rem; font-weight:800; color:var(--ink); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .cost-note { margin-top:14px; font-size:0.9rem; color:var(--text-muted); }
+
+  .reassure { margin-top:28px; padding:22px 26px; background:var(--white); border-left:3px solid var(--red); border-radius:0 10px 10px 0; font-size:1.02rem; color:var(--text); max-width:70ch; font-weight:500; }
+
+  /* FOOTER */
+  .footer { background:var(--ink); color:var(--on-dark-muted); padding:38px 24px 46px; }
+  .footer__inner { max-width:var(--wrap); margin:0 auto; border-top:1px solid var(--line-dark); padding-top:30px; display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:14px; }
+  .footer__name { font-size:0.9rem; font-weight:600; color:var(--on-dark); letter-spacing:0.02em; }
+  .footer__contact { font-size:0.88rem; text-align:right; line-height:1.7; margin-left:auto; }
+  .footer a { color:var(--on-dark); text-decoration:none; border-bottom:1px solid var(--red); }
+
+  /* MOTION */
+  .reveal { opacity:1; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    .reveal { opacity:1; transform:none; transition:none; }
+    .step { transition:none; }
+  }
+  a:focus-visible { outline:3px solid var(--red); outline-offset:3px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 860px) { .options { grid-template-columns:1fr; } }
+  @media (max-width: 760px) {
+    .section { padding:60px 18px; }
+    .hero { padding:28px 18px 68px; }
+    .hero__bar { padding-bottom:44px; }
+    .wordmark--hero { height:44px; }
+    .client-chip img { height:52px; }
+    .finding { grid-template-columns:1fr; gap:16px; padding:24px 20px; }
+    .finding__icon { width:64px; height:64px; }
+    .finding__icon svg { width:32px; height:32px; }
+    .pullout { grid-template-columns:1fr; gap:14px; }
+    .step { grid-template-columns:44px 1fr; gap:14px; padding:22px 20px; }
+    .step__num { font-size:1.7rem; }
+    .cost-card { padding:24px 20px 22px; }
+    .quote { padding:24px 22px; }
+    .footer__inner { flex-direction:column; align-items:flex-start; }
+    .footer__contact { text-align:left; }
+  }
+  @media (max-width: 560px) {
+    .cost-item { grid-template-columns:1fr; gap:4px; }
+    .cost-item__fig { text-align:left; margin-top:2px; }
+    .cost-item__desc { grid-column:1 / -1; }
+  }
+
+  /* PRINT */
+  @media print {
+    * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+    .section { padding:40px 24px; }
+    .step:hover { transform:none; box-shadow:none; }
+    .reveal { opacity:1; transform:none; }
+    .step, .finding, .cost-item, .option, .quote, .cost-totals { break-inside:avoid; }
+  }
+
+  /* ---- Kruzin draft 2 overrides: light content blocks, full-width text ---- */
+  :root { --text-muted:#4F4E4A; --accent-soft:#FBEAEC; }
+  body { line-height:1.66; }
+  :root { --wrap:1040px; }
+  .lede, .body-copy p, .finding p, .step li, .cost-item__desc, .reassure, .quote p, .hero__thesis, .hero h1 { max-width:none; }
+  .hero h1 { max-width:24ch; }
+  .body-copy p.muted { font-size:1.02rem; }
+
+  /* Audience band */
+  .audience { margin-top:44px; display:grid; grid-template-columns:repeat(4, 1fr); background:var(--white); border:1px solid var(--line); border-radius:16px; }
+  .audience__item { padding:28px 24px 26px; border-left:1px solid var(--line); }
+  .audience__item:first-child { border-left:none; }
+  .audience__icon { width:34px; height:34px; fill:none; stroke:var(--red); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+  .audience__num { font-weight:900; font-size:clamp(2rem, 4vw, 2.6rem); color:var(--ink); line-height:1; letter-spacing:-0.03em; margin:16px 0 10px; }
+  .audience__label { font-size:0.92rem; color:var(--text-muted); line-height:1.45; }
+  .audience__note { margin-top:12px; font-size:0.82rem; color:var(--muted); }
+  @media (max-width: 860px) {
+    .audience { grid-template-columns:repeat(2, 1fr); }
+    .audience__item:nth-child(3) { border-left:none; }
+    .audience__item:nth-child(n+3) { border-top:1px solid var(--line); }
+  }
+  @media (max-width: 480px) {
+    .audience { grid-template-columns:1fr; }
+    .audience__item { border-left:none; border-top:1px solid var(--line); }
+    .audience__item:first-child { border-top:none; }
+  }
+
+  /* Quote, light */
+  .quote { background:var(--white); color:var(--text); border:1px solid var(--line); border-left:4px solid var(--red); }
+  .quote p { color:var(--ink2); }
+  .quote cite { color:var(--muted); }
+
+  /* Findings, all light with a status accent */
+  .finding { background:var(--white); border:1px solid var(--line); border-left-width:5px; }
+  .finding--good { border-left-color:var(--good); }
+  .finding--opp { border-left-color:var(--opp); }
+  .finding--gap { border-left-color:var(--gap); }
+  .finding--fix { border-left-color:var(--red); }
+  .finding .finding__icon { width:72px; height:72px; background:var(--off); border:none; color:var(--ink); }
+  .finding .finding__icon svg { width:36px; height:36px; }
+  .finding h3 { color:var(--ink); }
+  .finding p { color:var(--text-muted); }
+  .finding { grid-template-columns:72px 1fr; }
+  .section--white .finding { background:var(--white); }
+
+  /* Steps and cost card */
+  .step { border-radius:16px; }
+  .cost-card { background:var(--white); border-radius:16px; }
+  .section--white .cost-card { background:var(--off); }
+  .cost-item__fig { white-space:normal; max-width:16ch; }
+  .reassure { background:var(--white); border:1px solid var(--line); border-left:4px solid var(--red); }
+  @media print { .audience { break-inside:avoid; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;pointer-events:none;overflow:hidden;">
+    <symbol id="vm-wordmark" viewBox="0 0 1326 432">
+      <path d="M235,0c111.664,10.915,197.86,102.283,198.111,215.515.251,113.616-86.089,205.547-198.111,216.485h-36C93.719,421.662,9.794,339.837,1.412,232.168c-.819-10.521-.817-21.823,0-32.324C9.797,92.111,93.712,10.391,199,0h36Z" fill="currentColor"/>
+      <path d="M1326,269.118v17.835c-7.93,3.41-16.787,4.077-25.378,1.376-8.358-2.629-12.629-9.363-12.967-18.814-7.294,22.822-35.432,25.527-53.286,16.214-9.909-5.169-14.838-14.626-14.72-25.739.217-20.406,15.561-27.725,33.583-30.722l33.364-5.548c.352-5.647.16-11.721-2.932-16.272-3.688-5.425-10.564-6.2-16.652-5.828-8.9.544-14.859,6.78-14.520,16.138l-27.583-.125c-.002-14.517,7.24-26.232,19.561-32.412,16.426-8.239,36.154-8.217,52.479.803,10.214,5.644,17.131,16.93,17.229,28.81l.443,53.789,11.378.494ZM1284.055,256.048c1.842-4.622,2.455-9.007,2.477-13.96l-27.615,4.783c-4.805.832-9.177,4.464-10.155,8.373-1.147,4.585-.715,10.73,3.837,13.09,12.054,6.249,26.527.078,31.456-12.287Z" fill="currentColor"/>
+      <path d="M919.126,288.282l-.307-101.609-40.391,100.988c-3.756.668-7.173.674-11.686.294l-40.749-99.924-.53,100.204-27.984-.024-.011-144.12,37.975-.137,37.198,94.533,36.861-94.41,37.517-.099-.052,144.26-27.841.044Z" fill="currentColor"/>
+      <path d="M1128.216,286.543c-21.168,11.032-46.094,1.182-55.379-20.536-7.979-18.663-8.691-40.283-1.191-59.06,8.288-20.75,29.334-31.654,50.464-26.216,10.01,2.576,15.324,9.337,20.216,18.962l.246-55.724,27.963.15-.02,143.841-20.946-.023-5.081-21.93c-4.344,7.852-7.626,16.03-16.272,20.536ZM1140.546,217.789c-3.88-9.96-12.646-15.813-22.947-15.193-9.784.589-17.833,7.013-20.732,17.265-3.388,11.979-2.913,25.118,3.051,36.349,4.157,7.827,12.822,11.336,21.307,10.578,21.945-1.959,26.058-31.703,19.32-49Z" fill="currentColor"/>
+      <polygon points="587.633 143.91 617.78 143.865 567.948 287.932 535.647 288.018 485.222 144.096 515.956 144.012 551.716 249.564 587.633 143.91" fill="currentColor"/>
+      <path d="M675.041,286.35c-10.962-4.919-16.147-14.951-16.079-26.357.117-19.728,15.055-27.585,32.392-30.488l34.683-5.808c.207-5.219-.016-10.918-2.424-15.322-3.114-5.697-9.643-6.852-15.568-6.876-9.642-.039-16.572,6.301-16.308,16.264l-27.434-.06c-.349-14.074,7.235-26.401,19.65-32.607,13.444-6.721,28.04-7.388,42.493-3.388,15.743,4.357,27.139,17.493,27.247,34.423l.335,52.517,10.983.228-.035,18.199c-8.609,3.686-17.907,3.923-26.602.651-7.267-2.734-10.342-8.815-11.64-17.282-7.685,21.345-33.531,24.39-51.694,15.906ZM692.557,268.679c12.223,5.583,25.782-.491,30.694-12.281,1.935-4.645,2.542-9.063,2.641-14.301l-27.205,4.64c-4.878.832-9.483,4.534-10.466,8.11-1.419,5.156-.819,11.478,4.337,13.832Z" fill="currentColor"/>
+      <path d="M994.878,264.197c9.85,6.639,28.964,4.741,33.494-9.712l26.921.089c-5.668,32.208-41.174,42.216-67.578,32.595-32.416-11.811-39.377-53.531-25.874-81.476s52.964-34.264,76.909-16.383c15.923,11.891,20.651,33.174,19.349,52.917l-73.914.067c.572,8.417,3.466,17.032,10.692,21.903ZM984.734,224.242l44.628-.023c-.167-7.385-2.671-14.601-8.703-18.925-7.99-5.729-19.949-5.462-27.591.786-5.521,4.513-8.199,11.526-8.333,18.162Z" fill="currentColor"/>
+      <polygon points="650.243 287.913 622.225 287.951 622.267 181.753 650.229 181.827 650.243 287.913" fill="currentColor"/>
+      <polygon points="1210.783 287.849 1182.999 288.043 1182.999 181.82 1210.729 181.752 1210.783 287.849" fill="currentColor"/>
+      <path d="M1196.508,168.821c-9.248-.171-15.164-6.208-15.253-14.809-.096-9.236,6.587-15.157,15.758-15.093,8.999.063,15.439,5.973,15.459,14.897.02,8.851-6.329,15.183-15.963,15.005Z" fill="currentColor"/>
+      <path d="M647.81,164.282c-6.207,6.287-17.22,6.02-23.156.101-5.428-5.413-5.463-15.42-.143-20.877,6.01-6.165,17.001-6.198,23.184-.194,5.412,5.255,5.763,15.25.116,20.97Z" fill="currentColor"/>
+      <polygon points="198.648 144.07 126.918 287.566 55.125 144.01 198.648 144.07" fill="#000000"/>
+      <polygon points="378.865 287.965 235.29 288.01 306.904 144.521 378.865 287.965" fill="#000000"/>
+      <polygon points="235.02 287.661 199.004 288.049 198.987 144.306 234.984 144.262 235.02 287.661" fill="#000000"/>
+    </symbol>
+  </svg>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero__bar">
+      <a class="wordmark-link" href="https://viamedia.co.nz" aria-label="Via Media home">
+        <svg class="wordmark wordmark--hero" viewBox="0 0 1326 432" role="img" aria-label="Via Media"><use href="#vm-wordmark"></use></svg>
+      </a>
+    </div>
+    <div class="hero__inner">
+      <h1>Kruzin Kustoms — Digital Presence Review and Growth Plan</h1>
+      <p class="hero__thesis">How Kruzin Kustoms shows up online today, and a content-led plan, supported by paid social, to put your builds and online shop in front of New Zealand’s V8 and modified performance car audiences.</p>
+      <div class="hero__tag">Indicative proposal</div>
+      <div class="hero__prepared">
+        <span class="pf-label">Prepared for</span>
+        <div class="client-chip"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4gPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBpZD0iR3JvdXBfMTYiIGRhdGEtbmFtZT0iR3JvdXAgMTYiIHdpZHRoPSIyNTMuMDAyIiBoZWlnaHQ9IjQ5Ljg3IiB2aWV3Qm94PSIwIDAgMjUzLjAwMiA0OS44NyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJjbGlwLXBhdGgiPjxyZWN0IGlkPSJSZWN0YW5nbGVfNCIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgNCIgd2lkdGg9IjI1My4wMDIiIGhlaWdodD0iNDkuODciIGZpbGw9Im5vbmUiPjwvcmVjdD48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcC1wYXRoLTIiPjxwYXRoIGlkPSJQYXRoXzkiIGRhdGEtbmFtZT0iUGF0aCA5IiBkPSJNMjgyLjA4Myw1LjEyNWEuNjQ5LjY0OSwwLDAsMS0uMjQ4LjA1N0EuMzYxLjM2MSwwLDAsMSwyODEuNTIxLDVhMzcuMDM2LDM3LjAzNiwwLDAsMC01LjQ0MywyLjU0NGMtMS45NjcuOS03LjE2MSwzLjA5My03LjE2MSw5LjMyNlY0My4yNDZjMCwzLjkxOSwzLjIzMyw2LjUzLDUuOTc2LDguMDI2LDIuMSwxLjE0Nyw0LjIsMS42MzgsOS4wNjMsMS42MzhzNi40MjYtLjcsOC42NjgtMS43MmMyLjctMS4yMjksNy4xNTgtNC4xNzcsNy4xNTgtOS4wMVYxNi44NzNjLS4xNC01LjU4MS01LjQ0Mi04LjUtNy4xNjItOS4zMjZhMzMuNjkyLDMzLjY5MiwwLDAsMC01LjU0My0yLjUxMy4zODMuMzgzLDAsMCwxLS4zMi4xNTcuNy43LDAsMCwxLS4yMzUtLjA0NywzLjUzOCwzLjUzOCwwLDAsMC0xLjA4Mi0uMTg1LDEuNjksMS42OSwwLDAsMC0uMjg5LjAyMi4xODcuMTg3LDAsMCwwLS4xNC4wOTEuMTkyLjE5MiwwLDAsMCwwLC4xNC43NjEuNzYxLDAsMCwwLC4zMzguNGwwLC4wMDdjLjMyOS4xMzgsMS4yOTIuNzMsMS4yOTIsMS42MSwwLC45NzctMS4xNTcsMS41NTQtMS4yODksMS42MTdhLjc4Ljc4LDAsMCwwLS4zNS42MzNjMCwuMS0uMDA2LjIxNy0uMDEyLjM0Mi0uMDE2LjMzMS0uMDQ3Ljk4OS4xLDEuMTU4LDIuNTMxLS4wMTcsNi4xNzEtLjMxNCw4LjU3OS40MTEsMS45LjU3Myw0LjgzOCwzLjIsNC45NjUsNy43MjNWNDIuMTgxYzAsNC40MDgtNC45LDYuOTg2LTYuNDA4LDcuNjcxLTIuMTU5Ljk4NC0zLjU4NC0uNzA5LTguMjc2LS43MDktMy44NjEsMC02LjI1MiwyLjEwOC04LjYuODI0LTQuMzc0LTIuMzg2LTUuMjkyLTQuOTcyLTUuMjkyLTYuNzIxVjE5LjA4NWMtLjA5Mi0yLjc4NS45ODYtNC40ODMsMy4wNi02LjU1MywyLjQ5My0yLjQ4Nyw3LjQ2MS0xLjg4NiwxMC4zNzQtMS42MzZxLjAyNy0uMDI5LjA1Mi0uMDZhMS45NjYsMS45NjYsMCwwLDAsLjA4OC0uOTljLS4wMDctLjEzMi0uMDE0LS4yNTYtLjAxNC0uMzdhLjc4MS43ODEsMCwwLDAtLjM1LS42MzNjLS4xMzItLjA2My0xLjI5LS42NC0xLjI5LTEuNjE3czEuMTU4LTEuNTU1LDEuMjg5LTEuNjE3YS44NTYuODU2LDAsMCwwLC4zMTctLjU2LjA5NC4wOTQsMCwwLDAtLjAyOC0uMDY3LDEuNSwxLjUsMCwwLDAtLjQ0My0uMDU4LDIuOTEyLDIuOTEyLDAsMCwwLTEuMDMzLjIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNjguOTE3IC00LjkyMikiIGZpbGw9Im5vbmUiPjwvcGF0aD48L2NsaXBQYXRoPjxyYWRpYWxHcmFkaWVudCBpZD0icmFkaWFsLWdyYWRpZW50IiBjeD0iMC4zOTkiIGN5PSItMC4wMDgiIHI9IjAuMjEiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMCwgMSwgMS43NjIsIDAsIC00LjQ2MSwgMy43MjMpIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjYzdlMWI5Ij48L3N0b3A+PHN0b3Agb2Zmc2V0PSIwLjAwNSIgc3RvcC1jb2xvcj0iI2ZlZTZkYyI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC4zOTEiIHN0b3AtY29sb3I9IiNlNTAwMTkiPjwvc3RvcD48c3RvcCBvZmZzZXQ9IjAuNDM3IiBzdG9wLWNvbG9yPSIjZGEwMzFhIj48L3N0b3A+PHN0b3Agb2Zmc2V0PSIwLjY3MyIgc3RvcC1jb2xvcj0iI2E5MTMyMSI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC43OSIgc3RvcC1jb2xvcj0iIzk2MWEyNCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzUxMTYxYiI+PC9zdG9wPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxnIGlkPSJHcm91cF8xMSIgZGF0YS1uYW1lPSJHcm91cCAxMSI+PGcgaWQ9Ikdyb3VwXzEwIiBkYXRhLW5hbWU9Ikdyb3VwIDEwIiBjbGlwLXBhdGg9InVybCgjY2xpcC1wYXRoKSI+PHBhdGggaWQ9IlBhdGhfOCIgZGF0YS1uYW1lPSJQYXRoIDgiIGQ9Ik0zMDEuMDE0LDM5LjgzMlYyOS4yODZhNy4yODYsNy4yODYsMCwwLDAtLjcwNi0xLjczOVYzOS44MzJoLTEuMDYzdi0xMy43YTYuMTU0LDYuMTU0LDAsMCwwLS43MDYtLjYxN1YzOS44MzJoLTEuMDYzVjI0LjkxMWMtLjA4NC0uMDMzLS4xNjYtLjA2Mi0uMjQ1LS4wODYtLjE0OC0uMDQ0LS4zLS4wODQtLjQ2MS0uMTJWMzkuODMyaC0xLjA2M1YyNC41MjNjLS4yMzQtLjAyOS0uNDctLjA1Mi0uNzA1LS4wN1YzOS44MzJoLTEuMDYyVjI0LjRjLS4yNDYtLjAwNy0uNDgzLS4wMTEtLjcwNi0uMDEzVjM5LjgzMmgtMS4wNjNWMjQuMzlxLS4zNTQuMDA2LS43MDUuMDE0VjM5LjgzMkgyOTAuNHYtMTUuNGwtLjcwNi4wMTdWMzkuODMyaC0xLjA2M1YyNC40NTdjLS4yMTQsMC0uNDUtLjAxNi0uNzA1LS4wMzR2MTUuNDFoLTEuMDY0di0xNS41bC0uMDMyLDAtLjY3My0uMDU5VjM5LjgzMkgyODUuMVYyNC4xOTNxLS4zNDgtLjAyMi0uNzA1LS4wMzdWMzkuODMySDI4My4zM3YtMTUuN2MtLjI0MywwLS40NzcuMDA2LS43MDYuMDE2VjM5LjgzMmgtMS4wNjN2LTE1LjZjLS4yNDUuMDI4LS40OC4wNjMtLjcwNS4xdjE1LjVoLTEuMDY0VjI0LjU4NmE2LjA3Miw2LjA3MiwwLDAsMC0uNzA2LjI2OVYzOS44MzJoLTEuMDYydi0xNC4zYy0uMDU3LjA1LS4xMTMuMS0uMTY1LjE1Mi0uMTkxLjE5MS0uMzcuMzc1LS41NC41NTdWMzkuODMyaC0xLjA2M3YtMTIuM2E1LjcwNSw1LjcwNSwwLDAsMC0uNzA2LDEuMzYyVjM5LjgzMmgtLjI5NHYuODhoLjI5NFY1Ni4zNjdhNS4yMDYsNS4yMDYsMCwwLDAsLjcwNiwxLjE3M1Y0MC43MTJoMS4wNjNWNTguNjQ2cS4zMjguMjg3LjcwNi41NjZ2LTE4LjVoMS4wNjJWNTkuOTI0cS4zMzkuMjA2LjcwNi40MDhWNDAuNzEyaDEuMDY0VjYwLjYzYy4wNTEsMCwuMSwwLC4xNTcsMGE0LjE1Miw0LjE1MiwwLDAsMCwuNTQ4LS4wMzlWNDAuNzEyaDEuMDYzVjYwLjM3NWMuMjI3LS4wNTguNDYxLS4xMjIuNzA2LS4xOVY0MC43MTJoMS4wNjNWNTkuOXEuMzQzLS4wODguNzA1LS4xNjhWNDAuNzEyaDEuMDYzVjU5LjUzNWMuMjI5LS4wMzMuNDY0LS4wNjEuNzA2LS4wODJWNDAuNzEyaDEuMDY0djE4LjdjLjI0NCwwLC40NzguMDA2LjcwNS4wMTVWNDAuNzEySDI4OS43VjU5LjVxLjM2OC4wMzYuNzA2LjA4M1Y0MC43MTJoMS4wNjNWNTkuNzYxYy4yNDcuMDUuNDgyLjEuNzA1LjE1NHYtMTkuMmgxLjA2M1Y2MC4xNzZjLjI1My4wNjIuNDg3LjExNi43MDYuMTU3VjQwLjcxMkgyOTVWNjAuMzk0YTIuMzMxLDIuMzMxLDAsMCwwLC42NzYtLjJsLjAyOS0uMDE0VjQwLjcxMmgxLjA2M1Y1OS42MzhjLjIyMS0uMTI1LjQ1OC0uMjY2LjcwNS0uNDIzdi0xOC41aDEuMDYzVjU4LjQ2M2MuMi0uMTU3LjQtLjMyMi41OTEtLjVsLjExNC0uMTA3VjQwLjcxMmgxLjA2M1Y1Ni42N2E1LjQ1Nyw1LjQ1NywwLDAsMCwuNzA2LTEuM1Y0MC43MTJoLjI2MnYtLjg4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3MC4wNjEgLTE0LjkxMSkiIGZpbGw9IiMxYTE4MTgiPjwvcGF0aD48L2c+PC9nPjxnIGlkPSJHcm91cF8xMyIgZGF0YS1uYW1lPSJHcm91cCAxMyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAyLjc3MyAxLjg4MSkiPjxnIGlkPSJHcm91cF8xMiIgZGF0YS1uYW1lPSJHcm91cCAxMiIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAtcGF0aC0yKSI+PHJlY3QgaWQ9IlJlY3RhbmdsZV81IiBkYXRhLW5hbWU9IlJlY3RhbmdsZSA1IiB3aWR0aD0iMzYuMzEiIGhlaWdodD0iNTEuMjk1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNS42MjEgMC42NjgpIHJvdGF0ZSgtNi43NzQpIiBmaWxsPSJ1cmwoI3JhZGlhbC1ncmFkaWVudCkiPjwvcmVjdD48L2c+PC9nPjxnIGlkPSJHcm91cF8xNSIgZGF0YS1uYW1lPSJHcm91cCAxNSI+PGcgaWQ9Ikdyb3VwXzE0IiBkYXRhLW5hbWU9Ikdyb3VwIDE0IiBjbGlwLXBhdGg9InVybCgjY2xpcC1wYXRoKSI+PHBhdGggaWQ9IlBhdGhfMTAiIGRhdGEtbmFtZT0iUGF0aCAxMCIgZD0iTTMwMC41ODksMTUuODM5YTkuOTg4LDkuOTg4LDAsMCwwLS45ODUtMy42MjUsNi45ODUsNi45ODUsMCwwLDAtMi4zNy0yLjc1MUE2LjcwNiw2LjcwNiwwLDAsMCwyOTQuMTA3LDguNGEyMy45LDIzLjksMCwwLDAtMi44MTUtLjEzOGMtLjc3NCwwLTEuNTM5LjAyLTIuMjg1LjA0MS0uMjc3LjAwNy0uNTU0LjAxNi0uODMxLjAyMWEyLjI1OCwyLjI1OCwwLDAsMS0uODQxLS4wMTRDMjg2LjgzNSw4LjEsMjg3LDYuOTMsMjg3LDYuNDM1YTEuMTQxLDEuMTQxLDAsMCwxLC41MzQtLjk2NnMxLjEwNS0uNTI0LDEuMTA1LTEuMjg0UzI4Ny41MzYsMi45LDI4Ny41MzYsMi45YS45MjEuOTIxLDAsMCwxLS41LTEuMDI3LjQ2OC40NjgsMCwwLDEsLjM1Ny0uMjg2LDMuNCwzLjQsMCwwLDEsMS40OS4xNzRjLjMuMTA3LjM4MS0uMDU5LjE4OS0uMzY5YTIuNDMxLDIuNDMxLDAsMCwwLTEuNTY4LS45ODdjLS4yODEtLjA2NS0uNTUzLS40LS44MjQtLjQtLjI0MiwwLS41LjMtLjc0Mi4zNzRhMi45NjQsMi45NjQsMCwwLDAtMS44LDEuMDRjLS4yLjMtLjE0MS40NDcuMTQxLjMzMWEyLjY4OSwyLjY4OSwwLDAsMSwxLjY1NS0uMTQ1LjQzNS40MzUsMCwwLDEsLjIyMy40LDEuMTczLDEuMTczLDAsMCwxLS41LjlzLTEuMTA1LjUyNC0xLjEwNSwxLjI4NCwxLjEwNSwxLjI4NCwxLjEwNSwxLjI4NGExLjE0LDEuMTQsMCwwLDEsLjUzNC45NjZjMCwuNDYxLjEzLDEuMjU3LS4xNTksMS42MTRhLjY1LjY1LDAsMCwxLS42MjcuMTg3LDI1LjY0OSwyNS42NDksMCwwLDAtMy42NTUtLjIyOGMtMS45LDAtNC4wOS4wODYtNS43MTEsMS40NTJhMTAuNDU0LDEwLjQ1NCwwLDAsMC0yLjMwNywyLjU3MSw2LjI4Myw2LjI4MywwLDAsMC0uODcsMS45MjUsMTIuNTgyLDEyLjU4MiwwLDAsMC0uMjEsMi45MDZWMjQuMnEwLDYuMDE5LDAsMTIuMDM4YzAsMi4yMzItLjMxMSw0LjY1NS45MTYsNi41MDdhMTIuNTc2LDEyLjU3NiwwLDAsMCw0LjIyNSwzLjgsMywzLDAsMCwwLDEuNTkuMzkzLDEwLjEzMSwxMC4xMzEsMCwwLDAsMi42MTktLjUsMTUuMjI1LDE1LjIyNSwwLDAsMSw0LjI0NC0uNzIyLDE4LjE3OCwxOC4xNzgsMCwwLDEsNC44My42Niw4LjM5Myw4LjM5MywwLDAsMCwxLjk4NS4zNDYsMy4wODYsMy4wODYsMCwwLDAsMS4zMjMtLjI5MiwxNS4xMzEsMTUuMTMxLDAsMCwwLDMuNjktMi4zODksNy4wNzcsNy4wNzcsMCwwLDAsMi41LTQuNjY0Yy4yLTIuMi4wNDItNS4xNjMuMDQyLTcuMzgxVjIxLjAyYzAtMS4zMTIsMC0yLjYyNi4wMTctMy45MzYsMC0uMy0uMDE4LS45NDktLjA0Ny0xLjI0Nm0tLjc2MSwyMi41YTUuNjM0LDUuNjM0LDAsMCwxLS4wNzgsMS41Yy0uNzczLDMuMDItMy40MjEsNC42MzMtNS42NDUsNS42NDZhMi40MzgsMi40MzgsMCwwLDEtMS4wNDYuMjMxLDcuOTcsNy45NywwLDAsMS0xLjgyNy0uMzI2LDE4Ljc0NSwxOC43NDUsMCwwLDAtNC45ODgtLjY4LDE1Ljc1OSwxNS43NTksMCwwLDAtNC40Mi43NDYsOS43Myw5LjczLDAsMCwxLTIuNDQzLjQ4LDIuNTQ1LDIuNTQ1LDAsMCwxLTEuMjY3LS4zMDljLTEuOTgtMS4wOC00LjQtMi41Ny00LjY0MS01LjUyMy0uMTM5LTEuNzI5LS4wMTYtMy45NTUtLjAxNi01LjY5NVYxNy4zNzNhMjUuNDc5LDI1LjQ3OSwwLDAsMSwuMDc3LTIuNTc4LDQuNjMsNC42MywwLDAsMSwuNjg5LTIuMDI2LDkuMjA4LDkuMjA4LDAsMCwxLDEuMy0xLjY0M0E2LjcyMSw2LjcyMSwwLDAsMSwyNzguMzE1LDkuNGExMi4xMjIsMTIuMTIyLDAsMCwxLDMuNDMzLS4zODZjMS4yMzEsMCwyLjQxOC4xMDUsMy40Ny4yLjc2NC4wNjgsMS40MjUuMTI3LDEuOTM2LjEyNy41NzgsMCwxLjIwNS0uMDE4LDEuODc2LS4wMzYuNzM1LS4wMTksMS41LS4wNCwyLjI2MS0uMDRhMTYuNDQ4LDE2LjQ0OCwwLDAsMSw0LjM0Ny40NDcsNi4yNjYsNi4yNjYsMCwwLDEsMi43MzQsMi4xMzUsNS44MDYsNS44MDYsMCwwLDEsMS4yODMsMi42NjgsNDIuNTksNDIuNTksMCwwLDEsLjE1Niw1Ljg3OVYzMS4zNTFjMCwyLjE5NS4wMTYsNC4zOTUuMDE2LDYuOTg4IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTY4LjQyOSAtMC4wMDEpIiBmaWxsPSIjMWExODE4Ij48L3BhdGg+PHBhdGggaWQ9IlBhdGhfMTEiIGRhdGEtbmFtZT0iUGF0aCAxMSIgZD0iTTM4LjUyMyw0NS42OTF2OC4wNjRhNy4zNzYsNy4zNzYsMCwwLDAsLjQxNSwyLjYxNCwzLjQxNCwzLjQxNCwwLDAsMCwxLjUzMiwxLjc1LDEwLjk0NSwxMC45NDUsMCwwLDAsNS40NTgsMS4xMDdxNC45MzMsMCw2LjUwOC0yLjA0NWE1LjU4LDUuNTgsMCwwLDAsLjg3NS0zLjQyNlY0NS42OTFhLjcxNC43MTQsMCwwLDEsLjE1My0uNSwxLjEzOCwxLjEzOCwwLDAsMSwuNTQ3LS4yNzR2LS4zMzdoLTQuNHYuMzM3YTEuMTM4LDEuMTM4LDAsMCwxLC41NDcuMjc0LjcxNC43MTQsMCwwLDEsLjE1My41VjUyLjg3YTguNjM5LDguNjM5LDAsMCwxLS4xNDIsMS44MzksMi4xMiwyLjEyLDAsMCwxLS41MjUsMSw0LjkxNCw0LjkxNCwwLDAsMS0zLjYsMS4wNzUsNC45LDQuOSwwLDAsMS0zLjU4OC0xLjA3NSwyLjA3NCwyLjA3NCwwLDAsMS0uNTM2LTEsOC42MzksOC42MzksMCwwLDEtLjE0Mi0xLjgzOVY0NS42OTFhLjcyNC43MjQsMCwwLDEsLjE1Ni0uNSwxLjA2MywxLjA2MywwLDAsMSwuNTQ0LS4yNjl2LS4zMzdoLTQuNjZ2LjMzN2ExLjEzNCwxLjEzNCwwLDAsMSwuNTQ3LjI3NC43MTQuNzE0LDAsMCwxLC4xNTMuNU00LjY2LDU4LjYzNmExLjA3NywxLjA3NywwLDAsMS0uNTQyLS4yNjkuNzE5LjcxOSwwLDAsMS0uMTU5LS41VjU0LjAwOGwyLjI1LTEuNzUsNC40LDUuMmEyLjMzNywyLjMzNywwLDAsMSwuNTI1Ljc4cTAsLjI4NC0uNTguNHYuMzM3aDUuODM1di0uMzM3YTEuOTU2LDEuOTU2LDAsMCwxLS44OTItLjM1Myw5LjQ0Niw5LjQ0NiwwLDAsMS0xLjE1NC0xLjJMOC41ODUsNTAuNDExbDUuMDc3LTMuOTMuODQzLS42NzRxLjc4OC0uNjIyLjk1Mi0uNzE3QTEuODk0LDEuODk0LDAsMCwxLDE2LDQ0LjkyMnYtLjMzN0g5Ljl2LjMzN3EuNjM1LjExNi42MzQuNDIyLDAsLjItLjQyNy41MzhMMy45Niw1MC43MTdWNDUuNjgxYS43MTguNzE4LDAsMCwxLC4xNTMtLjQ5LDEuMDUxLDEuMDUxLDAsMCwxLC41NDctLjI2OXYtLjMzN0gwdi4zMzdhMS4xMzQsMS4xMzQsMCwwLDEsLjU0Ny4yNzQuNy43LDAsMCwxLC4xNTMuNDg1VjU3Ljg2NmEuNzE1LjcxNSwwLDAsMS0uMTUzLjVBMS4xMzQsMS4xMzQsMCwwLDEsMCw1OC42MzZ2LjMzN0g0LjY2Wm0yMzYuMjkyLTQuNTEyLTEuNTMzLDMuNTMxLjMuMTU4YS44NjUuODY1LDAsMCwxLC40MjUtLjIzMiwyLjkxMiwyLjkxMiwwLDAsMSwuNjk0LjI3NCwxMi4yNiwxMi4yNiwwLDAsMCw1LjU0MywxLjM3LDEwLjY2NywxMC42NjcsMCwwLDAsMi45MzItLjM4OSw1LjE2MSw1LjE2MSwwLDAsMCwyLjctMS41OTEsNC4xNDIsNC4xNDIsMCwwLDAsLjk2My0yLjcsNC4wNzQsNC4wNzQsMCwwLDAtLjQwOS0xLjgsMy42LDMuNiwwLDAsMC0xLjExNC0xLjM1OSw1LjQ2OCw1LjQ2OCwwLDAsMC0xLjU5LS43NjksMTMuMiwxMy4yLDAsMCwwLTIuMzQ3LS40MzJsLTEuNjI3LS4xNjlhMTQuODg4LDE0Ljg4OCwwLDAsMS0yLjEzNC0uMzE2cS0uOTY0LS4yOTUtLjk2My0xLjEwNmExLjM0NCwxLjM0NCwwLDAsMSwuMzc4LS45MTYsMi4zMTYsMi4zMTYsMCwwLDEsLjk4OS0uNjMyLDYuMjU2LDYuMjU2LDAsMCwxLDEuOTM4LS4yNzQsNy4zLDcuMywwLDAsMSw0LjMzMSwxLjMwN3EuNi40MTEuNi43NywwLC4wNjMtLjAxLjE2OWwuMjkuMTY5TDI1Myw0NS44bC0uMjktLjE1OWEuODQ4Ljg0OCwwLDAsMS0uNTA4LjI0MywzLjE4LDMuMTgsMCwwLDEtLjczNi0uMjQzLDE4LjksMTguOSwwLDAsMC0yLjkyMi0xLjAzMiwxMC44MTcsMTAuODE3LDAsMCwwLTIuNTI4LS4yODEsNi43LDYuNywwLDAsMC00Ljg0OSwxLjU3Miw0LjAxOSw0LjAxOSwwLDAsMC0xLjIzMywzLjAxNywzLjg5NCwzLjg5NCwwLDAsMCwuNDg3LDEuOTYyLDMuNDcxLDMuNDcxLDAsMCwwLDEuNDgyLDEuNDI0LDUuODE3LDUuODE3LDAsMCwwLDEuMzI2LjQ5MSwyMS42NDgsMjEuNjQ4LDAsMCwwLDIuMjY5LjMyMWwxLjYuMTY4YTkuOTE3LDkuOTE3LDAsMCwxLDIuMTM0LjM4OSwxLjA1MSwxLjA1MSwwLDAsMSwuNzU2LDEuMDIsMS41MTUsMS41MTUsMCwwLDEtLjMyMS45MSwyLjI5LDIuMjksMCwwLDEtLjg2LjcsNS4zMzgsNS4zMzgsMCwwLDEtMi4zNTIuNDc0LDguOTMsOC45MywwLDAsMS0yLjY3My0uNDQzLDUuNjE1LDUuNjE1LDAsMCwxLTIuMDgyLTEuMDU0LDEuMTY5LDEuMTY5LDAsMCwxLS40NDYtLjg3NXYtLjEzN1ptLTE3LjM5Myw0LjUxMmExLjA1NSwxLjA1NSwwLDAsMS0uNTE4LS4yNzQuNzQxLjc0MSwwLDAsMS0uMTQ1LS41VjQ5LjAzM2w1LjIxNyw5Ljk0LDUuNTA3LTkuOTR2OC44MzNhLjc0Ni43NDYsMCwwLDEtLjE1LjUsMSwxLDAsMCwxLS41MTMuMjY5di4zMzdoNC40MTR2LS4zMzdhMS4wNTYsMS4wNTYsMCwwLDEtLjUxOC0uMjc0Ljc0MS43NDEsMCwwLDEtLjE0NS0uNVY0NS42ODFhLjcyMy43MjMsMCwwLDEsLjE0NS0uNDg1LDEuMDU2LDEuMDU2LDAsMCwxLC41MTgtLjI3NHYtLjMzN2gtNS4zNDh2LjMzN3EuNTE4LjA1My41MTguNDg1YTEuNzg0LDEuNzg0LDAsMCwxLS4yNTkuNzA2bC0zLjkxLDcuMzExLTMuODU4LTcuNDM4YTEuMDYsMS4wNiwwLDAsMS0uMTQ1LS40ODUuNTY0LjU2NCwwLDAsMSwuNDg3LS41OHYtLjMzN0gyMTkuNHYuMzM3YTEuMDU3LDEuMDU3LDAsMCwxLC41MTguMjc0LjcyMy43MjMsMCwwLDEsLjE0NS40ODVWNTcuODY2YS43NDIuNzQyLDAsMCwxLS4xNDUuNSwxLjA1NywxLjA1NywwLDAsMS0uNTE4LjI3NHYuMzM3aDQuMTU1Wm0tMTk5LjgxNywwYTEuMDc3LDEuMDc3LDAsMCwxLS41NDItLjI2OS43LjcsMCwwLDEtLjE1OS0uNDlWNTMuMWgzLjk4NmwzLjAyNCw0LjIzN2EyLjY2MywyLjY2MywwLDAsMSwuNTEzLjkxN3EwLC4zLS41NTcuMzh2LjMzN0gzNS40di0uMzM3YTEuNDQ0LDEuNDQ0LDAsMCwxLS44NjktLjMzMiw5LDksMCwwLDEtMS4xMjEtMS4zNDRsLTIuOS0zLjk3NHE0LjA1OC0uNiw0LjA1OC00LjEyMWE0LjcsNC43LDAsMCwwLS40LTEuOTQsMy4zODIsMy4zODIsMCwwLDAtMS4yOTEtMS40ODYsNC45MTksNC45MTksMCwwLDAtMS43NDUtLjY2NCwxNS4yMTEsMTUuMjExLDAsMCwwLTIuNzA3LS4xOUgxOS4wODF2LjMzN2ExLjEzNCwxLjEzNCwwLDAsMSwuNTQ3LjI3NC43MTQuNzE0LDAsMCwxLC4xNTMuNVY1Ny44NzdhLjcuNywwLDAsMS0uMTUzLjQ4NSwxLjEzNCwxLjEzNCwwLDAsMS0uNTQ3LjI3NHYuMzM3aDQuNjZabS0uNy0xMS42NzloNS4wMzJhMTQuMywxNC4zLDAsMCwxLDEuNTgxLjA1OCwyLjQyMywyLjQyMywwLDAsMSwuODM3LjI2OSwxLjg4LDEuODgsMCwwLDEsMCwzLjEyLDIuNTU1LDIuNTU1LDAsMCwxLS44NDIuMjY0LDEzLjMzMiwxMy4zMzIsMCwwLDEtMS41NzUuMDYzSDIzLjA0MVptMTQ5LjM5MSw3LjE2OEwxNzAuOSw1Ny42NTVsLjMuMTU4YS44NjUuODY1LDAsMCwxLC40MjUtLjIzMiwyLjkxMywyLjkxMywwLDAsMSwuNjk0LjI3NCwxMi4yNjEsMTIuMjYxLDAsMCwwLDUuNTQzLDEuMzcsMTAuNjcsMTAuNjcsMCwwLDAsMi45MzItLjM4OSw1LjE2Myw1LjE2MywwLDAsMCwyLjctMS41OTEsNC4xNDQsNC4xNDQsMCwwLDAsLjk2My0yLjcsNC4wNjksNC4wNjksMCwwLDAtLjQwOS0xLjgsMy42LDMuNiwwLDAsMC0xLjExNC0xLjM1OSw1LjQ2NSw1LjQ2NSwwLDAsMC0xLjU5MS0uNzY5QTEzLjE4OSwxMy4xODksMCwwLDAsMTc5LDUwLjE4OWwtMS42MjctLjE2OWExNC45MDUsMTQuOTA1LDAsMCwxLTIuMTM0LS4zMTZxLS45NjMtLjI5NS0uOTYzLTEuMTA2YTEuMzQ0LDEuMzQ0LDAsMCwxLC4zNzgtLjkxNiwyLjMxMiwyLjMxMiwwLDAsMSwuOTg5LS42MzIsNi4yNTUsNi4yNTUsMCwwLDEsMS45MzctLjI3NCw3LjMsNy4zLDAsMCwxLDQuMzMxLDEuMzA3cS42LjQxMS42Ljc3LDAsLjA2My0uMDEuMTY5bC4yOS4xNjksMS42ODktMy4zODgtLjI5LS4xNTlhLjg0OS44NDksMCwwLDEtLjUwOC4yNDMsMy4xNzQsMy4xNzQsMCwwLDEtLjczNi0uMjQzLDE4LjkxMywxOC45MTMsMCwwLDAtMi45MjItMS4wMzIsMTAuODIyLDEwLjgyMiwwLDAsMC0yLjUyOC0uMjgxLDYuNyw2LjcsMCwwLDAtNC44NDksMS41NzIsNC4wMTksNC4wMTksMCwwLDAtMS4yMzMsMy4wMTcsMy44OSwzLjg5LDAsMCwwLC40ODcsMS45NjIsMy40NzIsMy40NzIsMCwwLDAsMS40ODIsMS40MjQsNS44MDUsNS44MDUsMCwwLDAsMS4zMjYuNDkxLDIxLjYzOCwyMS42MzgsMCwwLDAsMi4yNjkuMzIxbDEuNi4xNjhhOS45MjgsOS45MjgsMCwwLDEsMi4xMzQuMzg5LDEuMDUyLDEuMDUyLDAsMCwxLC43NTYsMS4wMiwxLjUxMywxLjUxMywwLDAsMS0uMzIxLjkxLDIuMjksMi4yOSwwLDAsMS0uODYuNyw1LjMzOCw1LjMzOCwwLDAsMS0yLjM1Mi40NzQsOC45MjcsOC45MjcsMCwwLDEtMi42NzMtLjQ0Myw1LjYxNiw1LjYxNiwwLDAsMS0yLjA4My0xLjA1NCwxLjE2OSwxLjE2OSwwLDAsMS0uNDQ1LS44NzV2LS4xMzdabS0xMDEuOCw1YTEuMDY1LDEuMDY1LDAsMCwxLC4yODUuNTI3aC4zNVY1NS45MjdoLS4zNWExLjA2NywxLjA2NywwLDAsMS0uMjg1LjUyNy43NjIuNzYyLDAsMCwxLS41LjE0OEg2Mi4zNThsOC43ODgtMTEuNDE2di0uNkg1OC4yODNhLjc2NC43NjQsMCwwLDEtLjUwOS0uMTQ1LDEuMTQ1LDEuMTQ1LDAsMCwxLS4yOS0uNTI5aC0uMzV2My43MjFoLjM1YTEuMDU4LDEuMDU4LDAsMCwxLC4yODQtLjUzLjc5NC43OTQsMCwwLDEsLjUxNC0uMTQ0aDcuNDY5TDU3LjA2OSw1OC4yMzV2LjczOEg3MC4xM2EuNzU5Ljc1OSwwLDAsMSwuNS4xNDhNMTg2LjIwNiw0Ny4xYS43MDYuNzA2LDAsMCwxLC40NzctLjE0NGg0LjM5M3YxMC45MWEuNzQxLjc0MSwwLDAsMS0uMTQ1LjUsMS4wNTcsMS4wNTcsMCwwLDEtLjUxOC4yNzR2LjMzN2g0LjQxNHYtLjMzN2ExLjA1NywxLjA1NywwLDAsMS0uNTE4LS4yNzQuNzQxLjc0MSwwLDAsMS0uMTQ1LS41VjQ2Ljk1Nmg0LjM4M2EuNzIzLjcyMywwLDAsMSwuNDg3LjE0NCwxLjA3MywxLjA3MywwLDAsMSwuMjY5LjUzaC4zMzJWNDMuOTFIMTk5LjNhMS4wNzMsMS4wNzMsMCwwLDEtLjI2OS41MjkuNzE3LjcxNywwLDAsMS0uNDg3LjE0NUgxODYuNjgyYS42NzkuNjc5LDAsMCwxLS40NzEtLjE0NSwxLjE2NCwxLjE2NCwwLDAsMS0uMjc1LS41MjlIMTg1LjZ2My43MjFoLjMzMWExLjA3MywxLjA3MywwLDAsMSwuMjY5LS41M20tMzEuNTQ3LTEuNDA5djguMDY0YTcuNzQ4LDcuNzQ4LDAsMCwwLC4zOTQsMi42MTQsMy4zNjQsMy4zNjQsMCwwLDAsMS40NTEsMS43NSw5LjkxMSw5LjkxMSwwLDAsMCw1LjE3LDEuMTA3cTQuNjczLDAsNi4xNjUtMi4wNDVhNS44MTQsNS44MTQsMCwwLDAsLjgyOS0zLjQyNlY0NS42OTFhLjc0Ljc0LDAsMCwxLC4xNDUtLjUsMS4wNTYsMS4wNTYsMCwwLDEsLjUxOC0uMjc0di0uMzM3aC00LjE2NXYuMzM3YTEuMDU2LDEuMDU2LDAsMCwxLC41MTguMjc0Ljc0Ljc0LDAsMCwxLC4xNDUuNVY1Mi44N2E5LjEwNyw5LjEwNywwLDAsMS0uMTM1LDEuODM5LDIuMTYxLDIuMTYxLDAsMCwxLS41LDEsNS45MjMsNS45MjMsMCwwLDEtNi44MDcsMCwyLjExLDIuMTEsMCwwLDEtLjUwOC0xLDkuMTA4LDkuMTA4LDAsMCwxLS4xMzUtMS44MzlWNDUuNjkxYS43NTMuNzUzLDAsMCwxLC4xNDgtLjUuOTkuOTksMCwwLDEsLjUxNS0uMjY5di0uMzM3SDE1NHYuMzM3YTEuMDU3LDEuMDU3LDAsMCwxLC41MTguMjc0Ljc0Ljc0LDAsMCwxLC4xNDUuNW00OC4zNzUsMTEuNWE4LjE4Miw4LjE4MiwwLDAsMCw1LjgzNywyLjAzNHE0Ljg5MywwLDcuMDQtMy41YTcuMjUsNy4yNSwwLDAsMCwxLjEtMy44NTgsNy4xNyw3LjE3LDAsMCwwLTIuMjkyLTUuNSw4LjIyOCw4LjIyOCwwLDAsMC01Ljg2OC0yLjAzNXEtNC45MzUuMDY0LTcuMDE5LDMuNDg5YTcuNDY3LDcuNDY3LDAsMCwwLTEuMDg4LDMuOTUzLDcuNTg3LDcuNTg3LDAsMCwwLC41MjksMi44MTQsNy4wODIsNy4wODIsMCwwLDAsMS43NjIsMi42TTIwNS40OSw0OGE0LjgzMyw0LjgzMywwLDAsMSwzLjM3MS0xLjIyMSw1LjAzMyw1LjAzMywwLDAsMSwzLjQsMS4yMjEsNC44NDcsNC44NDcsMCwwLDEsMS42LDMuODQ0LDUuMTkxLDUuMTkxLDAsMCwxLS4zNzMsMS45MzcsNC43MTksNC43MTksMCwwLDEtNC42MDUsM0E1LjA4Myw1LjA4MywwLDAsMSwyMDUuNDksNDhNMTQxLjk0MSw1OC42MzZhMSwxLDAsMCwxLS41MTMtLjI2OS43NDYuNzQ2LDAsMCwxLS4xNS0uNVY1NC4wMDhsMi4xMzEtMS43NSw0LjE2NCw1LjJhMi4zNjMsMi4zNjMsMCwwLDEsLjUuNzhxMCwuMjg0LS41NS40di4zMzdoNS41Mjd2LS4zMzdhMS44LDEuOCwwLDAsMS0uODQ0LS4zNTMsOS4yMjEsOS4yMjEsMCwwLDEtMS4wOTMtMS4ybC01LjQ1Mi02LjY3NSw0LjgwOS0zLjkzLjgtLjY3NHEuNzQ2LS42MjIuOS0uNzE3YTEuNzI5LDEuNzI5LDAsMCwxLC41MTgtLjE2OXYtLjMzN2gtNS43ODF2LjMzN3EuNi4xMTYuNi40MjIsMCwuMi0uNC41MzhsLTUuODI0LDQuODM2VjQ1LjY4MWEuNzQ1Ljc0NSwwLDAsMSwuMTQ1LS40OS45NzguOTc4LDAsMCwxLC41MTgtLjI2OXYtLjMzN2gtNC40MTR2LjMzN2ExLjA1NiwxLjA1NiwwLDAsMSwuNTE4LjI3NC43MjMuNzIzLDAsMCwxLC4xNDUuNDg1VjU3Ljg2NmEuNzQxLjc0MSwwLDAsMS0uMTQ1LjUsMS4wNTYsMS4wNTYsMCwwLDEtLjUxOC4yNzR2LjMzN2g0LjQxNFptLTYyLjY1MiwwYTEuMDc3LDEuMDc3LDAsMCwxLS41NDItLjI2OS43MTkuNzE5LDAsMCwxLS4xNTktLjVWNDUuNjgxYS43MTkuNzE5LDAsMCwxLC4xNTMtLjQ5LDEuMDUxLDEuMDUxLDAsMCwxLC41NDctLjI2OXYtLjMzN0g3NC42M3YuMzM3YTEuMTM0LDEuMTM0LDAsMCwxLC41NDcuMjc0LjcuNywwLDAsMSwuMTUzLjQ4NVY1Ny44NjZhLjcxNS43MTUsMCwwLDEtLjE1My41LDEuMTM0LDEuMTM0LDAsMCwxLS41NDcuMjc0di4zMzdoNC42NlptOC4xODYsMGExLjEzNCwxLjEzNCwwLDAsMS0uNTQ3LS4yNzQuNzE1LjcxNSwwLDAsMS0uMTUzLS41VjQ5LjExN2w4LjM2OCw4LjMyN3EuNTM2LjUyNy41MzYuNzM4LDAsLjM1OC0uNDU5LjQ1M3YuMzM3aDQuN3YtLjMzN2ExLjEzNCwxLjEzNCwwLDAsMS0uNTQ3LS4yNzQuNzE1LjcxNSwwLDAsMS0uMTUzLS41VjQ1LjY4MWEuNy43LDAsMCwxLC4xNTMtLjQ4NSwxLjEzNCwxLjEzNCwwLDAsMSwuNTQ3LS4yNzR2LS4zMzdIOTUuNTM4di4zMzdhMS4xMzQsMS4xMzQsMCwwLDEsLjU0Ny4yNzQuNy43LDAsMCwxLC4xNTMuNDg1djguNTM4TDg4LDQ1Ljk2NmEuODQ4Ljg0OCwwLDAsMS0uMzA2LS41NTlxMC0uMzY5LjQ3LS40ODV2LS4zMzdIODMuMDg5di4zMzdhMS4xMzQsMS4xMzQsMCwwLDEsLjU0Ny4yNzQuNy43LDAsMCwxLC4xNTMuNDg1VjU3Ljg2NmEuNzE1LjcxNSwwLDAsMS0uMTUzLjUsMS4xMzQsMS4xMzQsMCwwLDEtLjU0Ny4yNzR2LjMzN2g0LjM4NlpNMjQxLjE3Niw3MWEuMy4zLDAsMCwxLC4xNTguMDQ0LjEwNS4xMDUsMCwwLDEsLjAzMS4wNzdWNzIuMmgtMS43NTRWNzEuMTI1YS4xMDUuMTA1LDAsMCwxLC4wMzEtLjA3N0EuMy4zLDAsMCwxLDIzOS44LDcxdi0uMDgxaC0xLjM5VjcxYS4zLjMsMCwwLDEsLjE1OS4wNDQuMS4xLDAsMCwxLC4wMy4wNzd2My4xNDRhLjEwNS4xMDUsMCwwLDEtLjAzLjA3OC4zLjMsMCwwLDEtLjE1OS4wNDR2LjA4MWgxLjM5Vjc0LjM5YS4zLjMsMCwwLDEtLjE1OS0uMDQ0LjEwNi4xMDYsMCwwLDEtLjAzMS0uMDc4VjczLjAyMWgxLjc1NHYxLjI0OGEuMTA2LjEwNiwwLDAsMS0uMDMxLjA3OC4zLjMsMCwwLDEtLjE1OC4wNDR2LjA4MWgxLjM5Vjc0LjM5YS4zLjMsMCwwLDEtLjE1OS0uMDQ0LjEwNS4xMDUsMCwwLDEtLjAzLS4wNzhWNzEuMTI1YS4xLjEsMCwwLDEsLjAzLS4wNzcuMy4zLDAsMCwxLC4xNTktLjA0NHYtLjA4MWgtMS4zOVpNMjI3Ljk0LDcxYy4xMDgsMCwuMTYyLjA0NS4xNjIuMTIxYS42Mi42MiwwLDAsMS0uMDYxLjE2OWMtLjA0LjA5LS4wOTMuMi0uMTU4LjMzN3MtLjEzOC4yODQtLjIxOS40NDYtLjE2LjMyOC0uMjM2LjVjLS4wMTMtLjAyNy0uMDM4LS4wODEtLjA3NC0uMTYybC0uMTI1LS4yOC0uMTQ5LS4zMzFjLS4wNTItLjExNS0uMS0uMjIxLS4xNDEtLjMycy0uMDc4LS4xODItLjEtLjI1YTEuMDA2LDEuMDA2LDAsMCwxLS4wNC0uMTA4YzAtLjA3Ni4wNTQtLjExNy4xNjItLjEyMXYtLjA4MWgtMS43NjFWNzFhLjMuMywwLDAsMSwuMTU5LjA0NC4xLjEsMCwwLDEsLjAzMS4wNzd2My4xNDRhLjEuMSwwLDAsMS0uMDMxLjA3OC4zLjMsMCwwLDEtLjE1OS4wNDR2LjA4MWgxLjE4N1Y3NC4zOWEuMy4zLDAsMCwxLS4xNTktLjA0NC4xMDUuMTA1LDAsMCwxLS4wMy0uMDc4VjcxLjc0NmguMDEzbDEuMTg3LDIuNjQ1LDEuMi0yLjYxOC4wMTMuMDE0djIuNDgyYS4xMDUuMTA1LDAsMCwxLS4wMy4wNzguMy4zLDAsMCwxLS4xNTkuMDQ0di4wODFoMS4zNDlWNzQuMzlhLjMuMywwLDAsMS0uMTU5LS4wNDQuMTA2LjEwNiwwLDAsMS0uMDMxLS4wNzhWNzEuMTI1YS4xMDUuMTA1LDAsMCwxLC4wMzEtLjA3Ny4zLjMsMCwwLDEsLjE1OS0uMDQ0di0uMDgxSDIyNy45NFptLTQuNTU3LjM0NGEyLjAxOCwyLjAxOCwwLDAsMC0uNjY4LS4zNDcsMi44NTcsMi44NTcsMCwwLDAtMS42MjYsMCwyLjAxNiwyLjAxNiwwLDAsMC0uNjY4LjM0NywxLjY3NywxLjY3NywwLDAsMC0uNDU1LjU2NywxLjksMS45LDAsMCwwLDAsMS41NjUsMS42NzIsMS42NzIsMCwwLDAsLjQ1NS41NjcsMS44NTgsMS44NTgsMCwwLDAsLjY2OC4zMzcsMy4xMDksMy4xMDksMCwwLDAsMS42MjYsMCwxLjg2LDEuODYsMCwwLDAsLjY2OC0uMzM3LDEuNjc3LDEuNjc3LDAsMCwwLC40NTYtLjU2NywxLjksMS45LDAsMCwwLDAtMS41NjUsMS42ODIsMS42ODIsMCwwLDAtLjQ1Ni0uNTY3bS0uNDY1LDEuNzcxYS45MTEuOTExLDAsMCwxLS4yNDMuMzEsMS4xMTQsMS4xMTQsMCwwLDEtLjM1MS4xOTIsMS4zNTQsMS4zNTQsMCwwLDEtLjg0MywwLDEuMTE2LDEuMTE2LDAsMCwxLS4zNTEtLjE5Mi45MjEuOTIxLDAsMCwxLS4yNDMtLjMxLDEuMDIzLDEuMDIzLDAsMCwxLDAtLjg0My45MjQuOTI0LDAsMCwxLC4yNDMtLjMxLDEuMSwxLjEsMCwwLDEsLjM1MS0uMTkzLDEuMzQ3LDEuMzQ3LDAsMCwxLC44NDMsMCwxLjEsMS4xLDAsMCwxLC4zNTEuMTkzLjkxNC45MTQsMCwwLDEsLjI0My4zMSwxLjAxOSwxLjAxOSwwLDAsMSwwLC44NDNtMTMuODQ2LS42MjFhMS41NzksMS41NzksMCwwLDAtLjQ0NS0uMTc5LDQuNzIzLDQuNzIzLDAsMCwwLS41MTMtLjA5NGMtLjE3NS0uMDIzLS4zNDctLjAzOS0uNTEzLS4wNXMtLjMxNS0uMDI2LS40NDUtLjA0NGExLjEsMS4xLDAsMCwxLS4zMTctLjA4NC4xODMuMTgzLDAsMCwxLS4xMjItLjE3MmMwLS4wNzYuMDU4LS4xNDkuMTc1LS4yMTZhMS4zMiwxLjMyLDAsMCwxLC42MTQtLjEsMy42MTksMy42MTksMCwwLDEsLjQ4Ni4wMzQsNC4yMzQsNC4yMzQsMCwwLDEsLjQ1Mi4wODQsMS43OTEsMS43OTEsMCwwLDEsLjMzNC4xMTVjLjA4OC4wNDMuMTMxLjA4NC4xMzEuMTI1di4wNzRsLjA4MS4wNC40NjUtLjkzNy0uMDc0LS4wMjdhLjQzMi40MzIsMCwwLDEtLjA3NC4wNzEuMTczLjE3MywwLDAsMS0uMTA4LjAzMS45NjEuOTYxLDAsMCwxLS4yMjMtLjA0NHEtLjE1NS0uMDQ0LS4zODQtLjF0LS41MjYtLjFhNC40MjEsNC40MjEsMCwwLDAtLjY0MS0uMDQ0LDIuNTM2LDIuNTM2LDAsMCwwLS42NzUuMDg0LDEuNywxLjcsMCwwLDAtLjUxNi4yMzMsMS4wODQsMS4wODQsMCwwLDAtLjMzMS4zNTcuOTMuOTMsMCwwLDAtLjExOC40NjUuNjUxLjY1MSwwLDAsMCwuMjA2LjUwOSwxLjM3MSwxLjM3MSwwLDAsMCwuNTE2LjI4MywzLjMyNSwzLjMyNSwwLDAsMCwuNjY4LjEzNXEuMzU4LjAzOC42NjguMDY4YTMuNywzLjcsMCwwLDEsLjUxNi4wODFjLjEzNy4wMzQuMjA2LjA5MS4yMDYuMTcyYS4zNy4zNywwLDAsMS0uMjM2LjM0MSwxLjc1LDEuNzUsMCwwLDEtLjc0Mi4xMTgsMi42ODMsMi42ODMsMCwwLDEtLjUxOS0uMDUsMi45MzUsMi45MzUsMCwwLDEtLjQ1Ni0uMTI1LDEuNTQ4LDEuNTQ4LDAsMCwxLS4zMjQtLjE1OGMtLjA4My0uMDU3LS4xMjUtLjEwNy0uMTI1LS4xNTJhLjUuNSwwLDAsMSwuMDEzLS4xNDFsLS4wNjgtLjAzNC0uNSwxLjIuMDgxLjAyYy4wMjMtLjAyMi4wNDQtLjA0Mi4wNjQtLjA2YS4xLjEsMCwwLDEsLjA3MS0uMDI3LjYuNiwwLDAsMSwuMTg1LjA0N3EuMTI1LjA0Ny4zNDEuMWE0LjIzNSw0LjIzNSwwLDAsMCwuNTIzLjEsNS43MzEsNS43MzEsMCwwLDAsLjczMi4wNDEsMy41MjcsMy41MjcsMCwwLDAsLjkxNC0uMSwxLjY1OCwxLjY1OCwwLDAsMCwuNTg3LS4yNzMuOTg2Ljk4NiwwLDAsMCwuMzEtLjM4OCwxLjExNywxLjExNywwLDAsMCwuMDkxLS40MzguODkxLjg5MSwwLDAsMC0uMTIyLS40ODIuOTQ4Ljk0OCwwLDAsMC0uMzE3LS4zMW0tMTcuOTUxLTEuNjEyYS4wOTQuMDk0LDAsMCwxLS4wODEuMDM3SDIxNS40YS4wOTQuMDk0LDAsMCwxLS4wODEtLjAzNy4zNTYuMzU2LDAsMCwxLS4wNC0uMTUxSDIxNS4ydjEuMmguMDgxYS4zNTYuMzU2LDAsMCwxLC4wNC0uMTUyLjA5NC4wOTQsMCwwLDEsLjA4MS0uMDM3aDEuMTZ2Mi41MjNhLjEwNi4xMDYsMCwwLDEtLjAzMS4wNzguMy4zLDAsMCwxLS4xNTkuMDQ0di4wODFoMS4zOVY3NC4zOWEuMy4zLDAsMCwxLS4xNTktLjA0NC4xMDUuMTA1LDAsMCwxLS4wMy0uMDc4VjcxLjc0NmgxLjE2YS4wOTQuMDk0LDAsMCwxLC4wODEuMDM3LjM2MS4zNjEsMCwwLDEsLjA0LjE1MmguMDgxdi0xLjJoLS4wODFhLjM2LjM2LDAsMCwxLS4wNC4xNTFtLTczLjE0LTcuMDE2YTEuMjI3LDEuMjI3LDAsMCwwLTEuMDY4LjYyOGwtNi42MTEtMS42MjUtMy4xMDksMi4yMywzLjEwOSwyLjIzMSw2LjYxMS0xLjYyNWExLjIyNSwxLjIyNSwwLDAsMCwyLjE3OS0uMDc5SDI1M1Y2NC41NzZIMTQ2Ljc4NGExLjIzLDEuMjMsMCwwLDAtMS4xMTEtLjcwN20xMDEuNjkyLDcuNDc4QTIuMDIxLDIuMDIxLDAsMCwwLDI0Ni43LDcxYTIuODU4LDIuODU4LDAsMCwwLTEuNjI2LDAsMi4wMTQsMi4wMTQsMCwwLDAtLjY2OC4zNDcsMS42NzMsMS42NzMsMCwwLDAtLjQ1Ni41NjcsMS45LDEuOSwwLDAsMCwwLDEuNTY1LDEuNjY4LDEuNjY4LDAsMCwwLC40NTYuNTY3LDEuODU3LDEuODU3LDAsMCwwLC42NjguMzM3LDMuMTEsMy4xMSwwLDAsMCwxLjYyNiwwLDEuODYzLDEuODYzLDAsMCwwLC42NjgtLjMzNywxLjY3OCwxLjY3OCwwLDAsMCwuNDU2LS41NjcsMS45LDEuOSwwLDAsMCwwLTEuNTY1LDEuNjgzLDEuNjgzLDAsMCwwLS40NTYtLjU2N20tLjQ2NSwxLjc3MWEuOTE4LjkxOCwwLDAsMS0uMjQzLjMxLDEuMTA4LDEuMTA4LDAsMCwxLS4zNS4xOTIsMS4zNTYsMS4zNTYsMCwwLDEtLjg0MywwLDEuMTE0LDEuMTE0LDAsMCwxLS4zNTEtLjE5Mi45MjEuOTIxLDAsMCwxLS4yNDMtLjMxLDEuMDE5LDEuMDE5LDAsMCwxLDAtLjg0My45MjMuOTIzLDAsMCwxLC4yNDMtLjMxLDEuMSwxLjEsMCwwLDEsLjM1MS0uMTkzLDEuMzQ4LDEuMzQ4LDAsMCwxLC44NDMsMCwxLjA5NCwxLjA5NCwwLDAsMSwuMzUuMTkzLjkyLjkyLDAsMCwxLC4yNDMuMzEsMS4wMjMsMS4wMjMsMCwwLDEsMCwuODQzbTUuNjgzLTEuODU5YTEuMTYsMS4xNiwwLDAsMC0uNC0uMjQ2LDEuNTg3LDEuNTg3LDAsMCwwLS41Ni0uMDkxSDI0OS4yVjcxYS4zLjMsMCwwLDEsLjE1OS4wNDQuMS4xLDAsMCwxLC4wMy4wNzd2My4xNDRhLjEwNi4xMDYsMCwwLDEtLjAzLjA3OC4zLjMsMCwwLDEtLjE1OS4wNDR2LjA4MWgxLjM5Vjc0LjM5YS4zLjMsMCwwLDEtLjE1OS0uMDQ0LjEwNi4xMDYsMCwwLDEtLjAzMS0uMDc4di0xLjFoMS4yMTVhMS41ODYsMS41ODYsMCwwLDAsLjU2LS4wOTEsMS4xODksMS4xODksMCwwLDAsLjQtLjI0My45NjcuOTY3LDAsMCwwLC4yNDMtLjM1NywxLjE3MywxLjE3MywwLDAsMCwwLS44NTcsMSwxLDAsMCwwLS4yNDMtLjM2MW0tLjczOSwxLjFhLjcxOC43MTgsMCwwLDEtLjQxNS4wOTRIMjUwLjR2LS43NzZoMS4wMjZhLjc2My43NjMsMCwwLDEsLjQxNS4wODguMzE1LjMxNSwwLDAsMSwuMTMxLjI4My4zNTUuMzU1LDAsMCwxLS4xMzEuMzFtLTU2LjgxMS41NzQtLjItLjIzN2ExLjYyLDEuNjIsMCwwLDAtLjIxNi0uMjE2Yy4wNjgtLjA0MS4xMzUtLjA4Ni4yLS4xMzVhMS4xNDIsMS4xNDIsMCwwLDAsLjE4Mi0uMTY1LjguOCwwLDAsMCwuMTMyLS4yLjU3LjU3LDAsMCwwLC4wNS0uMjM5Ljc1MS43NTEsMCwwLDAtLjExMi0uNDI4Ljc4OS43ODksMCwwLDAtLjI5LS4yNiwxLjMyMSwxLjMyMSwwLDAsMC0uMzk0LS4xMzEsMi41NzEsMi41NzEsMCwwLDAtLjQzMi0uMDM3LDIuNzE1LDIuNzE1LDAsMCwwLS40MzUuMDM3LDEuMzUxLDEuMzUxLDAsMCwwLS40MTIuMTM1LjgzNi44MzYsMCwwLDAtLjMuMjcuNzY0Ljc2NCwwLDAsMC0uMTE4LjQ0Mi41NTkuNTU5LDAsMCwwLC4xLjMyLDEuMTEyLDEuMTEyLDAsMCwwLC4yMzMuMjUzLDEuNjA2LDEuNjA2LDAsMCwwLS4zMzEuMTU5LDEuMTY1LDEuMTY1LDAsMCwwLS4yNy4yMzMsMS4xMDksMS4xMDksMCwwLDAtLjE4Mi4zLjk1Ljk1LDAsMCwwLS4wNjguMzYuOTEuOTEsMCwwLDAsLjEzNS41MDYsMS4xMTksMS4xMTksMCwwLDAsLjM0Ny4zNDQsMS40NSwxLjQ1LDAsMCwwLC40NzUuMTkzLDIuNDUzLDIuNDUzLDAsMCwwLC41MTIuMDU3LDMuMTUzLDMuMTUzLDAsMCwwLC43MjUtLjA3OCwxLjgxNiwxLjgxNiwwLDAsMCwuNjUxLS4zMTQsMS4wNTcsMS4wNTcsMCwwLDAsLjI1OS4yLDEuMzQ1LDEuMzQ1LDAsMCwwLC4zMDcuMTI1LDEuNjI3LDEuNjI3LDAsMCwwLC4zMy4wNTRxLjE2OS4wMS4zMzEuMDF2LS45MjRoLS4wODFhLjExMS4xMTEsMCwwLDEtLjEyMi4wOTQuMzU4LjM1OCwwLDAsMS0uMTE1LS4wMjQsMS4xLDEuMSwwLDAsMS0uMTM1LS4wNTcsMS4yMzIsMS4yMzIsMCwwLDEtLjEyOC0uMDc0LjYzNi42MzYsMCwwLDEtLjA5NC0uMDc0LjgzNy44MzcsMCwwLDEsLjA3MS0uMTQ4LDEuMzU1LDEuMzU1LDAsMCwxLC4xMTgtLjE3Mi45NDQuOTQ0LDAsMCwxLC4xNDEtLjE0NS4yMjkuMjI5LDAsMCwxLC4xNDItLjA2MS4xNzQuMTc0LDAsMCwxLC4xLjAyNC4xMzYuMTM2LDAsMCwxLC4wNDQuMDcxaC4wNTRWNzEuODRhMi40MTUsMi40MTUsMCwwLDAtLjY4MS40NjIsNC4wOCw0LjA4LDAsMCwwLS41MzMuNjMxbS0xLjM4My0xLjQ0NGEuNTM2LjUzNiwwLDAsMSwuNjA3LDAsLjM1My4zNTMsMCwwLDEsMCwuNTk0LjUzNi41MzYsMCwwLDEtLjYwNywwLC4zNTQuMzU0LDAsMCwxLDAtLjU5NG0uNTY3LDIuMTgzYTEsMSwwLDAsMS0uNDExLjEuNjkzLjY5MywwLDAsMS0uNDI1LS4xMjUuNDQyLjQ0MiwwLDAsMSwwLS42OTUuNy43LDAsMCwxLC40MjUtLjEyNS43NjMuNzYzLDAsMCwxLC43NDkuNTk0Ljg3NC44NzQsMCwwLDEtLjMzNy4yNTNtLTUuODgyLTIuMjRhMS41MTQsMS41MTQsMCwwLDAtLjU2Ni0uMzc1LDIuMjE4LDIuMjE4LDAsMCwwLS44MS0uMTM1aC0yLjI0VjcxYS4zLjMsMCwwLDEsLjE1OS4wNDQuMS4xLDAsMCwxLC4wMy4wNzd2My4xNDRhLjEwNS4xMDUsMCwwLDEtLjAzLjA3OC4zLjMsMCwwLDEtLjE1OS4wNDR2LjA4MWgyLjE2NWEyLjEzNCwyLjEzNCwwLDAsMCwuODI3LS4xNDgsMS43NzgsMS43NzgsMCwwLDAsLjU5NC0uMzk0LDEuNiwxLjYsMCwwLDAsLjM1OC0uNTY3LDEuOTEzLDEuOTEzLDAsMCwwLC4xMTgtLjY2NSwyLjEzNSwyLjEzNSwwLDAsMC0uMTEyLS43LDEuNTU5LDEuNTU5LDAsMCwwLS4zMzQtLjU2M20tLjc4OSwxLjk3YS45NjYuOTY2LDAsMCwxLS43NjkuMjc0aC0uODU3VjcxLjcxOGguODU3YS45NjYuOTY2LDAsMCwxLC43NjkuMjczLDEuMTcsMS4xNywwLDAsMSwwLDEuNDFtLTQuNjY0LTIuMDU0YTIuMDIzLDIuMDIzLDAsMCwwLS42NjgtLjM0NywyLjg1NywyLjg1NywwLDAsMC0xLjYyNiwwLDIuMDE2LDIuMDE2LDAsMCwwLS42NjguMzQ3LDEuNjc3LDEuNjc3LDAsMCwwLS40NTUuNTY3LDEuOSwxLjksMCwwLDAsMCwxLjU2NSwxLjY3MiwxLjY3MiwwLDAsMCwuNDU1LjU2NywxLjg1OSwxLjg1OSwwLDAsMCwuNjY4LjMzNywzLjEwOSwzLjEwOSwwLDAsMCwxLjYyNiwwLDEuODY1LDEuODY1LDAsMCwwLC42NjgtLjMzNywxLjY4MSwxLjY4MSwwLDAsMCwuNDU1LS41NjcsMS45LDEuOSwwLDAsMCwwLTEuNTY1LDEuNjg2LDEuNjg2LDAsMCwwLS40NTUtLjU2N20tLjQ2NiwxLjc3MWEuOTExLjkxMSwwLDAsMS0uMjQzLjMxLDEuMTE0LDEuMTE0LDAsMCwxLS4zNTEuMTkyLDEuMzU1LDEuMzU1LDAsMCwxLS44NDMsMCwxLjExNiwxLjExNiwwLDAsMS0uMzUxLS4xOTIuOTE2LjkxNiwwLDAsMS0uMjQyLS4zMSwxLjAxOSwxLjAxOSwwLDAsMSwwLS44NDMuOTE4LjkxOCwwLDAsMSwuMjQyLS4zMSwxLjEsMS4xLDAsMCwxLC4zNTEtLjE5MywxLjM0NywxLjM0NywwLDAsMSwuODQzLDAsMS4xLDEuMSwwLDAsMSwuMzUxLjE5My45MTQuOTE0LDAsMCwxLC4yNDMuMzEsMS4wMTksMS4wMTksMCwwLDEsMCwuODQzbS00LjM4OCwxLjE1LS44LTEuMTJhMS41NzgsMS41NzgsMCwwLDAsLjY5MS0uMzc4Ljk2NS45NjUsMCwwLDAsLjI3My0uNzI5LDEuMDIzLDEuMDIzLDAsMCwwLS4zMzctLjg0NiwxLjcyNiwxLjcyNiwwLDAsMC0xLjA4Ni0uMjczSDE3NC4zVjcxYS4zLjMsMCwwLDEsLjE1OS4wNDQuMTA1LjEwNSwwLDAsMSwuMDMxLjA3N3YzLjE0NGEuMTA2LjEwNiwwLDAsMS0uMDMxLjA3OC4zLjMsMCwwLDEtLjE1OS4wNDR2LjA4MWgxLjM5Vjc0LjM5YS4zLjMsMCwwLDEtLjE1OS0uMDQ0LjEwNi4xMDYsMCwwLDEtLjAzMS0uMDc4VjczLjEzNWguNjYyYy4wMTMuMDIzLjA0Mi4wNjUuMDg4LjEyOHMuMS4xMzUuMTU5LjIxNmwuMTg5LjI1M2MuMDY1LjA4OC4xMjUuMTcuMTc5LjI0N3MuMS4xNDEuMTM1LjJhLjM4Ni4zODYsMCwwLDEsLjA1NC4wOTRjMCwuMDc2LS4wNS4xMTctLjE0OC4xMjJ2LjA4MWgxLjRWNzQuMzlhLjIzMi4yMzIsMCwwLDEtLjItLjEyMm0tLjk4Mi0xLjk1OWEuNTc2LjU3NiwwLDAsMS0uNDA4LjExMkgxNzUuNXYtLjc0M2gxLjEzNGEuNTc2LjU3NiwwLDAsMSwuNDA4LjExMS4zNTkuMzU5LDAsMCwxLDAsLjUybTM2Ljg2My4xODlhMS41NzUsMS41NzUsMCwwLDAtLjQ0NS0uMTc5LDQuNjg4LDQuNjg4LDAsMCwwLS41MTItLjA5NGMtLjE3NS0uMDIzLS4zNDctLjAzOS0uNTEzLS4wNXMtLjMxNS0uMDI2LS40NDUtLjA0NGExLjEsMS4xLDAsMCwxLS4zMTctLjA4NC4xODMuMTgzLDAsMCwxLS4xMjItLjE3MmMwLS4wNzYuMDU4LS4xNDkuMTc1LS4yMTZhMS4zMiwxLjMyLDAsMCwxLC42MTQtLjEsMy42MTUsMy42MTUsMCwwLDEsLjQ4Ni4wMzQsNC4yMzUsNC4yMzUsMCwwLDEsLjQ1Mi4wODQsMS43ODIsMS43ODIsMCwwLDEsLjMzNC4xMTVjLjA4OC4wNDMuMTMxLjA4NC4xMzEuMTI1di4wNzRsLjA4MS4wNC40NjYtLjkzNy0uMDc1LS4wMjdhLjQzMi40MzIsMCwwLDEtLjA3NC4wNzEuMTczLjE3MywwLDAsMS0uMTA4LjAzMS45NjEuOTYxLDAsMCwxLS4yMjMtLjA0NHEtLjE1NS0uMDQ0LS4zODQtLjF0LS41MjYtLjFhNC40MjYsNC40MjYsMCwwLDAtLjY0MS0uMDQ0LDIuNTM2LDIuNTM2LDAsMCwwLS42NzUuMDg0LDEuNywxLjcsMCwwLDAtLjUxNi4yMzMsMS4wODcsMS4wODcsMCwwLDAtLjMzMS4zNTcuOTMxLjkzMSwwLDAsMC0uMTE4LjQ2NS42NTEuNjUxLDAsMCwwLC4yMDYuNTA5LDEuMzczLDEuMzczLDAsMCwwLC41MTYuMjgzLDMuMzIsMy4zMiwwLDAsMCwuNjY4LjEzNXEuMzU3LjAzOC42NjguMDY4YTMuNywzLjcsMCwwLDEsLjUxNi4wODFjLjEzNy4wMzQuMjA2LjA5MS4yMDYuMTcyYS4zNy4zNywwLDAsMS0uMjM2LjM0MSwxLjc1MSwxLjc1MSwwLDAsMS0uNzQyLjExOCwyLjY4MywyLjY4MywwLDAsMS0uNTE5LS4wNSwyLjkzNCwyLjkzNCwwLDAsMS0uNDU2LS4xMjUsMS41NDksMS41NDksMCwwLDEtLjMyNC0uMTU4Yy0uMDgzLS4wNTctLjEyNS0uMTA3LS4xMjUtLjE1MmEuNS41LDAsMCwxLC4wMTMtLjE0MWwtLjA2OC0uMDM0LS41LDEuMi4wODEuMDJjLjAyMi0uMDIyLjA0NC0uMDQyLjA2NC0uMDZhLjEuMSwwLDAsMSwuMDcxLS4wMjcuNi42LDAsMCwxLC4xODUuMDQ3cS4xMjUuMDQ3LjM0MS4xYTQuMjM0LDQuMjM0LDAsMCwwLC41MjMuMSw1LjczMiw1LjczMiwwLDAsMCwuNzMyLjA0MSwzLjUzLDMuNTMsMCwwLDAsLjkxNC0uMSwxLjY2NCwxLjY2NCwwLDAsMCwuNTg3LS4yNzMuOTg5Ljk4OSwwLDAsMCwuMzEtLjM4OCwxLjEyMywxLjEyMywwLDAsMCwuMDkxLS40MzguODg3Ljg4NywwLDAsMC0uMTIyLS40ODIuOTQ4Ljk0OCwwLDAsMC0uMzE3LS4zMU05MS45LDY0LjVhMS4yMjQsMS4yMjQsMCwwLDAtMi4xNzkuMDc5SDB2MS4wNTJIODkuNzJhMS4yMjUsMS4yMjUsMCwwLDAsMi4xNzkuMDc5bDYuNjEyLDEuNjI1TDEwMS42Miw2NS4xbC0zLjEwOS0yLjIzWk0yMDcuODcxLDcxYS4zLjMsMCwwLDEsLjE1OS4wNDQuMTA1LjEwNSwwLDAsMSwuMDMxLjA3N3YxLjgwOGEuNjU5LjY1OSwwLDAsMS0uMjIzLjU2LDEuMjUyLDEuMjUyLDAsMCwxLTEuMjU1LDAsLjY1OC42NTgsMCwwLDEtLjIyMy0uNTZWNzEuMTI1YS4xLjEsMCwwLDEsLjAzMS0uMDc3LjMuMywwLDAsMSwuMTU5LS4wNDR2LS4wODFoLTEuMzlWNzFhLjMuMywwLDAsMSwuMTU5LjA0NC4xLjEsMCwwLDEsLjAzLjA3N3YxLjgwOGExLjczLDEuNzMsMCwwLDAsLjE0NS43NDksMS4yNDksMS4yNDksMCwwLDAsLjQuNDg2LDEuNTQzLDEuNTQzLDAsMCwwLC41OTQuMjUzLDMuNzU0LDMuNzU0LDAsMCwwLDEuNDUsMCwxLjU0NCwxLjU0NCwwLDAsMCwuNTk0LS4yNTMsMS4yNDIsMS4yNDIsMCwwLDAsLjQtLjQ4NiwxLjczLDEuNzMsMCwwLDAsLjE0NS0uNzQ5VjcxLjEyNWEuMTA1LjEwNSwwLDAsMSwuMDMxLS4wNzdBLjMuMywwLDAsMSwyMDkuMjYsNzF2LS4wODFoLTEuMzlabS00LjExOCwzLjI4LTEuNDA2LTIuMDU0LDEuMTkyLTEsLjEwNy0uMDkxYy4wMy0uMDI1LjA1OC0uMDQ2LjA4My0uMDY0YS4yODkuMjg5LDAsMCwxLC4wODMtLjA0MS42NDEuNjQxLDAsMCwxLC4xMTQtLjAyVjcwLjkzaC0xLjc1MXYuMDgxYS41Ny41NywwLDAsMSwuMDg5LjAxN2MuMDIzLjAwNi4wMzUuMDMuMDM1LjA3MXEwLC4wMjctLjEzNS4xNTFjLS4wODkuMDgzLS4yLjE4NC0uMzM0LjNzLS4yNzkuMjQ4LS40MzguMzg3LS4zMDcuMjc0LS40NDUuNEgyMDAuOVY3MS4xMzJhLjEwNS4xMDUsMCwwLDEsLjAzMS0uMDc3LjMxMS4zMTEsMCwwLDEsLjE2Mi0uMDQ0VjcwLjkzaC0xLjQydi4wODFhLjMwOS4zMDksMCwwLDEsLjE2Mi4wNDQuMS4xLDAsMCwxLC4wMzEuMDc3Vjc0LjI3YS4xLjEsMCwwLDEtLjAzMS4wNzcuMzA4LjMwOCwwLDAsMS0uMTYyLjA0NHYuMDgxaDEuNDJ2LS4wODFhLjMxLjMxLDAsMCwxLS4xNjItLjA0NC4xLjEsMCwwLDEtLjAzMS0uMDc3di0uODA4bC42NzUtLjU5MmMuMDE4LjAyNy4wNTUuMDc5LjExLjE1NXMuMTE3LjE2Ni4xODYuMjY5LjE0My4yMTEuMjIxLjMyMy4xNDkuMjE4LjIxMy4zMTYuMTE3LjE4Mi4xNTkuMjQ5YS40MzQuNDM0LDAsMCwxLC4wNjIuMTIxYzAsLjA0NS0uMDEyLjA3MS0uMDM0LjA3N2EuMzU2LjM1NiwwLDAsMS0uMS4wMXYuMDgxaDEuNTc4di0uMDgxYS40NTEuNDUxLDAsMCwxLS4xMTctLjAxMy4yMTcuMjE3LDAsMCwxLS4xLS4wOTQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTI3LjEyOSkiIGZpbGw9IiMxYTE4MTgiPjwvcGF0aD48L2c+PC9nPjwvc3ZnPiA=" alt="Kruzin Kustoms"></div>
+        <div class="client-meta">Kendal Smith, Kruzin Kustoms</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- WHO WE ARE -->
+  <section class="section section--paper">
+    <div class="wrap reveal">
+      <div class="eyebrow">Who we are</div>
+      <h2 class="title">Who we are and who we reach</h2>
+      <div class="body-copy">
+        <p class="lede">Via Media’s brands, including NZV8 and NZ Performance Car, have covered New Zealand’s car enthusiast scene for 30 years, and we own the audiences that follow them on social media, by email, on our websites, and in print.</p>
+        <p class="muted">For a business like yours, this means one team creates the content, runs the paid media, and puts both in front of people who already follow and engage with us. NZV8 has featured several Kruzin Kustoms hot rod and custom builds over the last few years, including Todd Collins’ C10 ‘Mac Daddy’ and Hayden Brown’s bagged 1965 GMC C10. NZ Performance Car reaches the owners of the Japanese and Euro performance cars that are now becoming modern classics, from hands-on modifiers to established professionals with money to spend on their cars. These are the builds you want to grow into.</p>
+      </div>
+      <div class="audience">
+        <div class="audience__item">
+          <svg class="audience__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="18" cy="16" r="6"/><path d="M6 38c0-7 5.4-12 12-12s12 5 12 12"/><circle cx="33" cy="18" r="5"/><path d="M31 27c6 0 11 4.4 11 11"/></svg>
+          <div class="audience__num">105,000</div>
+          <div class="audience__label">NZV8 first-party audience</div>
+        </div>
+        <div class="audience__item">
+          <svg class="audience__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="18" cy="16" r="6"/><path d="M6 38c0-7 5.4-12 12-12s12 5 12 12"/><circle cx="33" cy="18" r="5"/><path d="M31 27c6 0 11 4.4 11 11"/></svg>
+          <div class="audience__num">115,000</div>
+          <div class="audience__label">NZ Performance Car first-party audience</div>
+        </div>
+        <div class="audience__item">
+          <svg class="audience__icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="10" width="34" height="31" rx="4"/><path d="M7 19h34M16 6v8M32 6v8"/><path d="M16 28h4M24 28h8M16 34h8"/></svg>
+          <div class="audience__num">73%</div>
+          <div class="audience__label">of NZ Performance Car’s audience is aged 25 to 44, with 40% aged 35 and over</div>
+        </div>
+        <div class="audience__item">
+          <svg class="audience__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="21" cy="21" r="13"/><path d="M30.5 30.5L42 42"/><path d="M21 13l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg>
+          <div class="audience__num">1.04M</div>
+          <div class="audience__label">Google AI-result impressions for NZ Performance Car in three months</div>
+        </div>
+      </div>
+      <p class="audience__note">Approximate figures. People who follow a title on more than one channel are counted once where platforms allow.</p>
+      <blockquote class="quote">
+        <p>“The team at Via Media make every campaign extremely easy with in-depth targeting data and post-campaign reporting. With the ability to target dual audiences of trade and consumer on one platform, all with consistently above average industry results, Via Media are a go-to for connecting with our customers smarter, faster, and more efficiently.”</p>
+        <cite>— Frances Vettori, General Manager Marketing, NAPA ANZ</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- WHAT WE FOUND -->
+  <section class="section section--white">
+    <div class="wrap reveal">
+      <div class="eyebrow">What we found</div>
+      <h2 class="title">How Kruzin Kustoms shows up online today</h2>
+      <p class="lede muted">We looked at your website, search results, AI answers, social channels, and advertising as a potential customer would see them, as the first step towards a full audit of your online presence and marketing channels.</p>
+      <div class="findings">
+        <div class="finding finding--good">
+          <div class="finding__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="5" y="13" width="38" height="27" rx="4"/><path d="M17 13l3-6h8l3 6"/><circle cx="24" cy="26.5" r="7.5"/></svg></div>
+          <div class="finding__body">
+            <span class="tag tag--good">Working well</span>
+            <h3>A name the scene already knows</h3>
+            <p>You won Supreme Business of the Year at the 2026 Yorb Manawatū Business Awards, along with the Marketing, Trades &amp; Services, and Medium Business awards. Your builds have been <em>NZV8</em> cover cars and featured in the US magazine <em>Classic Truck Performance</em>. Your Facebook Page has 12,600 followers, and each finished build draws a strong response.</p>
+          </div>
+        </div>
+        <div class="finding finding--gap">
+          <div class="finding__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="3.5"/><path d="M15.5 15.5a12 12 0 0 0 0 17M32.5 15.5a12 12 0 0 1 0 17M9.5 9.5a20.5 20.5 0 0 0 0 29M38.5 9.5a20.5 20.5 0 0 1 0 29"/></svg></div>
+          <div class="finding__body">
+            <span class="tag tag--gap">Gap</span>
+            <h3>Missing from search and AI answers for your trade</h3>
+            <p>For “hot rod shop NZ”, “hot rod builder NZ”, “restomod builder NZ”, “best custom car builder in New Zealand”, and “hot rod parts NZ”, Kruzin Kustoms appeared only in paid ads. When we asked Perplexity and Google’s AI Overviews to name the best hot rod and custom builders in New Zealand, neither list included you, even though your builds are profiled in editorial media. These tools name a business when the content is about that business: its people, its capability, and how it works. Most coverage of your work, including ours, tells the owner’s story and their build journey, so Kruzin Kustoms appears as a credit rather than the subject.</p>
+          </div>
+        </div>
+        <div class="finding finding--opp">
+          <div class="finding__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="21" cy="21" r="13"/><path d="M30.5 30.5L42 42"/><path d="M15 21h12M21 15v12"/></svg></div>
+          <div class="finding__body">
+            <span class="tag tag--opp">Opportunity</span>
+            <h3>Put your builds where search and AI tools look</h3>
+            <p>Workshop profiles we publish on NZV8 already appear in AI answers, and 41% of NZ Performance Car’s Google impressions now come from AI-generated results. Your Facebook Page shows a steady run of finished builds, but only six of the 61 project pages on your website were added after 2024. Profiles with Kruzin Kustoms as the subject, on sites these tools already use, put your name in those answers.</p>
+          </div>
+        </div>
+        <div class="finding finding--opp">
+          <div class="finding__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 10h5l4 22h20l4-15H15"/><circle cx="20" cy="39" r="2.5"/><circle cx="34" cy="39" r="2.5"/></svg></div>
+          <div class="finding__body">
+            <span class="tag tag--opp">Opportunity</span>
+            <h3>An online shop that shows what it’s best at</h3>
+            <p>Your shop carries 1,342 products. The home page features ten of them side by side, including a Harley-Davidson wheel, signwriting paint, a T-shirt, and an LS fitting, which makes it hard for a new visitor to see what the shop specialises in or where to start. Your Google Shopping ads lean towards Harley-Davidson parts. Clear featured ranges, built around your builds and your best sellers, would help shoppers and search engines alike.</p>
+          </div>
+        </div>
+        <div class="finding finding--fix">
+          <div class="finding__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 43s-13-12.5-13-23a13 13 0 0 1 26 0c0 10.5-13 23-13 23z"/><circle cx="24" cy="20" r="4.5"/></svg></div>
+          <div class="finding__body">
+            <span class="tag tag--fix">Fix needed</span>
+            <h3>Your Google profile, listings, and home page speed</h3>
+            <p>Your Google profile has 90 reviews at an average of 4.4, but it appears not to be claimed, so you can’t update its photos, services, or replies. Your Instagram bio and Yellow listing still show the Kelvin Grove Road address. Your home page loads about 18 MB, most of it the hero video, and Google’s data from real mobile visitors shows it loading more slowly than Google recommends. All of these are quick to fix.</p>
+          </div>
+        </div>
+        <div class="finding finding--gap">
+          <div class="finding__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="7"/><path d="M24 4v8M24 36v8M4 24h8M36 24h8"/></svg></div>
+          <div class="finding__body">
+            <span class="tag tag--gap">Gap</span>
+            <h3>Tracking for build enquiries</h3>
+            <p>GA4 and Google Ads track shop sales through WooCommerce. There’s no Meta pixel on the site, so Facebook and Instagram can’t show ads to people who’ve visited or viewed a product. We couldn’t see whether enquiry forms or phone calls are tracked, and your public Google ads are mostly shop products plus ads on your own name. The account review will show what they return.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PLAN -->
+  <section class="section section--paper">
+    <div class="wrap reveal">
+      <div class="eyebrow">The plan</div>
+      <h2 class="title">Foundations first, then content and paid media</h2>
+      <p class="lede muted">The plan covers the three things you’ve asked about: more visibility for your hot rod and custom builds, a move into JDM and performance builds, and a better-performing online shop.</p>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step__num">1</div>
+          <div>
+            <h3>Review your accounts and set a 90-day plan</h3>
+            <ul>
+              <li>A read-only review of Google Ads, GA4, Search Console, and Merchant Center.</li>
+              <li>A review of your online shop: how products are grouped and featured, your Google Shopping feed, and what sells.</li>
+              <li>Written findings and a 90-day plan for your new team member, matched to their skills.</li>
+              <li>A list of website and shop fixes, split into what your team can do in-house and what needs your web developer, each written so it can be quoted.</li>
+              <li>A handover session with you and your team member.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step__num">2</div>
+          <div>
+            <h3>Set up tracking and fix your listings</h3>
+            <ul>
+              <li>Two Meta pixels. Your own connects through WooCommerce and covers the shop, including your product catalogue, so your team can use it for its own advertising. Via Media’s covers the campaigns we run to our audiences.</li>
+              <li>The audiences we build through our campaigns sit in our ad account, and we reuse them for your future campaigns.</li>
+              <li>Tracking for enquiry forms and phone calls in GA4 and Google Ads, tested before handover.</li>
+              <li>A line for your privacy policy covering Meta tracking.</li>
+              <li>Your Google Business Profile claimed and updated, and your address corrected on Instagram and Yellow.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step__num">3</div>
+          <div>
+            <span class="budget">Two profiles a quarter, three in the first</span>
+            <h3>Behind-the-Build profiles on NZV8 and NZ Performance Car</h3>
+            <ul>
+              <li>Kruzin Kustoms is the subject: your team, your process, and the work.</li>
+              <li>NZV8 covers your hot rod and custom builds. NZ Performance Car introduces your JDM and performance work to its audience of about 115,000, most of them aged 25 to 44.</li>
+              <li>We schedule the profiles into our monthly, two-monthly, and quarterly editorial cycles, so each one gets a prime slot across our websites, social channels, and print when it runs. In the first three months we publish three: two on NZV8 and one on NZ Performance Car. From month four, we publish one on each title every quarter.</li>
+              <li>Each profile is a Q&amp;A with you, written as an online article built to be found by search engines and AI tools. It also runs in the print magazine.</li>
+              <li>We work from photos and video your team supplies of the build, your workshop, and your staff, or from our own shoots of builds we feature editorially. You’re welcome to use the photos and video on your own channels.</li>
+              <li>We promote each online article to the matching audience on Facebook and Instagram, with links to your site.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step__num">4</div>
+          <div>
+            <h3>Run your build videos to both audiences</h3>
+            <ul>
+              <li>We cut the build video you already have into Facebook and Instagram ads.</li>
+              <li>The ads run to NZV8’s and NZ Performance Car’s audiences and link to the profiles and your site.</li>
+              <li>Once tracking is live, we also show ads to people who have visited your site, so the campaign works toward enquiries.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step__num">5</div>
+          <div>
+            <span class="budget">Optional</span>
+            <h3>Shop and search campaigns</h3>
+            <ul>
+              <li>Google Shopping campaigns built around the ranges the review shows sell best.</li>
+              <li>Facebook and Instagram product ads that show people the parts they viewed in your shop.</li>
+              <li>Search campaigns for people looking for a builder.</li>
+              <li>We set the price once the review shows your current spend and setup.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step__num">6</div>
+          <div>
+            <h3>Monthly reporting</h3>
+            <ul>
+              <li>One written report each month covering the profiles, the paid social, enquiries, and shop sales.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IT COSTS -->
+  <section class="section section--white">
+    <div class="wrap reveal">
+      <div class="eyebrow">What it costs</div>
+      <h2 class="title">Costs by line, so you can choose</h2>
+
+      <div class="cost-card reveal">
+        <div class="cost-group">Via Media fee, one-off</div>
+        <div class="cost-item">
+          <div class="cost-item__title">Account review and 90-day plan</div>
+          <div class="cost-item__fig">$1,800</div>
+          <p class="cost-item__desc">Read-only review of Google Ads, GA4, Search Console, Merchant Center, and your online shop. Written findings, a 90-day plan for your team member, and a website and shop fix list ready to quote. Includes one handover session.</p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-item__title">Tracking and listings setup</div>
+          <div class="cost-item__fig">From $1,200</div>
+          <p class="cost-item__desc">Meta tracking, enquiry-form and phone-call tracking in GA4 and Google Ads, privacy-policy wording, and your Google Business Profile and listings. The price depends on what the review shows is needed, and we confirm it with you before we start.</p>
+        </div>
+
+        <div class="cost-group">Via Media fee, monthly</div>
+        <div class="cost-item">
+          <div class="cost-item__title">Behind-the-Build profiles</div>
+          <div class="cost-item__fig">$2,000 a month, then $1,333</div>
+          <p class="cost-item__desc">$2,000 a profile when your team supplies the photography. Our usual price of $2,500 includes our own photo shoot and article promotion. Each profile includes the Q&amp;A, the online article, and the print feature. Three profiles in the first three months, at $2,000 a month, then two a quarter, at $1,333 a month.</p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-item__title">Build video campaign</div>
+          <div class="cost-item__fig">$800</div>
+          <p class="cost-item__desc">Facebook and Instagram ads cut from your build video, run to NZV8’s and NZ Performance Car’s audiences and to your site visitors once tracking is live. One new ad set a month, with monitoring and the monthly report.</p>
+        </div>
+
+        <div class="cost-group">Media spend, monthly</div>
+        <div class="cost-item">
+          <div class="cost-item__title">Video campaign media</div>
+          <div class="cost-item__fig">$400 suggested</div>
+          <p class="cost-item__desc">Paid delivery of your build videos to NZV8’s and NZ Performance Car’s first-party audiences on Facebook and Instagram.</p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-item__title">Article promotion</div>
+          <div class="cost-item__fig">From $100</div>
+          <p class="cost-item__desc">Promotes each online profile to that title’s audience on Facebook and Instagram.</p>
+        </div>
+
+        <div class="cost-group">Optional</div>
+        <div class="cost-item">
+          <div class="cost-item__title">Shop and search campaigns</div>
+          <div class="cost-item__fig">From $850 a month</div>
+          <p class="cost-item__desc">Google Shopping, Facebook and Instagram product ads, and build-enquiry search. We set the price after the account review. Google and Meta media spend is billed to you directly.</p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-item__title">Photo shoot by our team</div>
+          <div class="cost-item__fig">$450 a profile, plus travel</div>
+          <p class="cost-item__desc">For a build we aren’t featuring editorially that needs more photography than your team can supply. We shoot the car, your workshop, and your staff ourselves.</p>
+        </div>
+
+        <div class="cost-totals">
+          <div class="cost-sum">
+            <div class="cost-sum__row">
+              <span class="cost-sum__label">Month one<small>One-off review and setup, plus the monthly fees and media</small></span>
+              <span class="cost-sum__fig">From $6,300 + GST</span>
+            </div>
+            <div class="cost-sum__row">
+              <span class="cost-sum__label">Months two and three<small>Via Media fees and media, per month</small></span>
+              <span class="cost-sum__fig">$3,300 + GST</span>
+            </div>
+            <div class="cost-sum__row">
+              <span class="cost-sum__label">From month four<small>Via Media fees and media, per month</small></span>
+              <span class="cost-sum__fig">$2,633 + GST</span>
+            </div>
+          </div>
+          <p class="cost-note">All figures exclude GST. The review and setup are charged in month one only. Any charges from your web developer to install tracking or make site fixes are separate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT STEPS -->
+  <section class="section section--paper">
+    <div class="wrap reveal">
+      <div class="eyebrow">Next steps</div>
+      <h2 class="title">Building on the results</h2>
+      <div class="body-copy">
+        <p class="lede">When we have your answers to a few questions, we’ll confirm the details in this proposal and start with the account review and tracking. The first profile follows once we have the photos and video for the build.</p>
+      </div>
+      <div class="reassure">Each profile stays live on our sites, and each month adds to the audiences we build for you: site visitors, video viewers, shoppers, and enquiries. After three months, we use those results to plan what comes next, putting more behind the builds, audiences, and channels that bring in enquiries and sales. There’s no fixed-term contract.</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__contact">
+        Michael White · Business Director<br>
+        <a href="mailto:michael.white@viamedia.co.nz">michael.white@viamedia.co.nz</a> · <a href="https://viamedia.co.nz">viamedia.co.nz</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
