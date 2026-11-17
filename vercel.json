@@ -69,6 +69,10 @@
       "destination": "/lp/review/:token/index.html"
     },
     {
+      "source": "/lp/audits/:token",
+      "destination": "/lp/audits/:token/index.html"
+    },
+    {
       "source": "/media-kit/:brand",
       "destination": "/media-kit/:brand/index.html"
     },
