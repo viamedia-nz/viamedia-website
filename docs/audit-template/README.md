@@ -6,7 +6,7 @@ This repository is public. Never commit client data to this folder. Client audit
 
 ## Files
 
-- `template.html` — the sample audit (fictional business, Tarnell Industrial). Copy it as the starting point for a new audit: head, CSS, wordmark, sections and script are all in this one file.
+- `template.html` — the sample audit (fictional business, Norvik Trade & Industrial Supply). Copy it as the starting point for a new audit: head, CSS, wordmark, sections and script are all in this one file.
 - `build_sample.py` — builds the sample page. Shows how each section is generated (findings, fixes, scorecard, cards).
 - `riskcard.py` — the "Spend unlikely to produce enquiries" card and the currency convention (state NZ$ once in the hero, then plain $).
 - `glance.py` — helpers for the "Audit at a glance" cards (waffle, dots, donut, timeline, stacked bars).
