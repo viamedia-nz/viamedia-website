@@ -12,7 +12,7 @@ head = src[: src.index('<div class="draft">')]
 tail = src[src.index("<script>"):]
 # drop any earlier RISK_CSS copy from the template head, then add our own once
 head = head.replace(RISK_CSS, "")
-head = head.replace("<title>Ag Steel Google Ads audit</title>", "<title>Sample digital platform audit · Tarnell Industrial</title>")
+head = head.replace("<title>Ag Steel Google Ads audit</title>", "<title>Sample digital platform audit · Norvik Trade &amp; Industrial Supply</title>")
 
 
 def gauge(level, label):
@@ -59,21 +59,21 @@ dots = "".join("<i></i>" for _ in range(12))
 
 segs = [(29, "#B3261E", "Other businesses by name"), (9, "#D9622B", "Clearly off-target"),
         (31, "#1E7A4C", "Relevant product searches"), (18, "#D4A017", "General trade searches"),
-        (13, "#354757", "Tarnell by name")]
+        (13, "#354757", "Norvik by name")]
 stack = "".join(f'<span style="width:{p}%;background:{c}" title="{l}: {p}%"></span>' for p, c, l in segs)
 stack_leg = "".join(f'<li><i style="background:{c}"></i><b>{p}%</b> {l}</li>' for p, c, l in segs)
 
-body = f'''<div class="sample">Sample report. Tarnell Industrial is a fictional business; names and figures are illustrative.</div>
+body = f'''<div class="sample">Sample report. Norvik Trade &amp; Industrial Supply is a fictional business; names and figures are illustrative.</div>
 
 <header class="hero">
   <div class="hero__inner">
     <svg class="wordmark" viewBox="0 0 1326 432" role="img" aria-label="Via Media"><use href="#vm-wordmark"></use></svg>
-    <h1>Tarnell Industrial digital platform audit</h1>
+    <h1>Norvik Trade &amp; Industrial Supply digital platform audit</h1>
     <p class="hero__sub">Findings and prioritised fixes</p>
     <dl class="hero__meta">
-      <div><dt>Prepared for</dt><dd>Tarnell Industrial</dd></div>
-      <div><dt>Period reviewed</dt><dd>12 months to Nov 2026</dd></div>
-      <div><dt>Audit dates</dt><dd>Two weeks, Nov 2026</dd></div>
+      <div><dt>Prepared for</dt><dd>Norvik Trade &amp; Industrial Supply</dd></div>
+      <div><dt>Period reviewed</dt><dd>12 months to Oct 2026</dd></div>
+      <div><dt>Audit dates</dt><dd>2 to 13 Nov 2026</dd></div>
       <div><dt>Prepared by</dt><dd>Via Media</dd></div>
     </dl>
   </div>
@@ -84,7 +84,7 @@ body = f'''<div class="sample">Sample report. Tarnell Industrial is a fictional 
   <div class="wrap">
     <div class="eyebrow">Overview</div>
     <h2>Key points</h2>
-    <p class="lede">Tarnell Industrial spent <span class="num">NZ$38,600</span> on Google and Meta ads in the last 12 months. The ads produce enquiries, but the platforms count the wrong things, and a third of Google spend reaches people unlikely to buy.</p>
+    <p class="lede">Norvik spent <span class="num">NZ$38,600</span> on Google and Meta ads in the last 12 months. The ads produce enquiries, but the platforms count the wrong things, and a third of Google spend reaches people unlikely to buy.</p>
     <div class="points">
       <div class="point"><div><strong>Google counts page visits and repeat form submissions as enquiries</strong><p>Google recorded 3,140 conversions. Your CRM shows 260 enquiries from the website and phone in the same period, about 12 recorded conversions for every real enquiry.</p></div></div>
       <div class="point"><div><strong>A third of Google spend went on clicks unlikely to produce an enquiry</strong><p>At least $10,400 of $31,400 went on searches for other businesses and Performance Max ads outside Google Search.</p></div></div>
@@ -138,7 +138,7 @@ body = f'''<div class="sample">Sample report. Tarnell Industrial is a fictional 
       <div class="g g--3 g--risk">
         <div class="g__kicker">Visible search spend · NZ$11,600</div>
         <div class="g__big num">38%</div>
-        <div class="g__label">reached people searching for other businesses, or for something Tarnell does not sell</div>
+        <div class="g__label">reached people searching for other businesses, or for something Norvik does not sell</div>
         <div class="stack" aria-hidden="true">{stack}</div>
         <ul class="key key--small">{stack_leg}</ul>
         <div class="g__src">Google Ads search terms report</div>
@@ -218,7 +218,7 @@ body = f'''<div class="sample">Sample report. Tarnell Industrial is a fictional 
  "Google Ads uses three main conversions: a visit to the contact page, a visit to the quote page, and the quote form. The quote form's thank-you page reloads when a visitor returns to it, so one enquiry can be counted several times. Calls from the ads are counted correctly. Google recorded 3,140 conversions in 12 months; your CRM shows 260 enquiries from the website and phone.",
  "Every cost-per-lead figure in Google and in your monthly report is far lower than the real cost. The campaigns are set to find more conversions, so they find more page visits.", "1 and 3", True)}
 {finding(2, "high", "A third of Google spend went on clicks unlikely to produce an enquiry", "Searches for other businesses, and Performance Max ads outside Search",
- "Of the searches Google shows, 38% of spend went on searches for other businesses by name or for products Tarnell does not sell, such as ‘hydraulic repairs near me’. Most keywords are broad match. Performance Max spent 33% of its budget on ads on other websites, apps and YouTube.",
+ "Of the searches Google shows, 38% of spend went on searches for other businesses by name or for products Norvik does not sell, such as ‘hydraulic repairs near me’. Most keywords are broad match. Performance Max spent 33% of its budget on ads on other websites, apps and YouTube.",
  "At least $10,400 of $31,400, and up to an estimated $15,700, went on clicks unlikely to produce an enquiry.", "4 and 5")}
 {finding(3, "high", "Meta leads are not followed up", "52 leads; 14 contacted within two days; no link to the CRM",
  "Meta lead ads collected 52 leads in 12 months. The leads stay in Meta until someone downloads them, which happened about once a fortnight. Fourteen leads were contacted within two days and nine became quotes. The Meta pixel is on the website but records page views only.",
@@ -247,7 +247,7 @@ body = f'''<div class="sample">Sample report. Tarnell Industrial is a fictional 
         <div class="lane__head"><h3>Now</h3><span>4 fixes</span></div>
         {fix(1, "Count only real enquiries: each form once, calls over 60 seconds, and phone taps", "Gives the bidding a true target.", ["Small", "Via Media", "Finding 1"])}
         {fix(2, "Send Meta leads straight to the CRM, with an alert to the sales team", "Leads are called the same day.", ["Small", "Via Media", "Finding 3"])}
-        {fix(3, "Test every enquiry route together and confirm each is counted once", "Proves the counting works.", ["Small", "Tarnell and Via Media", "Findings 1 and 3"])}
+        {fix(3, "Test every enquiry route together and confirm each is counted once", "Proves the counting works.", ["Small", "Norvik and Via Media", "Findings 1 and 3"])}
         {fix(4, "Exclude searches for other businesses; narrow broad keywords", "Stops the clearest unproductive spend.", ["Small", "Via Media", "Finding 2"])}
       </div>
       <div class="lane">
@@ -259,8 +259,8 @@ body = f'''<div class="sample">Sample report. Tarnell Industrial is a fictional 
       </div>
       <div class="lane">
         <div class="lane__head"><h3>Later</h3><span>3 fixes</span></div>
-        {fix(9, "Tag contacts by industry and product line; add reorder and quote follow-up emails", "Brings repeat buyers back.", ["Medium", "Tarnell and Via Media", "Finding 6"])}
-        {fix(10, "Use Meta to reach past website visitors and people similar to existing customers", "Keeps Tarnell in front of likely buyers.", ["Small", "Via Media", "Finding 3"])}
+        {fix(9, "Tag contacts by industry and product line; add reorder and quote follow-up emails", "Brings repeat buyers back.", ["Medium", "Norvik and Via Media", "Finding 6"])}
+        {fix(10, "Use Meta to reach past website visitors and people similar to existing customers", "Keeps Norvik in front of likely buyers.", ["Small", "Via Media", "Finding 3"])}
         {fix(11, "Rebuild the monthly report on enquiries, quotes and orders by source", "Judges each channel on sales.", ["Small", "Via Media"])}
       </div>
     </div>
@@ -297,7 +297,7 @@ body = f'''<div class="sample">Sample report. Tarnell Industrial is a fictional 
     <p class="lede">Based on your enquiry and order data, and the findings above.</p>
     <div class="strat">
       <div class="strat__row"><b>Recommended budget</b><span>Keep Google at about $2,600 a month, with a third moved from Performance Max into Search campaigns by product line. Keep Meta at about $600 a month, moved from lead forms to past website visitors and people similar to existing customers.</span></div>
-      <div class="strat__row"><b>Role of each channel</b><span>Google Search captures buyers looking for a product. Meta keeps Tarnell in front of likely buyers between purchases. Email prompts reorders. Organic search supports all three through faster, indexed product pages.</span></div>
+      <div class="strat__row"><b>Role of each channel</b><span>Google Search captures buyers looking for a product. Meta keeps Norvik in front of likely buyers between purchases. Email prompts reorders. Organic search supports all three through faster, indexed product pages.</span></div>
       <div class="strat__row"><b>Required for execution</b><span>A landing page for each product line with a short quote form; lead source recorded in the CRM; product images resized for mobile.</span></div>
       <div class="strat__row"><b>Success measures</b><span>Cost per qualified enquiry under $85; 70% of leads contacted within two hours; organic clicks to product pages up 25% in six months; reorder emails producing 10 orders a month.</span></div>
     </div>
@@ -321,7 +321,7 @@ body = f'''<div class="sample">Sample report. Tarnell Industrial is a fictional 
   <div class="wrap">
     <div class="eyebrow">Notes</div>
     <h2>About this sample</h2>
-    <div class="basis">This sample shows the format and depth of a Via Media digital platform audit. Tarnell Industrial, its people and its figures are fictional, based on patterns we see in real audits. A real audit is based on read-only access to your ad accounts, analytics, Search Console and email platform, your own reports, and information you supply.</div>
+    <div class="basis">This sample shows the format and depth of a Via Media digital platform audit. Norvik Trade &amp; Industrial Supply, its people and its figures are fictional, based on patterns we see in real audits. A real audit is based on read-only access to your ad accounts, analytics, Search Console and email platform, your own reports, and information you supply.</div>
     <details class="gloss">
       <summary>Plain-English glossary {CHEV}</summary>
       <dl>
