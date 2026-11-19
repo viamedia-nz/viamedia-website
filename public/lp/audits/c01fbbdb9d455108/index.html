@@ -225,6 +225,19 @@
     .section { padding:32px 20px; }
     details.finding, .fix, .point, .sc-row, .strat__row, .g { break-inside:avoid; }
   }
+
+  .g--6 { grid-column:span 6; }
+  @media (max-width: 860px) { .g--6 { grid-column:auto; } }
+  .g--alert { border-top:6px solid var(--crit); background:linear-gradient(180deg, #FFF5F4 0%, #FFFFFF 70%); }
+  .risk__head { display:flex; flex-wrap:wrap; align-items:flex-end; gap:6px 22px; }
+  .risk__big { font-weight:900; font-size:clamp(2rem, 4.8vw, 3.2rem); line-height:1; letter-spacing:-0.03em; color:var(--crit); }
+  .risk__of { font-weight:700; font-size:1.02rem; color:var(--ink); line-height:1.35; padding-bottom:4px; max-width:46ch; }
+  .risk__bar { width:100%; height:auto; display:block; margin-top:6px; }
+  .risk__key { list-style:none; display:grid; grid-template-columns:repeat(3, 1fr); gap:12px 22px; font-size:0.86rem; color:var(--ink2); }
+  .risk__key li { display:grid; grid-template-columns:16px 1fr; gap:8px; align-items:start; }
+  .risk__key i { width:16px; height:16px; border-radius:3px; margin-top:2px; }
+  .risk__key b { display:block; color:var(--ink); font-weight:800; }
+  @media (max-width: 860px) { .risk__key { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -314,6 +327,33 @@
         <div class="g__src">Google Ads, 12 months</div>
       </div>
 
+
+      <div class="g g--6 g--alert">
+        <div class="g__kicker">Spend unlikely to produce enquiries · 12 months</div>
+        <div class="risk__head">
+          <div class="risk__big num">NZ$14,800 to NZ$21,600</div>
+          <div class="risk__of">of NZ$23,381 in Google ad spend (63% to 92%) went on clicks unlikely to produce an enquiry</div>
+        </div>
+        <svg class="risk__bar" viewBox="0 0 1000 150" role="img" aria-label="Of NZ$23,381 in Google ad spend, a minimum of NZ$14,800 (63%) and up to NZ$21,600 (92%) went on clicks unlikely to produce enquiries.">
+  <defs><pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#E7A39E"/><rect width="4" height="10" fill="#B3261E"/></pattern></defs>
+  <rect x="0" y="56" width="1000" height="46" rx="8" fill="#DAD7D1"/>
+  <rect x="0" y="56" width="923.4" height="46" fill="url(#hatch)"/>
+  <rect x="0" y="56" width="633.6" height="46" fill="#B3261E"/>
+  <rect x="0" y="56" width="1000" height="46" rx="8" fill="none" stroke="#FFFFFF" stroke-width="0"/>
+  <line x1="633.6" y1="30" x2="633.6" y2="108" stroke="#111110" stroke-width="2"/>
+  <line x1="923.4" y1="8" x2="923.4" y2="108" stroke="#111110" stroke-width="2"/>
+  <text x="625.6" y="44" text-anchor="end" font-size="15" font-weight="800" fill="#111110">Minimum NZ$14,800 · 63%</text>
+  <text x="915.4" y="22" text-anchor="end" font-size="15" font-weight="800" fill="#B3261E">Up to NZ$21,600 · 92%</text>
+  <text x="0" y="132" font-size="13" fill="#5A5955">NZ$0</text>
+  <text x="1000" y="132" text-anchor="end" font-size="13" fill="#5A5955">NZ$23,381 total Google ad spend</text>
+</svg>
+        <ul class="risk__key">
+          <li><i style="background:#B3261E"></i><span><b>Minimum: NZ$14,800</b>Seen in the account: searches for named businesses and other steel suppliers (about NZ$5,200), and Performance Max ads outside Google Search (about NZ$9,600).</span></li>
+          <li><i style="background:url(#hatch);background-image:repeating-linear-gradient(45deg,#B3261E 0 4px,#E7A39E 4px 10px)"></i><span><b>Estimated: a further NZ$6,800</b>The same pattern applied to the search spend Google does not itemise.</span></li>
+          <li><i style="background:#DAD7D1"></i><span><b>Not yet measurable: NZ$1,800</b>Cannot be judged until enquiries are tracked (fixes 1 to 3).</span></li>
+        </ul>
+        <div class="g__src">Google Ads search terms and channel performance reports. Estimates, rounded; the reports cover periods a few days apart.</div>
+      </div>
       <div class="g g--2 g--risk">
         <div class="g__kicker">March to October 2026</div>
         <div class="g__big num">75 : 1</div>
@@ -428,7 +468,7 @@
     <p class="lede">Each area we reviewed, what it covered, and its health today.</p>
     <div class="scorecard" role="table" aria-label="Audit areas and health">
       <div class="sc-row sc-head" role="row"><div role="columnheader">Area</div><div role="columnheader">What was audited</div><div role="columnheader">Health</div></div>
-      <div class="sc-row" role="row"><div class="sc-task" role="cell">Google Ads review</div><div class="sc-what" role="cell">Campaigns, budgets, bidding, settings, and the searches that triggered the ads</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Google Ads review</div><div class="sc-what" role="cell">Campaigns, budgets, bidding, settings, and the searches that triggered the ads</div><div role="cell"><div class="gauge" data-level="1"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Critical</div></div></div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Coverage check against target industries</div><div class="sc-what" role="cell">Keywords and search themes for kiwifruit, vineyards, apples, and accessories</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Conversion tracking</div><div class="sc-what" role="cell">What Google Ads, Google Analytics and Tag Manager count, and the tags on agsteel.co.nz</div><div role="cell"><div class="gauge" data-level="1"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Critical</div></div></div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Call tracking options</div><div class="sc-what" role="cell">How phone calls from ads and the website are counted</div><div role="cell"><div class="gauge" data-level="1"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Critical</div></div></div></div>
@@ -453,7 +493,7 @@
       <details class="finding" data-p="high" open>
         <summary><span class="tag tag--high">High</span><span><span class="ftitle">1. Google counts page visits as conversions</span><span class="fsum">2,642 of 2,656 conversions were contact-page visits</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <div class="fbody"><dl>
-          <dt>Finding</dt><dd>Google Analytics records a "contact_us" event whenever someone opens a page whose address starts with /contact. Google Ads imports that event as its main conversion. It accounts for 2,642 of 2,656 conversions in 12 months. Contact form submissions have also been counted since 18 May 2026 (34). The order form and newsletter sign-up are not counted.</dd>
+          <dt>Finding</dt><dd>Google Analytics records a ‘contact_us’ event whenever someone opens a page whose address starts with /contact. Google Ads imports that event as its main conversion. It accounts for 2,642 of 2,656 conversions in 12 months. Contact form submissions have also been counted since 18 May 2026 (34). The order form and newsletter sign-up are not counted.</dd>
           <dt>Impact</dt><dd>Almost every cost-per-lead figure, in Google and in your AgSteel Performance Tracker, is a cost per page visit. A visitor from overseas who opens the contact page counts the same as a grower asking for a quote.</dd>
           <dt>Fixes</dt><dd>1, 2 and 3</dd>
         </dl></div>
@@ -473,7 +513,7 @@
         <div class="fbody">
           <dl>
             <dt>Finding</dt><dd>Of the searches Google reports (NZ$7,617, about a third of spend), most were for a named business rather than one of your products.</dd>
-            <dt>Impact</dt><dd>A search for "Craggy Range" is more likely to come from a wine buyer or a job seeker than a grower buying posts. The Vineyard campaign's search themes include "nz wineries", which produces this outcome.</dd>
+            <dt>Impact</dt><dd>A search for ‘Craggy Range’ is more likely to come from a wine buyer or a job seeker than a grower buying posts. The Vineyard campaign's search themes include ‘nz wineries’, which produces this outcome.</dd>
             <dt>Fixes</dt><dd>5 and 6</dd>
           </dl>
           <figure class="chart">
@@ -512,7 +552,7 @@
       <details class="finding" data-p="medium">
         <summary><span class="tag tag--medium">Medium</span><span><span class="ftitle">4. Coverage of your own products is minimal</span><span class="fsum">No apple or orchard keywords; accessory keywords paused</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <div class="fbody"><dl>
-          <dt>Finding</dt><dd>Kiwifruit and vineyards are covered; apples and other orchards are not. Keywords for clips, tensioners, caps and braces are paused, though your August email offered free clip installation and "vineyard clips" is searched often. One campaign bids on "industrial tube hamilton", the name of Industrial Tube NZ, a related TGF company.</dd>
+          <dt>Finding</dt><dd>Kiwifruit and vineyards are covered; apples and other orchards are not. Keywords for clips, tensioners, caps and braces are paused, though your August email offered free clip installation and ‘vineyard clips’ is searched often. One campaign bids on ‘industrial tube hamilton’, the name of Industrial Tube NZ, a related TGF company.</dd>
           <dt>Impact</dt><dd>Growers searching for products you sell, by crop or by part, are not reached by the ads.</dd>
           <dt>Fixes</dt><dd>7</dd>
         </dl></div>
@@ -530,7 +570,7 @@
       <details class="finding" data-p="low">
         <summary><span class="tag tag--low">Low</span><span><span class="ftitle">6. Organic search and email are underused</span><span class="fsum">Product pages rank on page 2; last full newsletter sent in March</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <div class="fbody"><dl>
-          <dt>Finding</dt><dd>Organic search brings about 130 clicks a month, mostly to product pages (Ag Beam, vineyard posts, stringing poles). "Steel vineyard posts" ranks around position 15, and "vineyard clips" shows 332 times with no clicks. In Mailchimp, Ag Steel contacts share one list with Industrial Tube and are grouped by tags. About 700 contacts carry tags that appear to relate to Ag Steel, but the tags do not clearly identify which contacts belong to Ag Steel. The last full newsletter went to 511 contacts in March 2026. Since then, two emails have gone to small vineyard groups: 40 contacts in April and 51 in August. Website sign-up forms have added three contacts to the list in total.</dd>
+          <dt>Finding</dt><dd>Organic search brings about 130 clicks a month, mostly to product pages (Ag Beam, vineyard posts, stringing poles). ‘Steel vineyard posts’ ranks around position 15, and ‘vineyard clips’ shows 332 times with no clicks. In Mailchimp, Ag Steel contacts share one list with Industrial Tube and are grouped by tags. About 700 contacts carry tags that appear to relate to Ag Steel, but the tags do not clearly identify which contacts belong to Ag Steel. The last full newsletter went to 511 contacts in March 2026. Since then, two emails have gone to small vineyard groups: 40 contacts in April and 51 in August. Website sign-up forms have added three contacts to the list in total.</dd>
           <dt>Impact</dt><dd>Two channels you already own, at no media cost, send fewer growers to the product pages than they could.</dd>
           <dt>Fixes</dt><dd>9 and 10</dd>
         </dl></div>
@@ -558,8 +598,8 @@
         <div class="lane__head"><h3>Next</h3><span>5 fixes</span></div>
         <div class="fix"><div class="fix__top"><span class="fix__n">4</span><span class="fix__t">Re-point campaign bidding at real enquiries once 4 weeks of corrected data exist</span></div><p class="fix__why">Stops Google buying page visits.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">Via Media</span><span class="chip">Finding 2</span></div></div>
         <div class="fix"><div class="fix__top"><span class="fix__n">5</span><span class="fix__t">Remove business-name search themes; exclude winery, orchard-company and job searches</span></div><p class="fix__why">Cuts spend on people looking for another business.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">Via Media</span><span class="chip">Finding 3</span></div></div>
-        <div class="fix"><div class="fix__top"><span class="fix__n">6</span><span class="fix__t">Narrow the broad keywords ("Steel Post", "Metal tube", "steel solutions")</span></div><p class="fix__why">Cuts spend on other steel suppliers.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">Via Media</span><span class="chip">Finding 3</span></div></div>
-        <div class="fix"><div class="fix__top"><span class="fix__n">7</span><span class="fix__t">Add apples and other orchards; restart clips and accessories; drop "industrial tube hamilton"</span></div><p class="fix__why">Covers what Ag Steel sells, not a related TGF company.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">Via Media</span><span class="chip">Finding 4</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">6</span><span class="fix__t">Narrow the broad keywords (‘Steel Post’, ‘Metal tube’, ‘steel solutions’)</span></div><p class="fix__why">Cuts spend on other steel suppliers.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">Via Media</span><span class="chip">Finding 3</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">7</span><span class="fix__t">Add apples and other orchards; restart clips and accessories; drop ‘industrial tube hamilton’</span></div><p class="fix__why">Covers what Ag Steel sells, not a related TGF company.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">Via Media</span><span class="chip">Finding 4</span></div></div>
         <div class="fix"><div class="fix__top"><span class="fix__n">8</span><span class="fix__t">Remove Industrial Tube NZ's tags from agsteel.co.nz</span></div><p class="fix__why">Keeps Ag Steel's data separate.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">Your web developer</span><span class="chip">Finding 5</span></div></div>
       </div>
       <div class="lane">
@@ -576,7 +616,7 @@
   <div class="wrap">
     <div class="eyebrow">Reporting</div>
     <h2>Your AgSteel Performance Tracker</h2>
-    <p class="lede">You want campaign results to fit your existing reporting, so we reviewed the AgSteel Performance Tracker against the audit findings. The tracker is designed to judge real performance on enquiries and orders, not on what the platforms report. What is fed into it now can't support those judgements until the following are fixed.</p>
+    <p class="lede">You've requested that campaign results fit your existing reporting, so we've reviewed the AgSteel Performance Tracker against the audit findings. The tracker uses platform figures to judge performance on enquiries and orders, and those figures can't support that judgement until the following are fixed.</p>
     <div class="tablewrap">
       <table class="ttable">
         <thead><tr><th scope="col">Tracker rows</th><th scope="col">Status</th><th scope="col">Why</th><th scope="col">Fix</th></tr></thead>
@@ -585,7 +625,7 @@
           <tr><td>Clicks, impressions, click-through rate, cost per click</td><td><span class="pill pill--ok">Reliable</span></td><td>Taken directly from Google Ads.</td><td>None</td></tr>
           <tr><td>Search and Performance Max conversions, cost per conversion, click-to-conversion</td><td><span class="pill pill--no">Not reliable</span></td><td>99% of the conversions are contact-page visits.</td><td>1 to 3</td></tr>
           <tr><td>Total platform leads, blended cost per platform lead</td><td><span class="pill pill--no">Not reliable</span></td><td>Built on the conversion count. In October, three cells show #REF! (a broken cell reference), and Search cost per conversion divides by Performance Max conversions: it shows NZ$8.89; the correct figure is NZ$10.42.</td><td>1 to 3, 11</td></tr>
-          <tr><td>Brand search impression share</td><td><span class="pill pill--part">Wrong row</span></td><td>No campaign targets brand searches. The figure entered (9.99%) is Google's "under 10%" for all search campaigns combined, which belongs under non-brand.</td><td>Move to non-brand</td></tr>
+          <tr><td>Brand search impression share</td><td><span class="pill pill--part">Wrong row</span></td><td>No campaign targets brand searches. The figure entered (9.99%) is Google's ‘under 10%’ for all search campaigns combined, which belongs under non-brand.</td><td>Move to non-brand</td></tr>
           <tr><td>Enquiry / form submissions</td><td><span class="pill pill--part">Partly reliable</span></td><td>Counts the contact form only, and only since 18 May 2026.</td><td>2</td></tr>
           <tr><td>Organic search rows</td><td><span class="pill pill--ok">Reliable</span></td><td>Matches Search Console to within about 4%.</td><td>Confirm which Search Console property is used</td></tr>
           <tr><td>Email audience size and growth</td><td><span class="pill pill--no">Not reliable</span></td><td>Each month records how many contacts one email was sent to (511 in March, 40 in April, 51 in August). Those sends went to different tagged groups in a list shared with the other TGF brands, so the month-to-month change is not list growth.</td><td>Save the Ag Steel contacts as one segment and report its size</td></tr>
