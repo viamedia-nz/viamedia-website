@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Industrial Tube Australia Google Ads audit</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* Via Media report system: dark hero, light content bands, red accent; status colours carry health and priority. Single light theme by choice (client report, prints). */
+  :root {
+    --white:#FFFFFF; --off:#F4F3F0; --stone:#E2E0DC;
+    --ink:#111110; --ink2:#2A2A28; --muted:#5A5955; --line:rgba(0,0,0,0.10); --line-md:rgba(0,0,0,0.18);
+    --red:#D4001A; --red-dark:#A80015; --steel:#354757;
+    --hero-left:#1A1918; --hero-right:#354757;
+    --crit:#B3261E; --poor:#D9622B; --fair:#D4A017; --good:#6E9F3A; --strong:#1E7A4C;
+    --high:#B3261E; --medium:#B86A00; --low:#2F5F8A; --pending:#6B6A67;
+    --font:'Montserrat', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+    --wrap:1040px;
+    color-scheme: light;
+  }
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  html { -webkit-text-size-adjust:100%; }
+  body { font-family:var(--font); color:var(--ink2); background:var(--off); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:var(--wrap); margin:0 auto; }
+  .section { padding:72px 24px; }
+  .section--white { background:var(--white); }
+  h1, h2, h3 { color:var(--ink); line-height:1.12; letter-spacing:-0.015em; text-wrap:balance; }
+  h2 { font-size:clamp(1.6rem, 3.6vw, 2.3rem); font-weight:800; margin-bottom:14px; }
+  h3 { font-size:1.12rem; font-weight:700; }
+  .eyebrow { font-weight:700; font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--red); display:inline-flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .eyebrow::before { content:""; width:26px; height:2px; background:var(--red); }
+  .lede { font-size:1.08rem; font-weight:500; max-width:70ch; color:var(--ink2); }
+  .note { font-size:0.86rem; color:var(--muted); }
+  .pending { display:inline-block; background:#EEEDEA; border:1px dashed var(--line-md); color:var(--muted); font-weight:600; font-size:0.85em; padding:1px 8px; border-radius:6px; }
+  .num { font-variant-numeric:tabular-nums; }
+
+  /* Draft strip */
+  .draft { background:#FFF4D6; color:#5A4300; font-size:0.86rem; font-weight:600; padding:10px 24px; text-align:center; border-bottom:1px solid #EBD38A; }
+
+  /* Hero */
+  .hero { background:linear-gradient(105deg, var(--hero-left) 0%, var(--hero-left) 42%, var(--hero-right) 100%); color:#F4F3F0; padding:36px 24px 64px; position:relative; }
+  .hero::after { content:""; position:absolute; left:0; right:0; bottom:0; height:5px; background:linear-gradient(90deg, var(--red), var(--red-dark)); }
+  .wordmark { height:52px; width:auto; color:#F4F3F0; display:block; }
+  .hero__inner { max-width:var(--wrap); margin:0 auto; }
+  .hero h1 { color:#fff; font-size:clamp(2rem, 5vw, 3.2rem); font-weight:900; margin-top:56px; }
+  .hero__sub { margin-top:12px; font-size:clamp(1.05rem, 2.4vw, 1.4rem); font-weight:700; color:#fff; }
+  .hero__meta { margin-top:32px; display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:18px; border-top:1px solid rgba(255,255,255,0.16); padding-top:20px; }
+  .hero__meta dt { font-size:0.68rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:rgba(244,243,240,0.62); }
+  .hero__meta dd { font-size:0.95rem; font-weight:600; color:#fff; margin-top:4px; }
+
+  /* Short version */
+  .points { margin-top:30px; display:grid; gap:12px; counter-reset:pt; }
+  .point { display:grid; grid-template-columns:44px 1fr; gap:18px; background:var(--white); border:1px solid var(--line); border-radius:14px; padding:20px 22px; }
+  .point::before { counter-increment:pt; content:counter(pt); font-weight:900; font-size:1.7rem; color:var(--red); line-height:1; }
+  .point strong { display:block; color:var(--ink); font-size:1.04rem; margin-bottom:4px; }
+  .point p { color:var(--muted); }
+  .verdict { margin-top:18px; display:flex; gap:16px; align-items:center; border-left:4px solid var(--ink); background:var(--white); border-radius:0 12px 12px 0; padding:16px 22px; }
+  .verdict b { font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink); }
+
+  /* At a glance: infographic cards */
+  .glance { margin-top:28px; display:grid; grid-template-columns:repeat(6, 1fr); gap:16px; }
+  .g { background:var(--white); border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; display:flex; flex-direction:column; gap:10px; min-width:0; }
+  .g--2 { grid-column:span 2; } .g--3 { grid-column:span 3; } .g--4 { grid-column:span 4; }
+  .g--risk { border-top:5px solid var(--poor); }
+  .g--opp { border-top:5px solid var(--good); }
+  .g--dark { background:linear-gradient(135deg, var(--hero-left) 0%, var(--hero-right) 100%); border:none; color:#F4F3F0; }
+  .g__kicker { font-size:0.68rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); }
+  .g--dark .g__kicker { color:rgba(244,243,240,0.7); }
+  .g__big { font-weight:900; font-size:clamp(2.2rem, 4.6vw, 3.1rem); line-height:1; letter-spacing:-0.03em; color:var(--ink); }
+  .g--dark .g__big { color:#fff; }
+  .g__title { font-weight:800; font-size:1.25rem; line-height:1.25; color:var(--ink); }
+  .g__label { font-weight:600; font-size:0.95rem; color:var(--ink2); line-height:1.4; }
+  .g__note { font-size:0.84rem; color:var(--muted); }
+  .g__src { margin-top:auto; padding-top:6px; font-size:0.74rem; color:var(--muted); }
+  .g--dark .g__src { color:rgba(244,243,240,0.6); }
+  .g__row { display:flex; gap:20px; align-items:flex-start; justify-content:space-between; }
+  .g__row--center { align-items:center; justify-content:flex-start; }
+  .split { display:flex; height:16px; border-radius:100px; overflow:hidden; gap:2px; margin-top:6px; }
+  .split--tall { height:26px; border-radius:8px; }
+  .key { list-style:none; display:grid; gap:6px; font-size:0.86rem; color:var(--ink2); }
+  .key li { display:flex; align-items:baseline; gap:8px; }
+  .key i { flex:none; width:11px; height:11px; border-radius:3px; transform:translateY(1px); }
+  .key b { font-weight:800; color:var(--ink); }
+  .key--dark, .key--dark b { color:#fff; }
+  .key--grid { grid-template-columns:1fr 1fr; gap:6px 18px; }
+  .key--small { font-size:0.78rem; gap:3px 14px; grid-template-columns:1fr 1fr; }
+  .key__total { font-weight:700; color:var(--ink); padding-top:4px; border-top:1px solid var(--line); }
+  .waffle { flex:none; display:grid; grid-template-columns:repeat(10, 13px); gap:3px; }
+  .w { width:13px; height:13px; border-radius:3px; }
+  .w--bad { background:var(--poor); } .w--ok { background:var(--good); }
+  .dots { display:flex; flex-wrap:wrap; gap:4px; align-items:center; }
+  .dots i { width:9px; height:9px; border-radius:50%; background:#C9C6C0; }
+  .dots i.dots__one { width:16px; height:16px; background:var(--red); margin-left:4px; }
+  .callout { display:flex; gap:14px; align-items:center; background:var(--off); border-radius:12px; padding:12px 16px; font-size:0.88rem; color:var(--ink2); }
+  .callout__n { font-weight:900; font-size:2rem; color:var(--crit); line-height:1; }
+  .stack { display:flex; height:22px; border-radius:6px; overflow:hidden; gap:2px; }
+  .donut { width:132px; height:132px; flex:none; }
+  .hb { list-style:none; display:grid; gap:7px; font-size:0.84rem; }
+  .hb li { display:grid; grid-template-columns:118px 1fr 34px; gap:10px; align-items:center; }
+  .hb__l { color:var(--ink2); font-weight:600; }
+  .hb__t { height:12px; background:var(--off); border-radius:100px; overflow:hidden; display:block; }
+  .hb__t span { display:block; height:100%; border-radius:100px; }
+  .hb__v { text-align:right; font-weight:700; color:var(--ink); }
+  .tl { width:100%; height:auto; display:block; }
+  .chart { background:var(--off); border:1px solid var(--line); border-radius:16px; padding:22px 22px 16px; }
+  .chart h3 { font-size:1rem; margin-bottom:4px; }
+  .chart svg { width:100%; height:auto; display:block; margin-top:10px; }
+  .chart .src { font-size:0.76rem; color:var(--muted); margin-top:8px; }
+
+  /* Scorecard */
+  .scorecard { margin-top:28px; border:1px solid var(--line); border-radius:16px; overflow:hidden; background:var(--white); }
+  .sc-row { display:grid; grid-template-columns:1.1fr 1.5fr 1fr; gap:20px; align-items:center; padding:16px 22px; border-top:1px solid var(--line); }
+  .sc-row:first-child { border-top:none; }
+  .sc-head { background:var(--ink); color:#fff; font-size:0.7rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; padding:12px 22px; }
+  .sc-task { font-weight:700; color:var(--ink); }
+  .sc-task small { display:block; font-weight:500; color:var(--muted); font-size:0.76rem; letter-spacing:0.02em; margin-top:2px; }
+  .sc-what { font-size:0.92rem; color:var(--ink2); }
+  .gauge { display:grid; gap:6px; }
+  .gauge__bar { display:grid; grid-template-columns:repeat(5, 1fr); gap:3px; height:12px; }
+  .gauge__bar span { border-radius:3px; background:#E6E4E0; }
+  .gauge[data-level="1"] .gauge__bar span:nth-child(-n+1) { background:var(--crit); }
+  .gauge[data-level="2"] .gauge__bar span:nth-child(-n+2) { background:var(--poor); }
+  .gauge[data-level="3"] .gauge__bar span:nth-child(-n+3) { background:var(--fair); }
+  .gauge[data-level="4"] .gauge__bar span:nth-child(-n+4) { background:var(--good); }
+  .gauge[data-level="5"] .gauge__bar span:nth-child(-n+5) { background:var(--strong); }
+  .gauge__label { font-size:0.8rem; font-weight:700; color:var(--ink); }
+  .gauge[data-level="0"] .gauge__label { color:var(--muted); font-weight:600; }
+  .legend { margin-top:12px; display:flex; flex-wrap:wrap; gap:16px; font-size:0.78rem; color:var(--muted); }
+  .legend i { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:-2px; }
+
+  /* Findings accordion */
+  .toolbar { margin-top:22px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+  .toolbar__hint { font-size:0.88rem; color:var(--muted); font-weight:600; }
+  .btn { font:inherit; font-size:0.82rem; font-weight:700; color:var(--ink); background:var(--white); border:1px solid var(--line-md); border-radius:100px; padding:7px 16px; cursor:pointer; }
+  .btn:hover { border-color:var(--ink); }
+  .btn:focus-visible, summary:focus-visible { outline:3px solid var(--red); outline-offset:3px; }
+  .findings { margin-top:12px; display:grid; gap:10px; }
+  details.finding { background:var(--white); border:1px solid var(--line); border-left:6px solid var(--pending); border-radius:12px; }
+  details.finding[data-p="high"] { border-left-color:var(--high); }
+  details.finding[data-p="medium"] { border-left-color:var(--medium); }
+  details.finding[data-p="low"] { border-left-color:var(--low); }
+  details.finding > summary { list-style:none; cursor:pointer; display:grid; grid-template-columns:auto 1fr auto; gap:16px; align-items:center; padding:18px 22px; }
+  details.finding > summary::-webkit-details-marker { display:none; }
+  .ftitle { font-weight:800; color:var(--ink); font-size:1.05rem; line-height:1.3; }
+  .fsum { display:block; font-weight:500; font-size:0.9rem; color:var(--muted); margin-top:3px; }
+  .chev { width:22px; height:22px; transition:transform .2s ease; color:var(--ink); }
+  details[open] .chev { transform:rotate(180deg); }
+  .tag { display:inline-block; min-width:84px; text-align:center; font-size:0.66rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#fff; border-radius:100px; padding:5px 11px; white-space:nowrap; }
+  .tag--high { background:var(--high); } .tag--medium { background:var(--medium); } .tag--low { background:var(--low); }
+  .fbody { padding:0 22px 22px 22px; display:grid; gap:14px; border-top:1px solid var(--line); padding-top:18px; margin:0 0 0 0; }
+  .fbody dl { display:grid; grid-template-columns:110px 1fr; gap:10px 18px; }
+  .fbody dt { font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); padding-top:3px; }
+  .fbody dd { color:var(--ink2); max-width:72ch; }
+  .fbody .chart { margin-top:4px; }
+
+  /* Fix list */
+  .lanes { margin-top:28px; display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; align-items:start; }
+  .lane { background:var(--off); border:1px solid var(--line); border-radius:16px; padding:16px; }
+  .lane__head { display:flex; align-items:baseline; justify-content:space-between; padding:2px 4px 12px; }
+  .lane__head h3 { font-size:1rem; text-transform:uppercase; letter-spacing:0.12em; }
+  .lane__head span { font-size:0.78rem; color:var(--muted); font-weight:600; }
+  .fix { background:var(--white); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-top:10px; }
+  .fix:first-of-type { margin-top:0; }
+  .fix__top { display:flex; gap:10px; align-items:baseline; }
+  .fix__n { font-weight:900; color:var(--red); font-size:1.1rem; min-width:22px; }
+  .fix__t { font-weight:700; color:var(--ink); line-height:1.35; }
+  .fix__why { margin-top:6px; font-size:0.88rem; color:var(--muted); }
+  .fix__meta { margin-top:10px; display:flex; flex-wrap:wrap; gap:6px; }
+  .chip { font-size:0.72rem; font-weight:600; color:var(--ink2); background:var(--off); border:1px solid var(--line); border-radius:100px; padding:3px 10px; }
+
+  /* Tracker table */
+  .ttable { margin-top:26px; width:100%; border-collapse:separate; border-spacing:0; background:var(--white); border:1px solid var(--line); border-radius:16px; overflow:hidden; font-size:0.92rem; }
+  .ttable th { background:var(--ink); color:#fff; text-align:left; font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; padding:12px 16px; font-weight:700; }
+  .ttable td { padding:14px 16px; border-top:1px solid var(--line); vertical-align:top; }
+  .ttable td:first-child { font-weight:700; color:var(--ink); width:26%; }
+  .pill { display:inline-block; font-size:0.72rem; font-weight:700; border-radius:100px; padding:3px 10px; white-space:nowrap; }
+  .pill--ok { background:#E3F1E8; color:#155C38; }
+  .pill--no { background:#F8E1DF; color:#8E1D17; }
+  .pill--part { background:#F7ECD6; color:#7A4A00; }
+  .pill--wait { background:#ECEBE8; color:#4F4E4A; }
+  .tablewrap { overflow-x:auto; }
+
+  /* Strategy */
+  .strat { margin-top:26px; display:grid; gap:10px; }
+  .strat__row { display:grid; grid-template-columns:220px 1fr; gap:20px; background:var(--white); border:1px solid var(--line); border-radius:12px; padding:16px 20px; }
+  .strat__row b { color:var(--ink); }
+
+  /* Basis + glossary */
+  .basis { margin-top:22px; background:var(--white); border:1px solid var(--line); border-left:4px solid var(--steel); border-radius:0 12px 12px 0; padding:18px 22px; font-size:0.94rem; max-width:80ch; }
+  details.gloss { margin-top:18px; background:var(--white); border:1px solid var(--line); border-radius:12px; }
+  details.gloss > summary { cursor:pointer; padding:16px 22px; font-weight:700; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; }
+  details.gloss > summary::-webkit-details-marker { display:none; }
+  .gloss dl { padding:0 22px 20px; display:grid; grid-template-columns:200px 1fr; gap:10px 20px; font-size:0.92rem; }
+  .gloss dt { font-weight:700; color:var(--ink); }
+
+  .footer { background:var(--ink); color:rgba(244,243,240,0.66); padding:34px 24px 40px; font-size:0.86rem; }
+  .footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; border-top:1px solid rgba(255,255,255,0.14); padding-top:24px; }
+  .footer b { color:#F4F3F0; font-weight:600; }
+
+  @media (max-width: 860px) {
+    .glance { grid-template-columns:1fr; }
+    .g--2, .g--3, .g--4 { grid-column:auto; }
+    .lanes { grid-template-columns:1fr; }
+    .sc-row { grid-template-columns:1fr; gap:8px; }
+    .sc-head { display:none; }
+    .strat__row { grid-template-columns:1fr; gap:4px; }
+  }
+  @media (max-width: 560px) {
+    .section { padding:52px 16px; }
+    .hero { padding:28px 16px 52px; }
+    .key--grid, .key--small { grid-template-columns:1fr; }
+    .g__row { flex-direction:column; }
+    .fbody dl, .gloss dl { grid-template-columns:1fr; gap:2px; }
+    .fbody dd { margin-bottom:8px; }
+    details.finding > summary { grid-template-columns:1fr auto; }
+    details.finding > summary .tag { grid-column:1 / -1; justify-self:start; }
+  }
+  @media (prefers-reduced-motion: reduce) { .chev { transition:none; } }
+  @media print {
+    * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+    .draft, .toolbar { display:none; }
+    .section { padding:32px 20px; }
+    details.finding, .fix, .point, .sc-row, .strat__row, .g { break-inside:avoid; }
+  }
+
+  .g--6 { grid-column:span 6; }
+  @media (max-width: 860px) { .g--6 { grid-column:auto; } }
+  .g--alert { border-top:5px solid var(--crit); }
+  .risk__head { display:block; }
+  .risk__big { font-weight:900; font-size:clamp(2rem, 4.6vw, 3rem); line-height:1; letter-spacing:-0.03em; color:var(--crit); }
+  .risk__of { font-weight:700; font-size:1.05rem; color:var(--ink); line-height:1.35; margin-top:8px; }
+  .risk__max { font-size:0.95rem; font-weight:600; color:var(--ink2); }
+  .risk__max b { color:var(--crit); font-weight:800; }
+  .risk__to { color:#C9625B; font-weight:800; }
+  .risk__bar { width:100%; height:auto; display:block; margin-top:6px; }
+  .risk__key { list-style:none; display:grid; grid-template-columns:repeat(3, 1fr); gap:12px 22px; font-size:0.86rem; color:var(--ink2); }
+  .risk__key li { display:grid; grid-template-columns:16px 1fr; gap:8px; align-items:start; }
+  .risk__key i { width:16px; height:16px; border-radius:3px; margin-top:2px; }
+  .risk__key b { display:block; color:var(--ink); font-weight:800; }
+  @media (max-width: 860px) { .risk__key { grid-template-columns:1fr; } }
+
+  .g--6 { grid-column:span 6; }
+  @media (max-width: 860px) { .g--6 { grid-column:auto; } }
+  .g--alert { border-top:5px solid var(--crit); }
+  .risk__head { display:block; }
+  .risk__big { font-weight:900; font-size:clamp(2rem, 4.6vw, 3rem); line-height:1; letter-spacing:-0.03em; color:var(--crit); }
+  .risk__of { font-weight:700; font-size:1.05rem; color:var(--ink); line-height:1.35; margin-top:8px; }
+  .risk__max { font-size:0.95rem; font-weight:600; color:var(--ink2); }
+  .risk__max b { color:var(--crit); font-weight:800; }
+  .risk__to { color:#C9625B; font-weight:800; }
+  .risk__bar { width:100%; height:auto; display:block; margin-top:6px; }
+  .risk__key { list-style:none; display:grid; grid-template-columns:repeat(3, 1fr); gap:12px 22px; font-size:0.86rem; color:var(--ink2); }
+  .risk__key li { display:grid; grid-template-columns:16px 1fr; gap:8px; align-items:start; }
+  .risk__key i { width:16px; height:16px; border-radius:3px; margin-top:2px; }
+  .risk__key b { display:block; color:var(--ink); font-weight:800; }
+  @media (max-width: 860px) { .risk__key { grid-template-columns:1fr; } }
+
+  .g--6 { grid-column:span 6; }
+  .hb--wide li { grid-template-columns:200px 1fr 34px; }
+  .scrollx { overflow-x:auto; }
+  @media (max-width: 560px) { .scrollx .tl { min-width:720px; } .hb--wide li { grid-template-columns:130px 1fr 34px; } }
+  .cmp { display:grid; gap:14px; margin-top:4px; }
+  .cmp__l { display:block; font-size:0.84rem; color:var(--ink2); font-weight:600; margin-bottom:6px; }
+  .cmp__l b { font-weight:900; color:var(--ink); font-size:1.05rem; margin-left:4px; }
+  .dots i.d--ok { background:var(--good); }
+  .key--row { grid-template-columns:repeat(3, auto); justify-content:start; gap:4px 22px; }
+  @media (max-width: 860px) { .g--6 { grid-column:auto; } .key--row { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;overflow:hidden;">
+  <symbol id="vm-wordmark" viewBox="0 0 1326 432">
+    <path d="M235,0c111.664,10.915,197.86,102.283,198.111,215.515.251,113.616-86.089,205.547-198.111,216.485h-36C93.719,421.662,9.794,339.837,1.412,232.168c-.819-10.521-.817-21.823,0-32.324C9.797,92.111,93.712,10.391,199,0h36Z" fill="currentColor"/>
+    <path d="M1326,269.118v17.835c-7.93,3.41-16.787,4.077-25.378,1.376-8.358-2.629-12.629-9.363-12.967-18.814-7.294,22.822-35.432,25.527-53.286,16.214-9.909-5.169-14.838-14.626-14.72-25.739.217-20.406,15.561-27.725,33.583-30.722l33.364-5.548c.352-5.647.16-11.721-2.932-16.272-3.688-5.425-10.564-6.2-16.652-5.828-8.9.544-14.859,6.78-14.520,16.138l-27.583-.125c-.002-14.517,7.24-26.232,19.561-32.412,16.426-8.239,36.154-8.217,52.479.803,10.214,5.644,17.131,16.93,17.229,28.81l.443,53.789,11.378.494ZM1284.055,256.048c1.842-4.622,2.455-9.007,2.477-13.96l-27.615,4.783c-4.805.832-9.177,4.464-10.155,8.373-1.147,4.585-.715,10.73,3.837,13.09,12.054,6.249,26.527.078,31.456-12.287Z" fill="currentColor"/>
+    <path d="M919.126,288.282l-.307-101.609-40.391,100.988c-3.756.668-7.173.674-11.686.294l-40.749-99.924-.53,100.204-27.984-.024-.011-144.12,37.975-.137,37.198,94.533,36.861-94.41,37.517-.099-.052,144.26-27.841.044Z" fill="currentColor"/>
+    <path d="M1128.216,286.543c-21.168,11.032-46.094,1.182-55.379-20.536-7.979-18.663-8.691-40.283-1.191-59.06,8.288-20.75,29.334-31.654,50.464-26.216,10.01,2.576,15.324,9.337,20.216,18.962l.246-55.724,27.963.15-.02,143.841-20.946-.023-5.081-21.93c-4.344,7.852-7.626,16.03-16.272,20.536ZM1140.546,217.789c-3.88-9.96-12.646-15.813-22.947-15.193-9.784.589-17.833,7.013-20.732,17.265-3.388,11.979-2.913,25.118,3.051,36.349,4.157,7.827,12.822,11.336,21.307,10.578,21.945-1.959,26.058-31.703,19.32-49Z" fill="currentColor"/>
+    <polygon points="587.633 143.91 617.78 143.865 567.948 287.932 535.647 288.018 485.222 144.096 515.956 144.012 551.716 249.564 587.633 143.91" fill="currentColor"/>
+    <path d="M675.041,286.35c-10.962-4.919-16.147-14.951-16.079-26.357.117-19.728,15.055-27.585,32.392-30.488l34.683-5.808c.207-5.219-.016-10.918-2.424-15.322-3.114-5.697-9.643-6.852-15.568-6.876-9.642-.039-16.572,6.301-16.308,16.264l-27.434-.06c-.349-14.074,7.235-26.401,19.65-32.607,13.444-6.721,28.04-7.388,42.493-3.388,15.743,4.357,27.139,17.493,27.247,34.423l.335,52.517,10.983.228-.035,18.199c-8.609,3.686-17.907,3.923-26.602.651-7.267-2.734-10.342-8.815-11.64-17.282-7.685,21.345-33.531,24.39-51.694,15.906ZM692.557,268.679c12.223,5.583,25.782-.491,30.694-12.281,1.935-4.645,2.542-9.063,2.641-14.301l-27.205,4.64c-4.878.832-9.483,4.534-10.466,8.11-1.419,5.156-.819,11.478,4.337,13.832Z" fill="currentColor"/>
+    <path d="M994.878,264.197c9.85,6.639,28.964,4.741,33.494-9.712l26.921.089c-5.668,32.208-41.174,42.216-67.578,32.595-32.416-11.811-39.377-53.531-25.874-81.476s52.964-34.264,76.909-16.383c15.923,11.891,20.651,33.174,19.349,52.917l-73.914.067c.572,8.417,3.466,17.032,10.692,21.903ZM984.734,224.242l44.628-.023c-.167-7.385-2.671-14.601-8.703-18.925-7.99-5.729-19.949-5.462-27.591.786-5.521,4.513-8.199,11.526-8.333,18.162Z" fill="currentColor"/>
+    <polygon points="650.243 287.913 622.225 287.951 622.267 181.753 650.229 181.827 650.243 287.913" fill="currentColor"/>
+    <polygon points="1210.783 287.849 1182.999 288.043 1182.999 181.82 1210.729 181.752 1210.783 287.849" fill="currentColor"/>
+    <path d="M1196.508,168.821c-9.248-.171-15.164-6.208-15.253-14.809-.096-9.236,6.587-15.157,15.758-15.093,8.999.063,15.439,5.973,15.459,14.897.02,8.851-6.329,15.183-15.963,15.005Z" fill="currentColor"/>
+    <path d="M647.81,164.282c-6.207,6.287-17.22,6.02-23.156.101-5.428-5.413-5.463-15.42-.143-20.877,6.01-6.165,17.001-6.198,23.184-.194,5.412,5.255,5.763,15.25.116,20.97Z" fill="currentColor"/>
+    <polygon points="198.648 144.07 126.918 287.566 55.125 144.01 198.648 144.07" fill="#000000"/>
+    <polygon points="378.865 287.965 235.29 288.01 306.904 144.521 378.865 287.965" fill="#000000"/>
+    <polygon points="235.02 287.661 199.004 288.049 198.987 144.306 234.984 144.262 235.02 287.661" fill="#000000"/>
+  </symbol>
+</svg>
+
+<div class="draft">Draft for review. Items marked <span class="pending">Pending</span> wait on information from Industrial Tube Australia.</div>
+
+<header class="hero">
+  <div class="hero__inner">
+    <svg class="wordmark" viewBox="0 0 1326 432" role="img" aria-label="Via Media"><use href="#vm-wordmark"></use></svg>
+    <h1>Industrial Tube Australia Google Ads audit</h1>
+    <p class="hero__sub">Findings and prioritised fixes</p>
+    <dl class="hero__meta">
+      <div><dt>Prepared for</dt><dd>Katrina Evans, TGF Holdings</dd></div>
+      <div><dt>Period reviewed</dt><dd>Nov 2025 to Nov 2026</dd></div>
+      <div><dt>Figures</dt><dd>NZ$, excluding GST</dd></div><div><dt>Audit dates</dt><dd>9 to 20 Nov 2026</dd></div>
+      <div><dt>Prepared by</dt><dd>Via Media</dd></div>
+    </dl>
+  </div>
+</header>
+
+<!-- KEY POINTS -->
+<section class="section section--white" id="summary">
+  <div class="wrap">
+    <div class="eyebrow">Overview</div>
+    <h2>Key points</h2>
+    <p class="lede">Industrial Tube Australia spent <span class="num">$20,901</span> on Google ads in the last 12 months. Since March 2026, enquiries from the Australian website have not been recorded in the Industrial Tube Australia ad account. That needs to be fixed first; then it will be possible to judge how effective the spend is.</p>
+    <div class="points">
+      <div class="point"><div><strong>The Australian website carries Industrial Tube NZ's Google Ads tag, not its own</strong><p>Activity and visitor audiences from the Australian website are recorded in Industrial Tube NZ's ad account instead. Since 18 March, almost all conversions the Australian account records come from people tapping the call button shown in its ads, which Google tracks without the website.</p></div></div>
+      <div class="point"><div><strong>The campaigns are optimising to conversions that aren't being captured</strong><p>All three live campaigns are set to get as many conversions as possible. While your Industrial Tube Australia Performance Tracker recorded 54 form enquiries from July to October, the ad account recorded 22 conversions, mostly calls from ads. The campaigns have no record of which clicks led to the form enquiries, so they cannot bid towards them.</p></div></div>
+      <div class="point"><div><strong>A large share of visible search spend reaches people searching for other businesses</strong><p>41% went on searches for other businesses by name, and 33% on relevant product searches. No keywords cover your target industries.</p></div></div>
+      <div class="point"><div><strong>Organic search and email are not being measured or used</strong><p>The Search Console property only covers the old address, www.industrialtube.com.au. Since the site moved to industrialtube.com.au in March, it has recorded about a quarter of the previous organic clicks. Only one EDM has been sent to Australian contacts in the last 12 months.</p></div></div>
+      <div class="point"><div><strong>Your Industrial Tube Australia Performance Tracker judges results on enquiries and orders, but its Google figures are incomplete</strong><p>It misses one Search campaign, shows NZ$ figures under A$ labels, and reports Performance Max as Shopping. See the tracker section below.</p></div></div>
+    </div>
+    <div class="verdict"><b>Verdict</b><span class="pending">Pending: your enquiry and order numbers</span></div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="section" id="numbers">
+  <div class="wrap">
+    <div class="eyebrow">Key figures</div>
+    <h2>Audit at a glance</h2>
+    <div class="glance">
+
+      <div class="g g--3 g--dark">
+        <div class="g__kicker">Google ad spend · 12 months</div>
+        <div class="g__big num">$20,901</div>
+        <div class="split" aria-hidden="true"><span style="width:57%;background:#9FB0BF"></span><span style="width:43%;background:var(--red)"></span></div>
+        <ul class="key key--dark">
+          <li><i style="background:#9FB0BF"></i><b>57%</b> Search campaigns · $11,897</li>
+          <li><i style="background:var(--red)"></i><b>43%</b> Performance Max · $9,004</li>
+        </ul>
+        <div class="g__src">Google Ads, ITM - AU account, 10 Nov 2025 to 16 Nov 2026. The account reports in NZ$.</div>
+      </div>
+
+      <div class="g g--3 g--risk">
+        <div class="g__kicker">Enquiries, July to October 2026</div>
+        <div class="g__title">Google recorded 22 results. Your tracker recorded 54 form enquiries.</div>
+        <div class="cmp">
+          <div class="cmp__row"><span class="cmp__l">Tracker form enquiries <b>54</b></span><div class="dots"><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i></div></div>
+          <div class="cmp__row"><span class="cmp__l">Google Ads conversions <b>22</b></span><div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        </div>
+        <div class="g__src">Google Ads (mostly calls from ads) and Owned KPIs sheet, Industrial Tube Australia Performance Tracker</div>
+      </div>
+
+
+      <div class="g g--6 g--alert">
+        <div class="g__kicker">Spend unlikely to produce enquiries · 12 months</div>
+        <div class="risk__head">
+          <div class="risk__big num">$3,800<span class="risk__to"> to $9,900</span></div>
+          <div class="risk__of">of $20,901 in Google ad spend (18%, potentially 47%) went on clicks unlikely to produce an enquiry</div>
+        </div>
+        <div class="risk__max">The lower figure is seen in the account, and the upper figure is estimated from the pattern in the searches Google shows.</div>
+        <svg class="risk__bar" viewBox="0 0 1000 150" role="img" aria-label="Of $20,901 in Google ad spend, at least $3,800 (18%) and up to an estimated $9,900 (47%) went on clicks unlikely to produce enquiries.">
+  <defs><pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#E7A39E"/><rect width="4" height="10" fill="#B3261E"/></pattern></defs>
+  <rect x="0" y="56" width="1000" height="46" rx="8" fill="#DAD7D1"/>
+  <rect x="0" y="56" width="471.8" height="46" fill="url(#hatch)"/>
+  <rect x="0" y="56" width="180.3" height="46" fill="#B3261E"/>
+  <line x1="180.3" y1="30" x2="180.3" y2="108" stroke="#111110" stroke-width="2"/>
+  <line x1="471.8" y1="8" x2="471.8" y2="108" stroke="#111110" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="188.3" y="44" text-anchor="start" font-size="15" font-weight="800" fill="#111110">At least $3,800 · 18%</text>
+  <text x="463.8" y="22" text-anchor="end" font-size="15" font-weight="700" fill="#5A5955">Up to $9,900 · 47% (estimated)</text>
+  <text x="0" y="132" font-size="13" fill="#5A5955">$0</text>
+  <text x="1000" y="132" text-anchor="end" font-size="13" fill="#5A5955">$20,901 total Google ad spend</text>
+</svg>
+        <ul class="risk__key">
+          <li><i style="background:#B3261E"></i><span><b>At least $3,800</b>Seen in the account: searches for other businesses or clearly off-target searches (about $1,900), and Performance Max ads outside Google Search (about $1,900).</span></li>
+          <li><i style="background-image:repeating-linear-gradient(45deg,#B3261E 0 4px,#E7A39E 4px 10px)"></i><span><b>Estimated, a further $6,100</b>Of the searches Google shows, 42% of spend went on clicks unlikely to produce an enquiry. Google doesn't show the searches behind about half of the search spend; applying the same 42% to the rest of the search spend gives this figure.</span></li>
+          <li><i style="background:#DAD7D1"></i><span><b>Not yet measurable: $11,000</b>Clicks on searches that look relevant, such as product searches. Whether they produced enquiries can't be judged until enquiries are tracked (fixes 1 to 3).</span></li>
+        </ul>
+        <div class="g__src">Google Ads search terms and channel performance reports. Estimates, rounded; the reports cover periods a few days apart.</div>
+      </div>
+
+      <div class="g g--6">
+        <div class="g__kicker">Spend and recorded conversions by month</div>
+        <div class="g__title">Conversions stopped in March; spend resumed in July without them</div>
+        <div class="scrollx"><svg class="tl" viewBox="0 0 980 340" role="img" aria-label="Monthly Google Ads spend and recorded conversions, November 2025 to November 2026. Conversions fall from 298 in February to almost none from April, while spend resumes from July.">
+<rect x="391" y="40" width="216" height="250" fill="#F4F3F0"/>
+<text x="499" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#5A5955">Campaigns paused</text>
+<line x1="358" y1="22" x2="358" y2="290" stroke="#B3261E" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="352" y="18" text-anchor="end" font-size="12" font-weight="700" fill="#B3261E">18 Mar: contact-page conversion stops</text>
+<text x="616" y="62" font-size="12" font-weight="700" fill="#111110">July: new campaigns</text>
+<rect x="40" y="173.6" width="54" height="116.5" rx="3" fill="#9FB0BF"><title>Nov: $1,781 spend, 163 conversions</title></rect>
+<circle cx="67.0" cy="149.1" r="18.4" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="67.0" y="153.1" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">163</text>
+<text x="67.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Nov</text>
+<text x="67.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.8k</text>
+<rect x="112" y="122.7" width="54" height="167.3" rx="3" fill="#9FB0BF"><title>Dec: $2,558 spend, 224 conversions</title></rect>
+<circle cx="139.0" cy="96.0" r="20.7" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="139.0" y="100.0" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">224</text>
+<text x="139.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Dec</text>
+<text x="139.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.6k</text>
+<rect x="184" y="122.4" width="54" height="167.6" rx="3" fill="#9FB0BF"><title>Jan: $2,563 spend, 262 conversions</title></rect>
+<circle cx="211.0" cy="94.4" r="22.0" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="211.0" y="98.4" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">262</text>
+<text x="211.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Jan</text>
+<text x="211.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.6k</text>
+<rect x="256" y="122.7" width="54" height="167.3" rx="3" fill="#9FB0BF"><title>Feb: $2,558 spend, 298 conversions</title></rect>
+<circle cx="283.0" cy="93.6" r="23.1" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="283.0" y="97.6" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">298</text>
+<text x="283.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Feb</text>
+<text x="283.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.6k</text>
+<rect x="328" y="172.5" width="54" height="117.5" rx="3" fill="#9FB0BF"><title>Mar: $1,797 spend, 98 conversions</title></rect>
+<circle cx="355.0" cy="151.1" r="15.4" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="355.0" y="155.1" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">98</text>
+<text x="355.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Mar</text>
+<text x="355.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.8k</text>
+<rect x="400" y="282.8" width="54" height="7.2" rx="3" fill="#9FB0BF"><title>Apr: $110 spend, 0 conversions</title></rect>
+<circle cx="427.0" cy="271.8" r="5.0" fill="#FFFFFF" stroke="#D9622B" stroke-width="2"/>
+<text x="427.0" y="262.8" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">0</text>
+<text x="427.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Apr</text>
+<text x="427.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$0.1k</text>
+<rect x="472" y="288.8" width="54" height="1.2" rx="3" fill="#9FB0BF"><title>May: $19 spend, 0 conversions</title></rect>
+<circle cx="499.0" cy="277.8" r="5.0" fill="#FFFFFF" stroke="#D9622B" stroke-width="2"/>
+<text x="499.0" y="268.8" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">0</text>
+<text x="499.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">May</text>
+<text x="499.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$19</text>
+<rect x="544" y="288.6" width="54" height="1.4" rx="3" fill="#9FB0BF"><title>Jun: $21 spend, 0 conversions</title></rect>
+<circle cx="571.0" cy="277.6" r="5.0" fill="#FFFFFF" stroke="#D9622B" stroke-width="2"/>
+<text x="571.0" y="268.6" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">0</text>
+<text x="571.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Jun</text>
+<text x="571.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$21</text>
+<rect x="616" y="164.1" width="54" height="125.9" rx="3" fill="#354757"><title>Jul: $1,926 spend, 2 conversions</title></rect>
+<circle cx="643.0" cy="151.6" r="6.5" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="643.0" y="141.1" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">2</text>
+<text x="643.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Jul</text>
+<text x="643.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.9k</text>
+<rect x="688" y="160.2" width="54" height="129.8" rx="3" fill="#354757"><title>Aug: $1,985 spend, 7 conversions</title></rect>
+<circle cx="715.0" cy="146.4" r="7.8" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="715.0" y="134.7" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">7</text>
+<text x="715.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Aug</text>
+<text x="715.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.0k</text>
+<rect x="760" y="126.0" width="54" height="164.0" rx="3" fill="#354757"><title>Sep: $2,508 spend, 12 conversions</title></rect>
+<circle cx="787.0" cy="111.4" r="8.6" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="787.0" y="98.7" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">12</text>
+<text x="787.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Sep</text>
+<text x="787.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.5k</text>
+<rect x="832" y="171.6" width="54" height="118.4" rx="3" fill="#354757"><title>Oct: $1,811 spend, 1 conversions</title></rect>
+<circle cx="859.0" cy="159.5" r="6.0" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="859.0" y="149.5" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">1</text>
+<text x="859.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Oct</text>
+<text x="859.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.8k</text>
+<rect x="904" y="207.4" width="54" height="82.6" rx="3" fill="#354757"><title>Nov*: $1,263 spend, 0 conversions</title></rect>
+<circle cx="931.0" cy="196.4" r="5.0" fill="#FFFFFF" stroke="#D9622B" stroke-width="2"/>
+<text x="931.0" y="187.4" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">0</text>
+<text x="931.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Nov*</text>
+<text x="931.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.3k</text>
+<line x1="34" y1="290" x2="964" y2="290" stroke="#B9B6B0"/>
+<text x="40" y="336" font-size="10" fill="#5A5955">2025</text><text x="184" y="336" font-size="10" fill="#5A5955">2026</text>
+</svg></div>
+        <ul class="key key--small key--row">
+          <li><i style="background:#9FB0BF"></i>Earlier campaigns</li>
+          <li><i style="background:var(--steel)"></i>Current campaigns (from July)</li>
+          <li><i style="background:var(--poor);border-radius:50%"></i>Conversions recorded (before March, mostly contact-page visits)</li>
+        </ul>
+        <div class="g__src">Google Ads, ITM - AU account. *November to 16 Nov 2026.</div>
+      </div>
+
+      <div class="g g--3">
+        <div class="g__kicker">Where Performance Max spent since July · $4,484</div>
+        <div class="g__title">36% ran outside Google Search</div>
+        <div class="split split--tall" aria-hidden="true"><span style="width:64%;background:var(--steel)"></span><span style="width:20%;background:var(--fair)"></span><span style="width:12%;background:var(--red)"></span><span style="width:4%;background:#B9B6B0"></span></div>
+        <ul class="key">
+          <li><i style="background:var(--steel)"></i><b>64%</b> Google Search · $2,873</li>
+          <li><i style="background:var(--fair)"></i><b>20%</b> Ads on other websites and apps · $879</li>
+          <li><i style="background:var(--red)"></i><b>12%</b> YouTube · $541</li>
+          <li><i style="background:#B9B6B0"></i><b>4%</b> Discover, Maps and search partners · $191</li>
+        </ul>
+        <div class="callout"><span class="callout__n num">11</span><span>results recorded, all calls from the ads on Google Search.</span></div>
+        <div class="g__src">Google Ads channel performance report, ITMAU_PMax #2, July to 16 Nov 2026</div>
+      </div>
+
+      <div class="g g--3 g--risk">
+        <div class="g__kicker">Visible search spend · $4,535</div>
+        <div class="g__big num">41%</div>
+        <div class="g__label">reached people searching for other businesses by name</div>
+        <div class="stack" aria-hidden="true"><span style="width:41%;background:#B3261E" title="Other businesses by name: 41%"></span><span style="width:33%;background:#1E7A4C" title="Relevant product searches: 33%"></span><span style="width:17%;background:#D4A017" title="Generic steel suppliers or fabrication: 17%"></span><span style="width:8%;background:#354757" title="Industrial Tube by name: 8%"></span><span style="width:1%;background:#B9B6B0" title="Clearly off-target: 1%"></span></div>
+        <ul class="key key--small"><li><i style="background:#B3261E"></i><b>41%</b> Other businesses by name</li><li><i style="background:#1E7A4C"></i><b>33%</b> Relevant product searches</li><li><i style="background:#D4A017"></i><b>17%</b> Generic steel suppliers or fabrication</li><li><i style="background:#354757"></i><b>8%</b> Industrial Tube by name</li><li><i style="background:#B9B6B0"></i><b>1%</b> Clearly off-target</li></ul>
+        <div class="g__src">Google Ads search terms report, 496 most-clicked searches, 12 Nov 2025 to 11 Nov 2026</div>
+      </div>
+
+      <div class="g g--3 g--risk">
+        <div class="g__kicker">Organic search clicks recorded by Search Console, per month</div>
+        <div class="g__big num">−73%</div>
+        <div class="g__label">since the website address changed from www.industrialtube.com.au to industrialtube.com.au in March</div>
+        <svg class="tl" viewBox="0 0 440 150" role="img" aria-label="Organic clicks recorded per month: about 140 before 17 March 2026, about 38 after">
+  <text x="0" y="22" font-size="12.5" font-weight="600" fill="#2A2A28">17 Nov 2025 to 16 Mar 2026</text>
+  <rect x="0" y="32" width="380" height="30" rx="4" fill="#354757"/><text x="388" y="53" font-size="14" font-weight="800" fill="#111110">~140</text>
+  <text x="0" y="96" font-size="12.5" font-weight="600" fill="#2A2A28">17 Mar to 16 Nov 2026</text>
+  <rect x="0" y="106" width="103" height="30" rx="4" fill="#D9622B"/><text x="111" y="127" font-size="14" font-weight="800" fill="#111110">~38</text>
+</svg>
+        <div class="g__src">Search Console is set up for www.industrialtube.com.au only, so clicks to industrialtube.com.au pages are not recorded. The drop is in what is measured, not necessarily in visits.</div>
+      </div>
+
+      <div class="g g--3 g--opp">
+        <div class="g__kicker">Email · Mailchimp</div>
+        <div class="g__big num" style="color:var(--strong)">1</div>
+        <div class="g__label">EDM sent to Australian contacts in the last 12 months: a December news email to 103 recipients</div>
+        <ul class="hb hb--wide">
+          <li><span class="hb__l">Australia prospective customer</span><span class="hb__t"><span style="width:100%;background:var(--good)"></span></span><span class="hb__v num">168</span></li>
+          <li><span class="hb__l">ITM Australia Dec 25</span><span class="hb__t"><span style="width:61%;background:var(--good)"></span></span><span class="hb__v num">103</span></li>
+          <li><span class="hb__l">ITMAU Online Store</span><span class="hb__t"><span style="width:0%;background:var(--good)"></span></span><span class="hb__v num">0</span></li>
+        </ul>
+        <div class="g__src">Mailchimp tags in the shared Industrial Tube list. Nothing on the Australian website or shop adds contacts.</div>
+      </div>
+
+    </div>
+    <p class="note" style="margin-top:16px">Enquiries and orders that came from the ads: <span class="pending">Pending: your sales records</span></p>
+  </div>
+</section>
+
+<!-- WHAT WAS AUDITED -->
+<section class="section section--white" id="audited">
+  <div class="wrap">
+    <div class="eyebrow">Scope</div>
+    <h2>What was audited</h2>
+    <p class="lede">Each area we reviewed, what it covered, and its health today.</p>
+    <div class="scorecard" role="table" aria-label="Audit areas and health">
+      <div class="sc-row sc-head" role="row"><div role="columnheader">Area</div><div role="columnheader">What was audited</div><div role="columnheader">Health</div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Google Ads review</div><div class="sc-what" role="cell">Campaigns, budgets, bidding, keywords, ads, settings, and the searches that triggered the ads</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Coverage of target industries and regions</div><div class="sc-what" role="cell">Keywords, search themes and locations against the industries and regions you sell to</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Conversion tracking</div><div class="sc-what" role="cell">What Google Ads and Tag Manager count, and the tags on industrialtube.com.au</div><div role="cell"><div class="gauge" data-level="1"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Critical</div></div></div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Call tracking options</div><div class="sc-what" role="cell">Calls from the call button in ads, calls to the phone numbers on the website, and taps on website phone links</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Merchant Centre and Search Console</div><div class="sc-what" role="cell">Whether Australian products can appear in Google Shopping, and organic search performance in Search Console</div><div role="cell"><div class="gauge" data-level="1"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Critical</div></div></div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Enquiry form and lead handling</div><div class="sc-what" role="cell">The contact form on the Australian website and where enquiries go</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Audiences and email lists</div><div class="sc-what" role="cell">Mailchimp tags, sign-up sources and sends, and Google remarketing audiences</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Current execution against optimal strategy</div><div class="sc-what" role="cell">Whether the account fits how Australian buyers find and order tube</div><div role="cell"><div class="gauge" data-level="0"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Pending: sales data</div></div></div></div>
+    </div>
+    <div class="legend" aria-hidden="true"><span><i style="background:var(--crit)"></i>Critical</span><span><i style="background:var(--poor)"></i>Poor</span><span><i style="background:var(--fair)"></i>Fair</span><span><i style="background:var(--good)"></i>Good</span><span><i style="background:var(--strong)"></i>Strong</span></div>
+  </div>
+</section>
+
+<!-- FINDINGS -->
+<section class="section" id="findings">
+  <div class="wrap">
+    <div class="eyebrow">Findings</div>
+    <h2>Audit findings</h2>
+    <p class="lede">Six findings, listed in order of urgency. Each shows the finding, its impact, and the fixes that address it in the prioritised fix list below.</p>
+    <div class="toolbar"><span class="toolbar__hint">Select a finding to open it, or open them all.</span><button class="btn" type="button" id="toggle-all">Expand all</button></div>
+    <div class="findings">
+
+      <details class="finding" data-p="high" open>
+        <summary><span class="tag tag--high">High</span><span><span class="ftitle">1. Enquiries from the Australian website are not recorded in the Australian ad account</span><span class="fsum">The Australian ad account's own tag is missing from the website</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="fbody"><dl>
+          <dt>Finding</dt><dd>The Australian ad account's tag is not on industrialtube.com.au. Instead, the site loads Industrial Tube NZ's Google Analytics tag, which also passes visits to Industrial Tube NZ's ad account. It is added by site code or a WordPress plugin, not Tag Manager. The account's main conversion, a visit to the contact page, was last triggered on 18 March 2026, around the time the site moved from www.industrialtube.com.au to industrialtube.com.au. Since then, almost all recorded conversions are calls from the call button in the ads (25 in 12 months), which Google tracks without the website. The contact form is not tracked, and the ‘Website calls’ conversion has never recorded a call.</dd>
+          <dt>Impact</dt><dd>Activity and visitor audiences from the Australian website are recorded in Industrial Tube NZ's ad account, not the Australian ad account that pays for the ads. Before March, conversions were contact-page visits; since March, the Australian account records almost none from the website. Neither measures enquiries.</dd>
+          <dt>Fixes</dt><dd>1, 2 and 3</dd>
+        </dl></div>
+      </details>
+
+      <details class="finding" data-p="high">
+        <summary><span class="tag tag--high">High</span><span><span class="ftitle">2. The campaigns are optimising to conversions that aren't being captured</span><span class="fsum">Three live campaigns are set to maximise conversions the account no longer receives</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="fbody"><dl>
+          <dt>Finding</dt><dd>The account was relaunched in July with three campaigns (two Search, one Performance Max), all set to get as many conversions as possible. From July to October they spent $8,230 and recorded 22 conversions. Performance Max has no product feed (see finding 5), and 36% of its spend ran on other websites, apps and YouTube. Google's automatic recommendations are switched on, and applied keyword and campaign changes in October without manual approval.</dd>
+          <dt>Impact</dt><dd>With almost no conversions to learn from, the bidding has no reliable signal about which clicks lead to enquiries. Changes are also applied automatically, without manual approval.</dd>
+          <dt>Fixes</dt><dd>5, after 1 to 3</dd>
+        </dl></div>
+      </details>
+
+      <details class="finding" data-p="medium">
+        <summary><span class="tag tag--medium">Medium</span><span><span class="ftitle">3. A large share of visible search spend reaches people searching for other businesses</span><span class="fsum">41% on other businesses by name; 33% on relevant product searches</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="fbody"><dl>
+          <dt>Finding</dt><dd>Google's search terms report lists the searches that showed the ads and were clicked, with their cost. The 496 searches with the most clicks cost $4,535. 41% of that (about $1,850) went on searches for other businesses by name, such as a competitor's name. Some of this is deliberate: the account bids on Orrcon Steel, Atlas Steels, Midway Metals and Stirlings Performance Steels. Most keywords are broad match, which extends that to steel businesses in general. 33% went on relevant product searches, such as stainless and steel tube.</dd>
+          <dt>Impact</dt><dd>These clicks to the website are recorded; what is not recorded is whether a click led to an enquiry. Spend on people looking for another business rarely produces one, and it reduces the budget available for product searches.</dd>
+          <dt>Fixes</dt><dd>6</dd>
+        </dl></div>
+      </details>
+
+      <details class="finding" data-p="medium">
+        <summary><span class="tag tag--medium">Medium</span><span><span class="ftitle">4. Your target industries and regions are not covered</span><span class="fsum">No keywords for furniture, medical equipment, ute trays, agricultural machinery or security gates</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="fbody"><dl>
+          <dt>Finding</dt><dd>There are no live keywords targeting any of your target industries. Motorsport is covered only by ‘roll cage tube’ ($2.68 in 12 months). Locations cover 27 Queensland areas and six in northern New South Wales, with no Newcastle. The location setting also shows ads to people outside these areas who show interest in them.</dd>
+          <dt>Impact</dt><dd>Manufacturers in your target industries who search by application are not reached, and some spend reaches people outside your delivery and collection area.</dd>
+          <dt>Fixes</dt><dd>7</dd>
+        </dl></div>
+      </details>
+
+      <details class="finding" data-p="medium">
+        <summary><span class="tag tag--medium">Medium</span><span><span class="ftitle">5. The online shop is not measured, and Shopping ads are not set up for Australia</span><span class="fsum">No Google tags on the shop; no Australian product feed</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="fbody"><dl>
+          <dt>Finding</dt><dd>The online shop at shop.industrialtube.com.au has no Google tags, so purchases, add-to-carts and revenue are not recorded in Google. The only Merchant Centre account holds Industrial Tube NZ's products, with New Zealand shipping only, so there is no Australian product feed. The paused Shopping campaign used that New Zealand feed.</dd>
+          <dt>Impact</dt><dd>The ecommerce and Shopping rows in your tracker cannot be filled, and Google cannot show Australian products in Shopping results.</dd>
+          <dt>Fixes</dt><dd>8</dd>
+        </dl></div>
+      </details>
+
+      <details class="finding" data-p="low">
+        <summary><span class="tag tag--low">Low</span><span><span class="ftitle">6. Organic search and email are not measured or used</span><span class="fsum">Search Console only tracks the old www address; one EDM in 12 months</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="fbody"><dl>
+          <dt>Finding</dt><dd>Search Console is set up only for the old address, www.industrialtube.com.au. Since the site moved to industrialtube.com.au in March, Google shows the new addresses in search results, and clicks on them are not recorded by that property. It now records about 38 organic clicks a month, against about 140 before. Most recorded clicks are for ‘industrial tube’ by name; ‘stainless steel tube’ and ‘steel tube’ show about 800 times each with few clicks. Only one EDM has been sent to Australian contacts in the last 12 months (a December news email to 103 recipients). The ‘ITMAU Online Store’ tag has no contacts, and the Australian site has no sign-up form.</dd>
+          <dt>Impact</dt><dd>Organic performance since March cannot be judged, and two channels that cost nothing in media are not bringing buyers back to the site.</dd>
+          <dt>Fixes</dt><dd>4, 9 and 10</dd>
+        </dl></div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- FIX LIST -->
+<section class="section section--white" id="fixes">
+  <div class="wrap">
+    <div class="eyebrow">Fixes</div>
+    <h2>Prioritised fix list</h2>
+    <p class="lede">Fixes 1 to 4 and 11 come first: they make the results accurate. Once the data is correct, it will show how far to take fixes 5 to 10, and the effect of each fix can be measured.</p>
+    <div class="lanes">
+      <div class="lane">
+        <div class="lane__head"><h3>Now</h3><span>5 fixes</span></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">1</span><span class="fix__t">Put the Australian account's tag on industrialtube.com.au and remove Industrial Tube NZ's tags</span></div><p class="fix__why">Records Australian website activity in the Australian ad account, which pays for the ads.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">Your web developer and Via Media</span><span class="chip">Finding 1</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">2</span><span class="fix__t">Count contact form enquiries and phone-number taps on the website</span></div><p class="fix__why">Captures every real enquiry route.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">Via Media</span><span class="chip">Finding 1</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">3</span><span class="fix__t">Remove dead conversions from the account goals; send a test enquiry together</span></div><p class="fix__why">Proves each enquiry is counted once.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">ITMA and Via Media</span><span class="chip">Finding 1</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">4</span><span class="fix__t">Add a Search Console property for industrialtube.com.au, or share the domain property</span></div><p class="fix__why">Restores organic search measurement.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">ITMA</span><span class="chip">Finding 6</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">11</span><span class="fix__t">Correct the Google rows in the Industrial Tube Australia Performance Tracker</span></div><p class="fix__why">Adds the missing campaign and fixes labels. See the tracker section below.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">ITMA</span></div></div>
+      </div>
+      <div class="lane">
+        <div class="lane__head"><h3>Next</h3><span>3 fixes</span></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">5</span><span class="fix__t">Turn off automatic recommendations; re-point bidding at enquiries once 4 weeks of corrected data exist</span></div><p class="fix__why">Stops changes being applied without approval, and gives the bidding a real target.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">Via Media</span><span class="chip">Finding 2</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">6</span><span class="fix__t">Narrow broad keywords; confirm which competitor names to bid on; exclude other businesses</span></div><p class="fix__why">Cuts spend on people looking for another business.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">Via Media</span><span class="chip">Finding 3</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">7</span><span class="fix__t">Add keywords and ads for target industries and motorsport; review locations and the location setting</span></div><p class="fix__why">Reaches buyers by application and region.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">Via Media</span><span class="chip">Finding 4</span></div></div>
+      </div>
+      <div class="lane">
+        <div class="lane__head"><h3>Later</h3><span>3 fixes</span></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">8</span><span class="fix__t">Tag the online shop; decide whether to set up an Australian product feed for Shopping</span></div><p class="fix__why">Makes online orders measurable.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">Your web developer and Via Media</span><span class="chip">Finding 5</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">9</span><span class="fix__t">Improve the pages for ‘stainless steel tube’ and ‘steel tube’</span></div><p class="fix__why">Turns existing search visibility into clicks.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">ITMA or Via Media</span><span class="chip">Finding 6</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">10</span><span class="fix__t">Define the Australian email audience; add a sign-up form; send regularly</span></div><p class="fix__why">Uses a list ITMA already owns.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">ITMA</span><span class="chip">Finding 6</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKER -->
+<section class="section" id="tracker">
+  <div class="wrap">
+    <div class="eyebrow">Reporting</div>
+    <h2>Your Industrial Tube Australia Performance Tracker</h2>
+    <p class="lede">You've requested that campaign results fit your existing reporting, so we've reviewed the Industrial Tube Australia Performance Tracker against the audit findings. The tracker uses platform figures to judge performance on enquiries and orders, and those figures can't support that judgement until the following are fixed.</p>
+    <div class="tablewrap">
+      <table class="ttable">
+        <thead><tr><th scope="col">Tracker rows</th><th scope="col">Status</th><th scope="col">Why</th><th scope="col">Fix</th></tr></thead>
+        <tbody>
+          <tr><td>Currency (A$ labels)</td><td><span class="pill pill--part">Wrong label</span></td><td>The Google Ads account reports in NZ$. The spend entered matches Google Ads in NZ$ exactly, for example NZ$891.63 for Performance Max in October.</td><td>Relabel as NZ$, or convert</td></tr>
+          <tr><td>Google Search spend, impressions, clicks</td><td><span class="pill pill--no">Not reliable</span></td><td>Only one of the two Search campaigns is entered. The stainless campaign ($3,226, July to October) is missing, and August Search spend is entered as 0. October paid spend in the tracker is $1,342; Google Ads shows $1,811.</td><td>11</td></tr>
+          <tr><td>‘Shopping’ spend, impressions, clicks</td><td><span class="pill pill--part">Wrong row</span></td><td>These figures come from the Performance Max campaign. No Shopping campaign runs, and there is no Australian product feed.</td><td>Rename as Performance Max</td></tr>
+          <tr><td>Shopping purchases, conversion value, ROAS</td><td><span class="pill pill--wait">Not measurable</span></td><td>No product feed, and no Google tags on the shop.</td><td>8</td></tr>
+          <tr><td>Search conversions, cost per conversion, platform leads</td><td><span class="pill pill--no">Not reliable</span></td><td>The Australian account's tag is not on the website, so website enquiries are not counted. September's cost per conversion ($1,146.84) reflects half a recorded conversion.</td><td>1 to 3</td></tr>
+          <tr><td>Enquiry / form submissions (11 to 19 a month)</td><td><span class="pill pill--wait">Source to confirm</span></td><td>The only enquiry figures available. Google Ads does not record them. We could not see the analytics property they come from.</td><td><span class="pending">Pending</span></td></tr>
+          <tr><td>Organic search rows</td><td><span class="pill pill--no">Not reliable</span></td><td>Consistent with the old www property, which has recorded about a quarter of the previous organic clicks since the site changed address in March.</td><td>4</td></tr>
+          <tr><td>Ecommerce rows</td><td><span class="pill pill--wait">Not measurable</span></td><td>The shop has no Google tags.</td><td>8</td></tr>
+          <tr><td>Paid social (Meta)</td><td><span class="pill pill--wait">Not in tracker</span></td><td>There is no Meta section. Results from the Industrial Tube Australia paid social campaign will be supplied in a format that drops into the tracker. The paid social cost per CRM lead formula divides by LinkedIn spend only.</td><td>Add a Meta section; include Meta spend</td></tr>
+          <tr><td>CRM leads, orders, leads by source</td><td><span class="pill pill--wait">Awaiting data</span></td><td>No data entered yet.</td><td><span class="pending">Pending</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGY -->
+<section class="section section--white" id="strategy">
+  <div class="wrap">
+    <div class="eyebrow">Strategy</div>
+    <h2>Making Google ads, organic search and email work</h2>
+    <p class="lede"><span class="pending">Pending</span> Completed once enquiry and order data is supplied.</p>
+    <div class="strat">
+      <div class="strat__row"><b>To be determined</b><span>Whether paid Google can produce Australian enquiries at an acceptable cost and at what level of spend, and what organic search, email and the planned paid social campaign should each contribute.</span></div>
+      <div class="strat__row"><b>To be analysed</b><span>Real enquiries and orders by source, average order value, how buyers collect or receive their tube, and search demand in each target industry and region.</span></div>
+      <div class="strat__row"><b>Expected recommendations</b><span>Correct tracking before any budget change; Search campaigns built around target industries and regions, measured on real enquiries; Performance Max kept only if it proves itself on enquiries or a product feed is set up; email and organic search to keep in contact between orders.</span></div>
+      <div class="strat__row"><b>Required for execution</b><span class="pending">Pending: to be agreed, for example industry landing pages, product photography, case studies</span></div>
+      <div class="strat__row"><b>Success measures</b><span>Three to five targets in the Industrial Tube Australia Performance Tracker, set after one month of corrected data.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BASIS + GLOSSARY -->
+<section class="section" id="basis">
+  <div class="wrap">
+    <div class="eyebrow">Notes</div>
+    <h2>Basis of this audit</h2>
+    <div class="basis">This audit is based on read-only access to Google Ads, Google Tag Manager, Search Console, Merchant Centre and Mailchimp, a review of the tags on industrialtube.com.au, your Industrial Tube Australia Performance Tracker, and information you have supplied, for the 12 months to November 2026. The Google Analytics property for the Australian website was not available to us. The audit reflects what these sources show. It does not include decisions, context or data held outside them, so a finding may not match how a campaign was intended to run. Where a finding conflicts with what you know, tell us and we will correct it.</div>
+    <details class="gloss">
+      <summary>Plain-English glossary <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <dl>
+        <dt>Conversion</dt><dd>Whatever Google is told to count as a success. Before March, mostly a contact-page visit; since March, mostly a call from an ad.</dd>
+        <dt>Tag</dt><dd>A small piece of code on the website that tells an ad account when a visitor does something.</dd>
+        <dt>Performance Max</dt><dd>A Google campaign that places ads across Search, YouTube, Maps and partner sites, and chooses where itself.</dd>
+        <dt>Ads on other websites and apps</dt><dd>Google's Display Network: banner and image ads shown on sites and apps that carry Google ads.</dd>
+        <dt>Product feed</dt><dd>A list of products, prices and stock sent to Google Merchant Centre so they can appear in Shopping results.</dd>
+        <dt>Broad keyword</dt><dd>A keyword Google may match to loosely related searches.</dd>
+        <dt>Search Console property</dt><dd>The version of the website address that Search Console reports on. A property for www.industrialtube.com.au does not cover industrialtube.com.au.</dd>
+        <dt>Organic search</dt><dd>The ordinary Google results below the ads, at no media cost.</dd>
+      </dl>
+    </details>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap"><span><b>Via Media</b> · Industrial Tube Australia Google Ads audit</span><span>Prepared November 2026</span></div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('toggle-all');
+    var items = Array.prototype.slice.call(document.querySelectorAll('details.finding'));
+    function sync() {
+      var allOpen = items.every(function (d) { return d.open; });
+      btn.textContent = allOpen ? 'Collapse all' : 'Expand all';
+    }
+    btn.addEventListener('click', function () {
+      var open = !items.every(function (d) { return d.open; });
+      items.forEach(function (d) { d.open = open; });
+      sync();
+    });
+    items.forEach(function (d) { d.addEventListener('toggle', sync); });
+    window.addEventListener('beforeprint', function () { document.querySelectorAll('details').forEach(function (d) { d.open = true; }); });
+  })();
+</script>
+</body>
+</html>

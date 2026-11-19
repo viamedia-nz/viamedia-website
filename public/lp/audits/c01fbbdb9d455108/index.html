@@ -229,9 +229,9 @@
   .g--6 { grid-column:span 6; }
   @media (max-width: 860px) { .g--6 { grid-column:auto; } }
   .g--alert { border-top:5px solid var(--crit); }
-  .risk__head { display:flex; flex-wrap:wrap; align-items:flex-end; gap:6px 22px; }
+  .risk__head { display:block; }
   .risk__big { font-weight:900; font-size:clamp(2rem, 4.6vw, 3rem); line-height:1; letter-spacing:-0.03em; color:var(--crit); }
-  .risk__of { font-weight:700; font-size:1.02rem; color:var(--ink); line-height:1.35; padding-bottom:4px; max-width:52ch; }
+  .risk__of { font-weight:700; font-size:1.05rem; color:var(--ink); line-height:1.35; margin-top:8px; }
   .risk__max { font-size:0.95rem; font-weight:600; color:var(--ink2); }
   .risk__max b { color:var(--crit); font-weight:800; }
   .risk__to { color:#C9625B; font-weight:800; }
@@ -335,9 +335,9 @@
         <div class="g__kicker">Spend unlikely to produce enquiries · 12 months</div>
         <div class="risk__head">
           <div class="risk__big num">$14,800<span class="risk__to"> to $21,600</span></div>
-          <div class="risk__of">of $23,381 in Google ad spend (63% to 92%) went on clicks unlikely to produce an enquiry</div>
+          <div class="risk__of">of $23,381 in Google ad spend (63%, potentially 92%) went on clicks unlikely to produce an enquiry</div>
         </div>
-        <div class="risk__max">The lower figure is seen in the account. The upper figure is estimated.</div>
+        <div class="risk__max">The lower figure is seen in the account, and the upper figure is estimated from the pattern in the searches Google shows.</div>
         <svg class="risk__bar" viewBox="0 0 1000 150" role="img" aria-label="Of $23,381 in Google ad spend, at least $14,800 (63%) and up to an estimated $21,600 (92%) went on clicks unlikely to produce enquiries.">
   <defs><pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#E7A39E"/><rect width="4" height="10" fill="#B3261E"/></pattern></defs>
   <rect x="0" y="56" width="1000" height="46" rx="8" fill="#DAD7D1"/>
