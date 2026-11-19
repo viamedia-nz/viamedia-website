@@ -234,6 +234,7 @@
   .risk__of { font-weight:700; font-size:1.02rem; color:var(--ink); line-height:1.35; padding-bottom:4px; max-width:52ch; }
   .risk__max { font-size:0.95rem; font-weight:600; color:var(--ink2); }
   .risk__max b { color:var(--crit); font-weight:800; }
+  .risk__to { color:#C9625B; font-weight:800; }
   .risk__bar { width:100%; height:auto; display:block; margin-top:6px; }
   .risk__key { list-style:none; display:grid; grid-template-columns:repeat(3, 1fr); gap:12px 22px; font-size:0.86rem; color:var(--ink2); }
   .risk__key li { display:grid; grid-template-columns:16px 1fr; gap:8px; align-items:start; }
@@ -333,10 +334,10 @@
       <div class="g g--6 g--alert">
         <div class="g__kicker">Spend unlikely to produce enquiries · 12 months</div>
         <div class="risk__head">
-          <div class="risk__big num">At least $14,800</div>
-          <div class="risk__of">of $23,381 in Google ad spend (63%) went on clicks unlikely to produce an enquiry</div>
+          <div class="risk__big num">$14,800<span class="risk__to"> to $21,600</span></div>
+          <div class="risk__of">of $23,381 in Google ad spend (63% to 92%) went on clicks unlikely to produce an enquiry</div>
         </div>
-        <div class="risk__max">Up to <b>$21,600</b> (92%) if the same pattern holds (estimated)</div>
+        <div class="risk__max">The lower figure is seen in the account. The upper figure is estimated.</div>
         <svg class="risk__bar" viewBox="0 0 1000 150" role="img" aria-label="Of $23,381 in Google ad spend, at least $14,800 (63%) and up to an estimated $21,600 (92%) went on clicks unlikely to produce enquiries.">
   <defs><pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#E7A39E"/><rect width="4" height="10" fill="#B3261E"/></pattern></defs>
   <rect x="0" y="56" width="1000" height="46" rx="8" fill="#DAD7D1"/>
@@ -351,8 +352,8 @@
 </svg>
         <ul class="risk__key">
           <li><i style="background:#B3261E"></i><span><b>At least $14,800</b>Seen in the account: searches for named businesses and other steel suppliers (about $5,200), and Performance Max ads outside Google Search (about $9,600).</span></li>
-          <li><i style="background-image:repeating-linear-gradient(45deg,#B3261E 0 4px,#E7A39E 4px 10px)"></i><span><b>Estimated, a further $6,800</b>Google doesn't show the searches behind about 45% of the search spend. This assumes they follow the same pattern as the searches it does show.</span></li>
-          <li><i style="background:#DAD7D1"></i><span><b>Not yet measurable: $1,800</b>Cannot be judged until enquiries are tracked (fixes 1 to 3).</span></li>
+          <li><i style="background-image:repeating-linear-gradient(45deg,#B3261E 0 4px,#E7A39E 4px 10px)"></i><span><b>Estimated, a further $6,800</b>Of the searches Google shows, 87% of spend went on clicks unlikely to produce an enquiry. Google doesn't show the searches behind about 45% of the search spend; applying the same 87% to the rest of the search spend gives this figure.</span></li>
+          <li><i style="background:#DAD7D1"></i><span><b>Not yet measurable: $1,800</b>Clicks on searches that look relevant, such as product searches. Whether they produced enquiries can't be judged until enquiries are tracked (fixes 1 to 3).</span></li>
         </ul>
         <div class="g__src">Google Ads search terms and channel performance reports. Estimates, rounded; the reports cover periods a few days apart.</div>
       </div>
