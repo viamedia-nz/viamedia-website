@@ -228,10 +228,12 @@
 
   .g--6 { grid-column:span 6; }
   @media (max-width: 860px) { .g--6 { grid-column:auto; } }
-  .g--alert { border-top:6px solid var(--crit); background:linear-gradient(180deg, #FFF5F4 0%, #FFFFFF 70%); }
+  .g--alert { border-top:5px solid var(--crit); }
   .risk__head { display:flex; flex-wrap:wrap; align-items:flex-end; gap:6px 22px; }
-  .risk__big { font-weight:900; font-size:clamp(2rem, 4.8vw, 3.2rem); line-height:1; letter-spacing:-0.03em; color:var(--crit); }
-  .risk__of { font-weight:700; font-size:1.02rem; color:var(--ink); line-height:1.35; padding-bottom:4px; max-width:46ch; }
+  .risk__big { font-weight:900; font-size:clamp(2rem, 4.6vw, 3rem); line-height:1; letter-spacing:-0.03em; color:var(--crit); }
+  .risk__of { font-weight:700; font-size:1.02rem; color:var(--ink); line-height:1.35; padding-bottom:4px; max-width:52ch; }
+  .risk__max { font-size:0.95rem; font-weight:600; color:var(--ink2); }
+  .risk__max b { color:var(--crit); font-weight:800; }
   .risk__bar { width:100%; height:auto; display:block; margin-top:6px; }
   .risk__key { list-style:none; display:grid; grid-template-columns:repeat(3, 1fr); gap:12px 22px; font-size:0.86rem; color:var(--ink2); }
   .risk__key li { display:grid; grid-template-columns:16px 1fr; gap:8px; align-items:start; }
@@ -270,7 +272,7 @@
     <dl class="hero__meta">
       <div><dt>Prepared for</dt><dd>Katrina Evans, TGF Holdings</dd></div>
       <div><dt>Period reviewed</dt><dd>12 Nov 2025 to 11 Nov 2026</dd></div>
-      <div><dt>Audit dates</dt><dd>9 to 20 Nov 2026</dd></div>
+      <div><dt>Figures</dt><dd>NZ$, excluding GST</dd></div><div><dt>Audit dates</dt><dd>9 to 20 Nov 2026</dd></div>
       <div><dt>Prepared by</dt><dd>Via Media</dd></div>
     </dl>
   </div>
@@ -281,7 +283,7 @@
   <div class="wrap">
     <div class="eyebrow">Overview</div>
     <h2>Key points</h2>
-    <p class="lede">Ag Steel spent <span class="num">NZ$23,381</span> on Google ads in the last 12 months. Google is not counting meaningful results, such as enquiries and orders. That needs to be fixed first; then it will be possible to judge how effective the spend is.</p>
+    <p class="lede">Ag Steel spent <span class="num">$23,381</span> on Google ads in the last 12 months. Google is not counting meaningful results, such as enquiries and orders. That needs to be fixed first; then it will be possible to judge how effective the spend is.</p>
     <div class="points">
       <div class="point"><div><strong>Google counts page visits as conversions</strong><p>99% of the 2,656 conversions Google recorded were visits to the contact page. Your AgSteel Performance Tracker records 25 form enquiries from March to October.</p></div></div>
       <div class="point"><div><strong>The campaigns optimise to that count</strong><p>Both Performance Max campaigns are set to find more conversions, so they find more contact-page visits. 55% of their spend ran outside Google Search, on other websites, apps and YouTube.</p></div></div>
@@ -302,11 +304,11 @@
 
       <div class="g g--3 g--dark">
         <div class="g__kicker">Google ad spend · 12 months</div>
-        <div class="g__big num">NZ$23,381</div>
+        <div class="g__big num">$23,381</div>
         <div class="split" aria-hidden="true"><span style="width:73%;background:var(--red)"></span><span style="width:27%;background:#9FB0BF"></span></div>
         <ul class="key key--dark">
-          <li><i style="background:var(--red)"></i><b>73%</b> Performance Max · NZ$16,998</li>
-          <li><i style="background:#9FB0BF"></i><b>27%</b> Search campaigns · NZ$6,383</li>
+          <li><i style="background:var(--red)"></i><b>73%</b> Performance Max · $16,998</li>
+          <li><i style="background:#9FB0BF"></i><b>27%</b> Search campaigns · $6,383</li>
         </ul>
         <div class="g__src">Google Ads, 12 Nov 2025 to 11 Nov 2026</div>
       </div>
@@ -331,26 +333,26 @@
       <div class="g g--6 g--alert">
         <div class="g__kicker">Spend unlikely to produce enquiries · 12 months</div>
         <div class="risk__head">
-          <div class="risk__big num">NZ$14,800 to NZ$21,600</div>
-          <div class="risk__of">of NZ$23,381 in Google ad spend (63% to 92%) went on clicks unlikely to produce an enquiry</div>
+          <div class="risk__big num">At least $14,800</div>
+          <div class="risk__of">of $23,381 in Google ad spend (63%) went on clicks unlikely to produce an enquiry</div>
         </div>
-        <svg class="risk__bar" viewBox="0 0 1000 150" role="img" aria-label="Of NZ$23,381 in Google ad spend, a minimum of NZ$14,800 (63%) and up to NZ$21,600 (92%) went on clicks unlikely to produce enquiries.">
+        <div class="risk__max">Up to <b>$21,600</b> (92%) if the same pattern holds (estimated)</div>
+        <svg class="risk__bar" viewBox="0 0 1000 150" role="img" aria-label="Of $23,381 in Google ad spend, at least $14,800 (63%) and up to an estimated $21,600 (92%) went on clicks unlikely to produce enquiries.">
   <defs><pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#E7A39E"/><rect width="4" height="10" fill="#B3261E"/></pattern></defs>
   <rect x="0" y="56" width="1000" height="46" rx="8" fill="#DAD7D1"/>
   <rect x="0" y="56" width="923.4" height="46" fill="url(#hatch)"/>
   <rect x="0" y="56" width="633.6" height="46" fill="#B3261E"/>
-  <rect x="0" y="56" width="1000" height="46" rx="8" fill="none" stroke="#FFFFFF" stroke-width="0"/>
   <line x1="633.6" y1="30" x2="633.6" y2="108" stroke="#111110" stroke-width="2"/>
-  <line x1="923.4" y1="8" x2="923.4" y2="108" stroke="#111110" stroke-width="2"/>
-  <text x="625.6" y="44" text-anchor="end" font-size="15" font-weight="800" fill="#111110">Minimum NZ$14,800 · 63%</text>
-  <text x="915.4" y="22" text-anchor="end" font-size="15" font-weight="800" fill="#B3261E">Up to NZ$21,600 · 92%</text>
-  <text x="0" y="132" font-size="13" fill="#5A5955">NZ$0</text>
-  <text x="1000" y="132" text-anchor="end" font-size="13" fill="#5A5955">NZ$23,381 total Google ad spend</text>
+  <line x1="923.4" y1="8" x2="923.4" y2="108" stroke="#111110" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="625.6" y="44" text-anchor="end" font-size="15" font-weight="800" fill="#111110">At least $14,800 · 63%</text>
+  <text x="915.4" y="22" text-anchor="end" font-size="15" font-weight="700" fill="#5A5955">Up to $21,600 · 92% (estimated)</text>
+  <text x="0" y="132" font-size="13" fill="#5A5955">$0</text>
+  <text x="1000" y="132" text-anchor="end" font-size="13" fill="#5A5955">$23,381 total Google ad spend</text>
 </svg>
         <ul class="risk__key">
-          <li><i style="background:#B3261E"></i><span><b>Minimum: NZ$14,800</b>Seen in the account: searches for named businesses and other steel suppliers (about NZ$5,200), and Performance Max ads outside Google Search (about NZ$9,600).</span></li>
-          <li><i style="background:url(#hatch);background-image:repeating-linear-gradient(45deg,#B3261E 0 4px,#E7A39E 4px 10px)"></i><span><b>Estimated: a further NZ$6,800</b>The same pattern applied to the search spend Google does not itemise.</span></li>
-          <li><i style="background:#DAD7D1"></i><span><b>Not yet measurable: NZ$1,800</b>Cannot be judged until enquiries are tracked (fixes 1 to 3).</span></li>
+          <li><i style="background:#B3261E"></i><span><b>At least $14,800</b>Seen in the account: searches for named businesses and other steel suppliers (about $5,200), and Performance Max ads outside Google Search (about $9,600).</span></li>
+          <li><i style="background-image:repeating-linear-gradient(45deg,#B3261E 0 4px,#E7A39E 4px 10px)"></i><span><b>Estimated, a further $6,800</b>Google doesn't show the searches behind about 45% of the search spend. This assumes they follow the same pattern as the searches it does show.</span></li>
+          <li><i style="background:#DAD7D1"></i><span><b>Not yet measurable: $1,800</b>Cannot be judged until enquiries are tracked (fixes 1 to 3).</span></li>
         </ul>
         <div class="g__src">Google Ads search terms and channel performance reports. Estimates, rounded; the reports cover periods a few days apart.</div>
       </div>
@@ -363,21 +365,21 @@
       </div>
 
       <div class="g g--4">
-        <div class="g__kicker">Where Performance Max spent · NZ$17,358</div>
+        <div class="g__kicker">Where Performance Max spent · $17,358</div>
         <div class="g__title">55% of Performance Max spend ran outside Google Search</div>
         <div class="split split--tall" aria-hidden="true"><span style="width:44.4%;background:var(--steel)"></span><span style="width:41.5%;background:var(--fair)"></span><span style="width:13.7%;background:var(--red)"></span><span style="width:0.4%;background:#B9B6B0"></span></div>
         <ul class="key key--grid">
-          <li><i style="background:var(--steel)"></i><b>44%</b> Google Search · NZ$7,701</li>
-          <li><i style="background:var(--fair)"></i><b>41%</b> Ads on other websites and apps · NZ$7,196</li>
-          <li><i style="background:var(--red)"></i><b>14%</b> YouTube · NZ$2,382</li>
-          <li><i style="background:#B9B6B0"></i><b>&lt;1%</b> Discover and search partners · NZ$78</li>
+          <li><i style="background:var(--steel)"></i><b>44%</b> Google Search · $7,701</li>
+          <li><i style="background:var(--fair)"></i><b>41%</b> Ads on other websites and apps · $7,196</li>
+          <li><i style="background:var(--red)"></i><b>14%</b> YouTube · $2,382</li>
+          <li><i style="background:#B9B6B0"></i><b>&lt;1%</b> Discover and search partners · $78</li>
         </ul>
         <div class="callout"><span class="callout__n num">8</span><span>contact-form submissions recorded from this spend, against 2,114 contact-page visits. Form submissions are counted from 18 May 2026.</span></div>
         <div class="g__src">Google Ads channel performance report, Vineyard and Kiwifruit campaigns, 10 Nov 2025 to 16 Nov 2026</div>
       </div>
 
       <div class="g g--3 g--risk">
-        <div class="g__kicker">Visible search spend · NZ$5,987</div>
+        <div class="g__kicker">Visible search spend · $5,987</div>
         <div class="g__big num">2%</div>
         <div class="g__label">reached people searching for your products</div>
         <div class="stack" aria-hidden="true"><span style="width:54%;background:#B3261E" title="Wineries, orchards, horticulture firms: 54%"></span><span style="width:28%;background:#D9622B" title="Other steel suppliers: 28%"></span><span style="width:5%;background:#D4A017" title="General agriculture information: 5%"></span><span style="width:5%;background:#B9B6B0" title="Other, mostly business names: 5%"></span><span style="width:4%;background:#354757" title="Ag Steel and AgBeam by name: 4%"></span><span style="width:3%;background:#8C8A85" title="Buying steel, no product named: 3%"></span><span style="width:2%;background:#1E7A4C" title="Posts, trellis, wire, beams, clips: 2%"></span></div>
@@ -388,19 +390,19 @@
       <div class="g g--3">
         <div class="g__kicker">Marketing spend · March to October 2026</div>
         <div class="g__row g__row--center">
-          <svg class="donut" viewBox="0 0 140 140" role="img" aria-label="Google ads NZ$15,260 (37%) and print, radio and events NZ$26,106 (63%), March to October 2026">
+          <svg class="donut" viewBox="0 0 140 140" role="img" aria-label="Google ads $15,260 (37%) and print, radio and events $26,106 (63%), March to October 2026">
   <circle cx="70" cy="70" r="54" fill="none" stroke="#C9C6C0" stroke-width="22"/>
   <circle cx="70" cy="70" r="54" fill="none" stroke="#354757" stroke-width="22" stroke-dasharray="125.17 339.29" transform="rotate(-90 70 70)"/>
   <text x="70" y="66" text-anchor="middle" font-size="22" font-weight="900" fill="#111110">37%</text>
   <text x="70" y="84" text-anchor="middle" font-size="9.5" font-weight="600" fill="#5A5955">Google ads</text>
 </svg>
           <ul class="key">
-            <li><i style="background:var(--steel)"></i><b>NZ$15,260</b> Google ads</li>
-            <li><i style="background:#C9C6C0"></i><b>NZ$26,106</b> Print, radio and events</li>
-            <li class="key__total">Total NZ$41,366</li>
+            <li><i style="background:var(--steel)"></i><b>$15,260</b> Google ads</li>
+            <li><i style="background:#C9C6C0"></i><b>$26,106</b> Print, radio and events</li>
+            <li class="key__total">Total $41,366</li>
           </ul>
         </div>
-        <p class="g__note">Offline spend is recorded in the tracker for March to October only, so this comparison covers those eight months. Over the full 12 months, Google ad spend was NZ$23,381.</p>
+        <p class="g__note">Offline spend is recorded in the tracker for March to October only, so this comparison covers those eight months. Over the full 12 months, Google ad spend was $23,381.</p>
         <div class="g__src">Paid KPIs and Offline Media sheets, AgSteel Performance Tracker</div>
       </div>
 
@@ -502,7 +504,7 @@
       <details class="finding" data-p="high">
         <summary><span class="tag tag--high">High</span><span><span class="ftitle">2. The campaigns optimise to page visits</span><span class="fsum">Bidding is set to find more of the conversions in finding 1</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <div class="fbody"><dl>
-          <dt>Finding</dt><dd>Both Performance Max campaigns (Vineyard and Kiwifruit) are set to get as many conversions as possible within a target cost. Together they spent NZ$17,358: 44% on Google Search, 41% on ads on other websites and apps, and 14% on YouTube. The two Search campaigns are set to maximise conversion value, but no value is recorded.</dd>
+          <dt>Finding</dt><dd>Both Performance Max campaigns (Vineyard and Kiwifruit) are set to get as many conversions as possible within a target cost. Together they spent $17,358: 44% on Google Search, 41% on ads on other websites and apps, and 14% on YouTube. The two Search campaigns are set to maximise conversion value, but no value is recorded.</dd>
           <dt>Impact</dt><dd>Google is doing what it is told, with the result that it finds cheap contact-page visits, much of it through ads on other websites and on YouTube. Performance Max clicks rose from about 2,000 to 11,000 a month from August to October, while form enquiries stayed at 2 to 3 a month. Since 18 May, the two campaigns have recorded 8 contact-form submissions.</dd>
           <dt>Fixes</dt><dd>4, after 1 to 3</dd>
         </dl></div>
@@ -512,36 +514,36 @@
         <summary><span class="tag tag--high">High</span><span><span class="ftitle">3. Most visible spend reaches people searching for a named business</span><span class="fsum">2% of visible search spend reached searches for your products</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <div class="fbody">
           <dl>
-            <dt>Finding</dt><dd>Of the searches Google reports (NZ$7,617, about a third of spend), most were for a named business rather than one of your products.</dd>
+            <dt>Finding</dt><dd>Of the searches Google reports ($7,617, about a third of spend), most were for a named business rather than one of your products.</dd>
             <dt>Impact</dt><dd>A search for ‘Craggy Range’ is more likely to come from a wine buyer or a job seeker than a grower buying posts. The Vineyard campaign's search themes include ‘nz wineries’, which produces this outcome.</dd>
             <dt>Fixes</dt><dd>5 and 6</dd>
           </dl>
           <figure class="chart">
             <h3>Only 2% of the visible search spend reached people searching for your products</h3>
-            <p class="note">Share of NZ$5,987 spent on the 500 most-clicked searches, 12 months to 11 Nov 2026</p>
+            <p class="note">Share of $5,987 spent on the 500 most-clicked searches, 12 months to 11 Nov 2026</p>
             <svg viewBox="0 0 760 330" role="img" aria-label="Only 2% of the visible search spend reached people searching for your products">
               <g font-size="13" fill="#2A2A28">
                 <text x="288" y="24" text-anchor="end">Wineries, orchards, horticulture firms</text>
-                <rect x="300" y="8" width="300" height="24" rx="2" fill="#B9B6B0"><title>NZ$3,258 (54%)</title></rect>
-                <text x="608" y="25" font-weight="700" fill="#111110">54%  NZ$3,258</text>
+                <rect x="300" y="8" width="300" height="24" rx="2" fill="#B9B6B0"><title>$3,258 (54%)</title></rect>
+                <text x="608" y="25" font-weight="700" fill="#111110">54%  $3,258</text>
                 <text x="288" y="68" text-anchor="end">Other steel suppliers by name</text>
-                <rect x="300" y="52" width="153" height="24" rx="2" fill="#B9B6B0"><title>NZ$1,663 (28%)</title></rect>
-                <text x="461" y="69" font-weight="700" fill="#111110">28%  NZ$1,663</text>
+                <rect x="300" y="52" width="153" height="24" rx="2" fill="#B9B6B0"><title>$1,663 (28%)</title></rect>
+                <text x="461" y="69" font-weight="700" fill="#111110">28%  $1,663</text>
                 <text x="288" y="112" text-anchor="end">General agriculture information</text>
-                <rect x="300" y="96" width="28" height="24" rx="2" fill="#B9B6B0"><title>NZ$302 (5%)</title></rect>
-                <text x="336" y="113" font-weight="700" fill="#111110">5%  NZ$302</text>
+                <rect x="300" y="96" width="28" height="24" rx="2" fill="#B9B6B0"><title>$302 (5%)</title></rect>
+                <text x="336" y="113" font-weight="700" fill="#111110">5%  $302</text>
                 <text x="288" y="156" text-anchor="end">Other, mostly business names</text>
-                <rect x="300" y="140" width="26" height="24" rx="2" fill="#B9B6B0"><title>NZ$285 (5%)</title></rect>
-                <text x="334" y="157" font-weight="700" fill="#111110">5%  NZ$285</text>
+                <rect x="300" y="140" width="26" height="24" rx="2" fill="#B9B6B0"><title>$285 (5%)</title></rect>
+                <text x="334" y="157" font-weight="700" fill="#111110">5%  $285</text>
                 <text x="288" y="200" text-anchor="end">Ag Steel and AgBeam by name</text>
-                <rect x="300" y="184" width="19" height="24" rx="2" fill="#B9B6B0"><title>NZ$210 (4%)</title></rect>
-                <text x="327" y="201" font-weight="700" fill="#111110">4%  NZ$210</text>
+                <rect x="300" y="184" width="19" height="24" rx="2" fill="#B9B6B0"><title>$210 (4%)</title></rect>
+                <text x="327" y="201" font-weight="700" fill="#111110">4%  $210</text>
                 <text x="288" y="244" text-anchor="end">Buying steel, no product named</text>
-                <rect x="300" y="228" width="16" height="24" rx="2" fill="#B9B6B0"><title>NZ$175 (3%)</title></rect>
-                <text x="324" y="245" font-weight="700" fill="#111110">3%  NZ$175</text>
+                <rect x="300" y="228" width="16" height="24" rx="2" fill="#B9B6B0"><title>$175 (3%)</title></rect>
+                <text x="324" y="245" font-weight="700" fill="#111110">3%  $175</text>
                 <text x="288" y="288" text-anchor="end" font-weight="700" fill="#111110">Posts, trellis, wire, beams, clips</text>
-                <rect x="300" y="272" width="9" height="24" rx="2" fill="#D4001A"><title>NZ$94 (2%)</title></rect>
-                <text x="317" y="289" font-weight="700" fill="#111110">2%  NZ$94</text>
+                <rect x="300" y="272" width="9" height="24" rx="2" fill="#D4001A"><title>$94 (2%)</title></rect>
+                <text x="317" y="289" font-weight="700" fill="#111110">2%  $94</text>
               </g>
             </svg>
             <p class="src">Source: Google Ads search terms report, Ag-Steel account. Most of the remaining spend went on Performance Max ads on other websites, apps and YouTube, which are not triggered by a search.</p>
@@ -624,7 +626,7 @@
           <tr><td>Spend (Search, Performance Max, total)</td><td><span class="pill pill--ok">Reliable</span></td><td>Taken directly from Google Ads.</td><td>None</td></tr>
           <tr><td>Clicks, impressions, click-through rate, cost per click</td><td><span class="pill pill--ok">Reliable</span></td><td>Taken directly from Google Ads.</td><td>None</td></tr>
           <tr><td>Search and Performance Max conversions, cost per conversion, click-to-conversion</td><td><span class="pill pill--no">Not reliable</span></td><td>99% of the conversions are contact-page visits.</td><td>1 to 3</td></tr>
-          <tr><td>Total platform leads, blended cost per platform lead</td><td><span class="pill pill--no">Not reliable</span></td><td>Built on the conversion count. In October, three cells show #REF! (a broken cell reference), and Search cost per conversion divides by Performance Max conversions: it shows NZ$8.89; the correct figure is NZ$10.42.</td><td>1 to 3, 11</td></tr>
+          <tr><td>Total platform leads, blended cost per platform lead</td><td><span class="pill pill--no">Not reliable</span></td><td>Built on the conversion count. In October, three cells show #REF! (a broken cell reference), and Search cost per conversion divides by Performance Max conversions: it shows $8.89; the correct figure is $10.42.</td><td>1 to 3, 11</td></tr>
           <tr><td>Brand search impression share</td><td><span class="pill pill--part">Wrong row</span></td><td>No campaign targets brand searches. The figure entered (9.99%) is Google's ‘under 10%’ for all search campaigns combined, which belongs under non-brand.</td><td>Move to non-brand</td></tr>
           <tr><td>Enquiry / form submissions</td><td><span class="pill pill--part">Partly reliable</span></td><td>Counts the contact form only, and only since 18 May 2026.</td><td>2</td></tr>
           <tr><td>Organic search rows</td><td><span class="pill pill--ok">Reliable</span></td><td>Matches Search Console to within about 4%.</td><td>Confirm which Search Console property is used</td></tr>
