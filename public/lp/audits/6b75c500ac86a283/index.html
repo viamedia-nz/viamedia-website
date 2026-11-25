@@ -32,7 +32,7 @@
   h3 { font-size:1.12rem; font-weight:700; }
   .eyebrow { font-weight:700; font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--red); display:inline-flex; align-items:center; gap:10px; margin-bottom:14px; }
   .eyebrow::before { content:""; width:26px; height:2px; background:var(--red); }
-  .lede { font-size:1.08rem; font-weight:500; max-width:70ch; color:var(--ink2); }
+  .lede { font-size:1.08rem; font-weight:500; color:var(--ink2); }
   .note { font-size:0.86rem; color:var(--muted); }
   .pending { display:inline-block; background:#EEEDEA; border:1px dashed var(--line-md); color:var(--muted); font-weight:600; font-size:0.85em; padding:1px 8px; border-radius:6px; }
   .num { font-variant-numeric:tabular-nums; }
@@ -189,7 +189,7 @@
   .strat__row b { color:var(--ink); }
 
   /* Basis + glossary */
-  .basis { margin-top:22px; background:var(--white); border:1px solid var(--line); border-left:4px solid var(--steel); border-radius:0 12px 12px 0; padding:18px 22px; font-size:0.94rem; max-width:80ch; }
+  .basis { margin-top:22px; background:var(--white); border:1px solid var(--line); border-left:4px solid var(--steel); border-radius:0 12px 12px 0; padding:18px 22px; font-size:0.94rem; }
   details.gloss { margin-top:18px; background:var(--white); border:1px solid var(--line); border-radius:12px; }
   details.gloss > summary { cursor:pointer; padding:16px 22px; font-weight:700; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; }
   details.gloss > summary::-webkit-details-marker { display:none; }
@@ -266,6 +266,17 @@
   .cmp__l { display:block; font-size:0.84rem; color:var(--ink2); font-weight:600; margin-bottom:6px; }
   .cmp__l b { font-weight:900; color:var(--ink); font-size:1.05rem; margin-left:4px; }
   .dots i.d--ok { background:var(--good); }
+  .dots i.d--new { background:var(--steel); }
+  .dots i.d--call { background:var(--fair); }
+  .cmp__row--sub { padding-left:16px; }
+  .cmp__row--sub2 { padding-left:32px; }
+  .tl--orders { max-width:620px; }
+  @media (max-width: 560px) { .scrollx .tl--orders { min-width:560px; } }
+  .g__eng { font-size:0.84rem; font-weight:600; color:var(--ink2); margin-top:10px; }
+  .ostats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:6px 0 10px; }
+  .ostats div { font-size:0.84rem; color:var(--ink2); line-height:1.35; }
+  .ostats .num { display:block; font-size:1.6rem; font-weight:900; color:var(--ink); }
+  @media (max-width: 560px) { .ostats { grid-template-columns:1fr; } }
   .key--row { grid-template-columns:repeat(3, auto); justify-content:start; gap:4px 22px; }
   @media (max-width: 860px) { .g--6 { grid-column:auto; } .key--row { grid-template-columns:1fr; } }
 </style>
@@ -290,7 +301,6 @@
   </symbol>
 </svg>
 
-<div class="draft">Draft for review. Items marked <span class="pending">Pending</span> wait on information from Industrial Tube Australia.</div>
 
 <header class="hero">
   <div class="hero__inner">
@@ -300,7 +310,7 @@
     <dl class="hero__meta">
       <div><dt>Prepared for</dt><dd>Katrina Evans, TGF Holdings</dd></div>
       <div><dt>Period reviewed</dt><dd>Nov 2025 to Nov 2026</dd></div>
-      <div><dt>Figures</dt><dd>NZ$, excluding GST</dd></div><div><dt>Audit dates</dt><dd>9 to 20 Nov 2026</dd></div>
+      <div><dt>Figures</dt><dd>NZ$, excluding GST</dd></div><div><dt>Audit dates</dt><dd>9 to 25 Nov 2026</dd></div>
       <div><dt>Prepared by</dt><dd>Via Media</dd></div>
     </dl>
   </div>
@@ -311,15 +321,16 @@
   <div class="wrap">
     <div class="eyebrow">Overview</div>
     <h2>Key points</h2>
-    <p class="lede">Industrial Tube Australia spent <span class="num">$20,901</span> on Google ads in the last 12 months. Since March 2026, enquiries from the Australian website have not been recorded in the Industrial Tube Australia ad account. That needs to be fixed first; then it will be possible to judge how effective the spend is.</p>
+    <p class="lede">Industrial Tube Australia spent <span class="num">$20,901</span> on Google ads in the last 12 months. Its ad account doesn’t record enquiries from the Australian website: before March 2026 it counted contact-page visits, and since then it records almost nothing from the website. Google Analytics does record form enquiries, but the campaigns can’t use them. That needs to be fixed first; then it will be possible to judge how effective the spend is.</p>
     <div class="points">
-      <div class="point"><div><strong>The Australian website carries Industrial Tube NZ's Google Ads tag, not its own</strong><p>Activity and visitor audiences from the Australian website are recorded in Industrial Tube NZ's ad account instead. Since 18 March, almost all conversions the Australian account records come from people tapping the call button shown in its ads, which Google tracks without the website.</p></div></div>
-      <div class="point"><div><strong>The campaigns are optimising to conversions that aren't being captured</strong><p>All three live campaigns are set to get as many conversions as possible. While your Industrial Tube Australia Performance Tracker recorded 54 form enquiries from July to October, the ad account recorded 22 conversions, mostly calls from ads. The campaigns have no record of which clicks led to the form enquiries, so they cannot bid towards them.</p></div></div>
+      <div class="point"><div><strong>The Australian website sends its visits to Industrial Tube NZ’s ad account, not its own</strong><p>Activity and visitor audiences from the Australian website are recorded in Industrial Tube NZ’s ad account instead. Since 18 March, almost all conversions the Australian account records come from people tapping the call button shown in its ads, which Google tracks without the website.</p></div></div>
+      <div class="point"><div><strong>The campaigns are optimising to conversions that aren’t being captured</strong><p>All three live campaigns are set to get as many conversions as possible. From July to October, Google Analytics recorded 11 contact form submissions from 8 Australian visitors who came from Google ads, all in August and September. Google Ads recorded none of them; its 22 conversions are mostly calls from ads. The campaigns cannot bid towards the form enquiries they produce.</p></div></div>
+      <div class="point"><div><strong>By your estimate, about one new customer a month arrives, mostly by phone</strong><p>Your sales figures show about 80 orders a month from about 35 customers, mostly repeat buyers. How each new customer found you is not recorded, so the estimate can’t be checked against the ads. The 11 to 19 form enquiries a month in your tracker are Google Analytics’ automatic ‘form_submit’ event, which counts any form sent from the website, from any country. Of 55 from July to October, 12 came from Australia, all from the contact page, and 22 from the United States.</p></div></div>
       <div class="point"><div><strong>A large share of visible search spend reaches people searching for other businesses</strong><p>41% went on searches for other businesses by name, and 33% on relevant product searches. No keywords cover your target industries.</p></div></div>
-      <div class="point"><div><strong>Organic search and email are not being measured or used</strong><p>The Search Console property only covers the old address, www.industrialtube.com.au. Since the site moved to industrialtube.com.au in March, it has recorded about a quarter of the previous organic clicks. Only one EDM has been sent to Australian contacts in the last 12 months.</p></div></div>
+      <div class="point"><div><strong>Search Console doesn’t record the new web address, and email is barely used</strong><p>The Search Console property only covers the old address, www.industrialtube.com.au. Since the site moved to industrialtube.com.au in March, it has recorded about a quarter of the previous organic clicks, although Google Analytics shows organic visits from Australia held up. Only one EDM has been sent to Australian contacts in the last 12 months.</p></div></div>
       <div class="point"><div><strong>Your Industrial Tube Australia Performance Tracker judges results on enquiries and orders, but its Google figures are incomplete</strong><p>It misses one Search campaign, shows NZ$ figures under A$ labels, and reports Performance Max as Shopping. See the tracker section below.</p></div></div>
     </div>
-    <div class="verdict"><b>Verdict</b><span class="pending">Pending: your enquiry and order numbers</span></div>
+    <div class="verdict"><b>Verdict</b><span>The ads do produce contact form enquiries (8 Australian visitors from July to October), but Google Ads doesn’t record them and new customers aren’t recorded by source. Fix the tracking first, then move the spend to stainless steel and target-industry searches, and judge it on the cost of each new customer.</span></div>
   </div>
 </section>
 
@@ -342,13 +353,16 @@
       </div>
 
       <div class="g g--3 g--risk">
-        <div class="g__kicker">Enquiries, July to October 2026</div>
-        <div class="g__title">Google recorded 22 results. Your tracker recorded 54 form enquiries.</div>
+        <div class="g__kicker">Enquiries and new customers, July to October 2026</div>
+        <div class="g__title">55 form enquiries; 12 from Australia, 11 of those from Google ads</div>
         <div class="cmp">
-          <div class="cmp__row"><span class="cmp__l">Tracker form enquiries <b>54</b></span><div class="dots"><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i></div></div>
-          <div class="cmp__row"><span class="cmp__l">Google Ads conversions <b>22</b></span><div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="cmp__row"><span class="cmp__l">Form submissions recorded by Google Analytics (your tracker shows 54) <b>55</b></span><div class="dots"><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i></div></div>
+          <div class="cmp__row cmp__row--sub"><span class="cmp__l">↳ of these, from Australia, all on the contact page, sent by 9 people <b>12</b></span><div class="dots"><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i></div></div>
+          <div class="cmp__row cmp__row--sub2"><span class="cmp__l">↳ of these, from Google ads, sent by 8 people <b>11</b></span><div class="dots"><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i><i class="d--ok"></i></div></div>
+          <div class="cmp__row"><span class="cmp__l">Google Ads conversions, mostly calls from the ads <b>22</b></span><div class="dots"><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i><i class="d--call"></i></div></div>
+          <div class="cmp__row"><span class="cmp__l">New customers, your estimate <b>about 4</b></span><div class="dots"><i class="d--new"></i><i class="d--new"></i><i class="d--new"></i><i class="d--new"></i></div></div>
         </div>
-        <div class="g__src">Google Ads (mostly calls from ads) and Owned KPIs sheet, Industrial Tube Australia Performance Tracker</div>
+        <div class="g__src">July to October is the only period that all these sources cover: the campaigns were relaunched in July, Google Analytics recorded almost nothing from March to June, and the tracker starts in July. The 22 Google Ads conversions are separate from the form submissions: Google Ads recorded none of the forms. Form submissions, country, page and traffic source from Google Analytics; new customers are your estimate of about one a month.</div>
       </div>
 
 
@@ -373,95 +387,112 @@
 </svg>
         <ul class="risk__key">
           <li><i style="background:#B3261E"></i><span><b>At least $3,800</b>Seen in the account: searches for other businesses or clearly off-target searches (about $1,900), and Performance Max ads outside Google Search (about $1,900).</span></li>
-          <li><i style="background-image:repeating-linear-gradient(45deg,#B3261E 0 4px,#E7A39E 4px 10px)"></i><span><b>Estimated, a further $6,100</b>Of the searches Google shows, 42% of spend went on clicks unlikely to produce an enquiry. Google doesn't show the searches behind about half of the search spend; applying the same 42% to the rest of the search spend gives this figure.</span></li>
-          <li><i style="background:#DAD7D1"></i><span><b>Not yet measurable: $11,000</b>Clicks on searches that look relevant, such as product searches. Whether they produced enquiries can't be judged until enquiries are tracked (fixes 1 to 3).</span></li>
+          <li><i style="background-image:repeating-linear-gradient(45deg,#B3261E 0 4px,#E7A39E 4px 10px)"></i><span><b>Estimated, a further $6,100</b>Of the searches Google shows, 42% of spend went on clicks unlikely to produce an enquiry. Google doesn’t show the searches behind about half of the search spend. Applying the same 42% to the rest of the search spend, including the half Google doesn’t show, gives this figure.</span></li>
+          <li><i style="background:#DAD7D1"></i><span><b>Not yet measurable: $11,000</b>Clicks on searches that look relevant, such as product searches. Google Analytics shows the ads produced 11 Australian contact form enquiries from July to October, but not which searches they came from. That needs enquiries recorded in Google Ads (fixes 1 to 3).</span></li>
         </ul>
         <div class="g__src">Google Ads search terms and channel performance reports. Estimates, rounded; the reports cover periods a few days apart.</div>
       </div>
 
       <div class="g g--6">
-        <div class="g__kicker">Spend and recorded conversions by month</div>
-        <div class="g__title">Conversions stopped in March; spend resumed in July without them</div>
-        <div class="scrollx"><svg class="tl" viewBox="0 0 980 340" role="img" aria-label="Monthly Google Ads spend and recorded conversions, November 2025 to November 2026. Conversions fall from 298 in February to almost none from April, while spend resumes from July.">
-<rect x="391" y="40" width="216" height="250" fill="#F4F3F0"/>
-<text x="499" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#5A5955">Campaigns paused</text>
-<line x1="358" y1="22" x2="358" y2="290" stroke="#B3261E" stroke-width="2" stroke-dasharray="4 3"/>
-<text x="352" y="18" text-anchor="end" font-size="12" font-weight="700" fill="#B3261E">18 Mar: contact-page conversion stops</text>
-<text x="616" y="62" font-size="12" font-weight="700" fill="#111110">July: new campaigns</text>
-<rect x="40" y="173.6" width="54" height="116.5" rx="3" fill="#9FB0BF"><title>Nov: $1,781 spend, 163 conversions</title></rect>
-<circle cx="67.0" cy="149.1" r="18.4" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
-<text x="67.0" y="153.1" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">163</text>
-<text x="67.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Nov</text>
-<text x="67.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.8k</text>
-<rect x="112" y="122.7" width="54" height="167.3" rx="3" fill="#9FB0BF"><title>Dec: $2,558 spend, 224 conversions</title></rect>
-<circle cx="139.0" cy="96.0" r="20.7" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
-<text x="139.0" y="100.0" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">224</text>
-<text x="139.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Dec</text>
-<text x="139.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.6k</text>
-<rect x="184" y="122.4" width="54" height="167.6" rx="3" fill="#9FB0BF"><title>Jan: $2,563 spend, 262 conversions</title></rect>
-<circle cx="211.0" cy="94.4" r="22.0" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
-<text x="211.0" y="98.4" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">262</text>
-<text x="211.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Jan</text>
-<text x="211.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.6k</text>
-<rect x="256" y="122.7" width="54" height="167.3" rx="3" fill="#9FB0BF"><title>Feb: $2,558 spend, 298 conversions</title></rect>
-<circle cx="283.0" cy="93.6" r="23.1" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
-<text x="283.0" y="97.6" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">298</text>
-<text x="283.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Feb</text>
-<text x="283.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.6k</text>
-<rect x="328" y="172.5" width="54" height="117.5" rx="3" fill="#9FB0BF"><title>Mar: $1,797 spend, 98 conversions</title></rect>
-<circle cx="355.0" cy="151.1" r="15.4" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
-<text x="355.0" y="155.1" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">98</text>
-<text x="355.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Mar</text>
-<text x="355.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.8k</text>
-<rect x="400" y="282.8" width="54" height="7.2" rx="3" fill="#9FB0BF"><title>Apr: $110 spend, 0 conversions</title></rect>
-<circle cx="427.0" cy="271.8" r="5.0" fill="#FFFFFF" stroke="#D9622B" stroke-width="2"/>
-<text x="427.0" y="262.8" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">0</text>
-<text x="427.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Apr</text>
-<text x="427.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$0.1k</text>
-<rect x="472" y="288.8" width="54" height="1.2" rx="3" fill="#9FB0BF"><title>May: $19 spend, 0 conversions</title></rect>
-<circle cx="499.0" cy="277.8" r="5.0" fill="#FFFFFF" stroke="#D9622B" stroke-width="2"/>
-<text x="499.0" y="268.8" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">0</text>
-<text x="499.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">May</text>
-<text x="499.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$19</text>
-<rect x="544" y="288.6" width="54" height="1.4" rx="3" fill="#9FB0BF"><title>Jun: $21 spend, 0 conversions</title></rect>
-<circle cx="571.0" cy="277.6" r="5.0" fill="#FFFFFF" stroke="#D9622B" stroke-width="2"/>
-<text x="571.0" y="268.6" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">0</text>
-<text x="571.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Jun</text>
-<text x="571.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$21</text>
-<rect x="616" y="164.1" width="54" height="125.9" rx="3" fill="#354757"><title>Jul: $1,926 spend, 2 conversions</title></rect>
-<circle cx="643.0" cy="151.6" r="6.5" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
-<text x="643.0" y="141.1" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">2</text>
-<text x="643.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Jul</text>
-<text x="643.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.9k</text>
-<rect x="688" y="160.2" width="54" height="129.8" rx="3" fill="#354757"><title>Aug: $1,985 spend, 7 conversions</title></rect>
-<circle cx="715.0" cy="146.4" r="7.8" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
-<text x="715.0" y="134.7" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">7</text>
-<text x="715.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Aug</text>
-<text x="715.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.0k</text>
-<rect x="760" y="126.0" width="54" height="164.0" rx="3" fill="#354757"><title>Sep: $2,508 spend, 12 conversions</title></rect>
-<circle cx="787.0" cy="111.4" r="8.6" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
-<text x="787.0" y="98.7" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">12</text>
-<text x="787.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Sep</text>
-<text x="787.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.5k</text>
-<rect x="832" y="171.6" width="54" height="118.4" rx="3" fill="#354757"><title>Oct: $1,811 spend, 1 conversions</title></rect>
-<circle cx="859.0" cy="159.5" r="6.0" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
-<text x="859.0" y="149.5" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">1</text>
-<text x="859.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Oct</text>
-<text x="859.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.8k</text>
-<rect x="904" y="207.4" width="54" height="82.6" rx="3" fill="#354757"><title>Nov*: $1,263 spend, 0 conversions</title></rect>
-<circle cx="931.0" cy="196.4" r="5.0" fill="#FFFFFF" stroke="#D9622B" stroke-width="2"/>
-<text x="931.0" y="187.4" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">0</text>
-<text x="931.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Nov*</text>
-<text x="931.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.3k</text>
-<line x1="34" y1="290" x2="964" y2="290" stroke="#B9B6B0"/>
-<text x="40" y="336" font-size="10" fill="#5A5955">2025</text><text x="184" y="336" font-size="10" fill="#5A5955">2026</text>
+        <div class="g__kicker">Spend, recorded conversions and enquiries from the ads, by month</div>
+        <div class="g__title">Google Ads counted 947 conversions from November to February; about 50 people from the ads sent a form enquiry</div>
+        <div class="scrollx"><svg class="tl" viewBox="0 0 1040 372" role="img" aria-label="Monthly Google Ads spend and recorded conversions, November 2025 to November 2026. Conversions fall from 298 in February to almost none from April, while spend resumes from July.">
+<rect x="451" y="40" width="216" height="250" fill="#F4F3F0"/>
+<text x="559" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#5A5955">Campaigns paused</text>
+<line x1="418" y1="22" x2="418" y2="290" stroke="#B3261E" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="412" y="18" text-anchor="end" font-size="12" font-weight="700" fill="#B3261E">18 Mar: contact-page conversion stops</text>
+<text x="676" y="62" font-size="12" font-weight="700" fill="#111110">July: new campaigns</text>
+<rect x="100" y="173.6" width="54" height="116.5" rx="3" fill="#9FB0BF"><title>Nov: $1,781 spend, 163 conversions</title></rect>
+<circle cx="127.0" cy="149.1" r="18.4" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="127.0" y="153.1" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">163</text>
+<text x="127.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Nov</text>
+<text x="127.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.8k</text>
+<rect x="112.0" y="332" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="127.0" y="345" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">15</text>
+<rect x="172" y="122.7" width="54" height="167.3" rx="3" fill="#9FB0BF"><title>Dec: $2,558 spend, 224 conversions</title></rect>
+<circle cx="199.0" cy="96.0" r="20.7" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="199.0" y="100.0" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">224</text>
+<text x="199.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Dec</text>
+<text x="199.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.6k</text>
+<rect x="184.0" y="332" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="199.0" y="345" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">13</text>
+<rect x="244" y="122.4" width="54" height="167.6" rx="3" fill="#9FB0BF"><title>Jan: $2,563 spend, 262 conversions</title></rect>
+<circle cx="271.0" cy="94.4" r="22.0" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="271.0" y="98.4" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">262</text>
+<text x="271.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Jan</text>
+<text x="271.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.6k</text>
+<rect x="256.0" y="332" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="271.0" y="345" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">13</text>
+<rect x="316" y="122.7" width="54" height="167.3" rx="3" fill="#9FB0BF"><title>Feb: $2,558 spend, 298 conversions</title></rect>
+<circle cx="343.0" cy="93.6" r="23.1" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="343.0" y="97.6" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">298</text>
+<text x="343.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Feb</text>
+<text x="343.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.6k</text>
+<rect x="328.0" y="332" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="343.0" y="345" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">8</text>
+<rect x="388" y="172.5" width="54" height="117.5" rx="3" fill="#9FB0BF"><title>Mar: $1,797 spend, 98 conversions</title></rect>
+<circle cx="415.0" cy="151.1" r="15.4" fill="#D9622B" stroke="#D9622B" stroke-width="2"/>
+<text x="415.0" y="155.1" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">98</text>
+<text x="415.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Mar</text>
+<text x="415.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.8k</text>
+<rect x="400.0" y="332" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="415.0" y="345" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">9</text>
+<rect x="460" y="282.8" width="54" height="7.2" rx="3" fill="#9FB0BF"><title>Apr: $110 spend, 0 conversions</title></rect>
+<circle cx="487.0" cy="271.8" r="5.0" fill="#FFFFFF" stroke="#D9622B" stroke-width="2"/>
+<text x="487.0" y="262.8" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">0</text>
+<text x="487.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Apr</text>
+<text x="487.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$0.1k</text>
+<text x="487.0" y="345" text-anchor="middle" font-size="11" fill="#9A988F">–</text>
+<rect x="532" y="288.8" width="54" height="1.2" rx="3" fill="#9FB0BF"><title>May: $19 spend, 0 conversions</title></rect>
+<circle cx="559.0" cy="277.8" r="5.0" fill="#FFFFFF" stroke="#D9622B" stroke-width="2"/>
+<text x="559.0" y="268.8" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">0</text>
+<text x="559.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">May</text>
+<text x="559.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$19</text>
+<text x="559.0" y="345" text-anchor="middle" font-size="11" fill="#9A988F">–</text>
+<rect x="604" y="288.6" width="54" height="1.4" rx="3" fill="#9FB0BF"><title>Jun: $21 spend, 0 conversions</title></rect>
+<circle cx="631.0" cy="277.6" r="5.0" fill="#FFFFFF" stroke="#D9622B" stroke-width="2"/>
+<text x="631.0" y="268.6" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">0</text>
+<text x="631.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Jun</text>
+<text x="631.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$21</text>
+<text x="631.0" y="345" text-anchor="middle" font-size="11" fill="#9A988F">–</text>
+<rect x="676" y="164.1" width="54" height="125.9" rx="3" fill="#354757"><title>Jul: $1,926 spend, 2 conversions</title></rect>
+<circle cx="703.0" cy="151.6" r="6.5" fill="#D4A017" stroke="#D4A017" stroke-width="2"/>
+<text x="703.0" y="141.1" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">2</text>
+<text x="703.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Jul</text>
+<text x="703.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.9k</text>
+<rect x="688.0" y="332" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="703.0" y="345" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">0</text>
+<rect x="748" y="160.2" width="54" height="129.8" rx="3" fill="#354757"><title>Aug: $1,985 spend, 7 conversions</title></rect>
+<circle cx="775.0" cy="146.4" r="7.8" fill="#D4A017" stroke="#D4A017" stroke-width="2"/>
+<text x="775.0" y="134.7" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">7</text>
+<text x="775.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Aug</text>
+<text x="775.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.0k</text>
+<rect x="760.0" y="332" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="775.0" y="345" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">3</text>
+<rect x="820" y="126.0" width="54" height="164.0" rx="3" fill="#354757"><title>Sep: $2,508 spend, 12 conversions</title></rect>
+<circle cx="847.0" cy="111.4" r="8.6" fill="#D4A017" stroke="#D4A017" stroke-width="2"/>
+<text x="847.0" y="98.7" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">12</text>
+<text x="847.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Sep</text>
+<text x="847.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.5k</text>
+<rect x="832.0" y="332" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="847.0" y="345" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">5</text>
+<rect x="892" y="171.6" width="54" height="118.4" rx="3" fill="#354757"><title>Oct: $1,811 spend, 1 conversions</title></rect>
+<circle cx="919.0" cy="159.5" r="6.0" fill="#D4A017" stroke="#D4A017" stroke-width="2"/>
+<text x="919.0" y="149.5" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">1</text>
+<text x="919.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Oct</text>
+<text x="919.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.8k</text>
+<rect x="904.0" y="332" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="919.0" y="345" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">0</text>
+<rect x="964" y="207.4" width="54" height="82.6" rx="3" fill="#354757"><title>Nov*: $1,263 spend, 0 conversions</title></rect>
+<circle cx="991.0" cy="196.4" r="5.0" fill="#FFFFFF" stroke="#D4A017" stroke-width="2"/>
+<text x="991.0" y="187.4" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">0</text>
+<text x="991.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Nov*</text>
+<text x="991.0" y="324" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.3k</text>
+<rect x="976.0" y="332" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="991.0" y="345" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">0</text>
+<line x1="94" y1="290" x2="1024" y2="290" stroke="#B9B6B0"/>
+<text x="86" y="324" text-anchor="end" font-size="10.5" font-weight="700" fill="#5A5955">Spend</text>
+<text x="86" y="345" text-anchor="end" font-size="10.5" font-weight="800" fill="#1E7A4C">Form enquiries</text>
+<text x="100" y="368" font-size="10" fill="#5A5955">2025</text><text x="244" y="368" font-size="10" fill="#5A5955">2026</text>
 </svg></div>
         <ul class="key key--small key--row">
           <li><i style="background:#9FB0BF"></i>Earlier campaigns</li>
           <li><i style="background:var(--steel)"></i>Current campaigns (from July)</li>
-          <li><i style="background:var(--poor);border-radius:50%"></i>Conversions recorded (before March, mostly contact-page visits)</li>
+          <li><i style="background:#D9622B;border-radius:50%"></i>Google Ads conversions to June: mostly contact-page visits, which stopped on 18 March</li>
+          <li><i style="background:#D4A017;border-radius:50%"></i>Google Ads conversions from July: mostly calls from the ads, which are enquiries too</li>
+          <li><i style="background:#1E7A4C;border-radius:4px"></i>Form enquiries: people from the ads who sent a form, recorded by Google Analytics (Australia)</li>
         </ul>
-        <div class="g__src">Google Ads, ITM - AU account. *November to 16 Nov 2026.</div>
+        <div class="g__src">Fewer form enquiries are recorded from the ads since July, but calls now make up most contacts. The website, the tracking and the campaigns all changed in March, so the cause can’t be isolated. Spend and conversions from Google Ads, ITM - AU account; form enquiries from Google Analytics, ITM Australia property. Form enquiries are form events (‘generate_lead’ before March, ‘form_submit’ from July) from visitors who arrived from Google ads; March is to 9 March. Google Analytics recorded almost nothing from 10 March to June. *November to 16 Nov 2026 (Google Ads) and 24 Nov (Google Analytics).</div>
       </div>
 
       <div class="g g--3">
@@ -474,14 +505,15 @@
           <li><i style="background:var(--red)"></i><b>12%</b> YouTube · $541</li>
           <li><i style="background:#B9B6B0"></i><b>4%</b> Discover, Maps and search partners · $191</li>
         </ul>
-        <div class="callout"><span class="callout__n num">11</span><span>results recorded, all calls from the ads on Google Search.</span></div>
-        <div class="g__src">Google Ads channel performance report, ITMAU_PMax #2, July to 16 Nov 2026</div>
+        <div class="callout"><span class="callout__n num">11</span><span>conversions recorded, all calls from the ads on Google Search.</span></div>
+        <div class="g__eng">Engaged visits from Australia, July to October: ads on other websites 25%, YouTube 11%.</div>
+        <div class="g__src">Google Ads channel performance report, ITMAU_PMax #2, July to 16 Nov 2026. Engaged visits from Google Analytics.</div>
       </div>
 
       <div class="g g--3 g--risk">
-        <div class="g__kicker">Visible search spend · $4,535</div>
-        <div class="g__big num">41%</div>
-        <div class="g__label">reached people searching for other businesses by name</div>
+        <div class="g__kicker">496 most-clicked searches · $4,535</div>
+        <div class="g__big num">42%</div>
+        <div class="g__label">of this spend went on searches unlikely to produce an enquiry, mostly for other businesses by name</div>
         <div class="stack" aria-hidden="true"><span style="width:41%;background:#B3261E" title="Other businesses by name: 41%"></span><span style="width:33%;background:#1E7A4C" title="Relevant product searches: 33%"></span><span style="width:17%;background:#D4A017" title="Generic steel suppliers or fabrication: 17%"></span><span style="width:8%;background:#354757" title="Industrial Tube by name: 8%"></span><span style="width:1%;background:#B9B6B0" title="Clearly off-target: 1%"></span></div>
         <ul class="key key--small"><li><i style="background:#B3261E"></i><b>41%</b> Other businesses by name</li><li><i style="background:#1E7A4C"></i><b>33%</b> Relevant product searches</li><li><i style="background:#D4A017"></i><b>17%</b> Generic steel suppliers or fabrication</li><li><i style="background:#354757"></i><b>8%</b> Industrial Tube by name</li><li><i style="background:#B9B6B0"></i><b>1%</b> Clearly off-target</li></ul>
         <div class="g__src">Google Ads search terms report, 496 most-clicked searches, 12 Nov 2025 to 11 Nov 2026</div>
@@ -497,7 +529,7 @@
   <text x="0" y="96" font-size="12.5" font-weight="600" fill="#2A2A28">17 Mar to 16 Nov 2026</text>
   <rect x="0" y="106" width="103" height="30" rx="4" fill="#D9622B"/><text x="111" y="127" font-size="14" font-weight="800" fill="#111110">~38</text>
 </svg>
-        <div class="g__src">Search Console is set up for www.industrialtube.com.au only, so clicks to industrialtube.com.au pages are not recorded. The drop is in what is measured, not necessarily in visits.</div>
+        <div class="g__src">Search Console is set up for www.industrialtube.com.au only, so clicks to industrialtube.com.au pages are not recorded. Google Analytics shows organic search visits from Australia held up: 517 from November to February, 700 from July to October. The drop is in what Search Console measures, not in visits.</div>
       </div>
 
       <div class="g g--3 g--opp">
@@ -509,11 +541,56 @@
           <li><span class="hb__l">ITM Australia Dec 25</span><span class="hb__t"><span style="width:61%;background:var(--good)"></span></span><span class="hb__v num">103</span></li>
           <li><span class="hb__l">ITMAU Online Store</span><span class="hb__t"><span style="width:0%;background:var(--good)"></span></span><span class="hb__v num">0</span></li>
         </ul>
-        <div class="g__src">Mailchimp tags in the shared Industrial Tube list. Nothing on the Australian website or shop adds contacts.</div>
+        <div class="g__src">Mailchimp tags in the shared Industrial Tube list. The main website has no sign-up form; the shop has a newsletter form, but no contacts carry the ‘ITMAU Online Store’ tag.</div>
+      </div>
+
+      <div class="g g--6">
+        <div class="g__kicker">Orders · April to November 2026</div>
+        <div class="g__title">About 80 orders a month from about 35 customers, mostly repeat buyers</div>
+        <div class="ostats">
+          <div><span class="num">646</span>orders from 68 customers, 9 to 10 each</div>
+          <div><span class="num">16</span>customers ordered only once</div>
+          <div><span class="num">~1</span>new customer a month, by your estimate, mostly by phone</div>
+        </div>
+        <div class="scrollx"><svg class="tl tl--orders" viewBox="0 0 620 200" role="img" aria-label="Orders per month, April to November 2026: between 71 and 99 a month, from 30 to 38 customers ordering.">
+<rect x="20" y="56.4" width="52" height="93.6" rx="3" fill="#354757"><title>Apr: 78 orders from 30 customers</title></rect>
+<text x="46.0" y="50.4" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">78</text>
+<text x="46.0" y="168" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Apr</text>
+<text x="46.0" y="184" text-anchor="middle" font-size="10.5" fill="#5A5955">30 cust.</text>
+<rect x="94" y="38.4" width="52" height="111.6" rx="3" fill="#354757"><title>May: 93 orders from 37 customers</title></rect>
+<text x="120.0" y="32.4" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">93</text>
+<text x="120.0" y="168" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">May</text>
+<text x="120.0" y="184" text-anchor="middle" font-size="10.5" fill="#5A5955">37 cust.</text>
+<rect x="168" y="48.0" width="52" height="102.0" rx="3" fill="#354757"><title>Jun: 85 orders from 38 customers</title></rect>
+<text x="194.0" y="42.0" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">85</text>
+<text x="194.0" y="168" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Jun</text>
+<text x="194.0" y="184" text-anchor="middle" font-size="10.5" fill="#5A5955">38 cust.</text>
+<rect x="242" y="52.8" width="52" height="97.2" rx="3" fill="#354757"><title>Jul: 81 orders from 35 customers</title></rect>
+<text x="268.0" y="46.8" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">81</text>
+<text x="268.0" y="168" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Jul</text>
+<text x="268.0" y="184" text-anchor="middle" font-size="10.5" fill="#5A5955">35 cust.</text>
+<rect x="316" y="31.2" width="52" height="118.8" rx="3" fill="#354757"><title>Aug: 99 orders from 37 customers</title></rect>
+<text x="342.0" y="25.2" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">99</text>
+<text x="342.0" y="168" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Aug</text>
+<text x="342.0" y="184" text-anchor="middle" font-size="10.5" fill="#5A5955">37 cust.</text>
+<rect x="390" y="46.8" width="52" height="103.2" rx="3" fill="#354757"><title>Sep: 86 orders from 35 customers</title></rect>
+<text x="416.0" y="40.8" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">86</text>
+<text x="416.0" y="168" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Sep</text>
+<text x="416.0" y="184" text-anchor="middle" font-size="10.5" fill="#5A5955">35 cust.</text>
+<rect x="464" y="64.8" width="52" height="85.2" rx="3" fill="#354757"><title>Oct: 71 orders from 32 customers</title></rect>
+<text x="490.0" y="58.8" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">71</text>
+<text x="490.0" y="168" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Oct</text>
+<text x="490.0" y="184" text-anchor="middle" font-size="10.5" fill="#5A5955">32 cust.</text>
+<rect x="538" y="86.4" width="52" height="63.6" rx="3" fill="#9FB0BF"><title>Nov*: 53 orders from 27 customers</title></rect>
+<text x="564.0" y="80.4" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">53</text>
+<text x="564.0" y="168" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Nov*</text>
+<text x="564.0" y="184" text-anchor="middle" font-size="10.5" fill="#5A5955">27 cust.</text>
+<line x1="14" y1="150" x2="596" y2="150" stroke="#B9B6B0"/>
+</svg></div>
+        <div class="g__src">Your sales records, supplied 24 Nov 2026. *November to date.</div>
       </div>
 
     </div>
-    <p class="note" style="margin-top:16px">Enquiries and orders that came from the ads: <span class="pending">Pending: your sales records</span></p>
   </div>
 </section>
 
@@ -527,12 +604,12 @@
       <div class="sc-row sc-head" role="row"><div role="columnheader">Area</div><div role="columnheader">What was audited</div><div role="columnheader">Health</div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Google Ads review</div><div class="sc-what" role="cell">Campaigns, budgets, bidding, keywords, ads, settings, and the searches that triggered the ads</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Coverage of target industries and regions</div><div class="sc-what" role="cell">Keywords, search themes and locations against the industries and regions you sell to</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
-      <div class="sc-row" role="row"><div class="sc-task" role="cell">Conversion tracking</div><div class="sc-what" role="cell">What Google Ads and Tag Manager count, and the tags on industrialtube.com.au</div><div role="cell"><div class="gauge" data-level="1"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Critical</div></div></div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Conversion tracking</div><div class="sc-what" role="cell">What Google Ads, Google Analytics and Tag Manager count, and the tags on industrialtube.com.au</div><div role="cell"><div class="gauge" data-level="1"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Critical</div></div></div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Call tracking options</div><div class="sc-what" role="cell">Calls from the call button in ads, calls to the phone numbers on the website, and taps on website phone links</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
-      <div class="sc-row" role="row"><div class="sc-task" role="cell">Merchant Centre and Search Console</div><div class="sc-what" role="cell">Whether Australian products can appear in Google Shopping, and organic search performance in Search Console</div><div role="cell"><div class="gauge" data-level="1"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Critical</div></div></div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Merchant Centre and Search Console</div><div class="sc-what" role="cell">Whether Australian products can appear in Google Shopping, and organic search performance in Search Console</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Enquiry form and lead handling</div><div class="sc-what" role="cell">The contact form on the Australian website and where enquiries go</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Audiences and email lists</div><div class="sc-what" role="cell">Mailchimp tags, sign-up sources and sends, and Google remarketing audiences</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
-      <div class="sc-row" role="row"><div class="sc-task" role="cell">Current execution against optimal strategy</div><div class="sc-what" role="cell">Whether the account fits how Australian buyers find and order tube</div><div role="cell"><div class="gauge" data-level="0"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Pending: sales data</div></div></div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Current execution against optimal strategy</div><div class="sc-what" role="cell">Whether the account fits how Australian buyers find and order tube</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
     </div>
     <div class="legend" aria-hidden="true"><span><i style="background:var(--crit)"></i>Critical</span><span><i style="background:var(--poor)"></i>Poor</span><span><i style="background:var(--fair)"></i>Fair</span><span><i style="background:var(--good)"></i>Good</span><span><i style="background:var(--strong)"></i>Strong</span></div>
   </div>
@@ -548,28 +625,28 @@
     <div class="findings">
 
       <details class="finding" data-p="high" open>
-        <summary><span class="tag tag--high">High</span><span><span class="ftitle">1. Enquiries from the Australian website are not recorded in the Australian ad account</span><span class="fsum">The Australian ad account's own tag is missing from the website</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="tag tag--high">High</span><span><span class="ftitle">1. Enquiries from the Australian website are not recorded in the Australian ad account</span><span class="fsum">Nothing on the website sends visits to the Australian ad account</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <div class="fbody"><dl>
-          <dt>Finding</dt><dd>The Australian ad account's tag is not on industrialtube.com.au. Instead, the site loads Industrial Tube NZ's Google Analytics tag, which also passes visits to Industrial Tube NZ's ad account. It is added by site code or a WordPress plugin, not Tag Manager. The account's main conversion, a visit to the contact page, was last triggered on 18 March 2026, around the time the site moved from www.industrialtube.com.au to industrialtube.com.au. Since then, almost all recorded conversions are calls from the call button in the ads (25 in 12 months), which Google tracks without the website. The contact form is not tracked, and the ‘Website calls’ conversion has never recorded a call.</dd>
-          <dt>Impact</dt><dd>Activity and visitor audiences from the Australian website are recorded in Industrial Tube NZ's ad account, not the Australian ad account that pays for the ads. Before March, conversions were contact-page visits; since March, the Australian account records almost none from the website. Neither measures enquiries.</dd>
+          <dt>Finding</dt><dd>Nothing on industrialtube.com.au sends visits to the Australian Google Ads account. The site has two Google tags. The Australian one sends visits only to the Australian Google Analytics property. Industrial Tube NZ’s one sends visits to the NZ Google Analytics property and the NZ Google Ads account, so Australian visitors are recorded in the NZ ad account instead. The NZ tag is added by site code or a WordPress plugin, not Tag Manager. The account’s main conversion, a visit to the contact page, was last triggered on 18 March 2026, around the time the site moved from www.industrialtube.com.au to industrialtube.com.au. Since then, almost all recorded conversions are calls from the call button in the ads (25 in 12 months), which Google tracks without the website. The contact form is not tracked in Google Ads, and the ‘Website calls’ conversion has never recorded a call. The Australian Google Analytics property recorded almost nothing from 10 March to the start of July: 46 page views, against about 7,000 from November to early March. Before March it counted enquiries as ‘generate_lead’; since July it counts every form sent from the website as ‘form_submit’.</dd>
+          <dt>Impact</dt><dd>Activity and visitor audiences from the Australian website are recorded in Industrial Tube NZ’s ad account, not the Australian ad account that pays for the ads. Before March, conversions were contact-page visits; since March, the Australian account records almost none from the website. Neither measures enquiries: from November to February, Google Ads counted 947 conversions, while Google Analytics shows about 50 Australian visitors from the ads who sent a form enquiry. Since July it shows 8, all in August and September; a test enquiry (fix 3) will show whether the contact form is still being counted.</dd>
           <dt>Fixes</dt><dd>1, 2 and 3</dd>
         </dl></div>
       </details>
 
       <details class="finding" data-p="high">
-        <summary><span class="tag tag--high">High</span><span><span class="ftitle">2. The campaigns are optimising to conversions that aren't being captured</span><span class="fsum">Three live campaigns are set to maximise conversions the account no longer receives</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="tag tag--high">High</span><span><span class="ftitle">2. The campaigns are optimising to conversions that aren’t being captured</span><span class="fsum">Three live campaigns are set to maximise conversions the account barely receives</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <div class="fbody"><dl>
-          <dt>Finding</dt><dd>The account was relaunched in July with three campaigns (two Search, one Performance Max), all set to get as many conversions as possible. From July to October they spent $8,230 and recorded 22 conversions. Performance Max has no product feed (see finding 5), and 36% of its spend ran on other websites, apps and YouTube. Google's automatic recommendations are switched on, and applied keyword and campaign changes in October without manual approval.</dd>
-          <dt>Impact</dt><dd>With almost no conversions to learn from, the bidding has no reliable signal about which clicks lead to enquiries. Changes are also applied automatically, without manual approval.</dd>
-          <dt>Fixes</dt><dd>5, after 1 to 3</dd>
+          <dt>Finding</dt><dd>The account was relaunched in July with two campaigns (one Search, one Performance Max); a second Search campaign started in September. All three are set to get as many conversions as possible. From July to October they spent $8,230 and recorded 22 conversions, mostly calls from the ads. Google Analytics shows that 11 of the 12 Australian contact form submissions in the same months came from Google ads clicks (8 people); Google Ads recorded none of them. Fewer form enquiries are recorded from the ads since July, but calls now make up most contacts. The website, the tracking and the campaigns all changed in March, so the cause can’t be isolated. In Google Analytics, a third of paid search visits from Australia were engaged from July to October, against two-thirds from November to February; visits from ads on other websites and on YouTube were lower still (25% and 11%). Performance Max has no product feed (see finding 5), and 36% of its spend ran outside Google Search. Google’s automatic recommendations are switched on, and applied keyword and campaign changes in October without manual approval. You estimate about one new customer a month, mostly by phone and mainly from Google search. How each customer found you is not recorded, so the estimate can’t be checked against the ads.</dd>
+          <dt>Impact</dt><dd>With almost no conversions to learn from, the bidding has no reliable signal about which clicks lead to enquiries, and it is buying less engaged visits. Changes are also applied automatically, without manual approval.</dd>
+          <dt>Fixes</dt><dd>5 and 12, after 1 to 3</dd>
         </dl></div>
       </details>
 
       <details class="finding" data-p="medium">
         <summary><span class="tag tag--medium">Medium</span><span><span class="ftitle">3. A large share of visible search spend reaches people searching for other businesses</span><span class="fsum">41% on other businesses by name; 33% on relevant product searches</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <div class="fbody"><dl>
-          <dt>Finding</dt><dd>Google's search terms report lists the searches that showed the ads and were clicked, with their cost. The 496 searches with the most clicks cost $4,535. 41% of that (about $1,850) went on searches for other businesses by name, such as a competitor's name. Some of this is deliberate: the account bids on Orrcon Steel, Atlas Steels, Midway Metals and Stirlings Performance Steels. Most keywords are broad match, which extends that to steel businesses in general. 33% went on relevant product searches, such as stainless and steel tube.</dd>
-          <dt>Impact</dt><dd>These clicks to the website are recorded; what is not recorded is whether a click led to an enquiry. Spend on people looking for another business rarely produces one, and it reduces the budget available for product searches.</dd>
+          <dt>Finding</dt><dd>Google’s search terms report lists the searches that showed the ads and were clicked, with their cost. The 496 searches with the most clicks cost $4,535. 41% of that (about $1,850) went on searches for other businesses by name, such as a competitor’s name. Some of this is deliberate: the account bids on Orrcon Steel, Atlas Steels, Midway Metals and Stirlings Performance Steels. Most keywords are broad match, which extends that to steel businesses in general. 33% went on relevant product searches, such as stainless and steel tube.</dd>
+          <dt>Impact</dt><dd>These clicks to the website are recorded; what is not recorded is which searches led to an enquiry. Spend on people looking for another business rarely produces one, and it reduces the budget available for product searches.</dd>
           <dt>Fixes</dt><dd>6</dd>
         </dl></div>
       </details>
@@ -586,17 +663,17 @@
       <details class="finding" data-p="medium">
         <summary><span class="tag tag--medium">Medium</span><span><span class="ftitle">5. The online shop is not measured, and Shopping ads are not set up for Australia</span><span class="fsum">No Google tags on the shop; no Australian product feed</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <div class="fbody"><dl>
-          <dt>Finding</dt><dd>The online shop at shop.industrialtube.com.au has no Google tags, so purchases, add-to-carts and revenue are not recorded in Google. The only Merchant Centre account holds Industrial Tube NZ's products, with New Zealand shipping only, so there is no Australian product feed. The paused Shopping campaign used that New Zealand feed.</dd>
+          <dt>Finding</dt><dd>The online shop at shop.industrialtube.com.au has no Google tags, so purchases, add-to-carts and revenue are not recorded in Google. The only Merchant Centre account holds Industrial Tube NZ’s products, with New Zealand shipping only, so there is no Australian product feed. The paused Shopping campaign used that New Zealand feed.</dd>
           <dt>Impact</dt><dd>The ecommerce and Shopping rows in your tracker cannot be filled, and Google cannot show Australian products in Shopping results.</dd>
           <dt>Fixes</dt><dd>8</dd>
         </dl></div>
       </details>
 
       <details class="finding" data-p="low">
-        <summary><span class="tag tag--low">Low</span><span><span class="ftitle">6. Organic search and email are not measured or used</span><span class="fsum">Search Console only tracks the old www address; one EDM in 12 months</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="tag tag--low">Low</span><span><span class="ftitle">6. Search Console doesn’t record the new web address, and email is barely used</span><span class="fsum">Search Console only tracks the old www address; one EDM in 12 months</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <div class="fbody"><dl>
-          <dt>Finding</dt><dd>Search Console is set up only for the old address, www.industrialtube.com.au. Since the site moved to industrialtube.com.au in March, Google shows the new addresses in search results, and clicks on them are not recorded by that property. It now records about 38 organic clicks a month, against about 140 before. Most recorded clicks are for ‘industrial tube’ by name; ‘stainless steel tube’ and ‘steel tube’ show about 800 times each with few clicks. Only one EDM has been sent to Australian contacts in the last 12 months (a December news email to 103 recipients). The ‘ITMAU Online Store’ tag has no contacts, and the Australian site has no sign-up form.</dd>
-          <dt>Impact</dt><dd>Organic performance since March cannot be judged, and two channels that cost nothing in media are not bringing buyers back to the site.</dd>
+          <dt>Finding</dt><dd>Search Console is set up only for the old address, www.industrialtube.com.au. Since the site moved to industrialtube.com.au in March, Google shows the new addresses in search results, and clicks on them are not recorded by that property. It now records about 38 organic clicks a month, against about 140 before. Most recorded clicks are for ‘industrial tube’ by name; ‘stainless steel tube’ and ‘steel tube’ show about 800 times each with few clicks. Only one EDM has been sent to Australian contacts in the last 12 months (a December news email to 103 recipients). The ‘ITMAU Online Store’ tag has no contacts, although the shop has a newsletter form. The main Australian website has no sign-up form.</dd>
+          <dt>Impact</dt><dd>Since March, Search Console cannot show which searches bring visitors, although Google Analytics shows organic visits from Australia held up. Two channels that cost nothing in media are not bringing buyers back to the site.</dd>
           <dt>Fixes</dt><dd>4, 9 and 10</dd>
         </dl></div>
       </details>
@@ -610,15 +687,16 @@
   <div class="wrap">
     <div class="eyebrow">Fixes</div>
     <h2>Prioritised fix list</h2>
-    <p class="lede">Fixes 1 to 4 and 11 come first: they make the results accurate. Once the data is correct, it will show how far to take fixes 5 to 10, and the effect of each fix can be measured.</p>
+    <p class="lede">Fixes 1 to 4, 11 and 12 come first: they make the results accurate. Once the data is correct, it will show how far to take fixes 5 to 10, and the effect of each fix can be measured.</p>
     <div class="lanes">
       <div class="lane">
-        <div class="lane__head"><h3>Now</h3><span>5 fixes</span></div>
-        <div class="fix"><div class="fix__top"><span class="fix__n">1</span><span class="fix__t">Put the Australian account's tag on industrialtube.com.au and remove Industrial Tube NZ's tags</span></div><p class="fix__why">Records Australian website activity in the Australian ad account, which pays for the ads.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">Your web developer and Via Media</span><span class="chip">Finding 1</span></div></div>
-        <div class="fix"><div class="fix__top"><span class="fix__n">2</span><span class="fix__t">Count contact form enquiries and phone-number taps on the website</span></div><p class="fix__why">Captures every real enquiry route.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">Via Media</span><span class="chip">Finding 1</span></div></div>
+        <div class="lane__head"><h3>Now</h3><span>6 fixes</span></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">1</span><span class="fix__t">Connect the Australian Google tag to the Australian Google Ads account, and remove Industrial Tube NZ’s Google tag</span></div><p class="fix__why">Records Australian website activity in the Australian ad account, which pays for the ads.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">Your web developer and Via Media</span><span class="chip">Finding 1</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">2</span><span class="fix__t">Count form enquiries and phone-number taps on the website</span></div><p class="fix__why">Captures every real enquiry route.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">Via Media</span><span class="chip">Finding 1</span></div></div>
         <div class="fix"><div class="fix__top"><span class="fix__n">3</span><span class="fix__t">Remove dead conversions from the account goals; send a test enquiry together</span></div><p class="fix__why">Proves each enquiry is counted once.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">ITMA and Via Media</span><span class="chip">Finding 1</span></div></div>
         <div class="fix"><div class="fix__top"><span class="fix__n">4</span><span class="fix__t">Add a Search Console property for industrialtube.com.au, or share the domain property</span></div><p class="fix__why">Restores organic search measurement.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">ITMA</span><span class="chip">Finding 6</span></div></div>
         <div class="fix"><div class="fix__top"><span class="fix__n">11</span><span class="fix__t">Correct the Google rows in the Industrial Tube Australia Performance Tracker</span></div><p class="fix__why">Adds the missing campaign and fixes labels. See the tracker section below.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">ITMA</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">12</span><span class="fix__t">Ask each new customer how they found Industrial Tube, and record it with their first order</span></div><p class="fix__why">Shows which channels bring in new accounts.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">ITMA</span><span class="chip">Finding 2</span></div></div>
       </div>
       <div class="lane">
         <div class="lane__head"><h3>Next</h3><span>3 fixes</span></div>
@@ -630,7 +708,7 @@
         <div class="lane__head"><h3>Later</h3><span>3 fixes</span></div>
         <div class="fix"><div class="fix__top"><span class="fix__n">8</span><span class="fix__t">Tag the online shop; decide whether to set up an Australian product feed for Shopping</span></div><p class="fix__why">Makes online orders measurable.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">Your web developer and Via Media</span><span class="chip">Finding 5</span></div></div>
         <div class="fix"><div class="fix__top"><span class="fix__n">9</span><span class="fix__t">Improve the pages for ‘stainless steel tube’ and ‘steel tube’</span></div><p class="fix__why">Turns existing search visibility into clicks.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">ITMA or Via Media</span><span class="chip">Finding 6</span></div></div>
-        <div class="fix"><div class="fix__top"><span class="fix__n">10</span><span class="fix__t">Define the Australian email audience; add a sign-up form; send regularly</span></div><p class="fix__why">Uses a list ITMA already owns.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">ITMA</span><span class="chip">Finding 6</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">10</span><span class="fix__t">Define the Australian email audience; check the shop’s newsletter form reaches Mailchimp, and add one to the main website; send regularly</span></div><p class="fix__why">Uses a list ITMA already owns.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">ITMA</span><span class="chip">Finding 6</span></div></div>
       </div>
     </div>
   </div>
@@ -641,21 +719,21 @@
   <div class="wrap">
     <div class="eyebrow">Reporting</div>
     <h2>Your Industrial Tube Australia Performance Tracker</h2>
-    <p class="lede">You've requested that campaign results fit your existing reporting, so we've reviewed the Industrial Tube Australia Performance Tracker against the audit findings. The tracker uses platform figures to judge performance on enquiries and orders, and those figures can't support that judgement until the following are fixed.</p>
+    <p class="lede">You’ve requested that campaign results fit your existing reporting, so we’ve reviewed the Industrial Tube Australia Performance Tracker against the audit findings. The tracker uses platform figures to judge performance on enquiries and orders, and those figures can’t support that judgement until the following are fixed.</p>
     <div class="tablewrap">
       <table class="ttable">
         <thead><tr><th scope="col">Tracker rows</th><th scope="col">Status</th><th scope="col">Why</th><th scope="col">Fix</th></tr></thead>
         <tbody>
           <tr><td>Currency (A$ labels)</td><td><span class="pill pill--part">Wrong label</span></td><td>The Google Ads account reports in NZ$. The spend entered matches Google Ads in NZ$ exactly, for example NZ$891.63 for Performance Max in October.</td><td>Relabel as NZ$, or convert</td></tr>
           <tr><td>Google Search spend, impressions, clicks</td><td><span class="pill pill--no">Not reliable</span></td><td>Only one of the two Search campaigns is entered. The stainless campaign ($3,226, July to October) is missing, and August Search spend is entered as 0. October paid spend in the tracker is $1,342; Google Ads shows $1,811.</td><td>11</td></tr>
-          <tr><td>‘Shopping’ spend, impressions, clicks</td><td><span class="pill pill--part">Wrong row</span></td><td>These figures come from the Performance Max campaign. No Shopping campaign runs, and there is no Australian product feed.</td><td>Rename as Performance Max</td></tr>
+          <tr><td>‘Shopping’ spend, impressions, clicks</td><td><span class="pill pill--part">Wrong label</span></td><td>These figures come from the Performance Max campaign. No Shopping campaign runs, and there is no Australian product feed.</td><td>Relabel as Performance Max</td></tr>
           <tr><td>Shopping purchases, conversion value, ROAS</td><td><span class="pill pill--wait">Not measurable</span></td><td>No product feed, and no Google tags on the shop.</td><td>8</td></tr>
-          <tr><td>Search conversions, cost per conversion, platform leads</td><td><span class="pill pill--no">Not reliable</span></td><td>The Australian account's tag is not on the website, so website enquiries are not counted. September's cost per conversion ($1,146.84) reflects half a recorded conversion.</td><td>1 to 3</td></tr>
-          <tr><td>Enquiry / form submissions (11 to 19 a month)</td><td><span class="pill pill--wait">Source to confirm</span></td><td>The only enquiry figures available. Google Ads does not record them. We could not see the analytics property they come from.</td><td><span class="pending">Pending</span></td></tr>
+          <tr><td>Search conversions, cost per conversion, platform leads</td><td><span class="pill pill--no">Not reliable</span></td><td>Nothing on the website sends enquiries to the Australian ad account, so form enquiries are not counted in Google Ads. September’s cost per conversion ($1,146.84) is the General Search campaign’s $573.42 divided by half a conversion: Google split the credit for one call between campaigns.</td><td>1 to 3</td></tr>
+          <tr><td>Enquiry / form submissions (11 to 19 a month)</td><td><span class="pill pill--no">Not reliable</span></td><td>These closely match Google Analytics’ automatic ‘form_submit’ event (July to October: 19, 12, 13 and 11; the tracker shows 19, 11, 13 and 11). It counts any form sent from the website, from any country. Of 55 submissions from July to October, 12 came from Australia, all from the contact page and 11 from Google ads; 22 came from the United States, and the rest from India, New Zealand, Nigeria and elsewhere. Google Ads does not record them.</td><td>2 and 12</td></tr>
           <tr><td>Organic search rows</td><td><span class="pill pill--no">Not reliable</span></td><td>Consistent with the old www property, which has recorded about a quarter of the previous organic clicks since the site changed address in March.</td><td>4</td></tr>
           <tr><td>Ecommerce rows</td><td><span class="pill pill--wait">Not measurable</span></td><td>The shop has no Google tags.</td><td>8</td></tr>
           <tr><td>Paid social (Meta)</td><td><span class="pill pill--wait">Not in tracker</span></td><td>There is no Meta section. Results from the Industrial Tube Australia paid social campaign will be supplied in a format that drops into the tracker. The paid social cost per CRM lead formula divides by LinkedIn spend only.</td><td>Add a Meta section; include Meta spend</td></tr>
-          <tr><td>CRM leads, orders, leads by source</td><td><span class="pill pill--wait">Awaiting data</span></td><td>No data entered yet.</td><td><span class="pending">Pending</span></td></tr>
+          <tr><td>CRM leads, orders, leads by source</td><td><span class="pill pill--part">Partly available</span></td><td>Orders and customers ordering are in your sales records (April to November 2026). How each customer found you is not recorded.</td><td>12</td></tr>
         </tbody>
       </table>
     </div>
@@ -667,13 +745,14 @@
   <div class="wrap">
     <div class="eyebrow">Strategy</div>
     <h2>Making Google ads, organic search and email work</h2>
-    <p class="lede"><span class="pending">Pending</span> Completed once enquiry and order data is supplied.</p>
+    <p class="lede">Based on your order figures, the findings above, and the stainless steel market you are building.</p>
     <div class="strat">
-      <div class="strat__row"><b>To be determined</b><span>Whether paid Google can produce Australian enquiries at an acceptable cost and at what level of spend, and what organic search, email and the planned paid social campaign should each contribute.</span></div>
-      <div class="strat__row"><b>To be analysed</b><span>Real enquiries and orders by source, average order value, how buyers collect or receive their tube, and search demand in each target industry and region.</span></div>
-      <div class="strat__row"><b>Expected recommendations</b><span>Correct tracking before any budget change; Search campaigns built around target industries and regions, measured on real enquiries; Performance Max kept only if it proves itself on enquiries or a product feed is set up; email and organic search to keep in contact between orders.</span></div>
-      <div class="strat__row"><b>Required for execution</b><span class="pending">Pending: to be agreed, for example industry landing pages, product photography, case studies</span></div>
-      <div class="strat__row"><b>Success measures</b><span>Three to five targets in the Industrial Tube Australia Performance Tracker, set after one month of corrected data.</span></div>
+      <div class="strat__row"><b>Where Google fits</b><span>Most orders come from about 35 customers a month, mostly repeat buyers, and they don’t need ads to find you. Google’s job is to bring in new accounts, mainly in stainless steel and your target industries, where buyers search by product and application.</span></div>
+      <div class="strat__row"><b>Spend and new customers</b><span>Since July, Google ads have cost about $2,000 a month. From July to October, 8 Australian visitors from the ads sent the contact form, and you estimate about one new customer a month. With the current setup, the actual cost of a new customer can’t be determined: part of the spend is unlikely to produce enquiries, and some new customers may come from organic search. Once enquiries and each customer’s source are recorded, that cost can be measured and compared with what a new account is worth to you.</span></div>
+      <div class="strat__row"><b>Recommended budget</b><span>Keep spend at the current level while the tracking is being fixed. Moving spend from other businesses’ names and Performance Max ads outside Search to product and target-industry searches may bring in more new customers for the same budget, at a lower cost each. Set the level after three months of corrected data, from the cost of each new customer.</span></div>
+      <div class="strat__row"><b>Role of each channel</b><span>Google Search’s job is to bring in new accounts. Organic search reaches the same buyers at no media cost through stronger stainless and steel tube pages. Email keeps Australian prospects and customers in contact between orders. The planned paid social campaign finds new buyers among automotive, motorsport and off-road fabricators and builders, and brings them to the new automotive steel tube page to enquire. Once fix 1 is done, those visitors can also be shown Google ads later.</span></div>
+      <div class="strat__row"><b>Required for execution</b><span>A record of how each new customer found you (fix 12), and Editor access to the Australian Google Analytics property. The existing pages are enough to start: the stainless steel tube page, and the new automotive steel tube page for automotive and motorsport searches. Later, a short section for each target industry would make a first visit more relevant, but it isn’t needed to start.</span></div>
+      <div class="strat__row"><b>Success measures</b><span>New Australian accounts a month, by source; cost per new account, falling as spend moves to product searches; form and call enquiries each counted once in Google Ads; organic clicks recorded for industrialtube.com.au.</span></div>
     </div>
   </div>
 </section>
@@ -683,18 +762,20 @@
   <div class="wrap">
     <div class="eyebrow">Notes</div>
     <h2>Basis of this audit</h2>
-    <div class="basis">This audit is based on read-only access to Google Ads, Google Tag Manager, Search Console, Merchant Centre and Mailchimp, a review of the tags on industrialtube.com.au, your Industrial Tube Australia Performance Tracker, and information you have supplied, for the 12 months to November 2026. The Google Analytics property for the Australian website was not available to us. The audit reflects what these sources show. It does not include decisions, context or data held outside them, so a finding may not match how a campaign was intended to run. Where a finding conflicts with what you know, tell us and we will correct it.</div>
+    <div class="basis">This audit is based on read-only access to Google Ads, Google Analytics, Google Tag Manager, Search Console, Merchant Centre and Mailchimp, a review of the tags on industrialtube.com.au, your Industrial Tube Australia Performance Tracker, and information you have supplied, including order figures for April to November 2026, for the 12 months to November 2026. The audit reflects what these sources show. It does not include decisions, context or data held outside them, so a finding may not match how a campaign was intended to run. Where a finding conflicts with what you know, tell us and we will correct it.</div>
     <details class="gloss">
       <summary>Plain-English glossary <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
       <dl>
         <dt>Conversion</dt><dd>Whatever Google is told to count as a success. Before March, mostly a contact-page visit; since March, mostly a call from an ad.</dd>
-        <dt>Tag</dt><dd>A small piece of code on the website that tells an ad account when a visitor does something.</dd>
+        <dt>Tag</dt><dd>A small piece of code on the website that tells an ad account or Google Analytics when a visitor does something.</dd>
+        <dt>Google tag</dt><dd>One piece of code that can send visits to several accounts at once, such as Google Analytics and Google Ads. Which accounts it sends to is set inside the tag.</dd>
         <dt>Performance Max</dt><dd>A Google campaign that places ads across Search, YouTube, Maps and partner sites, and chooses where itself.</dd>
-        <dt>Ads on other websites and apps</dt><dd>Google's Display Network: banner and image ads shown on sites and apps that carry Google ads.</dd>
+        <dt>Ads on other websites and apps</dt><dd>Google’s Display Network: banner and image ads shown on sites and apps that carry Google ads.</dd>
         <dt>Product feed</dt><dd>A list of products, prices and stock sent to Google Merchant Centre so they can appear in Shopping results.</dd>
         <dt>Broad keyword</dt><dd>A keyword Google may match to loosely related searches.</dd>
         <dt>Search Console property</dt><dd>The version of the website address that Search Console reports on. A property for www.industrialtube.com.au does not cover industrialtube.com.au.</dd>
         <dt>Organic search</dt><dd>The ordinary Google results below the ads, at no media cost.</dd>
+        <dt>Engaged visit</dt><dd>A visit in Google Analytics that lasted longer than 10 seconds or viewed two or more pages. It measures attention, not enquiries.</dd>
       </dl>
     </details>
   </div>
