@@ -37,8 +37,6 @@
   .pending { display:inline-block; background:#EEEDEA; border:1px dashed var(--line-md); color:var(--muted); font-weight:600; font-size:0.85em; padding:1px 8px; border-radius:6px; }
   .num { font-variant-numeric:tabular-nums; }
 
-  /* Draft strip */
-  .draft { background:#FFF4D6; color:#5A4300; font-size:0.86rem; font-weight:600; padding:10px 24px; text-align:center; border-bottom:1px solid #EBD38A; }
 
   /* Hero */
   .hero { background:linear-gradient(105deg, var(--hero-left) 0%, var(--hero-left) 42%, var(--hero-right) 100%); color:#F4F3F0; padding:36px 24px 64px; position:relative; }
@@ -227,6 +225,8 @@
   }
 
   .g--6 { grid-column:span 6; }
+  .scrollx { overflow-x:auto; }
+  @media (max-width: 560px) { .scrollx .tl { min-width:720px; } }
   @media (max-width: 860px) { .g--6 { grid-column:auto; } }
   .g--alert { border-top:5px solid var(--crit); }
   .risk__head { display:block; }
@@ -263,8 +263,6 @@
   </symbol>
 </svg>
 
-<div class="draft">Draft for review. Items marked <span class="pending">Pending</span> wait on information from Ag Steel.</div>
-
 <header class="hero">
   <div class="hero__inner">
     <svg class="wordmark" viewBox="0 0 1326 432" role="img" aria-label="Via Media"><use href="#vm-wordmark"></use></svg>
@@ -273,7 +271,7 @@
     <dl class="hero__meta">
       <div><dt>Prepared for</dt><dd>Katrina Evans, TGF Holdings</dd></div>
       <div><dt>Period reviewed</dt><dd>12 Nov 2025 to 11 Nov 2026</dd></div>
-      <div><dt>Figures</dt><dd>NZ$, excluding GST</dd></div><div><dt>Audit dates</dt><dd>9 to 20 Nov 2026</dd></div>
+      <div><dt>Figures</dt><dd>NZ$, excluding GST</dd></div><div><dt>Audit dates</dt><dd>9 to 26 Nov 2026</dd></div>
       <div><dt>Prepared by</dt><dd>Via Media</dd></div>
     </dl>
   </div>
@@ -287,12 +285,13 @@
     <p class="lede">Ag Steel spent <span class="num">$23,381</span> on Google ads in the last 12 months. Google is not counting meaningful results, such as enquiries and orders. That needs to be fixed first; then it will be possible to judge how effective the spend is.</p>
     <div class="points">
       <div class="point"><div><strong>Google counts page visits as conversions</strong><p>99% of the 2,656 conversions Google recorded were visits to the contact page. Your AgSteel Performance Tracker records 25 form enquiries from March to October.</p></div></div>
-      <div class="point"><div><strong>The campaigns optimise to that count</strong><p>Both Performance Max campaigns are set to find more conversions, so they find more contact-page visits. 55% of their spend ran outside Google Search, on other websites, apps and YouTube.</p></div></div>
+      <div class="point"><div><strong>The campaigns optimise to that count</strong><p>Both Performance Max campaigns are set to find more conversions, so they find more contact-page visits. 55% of their spend ran outside Google Search, on other websites, apps and YouTube. From August to October, their clicks rose from about 2,000 to 11,000 a month, and your recorded enquiries did not rise.</p></div></div>
+      <div class="point"><div><strong>Most enquiries arrive by phone, email or in person, and their source isn’t recorded</strong><p>Your records show about 30 enquiries a month. From March to October, Google Analytics recorded 25 website form enquiries, about 1 in 11 of the 281 in your records. How each enquiry found you isn’t recorded, so the number that came from the ads can’t be measured.</p></div></div>
       <div class="point"><div><strong>Most of the visible spend reaches people searching for a named business</strong><p>54% went on searches for named wineries, orchards and horticulture businesses, and 28% on other steel suppliers. 2% went on searches for posts, trellis, wire or beams.</p></div></div>
       <div class="point"><div><strong>Organic search and your email list can drive enquiries to the product pages</strong><p>Organic search already sends most of its visitors to product pages. About 700 Mailchimp contacts carry Ag Steel tags. However, the last full newsletter went out in March 2026; since then, two emails have gone to small vineyard groups, the latest in August.</p></div></div>
       <div class="point"><div><strong>Your AgSteel Performance Tracker judges results on enquiries and orders, but is not yet capturing true conversion data</strong><p>See the tracker section below.</p></div></div>
     </div>
-    <div class="verdict"><b>Verdict</b><span class="pending">Pending: your enquiry and order numbers</span></div>
+    <div class="verdict"><b>Verdict</b><span>Google counts contact-page visits rather than enquiries, and most of the spend goes on clicks unlikely to produce one. When Performance Max clicks rose more than five-fold, your recorded enquiries did not rise. Reduce spend while the tracking is fixed, starting with the Vineyard Performance Max campaign, and move the rest to product and crop searches, so the ads can be judged on real enquiries before the March to July peak.</span></div>
   </div>
 </section>
 
@@ -379,6 +378,94 @@
         <div class="g__src">Google Ads channel performance report, Vineyard and Kiwifruit campaigns, 10 Nov 2025 to 16 Nov 2026</div>
       </div>
 
+      <div class="g g--6 g--risk">
+        <div class="g__kicker">Recorded enquiries and Google ads · March to October 2026</div>
+        <div class="g__title">From August to October, Performance Max clicks rose more than five-fold; your recorded enquiries did not rise</div>
+        <div class="scrollx"><svg class="tl" viewBox="0 0 1000 400" role="img" aria-label="March to October 2026: recorded enquiries 38, 36, 51, 47, 36, 26, 26 and 21 a month; Performance Max clicks rose from 1,957 in August to 11,052 in October.">
+<text x="138" y="40" text-anchor="end" font-size="10.5" font-weight="700" fill="#B3261E">Performance Max</text>
+<text x="138" y="54" text-anchor="end" font-size="10.5" font-weight="700" fill="#B3261E">clicks</text>
+<text x="138" y="200" text-anchor="end" font-size="10.5" font-weight="700" fill="#354757">Recorded</text>
+<text x="138" y="214" text-anchor="end" font-size="10.5" font-weight="700" fill="#354757">enquiries</text>
+<polyline points="203.0,118.1 309.0,115.4 415.0,102.4 521.0,105.5 627.0,103.2 733.0,106.0 839.0,80.0 945.0,40.8" fill="none" stroke="#B3261E" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="203.0" cy="118.1" r="5" fill="#B3261E"><title>Mar: 268 Performance Max clicks</title></circle>
+<text x="203.0" y="108.1" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">268</text>
+<circle cx="309.0" cy="115.4" r="5" fill="#B3261E"><title>Apr: 646 Performance Max clicks</title></circle>
+<text x="309.0" y="105.4" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">646</text>
+<circle cx="415.0" cy="102.4" r="5" fill="#B3261E"><title>May: 2,453 Performance Max clicks</title></circle>
+<text x="415.0" y="92.4" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">2,453</text>
+<circle cx="521.0" cy="105.5" r="5" fill="#B3261E"><title>Jun: 2,020 Performance Max clicks</title></circle>
+<text x="521.0" y="95.5" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">2,020</text>
+<circle cx="627.0" cy="103.2" r="5" fill="#B3261E"><title>Jul: 2,349 Performance Max clicks</title></circle>
+<text x="627.0" y="93.2" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">2,349</text>
+<circle cx="733.0" cy="106.0" r="5" fill="#B3261E"><title>Aug: 1,957 Performance Max clicks</title></circle>
+<text x="733.0" y="96.0" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">1,957</text>
+<circle cx="839.0" cy="80.0" r="5" fill="#B3261E"><title>Sep: 5,582 Performance Max clicks</title></circle>
+<text x="839.0" y="70.0" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">5,582</text>
+<circle cx="945.0" cy="40.8" r="5" fill="#B3261E"><title>Oct: 11,052 Performance Max clicks</title></circle>
+<text x="945.0" y="30.8" text-anchor="middle" font-size="11" font-weight="800" fill="#111110">11,052</text>
+<rect x="175.0" y="201.3" width="56" height="88.7" rx="3" fill="#354757"><title>Mar: 38 recorded enquiries</title></rect>
+<text x="203.0" y="194.3" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">38</text>
+<rect x="281.0" y="206.0" width="56" height="84.0" rx="3" fill="#354757"><title>Apr: 36 recorded enquiries</title></rect>
+<text x="309.0" y="199.0" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">36</text>
+<rect x="387.0" y="171.0" width="56" height="119.0" rx="3" fill="#354757"><title>May: 51 recorded enquiries</title></rect>
+<text x="415.0" y="164.0" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">51</text>
+<rect x="493.0" y="180.3" width="56" height="109.7" rx="3" fill="#354757"><title>Jun: 47 recorded enquiries</title></rect>
+<text x="521.0" y="173.3" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">47</text>
+<rect x="599.0" y="206.0" width="56" height="84.0" rx="3" fill="#354757"><title>Jul: 36 recorded enquiries</title></rect>
+<text x="627.0" y="199.0" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">36</text>
+<rect x="705.0" y="229.3" width="56" height="60.7" rx="3" fill="#354757"><title>Aug: 26 recorded enquiries</title></rect>
+<text x="733.0" y="222.3" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">26</text>
+<rect x="811.0" y="229.3" width="56" height="60.7" rx="3" fill="#354757"><title>Sep: 26 recorded enquiries</title></rect>
+<text x="839.0" y="222.3" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">26</text>
+<rect x="917.0" y="241.0" width="56" height="49.0" rx="3" fill="#354757"><title>Oct: 21 recorded enquiries</title></rect>
+<text x="945.0" y="234.0" text-anchor="middle" font-size="12" font-weight="800" fill="#111110">21</text>
+<line x1="150" y1="290" x2="998" y2="290" stroke="#B9B6B0"/>
+<text x="138" y="327" text-anchor="end" font-size="10.5" font-weight="700" fill="#5A5955">Google ad spend</text>
+<text x="138" y="351" text-anchor="end" font-size="10.5" font-weight="700" fill="#5A5955">Radio</text>
+<text x="138" y="375" text-anchor="end" font-size="10.5" font-weight="800" fill="#1E7A4C">Form enquiries</text>
+<text x="203.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Mar</text>
+<text x="203.0" y="327" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.3k</text>
+<text x="203.0" y="351" text-anchor="middle" font-size="11" fill="#9A988F">–</text>
+<rect x="188.0" y="362" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="203.0" y="375" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">1</text>
+<text x="309.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Apr</text>
+<text x="309.0" y="327" text-anchor="middle" font-size="10.5" fill="#5A5955">$1.4k</text>
+<rect x="287.0" y="341" width="44" height="13" rx="6.5" fill="#D4A017"><title>Apr: radio ran</title></rect>
+<rect x="294.0" y="362" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="309.0" y="375" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">1</text>
+<text x="415.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">May</text>
+<text x="415.0" y="327" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.1k</text>
+<rect x="393.0" y="341" width="44" height="13" rx="6.5" fill="#D4A017"><title>May: radio ran</title></rect>
+<rect x="400.0" y="362" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="415.0" y="375" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">5</text>
+<text x="521.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Jun</text>
+<text x="521.0" y="327" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.1k</text>
+<rect x="499.0" y="341" width="44" height="13" rx="6.5" fill="#D4A017"><title>Jun: radio ran</title></rect>
+<rect x="506.0" y="362" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="521.0" y="375" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">4</text>
+<text x="627.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Jul</text>
+<text x="627.0" y="327" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.0k</text>
+<rect x="605.0" y="341" width="44" height="13" rx="6.5" fill="#D4A017"><title>Jul: radio ran</title></rect>
+<rect x="612.0" y="362" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="627.0" y="375" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">6</text>
+<text x="733.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Aug</text>
+<text x="733.0" y="327" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.1k</text>
+<rect x="711.0" y="341" width="44" height="13" rx="6.5" fill="#D4A017"><title>Aug: radio ran</title></rect>
+<rect x="718.0" y="362" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="733.0" y="375" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">2</text>
+<text x="839.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Sep</text>
+<text x="839.0" y="327" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.1k</text>
+<text x="839.0" y="351" text-anchor="middle" font-size="11" fill="#9A988F">–</text>
+<rect x="824.0" y="362" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="839.0" y="375" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">3</text>
+<text x="945.0" y="308" text-anchor="middle" font-size="12" font-weight="600" fill="#2A2A28">Oct</text>
+<text x="945.0" y="327" text-anchor="middle" font-size="10.5" fill="#5A5955">$2.1k</text>
+<text x="945.0" y="351" text-anchor="middle" font-size="11" fill="#9A988F">–</text>
+<rect x="930.0" y="362" width="30" height="18" rx="9" fill="#E3F0E8"/><text x="945.0" y="375" text-anchor="middle" font-size="11" font-weight="800" fill="#1E7A4C">3</text>
+</svg></div>
+        <ul class="key key--small">
+          <li><i style="background:#354757"></i>Recorded enquiries: all routes, from your sales records</li>
+          <li><i style="background:#B3261E;border-radius:50%"></i>Performance Max clicks</li>
+          <li><i style="background:#D4A017"></i>Months with radio advertising</li>
+          <li><i style="background:#1E7A4C;border-radius:4px"></i>Form enquiries recorded by Google Analytics (25, about 1 in 11 recorded enquiries)</li>
+        </ul>
+        <p class="g__note">Your records show 361 enquiries from November 2025 to October 2026, about 30 a month: about 20 a month from November to February, and the most from March to July, the months radio also ran. The effect of season and radio can’t be separated, and how each enquiry found you isn’t recorded.</p>
+        <div class="g__src">Enquiries from your sales records. Spend and Performance Max clicks from Google Ads, and form enquiries from Google Analytics, as entered in your AgSteel Performance Tracker; radio from its Offline Media sheet.</div>
+      </div>
+
       <div class="g g--3 g--risk">
         <div class="g__kicker">Visible search spend · $5,987</div>
         <div class="g__big num">2%</div>
@@ -459,7 +546,6 @@
       </div>
 
     </div>
-    <p class="note" style="margin-top:16px">Enquiries and orders that came from the ads: <span class="pending">Pending: your sales records</span></p>
   </div>
 </section>
 
@@ -476,9 +562,9 @@
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Conversion tracking</div><div class="sc-what" role="cell">What Google Ads, Google Analytics and Tag Manager count, and the tags on agsteel.co.nz</div><div role="cell"><div class="gauge" data-level="1"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Critical</div></div></div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Call tracking options</div><div class="sc-what" role="cell">How phone calls from ads and the website are counted</div><div role="cell"><div class="gauge" data-level="1"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Critical</div></div></div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Merchant Centre and Search Console</div><div class="sc-what" role="cell">Organic search performance and indexing. Ag Steel has no Merchant Centre account.</div><div role="cell"><div class="gauge" data-level="3"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Fair</div></div></div></div>
-      <div class="sc-row" role="row"><div class="sc-task" role="cell">Enquiry form and lead handling</div><div class="sc-what" role="cell">Contact, order and newsletter forms, and where enquiries go</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor · test enquiry pending</div></div></div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Enquiry form and lead handling</div><div class="sc-what" role="cell">Contact, order and newsletter forms, and where enquiries go</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor · test enquiry in Stage 2</div></div></div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Mailchimp</div><div class="sc-what" role="cell">List, tags, sign-up sources and sends in the last 12 months</div><div role="cell"><div class="gauge" data-level="3"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Fair</div></div></div></div>
-      <div class="sc-row" role="row"><div class="sc-task" role="cell">Current execution against optimal strategy</div><div class="sc-what" role="cell">Whether the account structure fits how growers buy</div><div role="cell"><div class="gauge" data-level="0"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Pending: sales data</div></div></div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Current execution against optimal strategy</div><div class="sc-what" role="cell">Whether the account structure fits how growers buy</div><div role="cell"><div class="gauge" data-level="2"><div class="gauge__bar"><span></span><span></span><span></span><span></span><span></span></div><div class="gauge__label">Poor</div></div></div></div>
     </div>
     <div class="legend" aria-hidden="true"><span><i style="background:var(--crit)"></i>Critical</span><span><i style="background:var(--poor)"></i>Poor</span><span><i style="background:var(--fair)"></i>Fair</span><span><i style="background:var(--good)"></i>Good</span><span><i style="background:var(--strong)"></i>Strong</span></div>
   </div>
@@ -506,8 +592,8 @@
         <summary><span class="tag tag--high">High</span><span><span class="ftitle">2. The campaigns optimise to page visits</span><span class="fsum">Bidding is set to find more of the conversions in finding 1</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <div class="fbody"><dl>
           <dt>Finding</dt><dd>Both Performance Max campaigns (Vineyard and Kiwifruit) are set to get as many conversions as possible within a target cost. Together they spent $17,358: 44% on Google Search, 41% on ads on other websites and apps, and 14% on YouTube. The two Search campaigns are set to maximise conversion value, but no value is recorded.</dd>
-          <dt>Impact</dt><dd>Google is doing what it is told, with the result that it finds cheap contact-page visits, much of it through ads on other websites and on YouTube. Performance Max clicks rose from about 2,000 to 11,000 a month from August to October, while form enquiries stayed at 2 to 3 a month. Since 18 May, the two campaigns have recorded 8 contact-form submissions.</dd>
-          <dt>Fixes</dt><dd>4, after 1 to 3</dd>
+          <dt>Impact</dt><dd>Google is doing what it is told, with the result that it finds cheap contact-page visits, much of it through ads on other websites and on YouTube. Performance Max clicks rose from about 2,000 to 11,000 a month from August to October, while form enquiries stayed at 2 to 3 a month and your recorded enquiries, by all routes, were 26, 26 and 21. Since 18 May, the two campaigns have recorded 8 contact-form submissions: 7 from the Kiwifruit campaign and 1 from the Vineyard campaign, which takes most of the spend.</dd>
+          <dt>Fixes</dt><dd>13 now; 4 once 1 to 3 are done</dd>
         </dl></div>
       </details>
 
@@ -588,14 +674,16 @@
   <div class="wrap">
     <div class="eyebrow">Fixes</div>
     <h2>Prioritised fix list</h2>
-    <p class="lede">Fixes 1 to 3 and 11 come first: they make the results accurate. Once the data is correct, it will show how far to take fixes 4 to 10, and the effect of each fix can be measured.</p>
+    <p class="lede">Fixes 1 to 3, 11 and 12 come first: they make the results accurate. Fix 13 cuts the spend least likely to produce enquiries straight away. Once the data is correct, it will show how far to take fixes 4 to 10, and the effect of each fix can be measured.</p>
     <div class="lanes">
       <div class="lane">
-        <div class="lane__head"><h3>Now</h3><span>4 fixes</span></div>
+        <div class="lane__head"><h3>Now</h3><span>6 fixes</span></div>
         <div class="fix"><div class="fix__top"><span class="fix__n">1</span><span class="fix__t">Stop counting contact-page visits as conversions</span></div><p class="fix__why">Removes 99% of the false conversions.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">Via Media</span><span class="chip">Finding 1</span></div></div>
         <div class="fix"><div class="fix__top"><span class="fix__n">2</span><span class="fix__t">Count the order form, newsletter sign-ups and phone-number taps on the website</span></div><p class="fix__why">Captures every real enquiry route.</p><div class="fix__meta"><span class="chip">Medium</span><span class="chip">Via Media</span><span class="chip">Finding 1</span></div></div>
         <div class="fix"><div class="fix__top"><span class="fix__n">3</span><span class="fix__t">Send a test enquiry together and confirm it is counted once</span></div><p class="fix__why">Proves the counting works.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">Ag Steel and Via Media</span><span class="chip">Finding 1</span></div></div>
         <div class="fix"><div class="fix__top"><span class="fix__n">11</span><span class="fix__t">Correct the October formulas in the AgSteel Performance Tracker</span></div><p class="fix__why">Restores the cost-per-conversion figures. See the tracker section below.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">Ag Steel</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">12</span><span class="fix__t">Record how each enquiry found Ag Steel</span></div><p class="fix__why">Shows what the ads, organic search, email, print, radio and field days each produce.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">Ag Steel</span></div></div>
+        <div class="fix"><div class="fix__top"><span class="fix__n">13</span><span class="fix__t">Pause the Vineyard Performance Max campaign; cover vineyard products with Search ads</span></div><p class="fix__why">Stops the largest share of spend unlikely to produce enquiries.</p><div class="fix__meta"><span class="chip">Small</span><span class="chip">Via Media</span><span class="chip">Finding 2</span></div></div>
       </div>
       <div class="lane">
         <div class="lane__head"><h3>Next</h3><span>5 fixes</span></div>
@@ -629,10 +717,10 @@
           <tr><td>Search and Performance Max conversions, cost per conversion, click-to-conversion</td><td><span class="pill pill--no">Not reliable</span></td><td>99% of the conversions are contact-page visits.</td><td>1 to 3</td></tr>
           <tr><td>Total platform leads, blended cost per platform lead</td><td><span class="pill pill--no">Not reliable</span></td><td>Built on the conversion count. In October, three cells show #REF! (a broken cell reference), and Search cost per conversion divides by Performance Max conversions: it shows $8.89; the correct figure is $10.42.</td><td>1 to 3, 11</td></tr>
           <tr><td>Brand search impression share</td><td><span class="pill pill--part">Wrong row</span></td><td>No campaign targets brand searches. The figure entered (9.99%) is Google’s ‘under 10%’ for all search campaigns combined, which belongs under non-brand.</td><td>Move to non-brand</td></tr>
-          <tr><td>Enquiry / form submissions</td><td><span class="pill pill--part">Partly reliable</span></td><td>Counts the contact form only, and only since 18 May 2026.</td><td>2</td></tr>
+          <tr><td>Enquiry / form submissions</td><td><span class="pill pill--part">Partly reliable</span></td><td>Counts the contact form only, and only since 18 May 2026. From March to October it shows 25, about 1 in 11 of the 281 enquiries in your records.</td><td>2</td></tr>
           <tr><td>Organic search rows</td><td><span class="pill pill--ok">Reliable</span></td><td>Matches Search Console to within about 4%.</td><td>Confirm which Search Console property is used</td></tr>
           <tr><td>Email audience size and growth</td><td><span class="pill pill--no">Not reliable</span></td><td>Each month records how many contacts one email was sent to (511 in March, 40 in April, 51 in August). Those sends went to different tagged groups in a list shared with the other TGF brands, so the month-to-month change is not list growth.</td><td>Save the Ag Steel contacts as one segment and report its size</td></tr>
-          <tr><td>CRM leads, orders, leads by source</td><td><span class="pill pill--wait">Awaiting data</span></td><td>No data entered yet.</td><td><span class="pending">Pending</span></td></tr>
+          <tr><td>CRM leads, orders, leads by source</td><td><span class="pill pill--part">Partly available</span></td><td>Monthly enquiries and cash-sale orders are in your sales records (November 2025 to October 2026). Account-client orders were not available for this audit, and how each enquiry found you is not recorded.</td><td>12</td></tr>
         </tbody>
       </table>
     </div>
@@ -644,13 +732,14 @@
   <div class="wrap">
     <div class="eyebrow">Strategy</div>
     <h2>Making Google ads, organic search and email work</h2>
-    <p class="lede"><span class="pending">Pending</span> Completed once enquiry and order data is supplied.</p>
+    <p class="lede">Based on your enquiry and cash-sale figures, the findings above, and how growers buy. The sales figures supplied cover cash sales only; account-client sales were not available, so no order value or return on ad spend is calculated.</p>
     <div class="strat">
-      <div class="strat__row"><b>To be determined</b><span>Whether paid Google pays its way for Ag Steel and at what level of spend, and how much organic search and email can contribute between campaigns.</span></div>
-      <div class="strat__row"><b>To be analysed</b><span>Real enquiries and orders from the ads, organic search and email, average order value, the length of a grower’s buying cycle, and how Google spend compares with print, radio and field days (63% of marketing spend, March to October).</span></div>
-      <div class="strat__row"><b>Expected recommendations</b><span>Fewer, tighter campaigns aimed at growers searching by crop (kiwifruit, vineyard, apple), measured on real enquiries; email and organic search to keep in contact between seasons.</span></div>
-      <div class="strat__row"><b>Required for execution</b><span class="pending">Pending: to be agreed, for example product photography, crop-specific landing pages, case studies</span></div>
-      <div class="strat__row"><b>Success measures</b><span>Three to five targets in the AgSteel Performance Tracker, set after one month of corrected data.</span></div>
+      <div class="strat__row"><b>Where Google fits</b><span>Ag Steel reaches growers and contractors through field sales, print, radio and field days; print, radio and events made up 63% of marketing spend from March to October. Google’s job is to reach growers who search for a product or a crop while planning a build, and bring them to the product pages to enquire.</span></div>
+      <div class="strat__row"><b>Spend and enquiries</b><span>Google ads have cost about $2,100 a month since May. Your records show about 30 enquiries a month, most from March to July; you note that the vineyard sector is new and its sales information is limited, so the figures are mostly kiwifruit. From August to October, Performance Max clicks rose more than five-fold and your recorded enquiries did not rise. How each enquiry found you isn’t recorded, so the cost of an enquiry from the ads can’t be determined. Your cash sales, which you expect are mainly new customers, are the closest measure of new business today.</span></div>
+      <div class="strat__row"><b>Recommended budget</b><span>Reduce spend while the tracking is being fixed. Pause the Vineyard Performance Max campaign: it took 58% of Google ad spend in the last 12 months, and 1 of the 8 contact-form submissions recorded from Performance Max since 18 May. Keep the Kiwifruit campaign and the Search campaigns, and move their spend from business names to product and crop searches, adding Search ads for vineyard products. This cuts the spend least likely to produce enquiries without stopping the ads. Set the level for the March to July peak from the first months of corrected data, judged on enquiries by source.</span></div>
+      <div class="strat__row"><b>Role of each channel</b><span>Google Search reaches growers searching by product and crop. Organic search already brings about 130 clicks a month to the product pages; improving the vineyard clips, Ag Wire and steel vineyard post pages (fix 9) adds to that at no media cost. Email keeps growers and contractors in contact between seasons, ahead of each build period. Print, radio and field days remain the main way to reach growers; recording how each enquiry found you (fix 12) will show what each channel produces.</span></div>
+      <div class="strat__row"><b>Required for execution</b><span>Edit access to the Ag-Steel Google Ads account, Google Analytics property and Tag Manager container (read-only today), and a record of how each enquiry found you (fix 12). The existing product pages are enough to start; the test enquiry (fix 3) is done together in Stage 2.</span></div>
+      <div class="strat__row"><b>Success measures</b><span>Enquiries a month by source; form, order-form and call enquiries each counted once in Google Ads; the share of search spend on product and crop searches; cash sales a month through the March to July peak. Three to five targets in the AgSteel Performance Tracker, set after one month of corrected data.</span></div>
     </div>
   </div>
 </section>
@@ -660,7 +749,7 @@
   <div class="wrap">
     <div class="eyebrow">Notes</div>
     <h2>Basis of this audit</h2>
-    <div class="basis">This audit is based on read-only access to Google Ads, Google Analytics, Google Tag Manager, Search Console and Mailchimp, your AgSteel Performance Tracker, and information you have supplied, for the 12 months to 11 November 2026. It reflects what those sources show. It does not include decisions, context or data held outside them, so a finding may not match how a campaign was intended to run. Where a finding conflicts with what you know, tell us and we will correct it.</div>
+    <div class="basis">This audit is based on read-only access to Google Ads, Google Analytics, Google Tag Manager, Search Console and Mailchimp, a review of the tags on agsteel.co.nz, your AgSteel Performance Tracker, and information you have supplied, including your sales records (monthly enquiries, and cash-sale orders and values, for November 2025 to October 2026; account-client sales were not available), for the 12 months to 11 November 2026. It reflects what those sources show. It does not include decisions, context or data held outside them, so a finding may not match how a campaign was intended to run. Where a finding conflicts with what you know, tell us and we will correct it.</div>
     <details class="gloss">
       <summary>Plain-English glossary <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
       <dl>
