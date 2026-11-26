@@ -193,13 +193,13 @@ body = f'''<div class="sample">Sample report. Norvik Trade &amp; Industrial Supp
     <div class="scorecard" role="table" aria-label="Audit areas and health">
       <div class="sc-row sc-head" role="row"><div role="columnheader">Area</div><div role="columnheader">What was audited</div><div role="columnheader">Health</div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Google Ads review</div><div class="sc-what" role="cell">Campaigns, budgets, bidding, keywords, ads, settings, and the searches that triggered the ads</div><div role="cell">{gauge(2, "Poor")}</div></div>
-      <div class="sc-row" role="row"><div class="sc-task" role="cell">Coverage of products and industries</div><div class="sc-what" role="cell">Keywords and campaigns against your product lines, target industries and regions</div><div role="cell">{gauge(2, "Poor")}</div></div>
-      <div class="sc-row" role="row"><div class="sc-task" role="cell">Conversion tracking</div><div class="sc-what" role="cell">What Google Ads, Meta, Google Analytics and Tag Manager count, and the tags on the website</div><div role="cell">{gauge(1, "Critical")}</div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Coverage of products and industries</div><div class="sc-what" role="cell">Keywords and campaigns against your product lines, target industries, and regions</div><div role="cell">{gauge(2, "Poor")}</div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Conversion tracking</div><div class="sc-what" role="cell">What Google Ads, Meta, Google Analytics, and Tag Manager count, and the tags on the website</div><div role="cell">{gauge(1, "Critical")}</div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Call tracking</div><div class="sc-what" role="cell">Calls from ads, calls to the numbers on the website, and taps on website phone links</div><div role="cell">{gauge(3, "Fair")}</div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Meta ads</div><div class="sc-what" role="cell">Campaigns, audiences, lead forms, the Meta pixel, and where leads go</div><div role="cell">{gauge(2, "Poor")}</div></div>
-      <div class="sc-row" role="row"><div class="sc-task" role="cell">Website, organic search and Merchant Centre</div><div class="sc-what" role="cell">Mobile speed, indexing, organic search performance, and whether products can appear in Google Shopping</div><div role="cell">{gauge(3, "Fair")}</div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Website, organic search, and Merchant Centre</div><div class="sc-what" role="cell">Mobile speed, indexing, organic search performance, and whether products can appear in Google Shopping</div><div role="cell">{gauge(3, "Fair")}</div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Enquiry forms and lead handling</div><div class="sc-what" role="cell">Forms on the website and in Meta, and how enquiries reach the sales team</div><div role="cell">{gauge(2, "Poor")}</div></div>
-      <div class="sc-row" role="row"><div class="sc-task" role="cell">Email</div><div class="sc-what" role="cell">List, segments, sign-up sources, sends and automations</div><div role="cell">{gauge(3, "Fair")}</div></div>
+      <div class="sc-row" role="row"><div class="sc-task" role="cell">Email</div><div class="sc-what" role="cell">List, segments, sign-up sources, sends, and automations</div><div role="cell">{gauge(3, "Fair")}</div></div>
       <div class="sc-row" role="row"><div class="sc-task" role="cell">Reporting</div><div class="sc-what" role="cell">Your monthly marketing report against what the platforms and the CRM record</div><div role="cell">{gauge(2, "Poor")}</div></div>
     </div>
     <div class="legend" aria-hidden="true"><span><i style="background:var(--crit)"></i>Critical</span><span><i style="background:var(--poor)"></i>Poor</span><span><i style="background:var(--fair)"></i>Fair</span><span><i style="background:var(--good)"></i>Good</span><span><i style="background:var(--strong)"></i>Strong</span></div>
@@ -218,11 +218,11 @@ body = f'''<div class="sample">Sample report. Norvik Trade &amp; Industrial Supp
  "Google Ads uses three main conversions: a visit to the contact page, a visit to the quote page, and the quote form. The quote form's thank-you page reloads when a visitor returns to it, so one enquiry can be counted several times. Calls from the ads are counted correctly. Google recorded 3,140 conversions in 12 months; your CRM shows 260 enquiries from the website and phone.",
  "Every cost-per-lead figure in Google and in your monthly report is far lower than the real cost. The campaigns are set to find more conversions, so they find more page visits.", "1 and 3", True)}
 {finding(2, "high", "A third of Google spend went on clicks unlikely to produce an enquiry", "Searches for other businesses, and Performance Max ads outside Search",
- "Of the searches Google shows, 38% of spend went on searches for other businesses by name or for products Norvik does not sell, such as ‘hydraulic repairs near me’. Most keywords are broad match. Performance Max spent 33% of its budget on ads on other websites, apps and YouTube.",
+ "Of the searches Google shows, 38% of spend went on searches for other businesses by name or for products Norvik does not sell, such as ‘hydraulic repairs near me’. Most keywords are broad match. Performance Max spent 33% of its budget on ads on other websites, apps, and YouTube.",
  "At least $10,400 of $31,400, and up to an estimated $15,700, went on clicks unlikely to produce an enquiry.", "4 and 5")}
 {finding(3, "high", "Meta leads are not followed up", "52 leads; 14 contacted within two days; no link to the CRM",
  "Meta lead ads collected 52 leads in 12 months. The leads stay in Meta until someone downloads them, which happened about once a fortnight. Fourteen leads were contacted within two days and nine became quotes. The Meta pixel is on the website but records page views only.",
- "Leads go cold before anyone calls. Meta also cannot learn which leads became customers, so it keeps finding people who fill in forms rather than people who buy.", "2, 3 and 10")}
+ "Leads go cold before anyone calls. Meta also cannot learn which leads became customers, so it keeps finding people who fill in forms rather than people who buy.", "2, 3, and 10")}
 {finding(4, "medium", "Two of three product lines are not advertised", "No campaigns for bearings or fasteners",
  "All campaigns promote hydraulics. Bearings and fasteners have no keywords or ads, although they receive a quarter of organic search clicks. There are no campaigns for your target industries (transport fleets, agriculture, food processing).",
  "Buyers searching for two thirds of your range, or by industry, are not reached by the ads.", "6")}
@@ -230,7 +230,7 @@ body = f'''<div class="sample">Sample report. Norvik Trade &amp; Industrial Supp
  "Product pages take 6.8 seconds to load on mobile, mainly because of large product images. Search Console shows 252 product pages not indexed, mostly filter pages that duplicate the main category pages. The online catalogue has no product feed in Merchant Centre.",
  "Slow pages lose visitors from both ads and organic search, and products not in the index or in Merchant Centre cannot be found.", "7 and 8")}
 {finding(6, "low", "The email list is used for news, not reorders", "2,850 trade contacts; no automated emails",
- "The list holds 2,850 trade contacts, tagged by branch but not by industry or product line. Eleven newsletters went out in 12 months, with a 3.8% average click rate. There are no reorder reminders, quote follow-ups or welcome emails.",
+ "The list holds 2,850 trade contacts, tagged by branch but not by industry or product line. Eleven newsletters went out in 12 months, with a 3.8% average click rate. There are no reorder reminders, quote follow-ups, or welcome emails.",
  "Repeat trade buyers are the easiest sales to win, and the list is not prompting them.", "9")}
     </div>
   </div>
@@ -253,7 +253,7 @@ body = f'''<div class="sample">Sample report. Norvik Trade &amp; Industrial Supp
       <div class="lane">
         <div class="lane__head"><h3>Next</h3><span>4 fixes</span></div>
         {fix(5, "Move Performance Max budget into Search campaigns by product line", "Puts spend where buyers search for products.", ["Medium", "Via Media", "Finding 2"])}
-        {fix(6, "Add campaigns for bearings, fasteners and target industries", "Covers the whole range.", ["Medium", "Via Media", "Finding 4"])}
+        {fix(6, "Add campaigns for bearings, fasteners, and target industries", "Covers the whole range.", ["Medium", "Via Media", "Finding 4"])}
         {fix(7, "Compress product images; speed up product pages on mobile", "Keeps visitors from ads and search.", ["Medium", "Your web developer", "Finding 5"])}
         {fix(8, "Remove duplicate filter pages from the index; set up a Merchant Centre feed", "Makes every product findable.", ["Medium", "Your web developer and Via Media", "Finding 5"])}
       </div>
@@ -261,7 +261,7 @@ body = f'''<div class="sample">Sample report. Norvik Trade &amp; Industrial Supp
         <div class="lane__head"><h3>Later</h3><span>3 fixes</span></div>
         {fix(9, "Tag contacts by industry and product line; add reorder and quote follow-up emails", "Brings repeat buyers back.", ["Medium", "Norvik and Via Media", "Finding 6"])}
         {fix(10, "Use Meta to reach past website visitors and people similar to existing customers", "Keeps Norvik in front of likely buyers.", ["Small", "Via Media", "Finding 3"])}
-        {fix(11, "Rebuild the monthly report on enquiries, quotes and orders by source", "Judges each channel on sales.", ["Small", "Via Media"])}
+        {fix(11, "Rebuild the monthly report on enquiries, quotes, and orders by source", "Judges each channel on sales.", ["Small", "Via Media"])}
       </div>
     </div>
   </div>
@@ -293,7 +293,7 @@ body = f'''<div class="sample">Sample report. Norvik Trade &amp; Industrial Supp
 <section class="section section--white" id="strategy">
   <div class="wrap">
     <div class="eyebrow">Strategy</div>
-    <h2>Making Google, Meta, organic search and email work</h2>
+    <h2>Making Google, Meta, organic search, and email work</h2>
     <p class="lede">Based on your enquiry and order data, and the findings above.</p>
     <div class="strat">
       <div class="strat__row"><b>Recommended budget</b><span>Keep Google at about $2,600 a month, with a third moved from Performance Max into Search campaigns by product line. Keep Meta at about $600 a month, moved from lead forms to past website visitors and people similar to existing customers.</span></div>
@@ -310,7 +310,7 @@ body = f'''<div class="sample">Sample report. Norvik Trade &amp; Industrial Supp
     <div>
       <div class="eyebrow eyebrow--light">Book an audit</div>
       <h2>See this for your business</h2>
-      <p>A Via Media digital platform audit covers Google, Meta, email, your website and your reporting. You get a report like this one, a prioritised fix list, and a walkthrough with our team.</p>
+      <p>A Via Media digital platform audit covers Google, Meta, email, your website, and your reporting. You get a report like this one, a prioritised fix list, and a walkthrough with our team.</p>
     </div>
     <a class="cta__btn" href="https://viamedia.co.nz/#contact">Talk to us</a>
   </div>
@@ -321,16 +321,16 @@ body = f'''<div class="sample">Sample report. Norvik Trade &amp; Industrial Supp
   <div class="wrap">
     <div class="eyebrow">Notes</div>
     <h2>About this sample</h2>
-    <div class="basis">This sample shows the format and depth of a Via Media digital platform audit. Norvik Trade &amp; Industrial Supply, its people and its figures are fictional, based on patterns we see in real audits. A real audit is based on read-only access to your ad accounts, analytics, Search Console and email platform, your own reports, and information you supply.</div>
+    <div class="basis">This sample shows the format and depth of a Via Media digital platform audit. Norvik Trade &amp; Industrial Supply, its people, and its figures are fictional, based on patterns we see in real audits. A real audit is based on read-only access to your ad accounts, analytics, Search Console, and email platform, your own reports, and information you supply.</div>
     <details class="gloss">
       <summary>Plain-English glossary {CHEV}</summary>
       <dl>
         <dt>Conversion</dt><dd>Whatever an ad platform is told to count as a success.</dd>
-        <dt>Performance Max</dt><dd>A Google campaign that places ads across Search, YouTube, Maps and partner sites, and chooses where itself.</dd>
+        <dt>Performance Max</dt><dd>A Google campaign that places ads across Search, YouTube, Maps, and partner sites, and chooses where itself.</dd>
         <dt>Ads on other websites and apps</dt><dd>Google's Display Network: banner and image ads shown on sites and apps that carry Google ads.</dd>
         <dt>Lead ad</dt><dd>A Meta ad with a form inside Facebook or Instagram, so people can enquire without visiting the website.</dd>
         <dt>Indexed</dt><dd>Stored by Google so the page can appear in search results.</dd>
-        <dt>Product feed</dt><dd>A list of products, prices and stock sent to Google Merchant Centre so they can appear in Shopping results.</dd>
+        <dt>Product feed</dt><dd>A list of products, prices, and stock sent to Google Merchant Centre so they can appear in Shopping results.</dd>
         <dt>Broad keyword</dt><dd>A keyword Google may match to loosely related searches.</dd>
         <dt>Organic search</dt><dd>The ordinary Google results below the ads, at no media cost.</dd>
       </dl>
